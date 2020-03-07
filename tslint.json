@@ -1,0 +1,14 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:latest"
+    ],
+    "jsRules": {},
+    "rules": {
+        "no-constant-condition": true
+    },
+    "rulesDirectory": [],
+    "exclude": [
+        "node_modules"
+    ]
+}
