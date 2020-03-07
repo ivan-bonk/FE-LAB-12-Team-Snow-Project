@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "tslint --project .",
-    "prettier": "prettier --write  --single-quote \"src/**/*.tsx\""
+    "prettier": "prettier --write --single-quote \"src/**/*.tsx\""
   },
   "eslintConfig": {
     "extends": "react-app"
