@@ -7,6 +7,6 @@ cache:
 install:
   - yarn install
 script:
+  - yarn run prettier
   - yarn run lint
   - yarn test
-  - yarn run build
