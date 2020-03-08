@@ -5,7 +5,9 @@
     ],
     "jsRules": {},
     "rules": {
-        "no-constant-condition": true
+        "no-constant-condition": true,
+        "no-console": false,
+        "no-submodule-imports": false
     },
     "rulesDirectory": [],
     "exclude": [
