@@ -44,13 +44,13 @@
   },
   "husky": {
     "hooks": {
-        "pre-commit": "tsc --noEmit && lint-staged"
+      "pre-commit": "tsc --noEmit && lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
-        "eslint --fix",
-        "git add"
+      "eslint --fix",
+      "git add"
     ]
   }
 }
