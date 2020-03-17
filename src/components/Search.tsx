@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default function Search() {
+type SearchProps<T = any> = {
+    name: string;
+    type: T;
+};
+
+export const Search: React.FC<SearchProps> = props => {
     return (
         <div>
             <h1>Search Page</h1>
         </div>
-    )
-}
+    );
+};

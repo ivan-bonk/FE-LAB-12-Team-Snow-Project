@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default function Home() {
+type HomeProps<T = any> = {
+    name: string;
+    type: T;
+};
+
+export const Home: React.FC<HomeProps> = props => {
     return (
         <div>
-            <h1>Home page
-            </h1>
+            <h1>Home page</h1>
         </div>
-    )
-}
+    );
+};

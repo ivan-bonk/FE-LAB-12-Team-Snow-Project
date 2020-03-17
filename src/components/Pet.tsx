@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default function Pet() {
+type PetProps<T = any> = {
+    name: string;
+    type: T;
+};
+
+export const Pet: React.FC<PetProps> = props => {
     return (
         <div>
             <h1>Pet Page</h1>
         </div>
-    )
-}
+    );
+};
