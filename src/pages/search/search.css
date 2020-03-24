@@ -1,0 +1,49 @@
+.search-modal {
+  width: 360px;
+  margin: 0 auto;
+  border: 1px solid red;
+  padding: 28px;
+}
+.search-logo-container {
+  width: 30px;
+}
+.search-logo {
+  width: 30px;
+  height: 27.02px;
+}
+.search-logo-container span {
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #5c4937;
+}
+.search-header {
+  width: 90px;
+  height: 33px;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 28px;
+  margin-top: 25px;
+}
+.btn {
+  width: 107px;
+  height: 32px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 28px;
+}
+.btn-apply {
+  background-color: #902111;
+  color: #ffffff;
+}
+.btn-cancel {
+  background-color: #f7f7f6;
+  color: #000000;
+}

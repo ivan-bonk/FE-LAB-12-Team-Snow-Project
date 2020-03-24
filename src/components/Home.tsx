@@ -2,10 +2,9 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Search } from '../pages/search/search.component';
 
-type HomeProps<T = unknown> = {
-  name: string;
-  type: T;
-  test: boolean;
+type HomeProps = {
+  closeModal: void;
+  onKeyDown: any;
 };
 Modal.setAppElement('#root');
 
@@ -15,15 +14,23 @@ export const Home: React.FC<HomeProps> = () => {
   function openModal(): void {
     setIsOpen(true);
   }
-  // function closeModal(): void {
-  //   setIsOpen(false);
-  // }
+  function closeModal(): void {
+    setIsOpen(false);
+  }
+  function handleKeyDown(e: any): void {
+    if (e.keyCode === 27) {
+      setIsOpen(false);
+    }
+  }
+
   return (
-    <div>
+    // Whet page will be done, copy and past in to real Home Page,  just Modal !!!!!!!!!!!!!!!!!
+
+    <div onKeyUp={handleKeyDown}>
       <h1>Home page</h1>
       <button onClick={openModal}>Підібрати</button>
-      <Modal isOpen={modalIsOpen}>
-        <Search />
+      <Modal isOpen={modalIsOpen} className="modal">
+        <Search closeModal={closeModal.bind(Home)} />
       </Modal>
     </div>
   );
