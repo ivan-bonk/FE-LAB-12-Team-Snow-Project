@@ -1,6 +1,6 @@
 export interface Pet {
     id: string,
-    img_url: string,
+    imgUrl: string,
     alias: string,
     popularity: number,
     training: number,

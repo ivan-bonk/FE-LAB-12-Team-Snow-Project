@@ -13,7 +13,7 @@ function fetchData(ids: string[]): object[] {
     return [
         {
             id: "122",
-            img_url: 'https://lapkins.ru/upload/iblock/c35/c354befe4fd9dc1c6f7baaf41fa80d74.jpg',
+            imgUrl: 'https://lapkins.ru/upload/iblock/c35/c354befe4fd9dc1c6f7baaf41fa80d74.jpg',
             alias: "Бігль",
             popularity: 5,
             training: 3,
@@ -21,7 +21,7 @@ function fetchData(ids: string[]): object[] {
         },
         {
             id: "223",
-            img_url: 'https://lapki.pet/uploads/article/43/coderzhanie-akita-inu.jpg',
+            imgUrl: 'https://lapki.pet/uploads/article/43/coderzhanie-akita-inu.jpg',
             alias: "Акіта",
             popularity: 3,
             training: 4,
@@ -29,7 +29,7 @@ function fetchData(ids: string[]): object[] {
         },
         {
             id: "334",
-            img_url: 'https://zoolandy.ru/assets/components/phpthumbof/cache/6951-1.fc1d92c6b7a832b7f0ac395e0381142c7093.jpg',
+            imgUrl: 'https://zoolandy.ru/assets/components/phpthumbof/cache/6951-1.fc1d92c6b7a832b7f0ac395e0381142c7093.jpg',
             alias: "Гладко-шерстий терєр",
             popularity: 1,
             training: 4,

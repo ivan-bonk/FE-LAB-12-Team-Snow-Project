@@ -16,13 +16,13 @@ type ComparisonProps<T = any> = {
 
 interface RootState {
   data: object,
-  pets_to_compare: Array<Pet>
+  petsToCompare: Array<Pet>
 }
 
 
 export const Comparison: React.FC<ComparisonProps> = (props) => {
   const dispatch = useDispatch();
-  const pets = useSelector((state: RootState) => state.pets_to_compare)
+  const pets = useSelector((state: RootState) => state.petsToCompare)
 
   useEffect(() => {
     // const url = window.location.pathname;

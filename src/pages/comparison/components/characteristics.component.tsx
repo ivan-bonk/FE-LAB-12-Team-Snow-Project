@@ -32,7 +32,7 @@ export const Characteristics = (
         <Link style={styles} to={`/pet/${el.id}`} key={el.id}>
             <li className='item-compare'>
                 <div className='pet-block'>
-                    <img className='pet-image' src={el.img_url} alt={el.alias} />
+                    <img className='pet-image' src={el.imgUrl} alt={el.alias} />
                     <span className="pet-name">{el.alias}</span>
                 </div>
                 {show}

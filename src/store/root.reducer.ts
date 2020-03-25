@@ -1,6 +1,6 @@
 const initiatState = {
   data: {},
-  pets_to_compare: [],
+  petsToCompare: [],
 };
 
 export const rootReducer = (state: object = initiatState, action: any) => {
@@ -8,7 +8,7 @@ export const rootReducer = (state: object = initiatState, action: any) => {
     case "PUT_PETS": 
     return {
       ...state,
-      pets_to_compare: action.payload.pets
+      petsToCompare: action.payload.pets
     }
   }
 
