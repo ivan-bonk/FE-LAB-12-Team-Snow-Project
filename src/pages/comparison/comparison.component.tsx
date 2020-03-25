@@ -25,11 +25,14 @@ interface RootState {
 }
 
 export const Comparison: React.FC<ComparisonProps> = (props) => {
+
+  const { ids } = props.match.params;
+
   const dispatch = useDispatch();
   const pets = useSelector((state: RootState) => state.petsToCompare)
 
   useEffect(() => {
-    dispatch(findPetsById(props.match.params.ids.split('-')));
+    dispatch(findPetsById(ids.split('-')));
   })
   return (
     <div className='comparison-page'>
