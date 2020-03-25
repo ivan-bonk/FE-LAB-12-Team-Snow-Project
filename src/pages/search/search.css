@@ -1,7 +1,6 @@
 .search-modal {
-  width: 360px;
+  width: 100%;
   margin: 0 auto;
-  border: 1px solid red;
   padding: 28px;
 }
 .search-logo-container {
@@ -10,6 +9,7 @@
 .search-logo {
   width: 30px;
   height: 27.02px;
+  color: #5c4937;
 }
 .search-logo-container span {
   font-family: Raleway;
@@ -26,6 +26,9 @@
   font-weight: bold;
   font-size: 28px;
   margin-top: 25px;
+}
+.errorInput {
+  border: solid 2px red;
 }
 .btn {
   width: 107px;
