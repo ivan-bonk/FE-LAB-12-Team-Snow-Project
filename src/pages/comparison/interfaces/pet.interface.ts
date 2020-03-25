@@ -1,5 +1,5 @@
 export interface Pet {
-    id: string,
+    _id: string,
     imgUrl: string,
     alias: string,
     popularity: number,

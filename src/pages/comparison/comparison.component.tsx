@@ -11,7 +11,12 @@ import { Pet } from './interfaces/pet.interface';
 
 type ComparisonProps<T = any> = {
   name: string;
-  type: T
+  type: T;
+  match: {
+    params: {
+      ids: string
+    }
+  };
 };
 
 interface RootState {
@@ -19,16 +24,13 @@ interface RootState {
   petsToCompare: Array<Pet>
 }
 
-
 export const Comparison: React.FC<ComparisonProps> = (props) => {
   const dispatch = useDispatch();
   const pets = useSelector((state: RootState) => state.petsToCompare)
 
   useEffect(() => {
-    // const url = window.location.pathname;
-    dispatch(findPetsById(['122','223','334']));
+    dispatch(findPetsById(props.match.params.ids.split('-')));
   })
-
   return (
     <div className='comparison-page'>
       <Logo />
