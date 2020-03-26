@@ -7,7 +7,7 @@ import { Home } from './pages/Home';
 import { Auth } from './pages/Auth';
 import { Registration } from './pages/Registration';
 import { Search } from './pages/Search';
-import { Result } from './pages/Result';
+import { Result } from './pages/result/result.component';
 import { User } from './pages/User';
 import { Pet } from './pages/Pet';
 import { AddPet } from './pages/AddPet';
