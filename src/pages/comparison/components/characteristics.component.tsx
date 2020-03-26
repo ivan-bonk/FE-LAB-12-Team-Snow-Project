@@ -11,18 +11,13 @@ export const Characteristics = (props: {pets: Array<Pet>; display: string; rate:
 
     const { pets, display, rate } = props;
 
-    const items = pets.map((el: Pet) => {
-        const property = Object.getOwnPropertyDescriptor(el, display);
+    const items: React.ReactElement[] = pets.map((el: Pet) => {
+        const property = Object.getOwnPropertyDescriptor(el, display);  //looking for key, which we pass as props
 
-        const show = rate ? <Rate rate={property?.value} /> : <span>{property?.value}</span>;
-
-        const styles = {
-            color: 'black',
-            textDecoration: 'none'
-        }
-
+        const show = rate ? <Rate rate={property?.value} /> : <span>{property?.value}</span>; 
+        
         return (
-        <Link style={styles} to={`/pet/${el._id}`} key={el._id}>
+        <Link className="link-style" to={`/pet/${el._id}`} key={el._id}>
             <li className="item-compare">
                 <div className="pet-block">
                     <img className="pet-image" src={el.imgUrl} alt={el.alias} />

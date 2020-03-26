@@ -1,41 +1,31 @@
 import React from 'react';
 import './rate.css';
 
-export const Rate = (props: { rate: number}) => {
+export const Rate = (props: { rate: number }) => {
+    const { rate } = props;
 
-    let clases: string[] = [];
+    let clases: string[] = ['gy', 'gy', 'gy', 'gy', 'gy']; // gy - grey
 
-    switch (props.rate) {
-        case 1: {
-            clases = ['r', 'gy', 'gy','gy', 'gy']; 
-            break;
+    if (rate === 1) {
+        clases[0] = 'r';                  // r - red
+    } else if (rate < 4) {
+        for (let i = 0; i < rate; i++) {
+            clases[i] = 'y';              // y - yellow
         }
-        case 2: {
-            clases = ['y', 'y', 'gy', 'gy', 'gy'];
-            break;
+    } else {
+        for (let i = 0; i < rate; i++) {
+            clases[i] = 'gr';             // gr - green
         }
-        case 3: {
-            clases = ['y', 'y', 'y', 'gy', 'gy'];
-            break;
-        }
-        case 4: {
-            clases = ['gr', 'gr', 'gr', 'gr', 'gy'];
-            break;
-        } 
-        case 5: {
-            clases = ['gr', 'gr', 'gr', 'gr', 'gr'];
-            break;
-        }
-        default: break;
     }
 
+    let key: number = 0;
+    const items = clases.map((el) => {
+        return <div key={key++} className={el}></div>;
+    })
+
     return (
-        <span className="rate-bar">
-            <div className={clases[0]}></div>
-            <div className={clases[1]}></div>
-            <div className={clases[2]}></div>
-            <div className={clases[3]}></div>
-            <div className={clases[4]}></div>
-        </span>
+        <div className="rate-bar">
+            {items}
+        </div>
     );
 }

@@ -24,13 +24,13 @@ interface RootState {
 }
 
 export function Comparison (props: ComparisonProps): React.ReactElement {
-  const { ids } = props.match.params;
+  const { ids } = props.match.params;  //extract pets to compare id from pathname
 
   const dispatch = useDispatch();
-  const pets = useSelector((state: RootState) => state.petsToCompare);
+  const pets = useSelector((state: RootState) => state.petsToCompare); 
 
   useEffect(() => {
-    dispatch(findPetsById(ids.split('-')));
+    dispatch(findPetsById(ids.split('-'))); //run action, which fetch pets by id from database
   });
   return (
     <div className="comparison-page">
@@ -39,14 +39,14 @@ export function Comparison (props: ComparisonProps): React.ReactElement {
       <div className="characteristics">
         <h2>Характеристики</h2>
         <h3>Популярність</h3>
-        <Characteristics pets={ pets } display="popularity" rate={true}/>
+        <Characteristics pets={ pets } display="popularity" rate={true}/>  {/* if we want to show Rate bar, rate = true */}
         <h3>Тренування</h3>
         <Characteristics pets={ pets } display="training" rate={true}/>
       </div>
       <div className="specificity-care">
         <h2>Особливості догляду</h2>
         <h3>Час піклування (хв. на день)</h3>
-        <Characteristics pets={ pets } display="careTime" rate={false}/>
+        <Characteristics pets={ pets } display="careTime" rate={false}/> 
       </div>
     </div>
   );
