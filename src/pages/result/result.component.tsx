@@ -1,4 +1,9 @@
 import React, { useEffect } from 'react';
+import { Logo } from '../../shared/logo/logo.component';
+
+import { DogSearch } from './components/dog-search/dog-search.component';
+
+import './result.styles.css';
 
 type ResultProps<T = any> = {
   name: string;
@@ -7,8 +12,9 @@ type ResultProps<T = any> = {
 
 export const Result: React.FC<ResultProps> = props => {
   return (
-    <div>
-      <h1>Result Page</h1>
+    <div className="wrapper">
+      <Logo />
+      <DogSearch />
     </div>
   );
 };
