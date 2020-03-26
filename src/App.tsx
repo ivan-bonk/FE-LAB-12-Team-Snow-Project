@@ -9,7 +9,7 @@ import { Registration } from './components/Registration';
 import { Search } from './components/Search';
 import { Result } from './components/Result';
 import { User } from './components/User';
-import { Pet } from './components/Pet';
+import { Pet } from './components/pet/pet.component';
 import { AddPet } from './components/AddPet';
 import { Comparison } from './components/Comparison';
 
