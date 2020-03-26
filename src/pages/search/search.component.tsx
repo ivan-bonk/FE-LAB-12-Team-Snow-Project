@@ -1,12 +1,10 @@
 import React from 'react';
 import { ModalHeader } from './components/modalHeader.component';
 import { ModalBody } from './components/modalBody.component';
-// import { ModalFooter } from './components/modalFooter.component';
+import { SearchInterface } from './search.interfaces';
 import './search.css';
-type HomeProps = {
-  closeModal: any;
-};
-export const Search: React.FC<HomeProps> = (props: HomeProps) => {
+
+export const Search: React.FC<SearchInterface> = (props: SearchInterface) => {
   return (
     <div className="search-modal">
       <ModalHeader />

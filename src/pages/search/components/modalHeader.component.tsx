@@ -2,7 +2,7 @@ import React from 'react';
 
 export const ModalHeader: React.FC = () => {
   return (
-    <div>
+    <div className="header">
       <div className="search-logo-container">
         <img className="search-logo" src={require('../../../images/paw-solid.svg')} alt="pet-logo" />
         <span>МійПес </span>

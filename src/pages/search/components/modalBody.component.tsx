@@ -1,60 +1,149 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { searchAction } from '../../../store/actions/search.action';
+import { SearchInterface } from '../search.interfaces';
 
-type HomeProps = {
-  closeModal: any;
-};
-
-export const ModalBody: React.FC<HomeProps> = (props: HomeProps) => {
+export const ModalBody: React.FC<SearchInterface> = (props: SearchInterface) => {
   const { register, handleSubmit, errors } = useForm();
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const onSubmit = (data: {}): void => {
     console.log(data);
+    dispatch(searchAction(data));
+    history.push('/result');
   };
 
-  return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <h2>Щодня зможу проводити з ним</h2>
-        <input type="range" name="timeWolk" ref={register} min="0" max="60" step="1" />
+  const [time, setTime] = useState('0');
+  const [posTime, setPosTime] = useState(0);
 
-        <h2>На місяць зможу витрачати максимум</h2>
-        <input type="range" name="money" ref={register} min="0" max="1000" step="50" />
+  const [money, setMoney] = useState('0');
+  const [posMoney, setPosMoney] = useState(0);
+
+  const [security, setSecurity] = useState('0');
+  const [posSecurity, setPosSecurity] = useState(0);
+
+  return (
+    <span>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <section className="range-slider">
+          <label>Щодня зможу проводити з ним</label>
+          <br />
+          <output htmlFor="timeWolk" style={{ left: `${posTime}px` }}>
+            {time}хв
+          </output>
+          <input
+            type="range"
+            name="timeWolk"
+            ref={register}
+            min="0"
+            max="60"
+            step="1"
+            value={time}
+            onChange={(e): any => {
+              setPosTime(+e.target.value * e.target.offsetWidth * 0.0155);
+              setTime(e.target.value);
+            }}
+          />
+        </section>
+        <section className="range-slider">
+          <label>На місяць зможу витрачати максимум</label>
+          <br />
+          <output htmlFor="moneyPerMonth" style={{ left: `${posMoney}px` }}>
+            {money}грн
+          </output>
+          <input
+            type="range"
+            name="moneyPerMonth"
+            ref={register}
+            min="0"
+            max="1000"
+            step="50"
+            value={money}
+            onChange={(e): any => {
+              setPosMoney(+e.target.value * e.target.offsetWidth * 0.00087);
+              setMoney(e.target.value);
+            }}
+          />
+        </section>
 
         <h2>Зможу осилити час догляду</h2>
-        <section className="checkboxes time-month">
-          <input type="radio" name="timePerMonth" value="low" ref={register({ required: true })} />
-          <input type="radio" name="timePerMonth" value="average" ref={register({ required: true })} />
-          <input type="radio" name="timePerMonth" value="high" ref={register({ required: true })} />
-          <input type="radio" name="timePerMonth" value="any" ref={register({ required: true })} />
+        <section className="checkboxes form_radio_group">
+          <input id="radio-1" type="radio" name="timePerMonth" value="low" ref={register({ required: true })} />
+          <label htmlFor="radio-1">Низьку</label>
+          <input id="radio-2" type="radio" name="timePerMonth" value="average" ref={register({ required: true })} />
+          <label htmlFor="radio-2">Середню</label>
+          <input id="radio-3" type="radio" name="timePerMonth" value="high" ref={register({ required: true })} />
+          <label htmlFor="radio-3">Високу</label>
+          <input id="radio-4" type="radio" name="timePerMonth" value="any" ref={register({ required: true })} />
+          <label htmlFor="radio-4">Любу</label>
         </section>
         {errors.exampleRequired && <span>This field is required</span>}
 
-        <h2>Захисник та охоронець на</h2>
-        <input type="range" name="securityLevel" ref={register} min="0" max="100" step="5" />
+        <section className="range-slider">
+          <label>Захисник та охоронець на</label>
+          <br />
+          <output htmlFor="moneyPerMonth" style={{ left: `${posSecurity}px` }}>
+            {' '}
+            {security}%{' '}
+          </output>
+          <input
+            type="range"
+            name="securityLevel"
+            ref={register}
+            min="0"
+            max="100"
+            step="5"
+            value={security}
+            onChange={(e): any => {
+              setPosSecurity(+e.target.value * e.target.offsetWidth * 0.0091);
+              setSecurity(e.target.value);
+            }}
+          />
+        </section>
 
         <h2>Розмір собаки</h2>
-        <section className="checkboxes pet-size">
-          <input type="radio" name="petSize" value="low" ref={register} />
-          <input type="radio" name="petSize" value="average" ref={register} />
-          <input type="radio" name="petSize" value="high" ref={register} />
-          <input type="radio" name="petSize" value="any" ref={register} />
+        <section className="checkboxes form_radio_group">
+          <input type="radio" id="radio-5" name="petSize" value="any" ref={register} />
+          <label htmlFor="radio-5">Любий</label>
+          <input type="radio" id="radio-6" name="petSize" value="low" ref={register} />
+          <label htmlFor="radio-6">S</label>
+          <input type="radio" id="radio-7" name="petSize" value="average" ref={register} />
+          <label htmlFor="radio-7">M</label>
+          <input type="radio" id="radio-8" name="petSize" value="high" ref={register} />
+          <label htmlFor="radio-8">L</label>
         </section>
 
         <section className="checkboxes general">
           <label>
             Легко дресерувати
-            <input type="checkbox" name="easyToTrain" ref={register} />
+            <div className="switch">
+              <input type="checkbox" name="easyToTrain" ref={register} />
+              <span className="slider"></span>
+            </div>
           </label>
           <label>
             Ідеальний для сімї
-            <input type="checkbox" name="family" ref={register} />
+            <div className="switch">
+              <input type="checkbox" name="family" ref={register} />
+              <span className="slider"></span>
+            </div>
           </label>
           <label>
             Підходить для квартири
-            <input type="checkbox" name="apartment" ref={register} />
+            <div className="switch">
+              <input type="checkbox" name="apartment" ref={register} />
+              <span className="slider"></span>
+            </div>
           </label>
           <label>
-            Упс, в мене алергія <input type="checkbox" name="allergy" ref={register} />
+            Упс, в мене алергія
+            <div className="switch">
+              <input type="checkbox" name="allergy" ref={register} />
+              <span className="slider"></span>
+            </div>
           </label>
         </section>
 
@@ -65,6 +154,6 @@ export const ModalBody: React.FC<HomeProps> = (props: HomeProps) => {
           Закрити
         </button>
       </form>
-    </div>
+    </span>
   );
 };

@@ -8,6 +8,8 @@ type HomeProps = {
 };
 Modal.setAppElement('#root');
 
+// Whet page will be done, copy and past in to real Home Page !!!!!!!!!!!!!!!!!
+
 export const Home: React.FC<HomeProps> = () => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -24,8 +26,6 @@ export const Home: React.FC<HomeProps> = () => {
   }
 
   return (
-    // Whet page will be done, copy and past in to real Home Page,  just Modal !!!!!!!!!!!!!!!!!
-
     <div onKeyUp={handleKeyDown}>
       <h1>Home page</h1>
       <button onClick={openModal}>Підібрати</button>
