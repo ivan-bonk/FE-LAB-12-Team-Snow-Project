@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Logo } from '../../shared/logo/logo.component';
 
 import { DogSearch } from './components/dog-search/dog-search.component';
+import { FilterButton } from './components/filter-button/filter-button.component';
 
 import './result.styles.css';
 
@@ -15,6 +16,7 @@ export const Result: React.FC<ResultProps> = props => {
     <div className="wrapper">
       <Logo />
       <DogSearch />
+      <FilterButton />
     </div>
   );
 };

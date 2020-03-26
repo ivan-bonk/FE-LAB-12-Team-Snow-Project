@@ -1,6 +1,6 @@
 import React from 'react';
 
-import dandruf from './dandruf.image.svg';
+// import dandruf from './dandruf.image.svg';
 
 import './dog-search.styles.css';
 
