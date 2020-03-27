@@ -11,7 +11,6 @@ export const ModalBody: React.FC<SearchInterface> = (props: SearchInterface) => 
   const history = useHistory();
 
   const onSubmit = (data: {}): void => {
-    console.log(data);
     dispatch(searchAction(data));
     history.push('/result');
   };
