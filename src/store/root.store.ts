@@ -2,8 +2,9 @@ import { rootReducer } from './root.reducer';
 import { saga } from './root.saga';
 import { createStore, applyMiddleware } from 'redux';
 import { watchPets } from './sagas/comparison.saga';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
-export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(saga)));
+export const store = createStore(rootReducer, composeWithDevTools( applyMiddleware(saga) ));
 
 saga.run(watchPets);
+
