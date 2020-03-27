@@ -6,7 +6,8 @@ async function fetchData(ids: string[]) {
     let data = [];
 
     for (let id of ids) {
-        const pet = await fetch(`http://localhost:8080/pets/${id}`)
+        // const pet = await fetch(`http://localhost:8080/pets/${id}`)
+        const pet = await fetch(`https://fathomless-ridge-53873.herokuapp.com/pets/${id}`)
             .then(response => response.json())
             .catch(err => {
                 console.error(err);
