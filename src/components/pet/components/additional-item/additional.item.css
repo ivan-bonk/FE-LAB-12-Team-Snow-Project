@@ -1,0 +1,7 @@
+.add-title{
+    display: flex;
+}
+
+.add-title > img {
+    padding-right: 10px;
+}
