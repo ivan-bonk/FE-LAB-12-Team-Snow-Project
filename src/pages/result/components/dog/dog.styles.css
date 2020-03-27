@@ -1,0 +1,13 @@
+.dog-container {
+    margin-top: 30px;
+}
+
+.dog-name {
+    margin-bottom: 15px;
+}
+
+.dog-characteristic-container {
+    display: flex;
+    justify-content: space-between;
+    width: 77%;
+}
