@@ -11,35 +11,12 @@ import corgi3Small2 from './images/corgi3-small2.jpg';
 import './dog-images.styles.css';
 
 export const DogImages: React.FC = (): React.ReactElement => {
-    const dogsArray: {}[] = [
-        {
-            id: 1,
-            name: 'Corgi',
-            photos: [
-                {
-                    smallPhoto: corgi1Small2,
-                    largePhoto: corgi1
-                },
-                {
-                    smallPhoto: corgi2Small2,
-                    largePhoto: corgi2
-                },
-                {
-                    smallPhoto: corgi3Small2,
-                    largePhoto: corgi3
-                }
-            ]
-        }
-    ];
 
     const selectedImage = useRef<HTMLImageElement>(null);
 
     const handleImageClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
         const selectedImageSrc = selectedImage.current!.getAttribute('src') + '';
         const clickedImageSrc = e.currentTarget.getAttribute('src') + '';   
-
-        
-
 
         // const selectedImageIndex = selectedImage.current!.getAttribute('alt') + ''.match(/\d+/g)![0];
         // const clickedImageIndex = e.currentTarget.getAttribute('alt') + ''.match(/\d+/g)![0];

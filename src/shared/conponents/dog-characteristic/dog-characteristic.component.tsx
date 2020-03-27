@@ -1,13 +1,9 @@
 import React from 'react';
+import { PetCharacteristic } from './dog-characteristics.interfaces';
 
 import './dog-characteristic.styles.css';
 
-interface DogCharacteristic {
-    title: string;
-    value: string;
-}
-
-export const DogCharacteristic: React.FC<DogCharacteristic> = (props): React.ReactElement => {
+export const DogCharacteristic: React.FC<PetCharacteristic> = (props): React.ReactElement => {
     return (
         <div className="characteristic-container">
             <p className="characteristic-title">{props.title}</p>
