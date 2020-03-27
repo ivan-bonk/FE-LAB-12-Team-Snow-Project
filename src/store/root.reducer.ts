@@ -19,18 +19,3 @@ export const rootReducer = (state: object = initiatState, action: any) => {
 
   return state;
 };
-
-// import { combineReducers } from 'redux';
-// import searchReducer from './search.reducer';
-
-// export const rootReducer = combineReducers({
-//   search: searchReducer,
-// });
-
-// const initiatState = {
-//   data: {},
-// };
-
-// export const rootReducer = (state = initiatState) => {
-//   return state;
-// };

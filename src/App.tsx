@@ -11,7 +11,7 @@ import { Result } from './components/Result';
 import { User } from './components/User';
 import { Pet } from './components/Pet';
 import { AddPet } from './components/AddPet';
-import { Comparison } from './components/Comparison';
+import { Comparison } from './pages/comparison/comparison.component';
 
 function App() {
   return (

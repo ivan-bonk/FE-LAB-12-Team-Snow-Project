@@ -6,6 +6,6 @@ export const ROUTES = {
   result: '/result',
   registration: '/registration',
   pet: '/pet/:id',
-  comparison: '/comparison',
+  comparison: '/comparison/:ids',
   search: '/search',
 };
