@@ -3,15 +3,15 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { ROUTES } from './shared/constants/routes.constants';
-import { Home } from './components/Home';
-import { Auth } from './components/Auth';
-import { Registration } from './components/Registration';
-import { Search } from './components/Search';
-import { Result } from './components/Result';
-import { User } from './components/User';
-import { Pet } from './components/pet/pet.component';
-import { AddPet } from './components/AddPet';
-import { Comparison } from './components/Comparison';
+import { Home } from './pages/Home';
+import { Auth } from './pages/Auth';
+import { Registration } from './pages/Registration';
+import { Search } from './pages/Search';
+import { Result } from './pages/Result';
+import { User } from './pages/User';
+import { Pet } from './pages/Pet';
+import { AddPet } from './pages/AddPet';
+import { Comparison } from './pages/comparison/comparison.component';
 
 function App() {
   return (
