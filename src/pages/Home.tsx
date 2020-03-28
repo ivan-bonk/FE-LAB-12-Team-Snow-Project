@@ -1,9 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { Search } from '../pages/search/search.component';
+import { Filter } from './search/filter.component';
 
 type HomeProps = {
-  closeModal: void;
+  // closeModal: void;
   onKeyDown: any;
 };
 Modal.setAppElement('#root');
@@ -16,9 +16,9 @@ export const Home: React.FC<HomeProps> = () => {
   function openModal(): void {
     setIsOpen(true);
   }
-  function closeModal(): void {
-    setIsOpen(false);
-  }
+  // function closeModal(): void {
+  //   setIsOpen(false);
+  // }
   function handleKeyDown(e: any): void {
     if (e.keyCode === 27) {
       setIsOpen(false);
@@ -30,7 +30,8 @@ export const Home: React.FC<HomeProps> = () => {
       <h1>Home page</h1>
       <button onClick={openModal}>Підібрати</button>
       <Modal isOpen={modalIsOpen} className="modal">
-        <Search closeModal={closeModal.bind(Home)} />
+        {/* <Search closeModal={closeModal.bind(Home)} /> */}
+        <Filter />
       </Modal>
     </div>
   );
