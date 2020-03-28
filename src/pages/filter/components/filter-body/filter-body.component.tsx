@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { searchAction } from '../../../../store/actions/filter.action';
 import { OverviewCheckboxes } from '../overview-checkboxes/overview-checkboxes.component';
 import { PetSizeCheckboxes } from '../petSize-checkboxes/petSize-checkboxes.component';
-import { Slider } from '../slider/slider.component';
+import { SliderSection } from '../slider-section/slider-section.component';
 import { TimePerMonthCheckboxes } from '../timePerMonth-checkboxes/timePerMonth-checkboxes.component';
 import { Body } from '../../../comparison/interfaces/filter.interface';
 
@@ -25,12 +25,12 @@ export const FilterBody: React.FC<Body> = () => {
 
   const _deltaPositionTime = 0.0155;
   const _deltaPositionMoney = 0.00087;
-  const _deltaPositionSecurity = 0.0091;
+  const _deltaPositionSecurity = 0.0093;
 
   return (
     <span>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Slider
+        <SliderSection
           name="timeWolk"
           refAttribute={register}
           delta={_deltaPositionTime}
@@ -41,7 +41,7 @@ export const FilterBody: React.FC<Body> = () => {
           lable="Щодня зможу проводити з ним"
         />
 
-        <Slider
+        <SliderSection
           name="moneyPerMonth"
           refAttribute={register}
           delta={_deltaPositionMoney}
@@ -57,7 +57,7 @@ export const FilterBody: React.FC<Body> = () => {
         <TimePerMonthCheckboxes refAttribute={register({ required: true })} />
         {/* {errors.exampleRequired && <span>This field is required</span>} */}
 
-        <Slider
+        <SliderSection
           name="securityLevel"
           refAttribute={register}
           delta={_deltaPositionSecurity}

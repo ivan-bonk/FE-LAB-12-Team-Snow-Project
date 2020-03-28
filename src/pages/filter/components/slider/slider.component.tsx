@@ -2,20 +2,19 @@ import React, { useState } from 'react';
 import { InpSwitch } from '../../../comparison/interfaces/filter.interface';
 
 export const Slider: React.FC<InpSwitch> = props => {
-  const [time, setTime] = useState('0');
-  const [posTime, setPosTime] = useState(0);
+  const [inpValue, setInpValue] = useState('0');
+  const [positionValue, setPositionValue] = useState(0);
 
-  const handlePostionT = (e: React.FormEvent<EventTarget>, delta: any): void => {
+  const handlePostion = (e: React.FormEvent<EventTarget>, delta: any): void => {
     const target = e.target as HTMLInputElement;
-    setPosTime(parseInt(target.value) * target.offsetWidth * delta);
-    setTime(target.value);
+    setPositionValue(parseInt(target.value) * target.offsetWidth * delta);
+    setInpValue(target.value);
   };
 
   return (
-    <section className="range-slider">
-      <label>{props.lable}</label>
-      <output htmlFor="timeWolk" style={{ left: `${posTime}px` }}>
-        {time}
+    <>
+      <output htmlFor="timeWolk" style={{ left: `${positionValue}px` }}>
+        {inpValue}
         {props.units}
       </output>
       <input
@@ -25,11 +24,11 @@ export const Slider: React.FC<InpSwitch> = props => {
         min={props.min}
         max={props.max}
         step={props.step}
-        value={time}
+        value={inpValue}
         onChange={(e): any => {
-          handlePostionT(e, props.delta);
+          handlePostion(e, props.delta);
         }}
       />
-    </section>
+    </>
   );
 };
