@@ -1,7 +1,7 @@
 const initiatState = {
   data: {},
   petsToCompare: [],
-  search: {},
+  filter: {},
 };
 
 export const rootReducer = (state: object = initiatState, action: any) => {
@@ -11,9 +11,10 @@ export const rootReducer = (state: object = initiatState, action: any) => {
         ...state,
         petsToCompare: action.payload.pets,
       };
-    case 'SEARCH':
+    case 'FILTER':
       return {
-        search: action.payload,
+        ...state,
+        filter: action.payload,
       };
   }
 

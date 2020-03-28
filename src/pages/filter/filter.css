@@ -49,6 +49,7 @@ h2 {
   line-height: 16px;
   font-weight: 400;
   margin-top: 20px;
+  width: 100%;
 }
 
 h2 {
@@ -61,11 +62,11 @@ output {
   position: absolute;
   font-size: 14px;
   line-height: 16px;
-  margin: 10px auto 0;
+  margin: 40px auto 0;
 }
 
 input[type='range'] {
-  margin: 25px auto 0;
+  margin: 35px auto 0;
   height: 25px;
   -webkit-appearance: none;
   width: 100%;

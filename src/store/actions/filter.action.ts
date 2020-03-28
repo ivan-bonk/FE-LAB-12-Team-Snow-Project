@@ -1,6 +1,6 @@
 export const searchAction = (data: any): any => {
   return {
-    type: 'SEARCH',
+    type: 'FILTER',
     payload: data,
   };
 };

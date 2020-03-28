@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { InpSwitch } from '../../../comparison/interfaces/filter.interface';
 
-export const TimeWalkSlider: React.FC<InpSwitch> = props => {
+export const Slider: React.FC<InpSwitch> = props => {
   const [time, setTime] = useState('0');
   const [posTime, setPosTime] = useState(0);
 
