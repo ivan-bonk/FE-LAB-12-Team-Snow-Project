@@ -1,6 +1,5 @@
 export interface InpSwitch {
   name?: string;
-  refAttribute: any;
   id?: string;
   value?: string;
   lable?: string;
@@ -10,6 +9,7 @@ export interface InpSwitch {
   min?: string;
   max?: string;
   step?: string;
+  refAttribute: React.Ref<HTMLInputElement>;
   units?: string;
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { searchAction } from '../../../../store/actions/filter.action';
+import { filterAction } from '../../../../store/actions/filter.action';
 import { OverviewCheckboxes } from '../overview-checkboxes/overview-checkboxes.component';
 import { PetSizeCheckboxes } from '../petSize-checkboxes/petSize-checkboxes.component';
 import { SliderSection } from '../slider-section/slider-section.component';
@@ -15,17 +15,17 @@ export const FilterBody: React.FC<Body> = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const goHome = (): void => {
-    dispatch(searchAction({}));
-    history.push('/');
+  const goBack = (): void => {
+    dispatch(filterAction({}));
+    history.push('/search');
   };
   const onSubmit = (data: {}): void => {
-    dispatch(searchAction(data));
+    dispatch(filterAction(data));
     history.push('/result');
   };
 
   const _deltaPositionTime = 0.0155;
-  const _deltaPositionMoney = 0.00087;
+  const _deltaPositionMoney = 0.00089;
   const _deltaPositionSecurity = 0.0093;
 
   return (
@@ -72,7 +72,7 @@ export const FilterBody: React.FC<Body> = () => {
       <OverviewCheckboxes refAttribute={register} />
 
       <Button className="btn btn-apply" text="Застосувати" onClick={handleSubmit(onSubmit)} />
-      <Button className="btn btn-cancel" text="Назад" onClick={goHome} />
+      <Button className="btn btn-cancel" text="Назад" onClick={goBack} />
     </form>
   );
 };

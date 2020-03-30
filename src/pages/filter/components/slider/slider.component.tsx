@@ -25,7 +25,7 @@ export const Slider: React.FC<InpSwitch> = props => {
         max={props.max}
         step={props.step}
         value={inpValue}
-        onChange={(e): any => {
+        onChange={(e): void => {
           handlePostion(e, props.delta);
         }}
       />

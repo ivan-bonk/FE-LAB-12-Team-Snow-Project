@@ -1,6 +1,5 @@
-export const searchAction = (data: any): any => {
-  return {
-    type: 'FILTER',
-    payload: data,
-  };
-};
+import { createCustomAction } from 'typesafe-actions';
+
+export const filterAction = createCustomAction('FILTER', (data: {}) => {
+  return { payload: data };
+});
