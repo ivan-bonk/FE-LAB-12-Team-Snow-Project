@@ -1,4 +1,4 @@
-.search-modal {
+.filter {
   width: 100%;
   margin: 0 auto;
   padding: 28px;
@@ -6,24 +6,28 @@
   max-height: calc(100vh - 1px);
   overflow-y: auto;
 }
+
 .header {
   display: flex;
 }
+
 .header h1 {
   width: 90px;
   text-align: center;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
-.search-logo-container {
+.filter-logo-container {
   width: 30px;
 }
-.search-logo {
+
+.filter-logo {
   width: 30px;
   height: 27.02px;
   color: #5c4937;
 }
-.search-logo-container span {
+
+.filter-logo-container span {
   font-family: Raleway;
   font-weight: bold;
   font-size: 14px;
@@ -31,18 +35,20 @@
   text-align: center;
   color: #5c4937;
 }
-.search-header {
+
+.filter-header {
   width: 90px;
   height: 33px;
   font-family: Roboto;
   font-weight: bold;
-  font-size: 28px;
-  margin-top: 25px;
+  font-size: 30px;
 }
+
 form {
   width: 100%;
   margin-top: 25px;
 }
+
 .range-slider label,
 h2 {
   font-size: 14px;
@@ -52,11 +58,16 @@ h2 {
   width: 100%;
 }
 
-h2 {
-}
 .range-slider {
   margin-top: 20px;
   position: relative;
+}
+.error {
+  color: #ff0000;
+  width: 100%;
+  text-align: center;
+  margin-top: 14px;
+  font-size: 16px;
 }
 output {
   position: absolute;
@@ -71,19 +82,21 @@ input[type='range'] {
   -webkit-appearance: none;
   width: 100%;
 }
+
 input[type='range']:focus {
   outline: none;
 }
+
 input[type='range']::-webkit-slider-runnable-track {
   width: 100%;
   height: 5px;
   cursor: pointer;
-  /* animate: 0.2s;  */
   box-shadow: 0px 0px 0px #000000;
   background: #dcdcdc;
   border-radius: 1px;
   border: 0px solid #000000;
 }
+
 input[type='range']::-webkit-slider-thumb {
   box-shadow: 0px 0px 0px #000000;
   border: 1px solid #dcdcdc;
@@ -95,19 +108,21 @@ input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -7px;
 }
+
 input[type='range']:focus::-webkit-slider-runnable-track {
   background: #dcdcdc;
 }
+
 input[type='range']::-moz-range-track {
   width: 100%;
   height: 5px;
   cursor: pointer;
-  /* animate: 0.2s; */
   box-shadow: 0px 0px 0px #000000;
   background: #dcdcdc;
   border-radius: 1px;
   border: 0px solid #000000;
 }
+
 input[type='range']::-moz-range-thumb {
   box-shadow: 0px 0px 0px #000000;
   border: 1px solid #dcdcdc;
@@ -117,27 +132,30 @@ input[type='range']::-moz-range-thumb {
   background: #902111;
   cursor: pointer;
 }
+
 input[type='range']::-ms-track {
   width: 100%;
   height: 5px;
   cursor: pointer;
-  /* animate: 0.2s; */
   background: transparent;
   border-color: transparent;
   color: transparent;
 }
+
 input[type='range']::-ms-fill-lower {
   background: #dcdcdc;
   border: 0px solid #000000;
   border-radius: 2px;
   box-shadow: 0px 0px 0px #000000;
 }
+
 input[type='range']::-ms-fill-upper {
   background: #dcdcdc;
   border: 0px solid #000000;
   border-radius: 2px;
   box-shadow: 0px 0px 0px #000000;
 }
+
 input[type='range']::-ms-thumb {
   margin-top: 1px;
   box-shadow: 0px 0px 0px #000000;
@@ -148,16 +166,15 @@ input[type='range']::-ms-thumb {
   background: #902111;
   cursor: pointer;
 }
+
 input[type='range']:focus::-ms-fill-lower {
   background: #dcdcdc;
 }
+
 input[type='range']:focus::-ms-fill-upper {
   background: #dcdcdc;
 }
 
-.errorInput {
-  border: solid 2px red;
-}
 .btn {
   width: 107px;
   height: 32px;
@@ -171,10 +188,12 @@ input[type='range']:focus::-ms-fill-upper {
   margin-right: 28px;
   margin-top: 25px;
 }
+
 .btn-apply {
   background-color: #902111;
   color: #ffffff;
 }
+
 .btn-cancel {
   background-color: #f7f7f6;
   color: #000000;
@@ -185,9 +204,11 @@ input[type='range']:focus::-ms-fill-upper {
   flex-direction: column;
   margin-top: 20px;
 }
+
 .general {
-  margin-top: 25px;
+  margin-top: 35px;
 }
+
 .general label {
   display: flex;
   justify-content: space-between;
@@ -196,6 +217,7 @@ input[type='range']:focus::-ms-fill-upper {
   font-family: Roboto;
   margin-top: 10px;
 }
+
 .switch {
   position: relative;
   width: 50px;
@@ -253,9 +275,11 @@ input:checked + .slider:before {
   justify-content: space-between;
   margin-top: 25px;
 }
+
 .form_radio_group input[type='radio'] {
   display: none;
 }
+
 .form_radio_group label {
   display: flex;
   justify-content: center;
@@ -269,6 +293,7 @@ input:checked + .slider:before {
 .form_radio_group .form_radio_group-item:first-child label {
   border-radius: 6px 0 0 6px;
 }
+
 .form_radio_group .form_radio_group-item:last-child label {
   border-radius: 0 6px 6px 0;
   border-right: 1px solid #999;

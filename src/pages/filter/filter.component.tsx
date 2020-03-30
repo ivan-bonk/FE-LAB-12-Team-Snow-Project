@@ -5,7 +5,7 @@ import './filter.css';
 
 export const Filter: React.FC = () => {
   return (
-    <div className="search-modal">
+    <div className="filter">
       <FilterHeader />
       <FilterBody />
     </div>

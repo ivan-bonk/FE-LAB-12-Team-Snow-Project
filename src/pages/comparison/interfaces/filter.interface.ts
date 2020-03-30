@@ -19,3 +19,9 @@ export interface Body {
   value?: string;
   lable?: string;
 }
+
+export interface Buttons {
+  text: string;
+  className: string;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+}
