@@ -6,10 +6,12 @@ export const Slider: React.FC<InpSwitch> = props => {
   const [inpValue, setInpValue] = useState('0');
   const [positionValue, setPositionValue] = useState(0);
 
-  const handlePostion = (e: React.FormEvent<EventTarget>, delta: any): void => {
+  const handlePostion = (e: React.FormEvent<EventTarget>): void => {
     const target = e.target as HTMLInputElement;
-    setPositionValue(parseInt(target.value) * target.offsetWidth * delta);
-    setInpValue(target.value);
+    if (props.delta) {
+      setPositionValue(props.delta * parseInt(target.value) * target.offsetWidth);
+      setInpValue(target.value);
+    }
   };
 
   return (
@@ -27,7 +29,7 @@ export const Slider: React.FC<InpSwitch> = props => {
         step={props.step}
         value={inpValue}
         onChange={(e): void => {
-          handlePostion(e, props.delta);
+          handlePostion(e);
         }}
       />
     </>
