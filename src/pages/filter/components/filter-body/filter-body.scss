@@ -1,0 +1,19 @@
+form {
+  h2,
+  label {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .error {
+    color: #ff0000;
+    width: 100%;
+    text-align: center;
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

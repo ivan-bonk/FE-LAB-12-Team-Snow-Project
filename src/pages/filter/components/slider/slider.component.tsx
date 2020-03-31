@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { InpSwitch } from '../../../comparison/interfaces/filter.interface';
+import './slider.scss';
 
 export const Slider: React.FC<InpSwitch> = props => {
   const [inpValue, setInpValue] = useState('0');

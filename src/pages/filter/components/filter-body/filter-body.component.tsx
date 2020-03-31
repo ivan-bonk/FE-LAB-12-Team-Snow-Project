@@ -9,6 +9,7 @@ import { SliderSection } from '../slider-section/slider-section.component';
 import { TimePerMonthCheckboxes } from '../timePerMonth-checkboxes/timePerMonth-checkboxes.component';
 import { Button } from '../button/button.component';
 import { Body } from '../../../comparison/interfaces/filter.interface';
+import './filter-body.scss';
 
 export const FilterBody: React.FC<Body> = () => {
   const { register, handleSubmit, errors } = useForm();
