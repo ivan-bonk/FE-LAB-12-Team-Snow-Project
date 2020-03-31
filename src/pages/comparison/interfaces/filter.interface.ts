@@ -1,4 +1,4 @@
-export interface InpSwitch {
+export interface InputRadioProps {
   name?: string;
   id?: string;
   value?: string;
@@ -13,14 +13,14 @@ export interface InpSwitch {
   units?: string;
 }
 
-export interface Body {
+export interface BodyProps {
   name?: string;
   id?: string;
   value?: string;
   lable?: string;
 }
 
-export interface Buttons {
+export interface ButtonProps {
   text: string;
   className: string;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;

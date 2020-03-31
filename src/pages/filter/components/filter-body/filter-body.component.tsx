@@ -8,16 +8,16 @@ import { PetSizeCheckboxes } from '../petSize-checkboxes/petSize-checkboxes.comp
 import { SliderSection } from '../slider-section/slider-section.component';
 import { TimePerMonthCheckboxes } from '../timePerMonth-checkboxes/timePerMonth-checkboxes.component';
 import { Button } from '../button/button.component';
-import { Body } from '../../../comparison/interfaces/filter.interface';
+import { BodyProps } from '../../../comparison/interfaces/filter.interface';
 import './filter-body.scss';
 
-export const FilterBody: React.FC<Body> = () => {
+export const FilterBody: React.FC<BodyProps> = () => {
   const { register, handleSubmit, errors } = useForm();
   const dispatch = useDispatch();
   const history = useHistory();
 
   const goBack = (): void => {
-    dispatch(filterAction({}));
+    dispatch(filterAction(null));
     history.push('/search');
   };
   const onSubmit = (data: {}): void => {
@@ -25,16 +25,16 @@ export const FilterBody: React.FC<Body> = () => {
     history.push('/result');
   };
 
-  const _deltaPositionTime = 0.0155;
-  const _deltaPositionMoney = 0.00089;
-  const _deltaPositionSecurity = 0.0093;
+  const deltaPositionTime = 0.0155;
+  const deltaPositionMoney = 0.00089;
+  const deltaPositionSecurity = 0.0093;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <SliderSection
         name="timeWolk"
         refAttribute={register}
-        delta={_deltaPositionTime}
+        delta={deltaPositionTime}
         min="0"
         max="60"
         step="1"
@@ -45,7 +45,7 @@ export const FilterBody: React.FC<Body> = () => {
       <SliderSection
         name="moneyPerMonth"
         refAttribute={register}
-        delta={_deltaPositionMoney}
+        delta={deltaPositionMoney}
         min="0"
         max="1000"
         step="50"
@@ -59,7 +59,7 @@ export const FilterBody: React.FC<Body> = () => {
       <SliderSection
         name="securityLevel"
         refAttribute={register}
-        delta={_deltaPositionSecurity}
+        delta={deltaPositionSecurity}
         min="0"
         max="100"
         step="1"

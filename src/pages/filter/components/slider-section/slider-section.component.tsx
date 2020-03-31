@@ -1,8 +1,8 @@
 import React from 'react';
-import { InpSwitch } from '../../../comparison/interfaces/filter.interface';
+import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
 import { Slider } from '../slider/slider.component';
 
-export const SliderSection: React.FC<InpSwitch> = props => {
+export const SliderSection: React.FC<InputRadioProps> = props => {
   return (
     <section className="range-slider">
       <label>{props.lable}</label>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { InputRadio } from '../input-radio/input-radio.component';
-import { InpSwitch } from '../../../comparison/interfaces/filter.interface';
+import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
 
-export const TimePerMonthCheckboxes: React.FC<InpSwitch> = props => {
+export const TimePerMonthCheckboxes: React.FC<InputRadioProps> = props => {
   return (
     <>
       <h2>Зможу осилити час догляду</h2>

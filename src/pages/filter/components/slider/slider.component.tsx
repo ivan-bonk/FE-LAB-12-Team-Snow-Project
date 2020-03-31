@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { InpSwitch } from '../../../comparison/interfaces/filter.interface';
+import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
 import './slider.scss';
 
-export const Slider: React.FC<InpSwitch> = props => {
+export const Slider: React.FC<InputRadioProps> = props => {
   const [inpValue, setInpValue] = useState('0');
   const [positionValue, setPositionValue] = useState(0);
 

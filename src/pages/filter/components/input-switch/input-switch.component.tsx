@@ -1,7 +1,7 @@
 import React from 'react';
-import { InpSwitch } from '../../../comparison/interfaces/filter.interface';
+import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
 
-export const InputSwitch: React.FC<InpSwitch> = props => {
+export const InputSwitch: React.FC<InputRadioProps> = props => {
   return (
     <div className="switch">
       <input type="checkbox" name={props.name} ref={props.refAttribute} />
