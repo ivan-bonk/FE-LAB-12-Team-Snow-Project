@@ -1,3 +1,6 @@
+import { Characteristics } from '../../result.interfaces';
+
 export interface DogInfo {
-    name: string;
-};
+  name: string;
+  characteristics: Characteristics;
+}

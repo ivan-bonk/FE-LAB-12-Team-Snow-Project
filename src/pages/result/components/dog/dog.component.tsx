@@ -5,19 +5,18 @@ import { DogInfo } from './dog.interfaces';
 
 import './dog.styles.css';
 
-export const Dog: React.FC<DogInfo> = (props): React.ReactElement => {
-
-    return (
-        <div className="dog-container">
-            <div className="dog-name">
-                <h3 className="dog-name-text">{props.name}</h3>
-            </div>
-            <DogImages />
-            <div className="dog-characteristic-container">
-                <DogCharacteristic title="Час догляду" value="~1 год/день"/>
-                <DogCharacteristic title="Витрати" value="1200 грн/місяць"/>
-                <DogCharacteristic title="Розмір" value="середній"/>
-            </div>
-        </div>
-    );
+export const Dog: React.FC<DogInfo> = props => {
+  return (
+    <div className="dog-container">
+      <div className="dog-name">
+        <h3 className="dog-name-text">{props.name}</h3>
+      </div>
+      <DogImages />
+      <div className="dog-characteristic-container">
+        <DogCharacteristic title="Час догляду" value={props.characteristics.spandTime} />
+        <DogCharacteristic title="Витрати" value={props.characteristics.outlay} />
+        <DogCharacteristic title="Розмір" value={props.characteristics.size} />
+      </div>
+    </div>
+  );
 };
