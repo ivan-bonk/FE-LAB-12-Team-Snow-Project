@@ -11,7 +11,7 @@ import { Button } from '../button/button.component';
 import { BodyProps } from '../../../comparison/interfaces/filter.interface';
 import './filter-body.scss';
 
-export const FilterBody: React.FC<BodyProps> = () => {
+export const FilterBody: React.FC<Partial<BodyProps>> = () => {
   const { register, handleSubmit, errors } = useForm();
   const dispatch = useDispatch();
   const history = useHistory();

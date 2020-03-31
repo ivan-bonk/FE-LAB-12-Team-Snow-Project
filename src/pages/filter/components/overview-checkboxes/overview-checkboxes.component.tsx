@@ -2,7 +2,7 @@ import React from 'react';
 import { InputSwitch } from '../input-switch/input-switch.component';
 import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
 
-export const OverviewCheckboxes: React.FC<InputRadioProps> = props => {
+export const OverviewCheckboxes: React.FC<Partial<InputRadioProps>> = props => {
   return (
     <section className="checkboxes general">
       <label>

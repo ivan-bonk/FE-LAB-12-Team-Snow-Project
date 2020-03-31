@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
 import './slider.scss';
 
-export const Slider: React.FC<InputRadioProps> = props => {
+export const Slider: React.FC<Partial<InputRadioProps>> = props => {
   const [inpValue, setInpValue] = useState('0');
   const [positionValue, setPositionValue] = useState(0);
 

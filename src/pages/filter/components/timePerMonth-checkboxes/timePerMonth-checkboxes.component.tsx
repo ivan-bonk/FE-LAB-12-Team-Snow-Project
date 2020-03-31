@@ -2,7 +2,7 @@ import React from 'react';
 import { InputRadio } from '../input-radio/input-radio.component';
 import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
 
-export const TimePerMonthCheckboxes: React.FC<InputRadioProps> = props => {
+export const TimePerMonthCheckboxes: React.FC<Partial<InputRadioProps>> = props => {
   return (
     <>
       <h2>Зможу осилити час догляду</h2>
