@@ -5,8 +5,8 @@ export const ROUTES = {
   addpet: '/addpet',
   result: '/result',
   registration: '/registration',
-  pet: '/pet/:id',
-  comparison: '/comparison',
+  pet: (id: string) => `/pet/${id}`,
+  comparison: '/comparison/:ids',
   search: '/search',
   filter: '/filter',
 };

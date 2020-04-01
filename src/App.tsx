@@ -9,9 +9,10 @@ import { Registration } from './pages/Registration';
 import { Search } from './pages/Search';
 import { Result } from './pages/result/result.component';
 import { User } from './pages/User';
-import { Pet } from './pages/Pet';
+import { Pet } from './pages/pet/pet.component';
 import { AddPet } from './pages/AddPet';
-import { Comparison } from './pages/Comparison';
+import { Comparison } from './pages/comparison/comparison.component';
+import { Filter } from './pages/filter/filter.component';
 
 function App() {
   return (
@@ -23,10 +24,10 @@ function App() {
         <Route path={ROUTES.search} component={Search}></Route>
         <Route path={ROUTES.result} component={Result}></Route>
         <Route path={ROUTES.user} component={User}></Route>
-        <Route path={ROUTES.pet} component={Pet}></Route>
+        <Route path={ROUTES.pet('')} component={Pet}></Route>
         <Route path={ROUTES.addpet} component={AddPet}></Route>
         <Route path={ROUTES.comparison} component={Comparison}></Route>
-        <Route path={ROUTES.filter} component={Search}></Route>
+        <Route path={ROUTES.filter} component={Filter}></Route>
       </Switch>
     </Router>
   );
