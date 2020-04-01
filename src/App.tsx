@@ -24,7 +24,7 @@ function App() {
         <Route path={ROUTES.search} component={Search}></Route>
         <Route path={ROUTES.result} component={Result}></Route>
         <Route path={ROUTES.user} component={User}></Route>
-        <Route path={ROUTES.pet} component={Pet}></Route>
+        <Route path={ROUTES.pet('')} component={Pet}></Route>
         <Route path={ROUTES.addpet} component={AddPet}></Route>
         <Route path={ROUTES.comparison} component={Comparison}></Route>
         <Route path={ROUTES.filter} component={Filter}></Route>

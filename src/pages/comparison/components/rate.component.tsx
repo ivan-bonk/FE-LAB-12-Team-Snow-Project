@@ -1,31 +1,14 @@
 import React from 'react';
-import './rate.css';
+import './rate.scss';
+import clases from './rate-logic.service';
 
-export const Rate = (props: { rate: number }) => {
-    const { rate } = props;
+import { RateProps } from '../interfaces/pet.interface';
 
-    let clases: string[] = ['gy', 'gy', 'gy', 'gy', 'gy']; // gy - grey
+export const Rate: React.FC<RateProps> = props => {
 
-    if (rate === 1) {
-        clases[0] = 'r';                  // r - red
-    } else if (rate < 4) {
-        for (let i = 0; i < rate; i++) {
-            clases[i] = 'y';              // y - yellow
-        }
-    } else {
-        for (let i = 0; i < rate; i++) {
-            clases[i] = 'gr';             // gr - green
-        }
-    }
+  const items = clases(props.rate).map((el, index) => {
+    return <div key={index} className={el}></div>;
+  });
 
-    let key: number = 0;
-    const items = clases.map((el) => {
-        return <div key={key++} className={el}></div>;
-    })
-
-    return (
-        <div className="rate-bar">
-            {items}
-        </div>
-    );
-}
+  return <div className="rate-bar">{items}</div>;
+};
