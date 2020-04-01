@@ -1,8 +1,26 @@
-import { createReducer } from 'typesafe-actions';
+import { createReducer, ActionType } from 'typesafe-actions';
+import * as Actions from './actions/filter.action';
+import { Data } from '../pages/comparison/interfaces/filter.interface';
 
-type State = {};
-type Action = { type: 'FILTER'; payload: {} };
+export type ProfileAction = ActionType<typeof Actions>;
 
-const filterReducer = createReducer<State, Action>(0).handleType('FILTER', (state, action) => (state = action.payload));
+type State = Data | null;
+
+const initialState = {
+  timeWolk: '0',
+  moneyPerMonth: '0',
+  timePerMonth: '0',
+  securityLevel: '0',
+  petSize: '0',
+  easyToTrain: false,
+  family: false,
+  apartment: false,
+  allergy: false,
+};
+
+const filterReducer = createReducer<State, ProfileAction>(initialState).handleType(
+  'FILTER',
+  (state, action) => (state = action.payload),
+);
 
 export default filterReducer;

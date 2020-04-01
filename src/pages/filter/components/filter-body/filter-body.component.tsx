@@ -8,11 +8,11 @@ import { PetSizeCheckboxes } from '../petSize-checkboxes/petSize-checkboxes.comp
 import { SliderSection } from '../slider-section/slider-section.component';
 import { TimePerMonthCheckboxes } from '../timePerMonth-checkboxes/timePerMonth-checkboxes.component';
 import { Button } from '../button/button.component';
-import { BodyProps } from '../../../comparison/interfaces/filter.interface';
+import { BodyProps, Data } from '../../../comparison/interfaces/filter.interface';
 import './filter-body.scss';
 
 export const FilterBody: React.FC<Partial<BodyProps>> = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm<Data>();
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -20,7 +20,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
     dispatch(filterAction(null));
     history.push('/search');
   };
-  const onSubmit = (data: {}): void => {
+  const onSubmit = (data: Data): void => {
     dispatch(filterAction(data));
     history.push('/result');
   };

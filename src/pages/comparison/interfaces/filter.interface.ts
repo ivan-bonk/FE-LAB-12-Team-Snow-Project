@@ -25,3 +25,15 @@ export interface ButtonProps {
   className: string;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
+
+export interface Data {
+  timeWolk: string;
+  moneyPerMonth: string;
+  timePerMonth: string;
+  securityLevel: string;
+  petSize: string;
+  easyToTrain: boolean;
+  family: boolean;
+  apartment: boolean;
+  allergy: boolean;
+}
