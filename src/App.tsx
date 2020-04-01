@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { ROUTES } from './shared/constants/routes.constants';
-import { Home } from './pages/Home';
+import { LandinPage } from './pages/landing-page/landing-page.component';
 import { Auth } from './pages/Auth';
 import { Registration } from './pages/Registration';
 import { Search } from './pages/Search';
@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path={ROUTES.home} component={Home}></Route>
+        <Route exact path={ROUTES.home} component={LandinPage}></Route>
         <Route path={ROUTES.auth} component={Auth}></Route>
         <Route path={ROUTES.registration} component={Registration}></Route>
         <Route path={ROUTES.search} component={Search}></Route>
