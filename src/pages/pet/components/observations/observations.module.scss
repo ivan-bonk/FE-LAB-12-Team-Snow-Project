@@ -1,0 +1,21 @@
+$dark-grey: #8E8E93;
+
+.obsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.obsItem {
+  margin-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.obsTitle {
+  font-weight: 500;
+  font-size: 14px;
+  color: $dark-grey;
+  margin: 0;
+}
+.plainText {
+  font-size: 16px;
+  margin: 0px 0px 8px 0px;
+}

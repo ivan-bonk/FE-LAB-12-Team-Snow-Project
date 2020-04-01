@@ -1,17 +1,17 @@
 export interface Characteristics {
   popularity: number;
-  trainings: number;
+  training: number;
   size: number;
   brain: number;
   security: number;
-  childrens: number;
+  childFriendly: number;
   agility: number;
-  problems: number;
+  problematic: number;
 }
 
 export interface Observations {
   country: string;
-  life: string;
+  lifetime: string;
   height: string;
   weight: string;
   price: string;
@@ -21,14 +21,7 @@ export interface Observations {
 
 export interface AdditionalInfo {
   about: string;
-  specialties: string;
-  issues: string;
+  specialties: string[];
+  issues: string[];
 }
 
-export interface PetProfile {
-  id: number;
-  breed: string;
-  characteristics: Characteristics;
-  observations: Observations;
-  additionalInfo: AdditionalInfo;
-}

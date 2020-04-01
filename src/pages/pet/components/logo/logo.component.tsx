@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import logo2 from './logo2.svg';
 import './logo.css';
 
-export const Logo = (): React.ReactElement => {
+export const Logo: React.FC = () => {
   return (
     <Link to="/">
       <div className="logo">
