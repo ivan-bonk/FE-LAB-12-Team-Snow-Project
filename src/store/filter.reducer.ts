@@ -6,7 +6,7 @@ export type ProfileAction = ActionType<typeof Actions>;
 
 type State = Data | null;
 
-const initialState = {
+const initialState: Data = {
   timeWolk: '0',
   moneyPerMonth: '0',
   timePerMonth: '0',
