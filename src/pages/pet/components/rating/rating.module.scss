@@ -1,0 +1,31 @@
+$green: #30D158;
+$yellow: #FF9F0A;
+$grey: #E4E4E4;
+
+%dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;   
+}
+
+.ratingContainer{
+  display: flex;
+  align-items: center;
+}
+
+.green {
+  background-color: $green;
+  @extend %dot;    
+}
+
+.yellow {
+  background-color: $yellow;
+  @extend %dot;
+}
+
+.grey {
+  background-color: $grey;
+  @extend %dot;
+}
