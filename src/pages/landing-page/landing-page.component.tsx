@@ -6,7 +6,7 @@ import logo from '../../images/paw-solid.svg';
 import { FindOut } from './components/find-out/find-out.component';
 import { ToPickUp } from './components/to-pick-up/to-pick-up.component';
 
-export const LandinPage: React.FC<{}> = () => {
+export const LandinPage: React.FC = () => {
   return (
     <div>
       <header className={styles.header}>

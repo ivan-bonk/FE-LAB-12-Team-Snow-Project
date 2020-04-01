@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '../../../../shared/constants/routes.constants'
 
 import img1 from '../../../../images/Landing 3.png';
 import dog from './bigl.svg';
 import styles from './find-out.module.scss';
 
-export const FindOut: React.FC<{}> = () => {
+export const FindOut: React.FC = () => {
   return (
     <div className={styles.block}>
       <h2 className={styles.block__title}>Дізнайтеся чи правильно ви доглядаєте за соїм улюбленцем</h2>
@@ -45,7 +46,7 @@ export const FindOut: React.FC<{}> = () => {
           </tr>
         </tbody>
       </table>
-      <Link to={`/`} className={styles.block__link}>
+      <Link to={ROUTES.home} className={styles.block__link}>
         Дізнатися →
       </Link>
     </div>
