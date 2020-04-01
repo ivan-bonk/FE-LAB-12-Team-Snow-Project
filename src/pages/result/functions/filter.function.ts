@@ -7,8 +7,9 @@ export const getFiltredPets = (pets: Array<PetProfile>, filterValues: FilterValu
   const getComparisonResult = (petValue: string, userInputValue: string): boolean => {
     const parsedUserInputValue = parseInt(userInputValue, notation);
 
-    const petMinValue = parseInt(petValue.match(/^\d+/g)![0], notation);
-    const petMaxValue = parseInt(petValue.match(/\d+$/g)![0], notation);
+    const petMinValue = parseInt(petValue.toString().match(/\d+/g)![0], notation);
+    //in this case index have to be 1, but some values in DB haven't range value yet
+    const petMaxValue = parseInt(petValue.toString().match(/\d+/g)![0], notation);
 
     return (
       (parsedUserInputValue >= petMinValue && parsedUserInputValue <= petMaxValue) ||

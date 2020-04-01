@@ -17,21 +17,9 @@ export interface Data {
   data: Array<PetProfile>;
 }
 
-// export interface FilterValues {
-//   timeWolk: string;
-//   moneyPerMonth: string;
-//   timePerMounth: string;
-//   securityLevel: string;
-//   size: string;
-//   easyToTrain: boolean;
-//   family: boolean;
-//   apartment: boolean;
-//   allergy: boolean;
-// }
-
 export interface FilterValues {
   carePrice: string;
-  careTime: string;
+  price: string;
 }
 
 export interface RootState {

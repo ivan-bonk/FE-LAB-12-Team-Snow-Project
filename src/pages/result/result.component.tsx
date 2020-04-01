@@ -9,7 +9,6 @@ import { fetchPetsAsync } from '../../store/result/actions/result.actions';
 import { RootState } from './result.interfaces';
 import { PetProfile } from '../../shared/interfaces';
 import { FilterValues } from './result.interfaces';
-
 import { getFiltredPets } from './functions/filter.function';
 
 import './result.styles.scss';
@@ -25,11 +24,10 @@ export const Result: React.FC = () => {
 
   const pets = useSelector((state: RootState) => state.resultReducer.data);
 
-  // const filterValues = useSelector((state: RootState) => state.searchReducer.search);
-
+  // Hardcoden values for filter
   const filterValues: FilterValues = {
     carePrice: '1000',
-    careTime: 'any',
+    price: 'any',
   };
 
   const mapArrayOfPets = (petsArray: PetProfile[]): JSX.Element[] => {

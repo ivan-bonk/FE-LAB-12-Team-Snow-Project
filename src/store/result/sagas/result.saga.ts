@@ -2,7 +2,7 @@ import { takeEvery, put, call } from 'redux-saga/effects';
 import { fetchPetsAsync } from '../actions/result.actions';
 
 function fetchPets() {
-  return fetch('http://localhost:3001/pets').then(response => response.json());
+  return fetch('https://fathomless-ridge-53873.herokuapp.com/pets').then(response => response.json());
 }
 
 function* workerFetchPets() {

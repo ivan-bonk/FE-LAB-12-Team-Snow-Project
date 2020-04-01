@@ -13,9 +13,9 @@ export const Dog: React.FC<DogInfo> = props => {
       </div>
       <DogImages />
       <div className="dog-characteristic-container">
-        <DogCharacteristic title="Час догляду" value={`${props.observations.careTime}хв/день`} />
-        <DogCharacteristic title="Витрати" value={`${props.observations.carePrice}грн/місяць`} />
-        <DogCharacteristic title="Вартість" value={`${props.observations.price}грн`} />
+        <DogCharacteristic title="Час догляду" value={`${props.observations.careTime}`} />
+        <DogCharacteristic title="Витрати" value={`${props.observations.carePrice}`} />
+        <DogCharacteristic title="Вартість" value={`${props.observations.price}`} />
       </div>
     </div>
   );
