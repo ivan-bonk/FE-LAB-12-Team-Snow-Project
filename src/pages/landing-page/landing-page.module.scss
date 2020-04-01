@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    &__logo {
+        width: 60px;
+        color: #5C4937;
+        font-family: Raleway;
+        margin: 10px auto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
