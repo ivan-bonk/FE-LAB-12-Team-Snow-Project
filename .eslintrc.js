@@ -16,7 +16,7 @@ module.exports = {
       // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
       // e.g. "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-function-return-type": 0,
-      'react/prop-types': 0,
+      "react/prop-types": 0,
     },
     settings: {
       react: {
