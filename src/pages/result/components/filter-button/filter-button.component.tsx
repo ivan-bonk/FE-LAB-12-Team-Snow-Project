@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './filter-button.styles.css';
+import './filter-button.styles.scss';
 
 export const FilterButton: React.FC = () => {
   return (

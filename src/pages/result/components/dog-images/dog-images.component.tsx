@@ -5,7 +5,7 @@ import corgi1 from './images/corgi1.jpg';
 import corgi2Small2 from './images/corgi2-small2.jpg';
 import corgi3Small2 from './images/corgi3-small2.jpg';
 
-import './dog-images.styles.css';
+import './dog-images.styles.scss';
 
 export const DogImages: React.FC = (): React.ReactElement => {
   const selectedImage = useRef<HTMLImageElement>(null);

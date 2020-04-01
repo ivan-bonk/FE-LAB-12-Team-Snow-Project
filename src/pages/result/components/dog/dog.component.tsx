@@ -3,7 +3,7 @@ import { DogImages } from '../dog-images/dog-images.component';
 import { DogCharacteristic } from '../../../../shared/conponents/dog-characteristic/dog-characteristic.component';
 import { DogInfo } from './dog.interfaces';
 
-import './dog.styles.css';
+import './dog.styles.scss';
 
 export const Dog: React.FC<DogInfo> = props => {
   return (

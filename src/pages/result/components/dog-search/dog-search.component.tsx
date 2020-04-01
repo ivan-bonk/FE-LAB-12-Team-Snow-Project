@@ -2,7 +2,7 @@ import React from 'react';
 
 import { PetsSearch } from './dog-search.interfaces';
 
-import './dog-search.styles.css';
+import './dog-search.styles.scss';
 
 export const DogSearch: React.FC<PetsSearch> = props => {
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {

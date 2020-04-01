@@ -12,7 +12,7 @@ import { FilterValues } from './result.interfaces';
 
 import { getFiltredPets } from './functions/filter.function';
 
-import './result.styles.css';
+import './result.styles.scss';
 
 export const Result: React.FC = () => {
   const [searchedPets, setSearchedPets] = useState<JSX.Element[] | string>('');
@@ -28,7 +28,7 @@ export const Result: React.FC = () => {
   // const filterValues = useSelector((state: RootState) => state.searchReducer.search);
 
   const filterValues: FilterValues = {
-    carePrice: '0',
+    carePrice: '1000',
     careTime: 'any',
   };
 
@@ -45,17 +45,15 @@ export const Result: React.FC = () => {
   };
 
   const renderPets = (): string | JSX.Element | JSX.Element[] => {
-    if (Object.keys(filterValues).length !== 0) {
-      return mapArrayOfPets(getFiltredPets(pets, filterValues));
-    }
-
     if (searchedPets) {
       const searchPetsFail = <h4>За вашим запитом нічого не знайдено...</h4>;
 
       return searchedPets.length ? searchedPets : searchPetsFail;
     }
 
-    if (pets.length) {
+    if (Object.keys(filterValues).length !== 0) {
+      return mapArrayOfPets(getFiltredPets(pets, filterValues));
+    } else if (pets.length) {
       return mapArrayOfPets(pets);
     }
 
