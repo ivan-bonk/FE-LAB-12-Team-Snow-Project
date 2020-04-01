@@ -15,6 +15,6 @@ function* workerFetchPets() {
   }
 }
 
-export function* watchFetchPets() {
+export function* resultSaga() {
   yield takeEvery(fetchPetsAsync.request, workerFetchPets);
 }

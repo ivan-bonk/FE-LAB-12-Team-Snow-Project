@@ -1,8 +1,8 @@
 import { rootReducer } from './root.reducer';
 import { saga } from './root.saga';
 import { createStore, applyMiddleware } from 'redux';
-import { watchFetchPets } from './result/sagas/result.saga';
+import { rootSaga } from './root.saga';
 
 export const store = createStore(rootReducer, applyMiddleware(saga));
 
-saga.run(watchFetchPets);
+saga.run(rootSaga);
