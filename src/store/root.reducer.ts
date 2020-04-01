@@ -1,21 +1,7 @@
-const initiatState = {
-  data: {},
-  petsToCompare: [],
-  search: {},
-};
+import { combineReducers } from 'redux';
 
-export const rootReducer = (state: object = initiatState, action: any) => {
-  switch (action.type) {
-    case 'PUT_PETS':
-      return {
-        ...state,
-        petsToCompare: action.payload.pets,
-      };
-    case 'SEARCH':
-      return {
-        search: action.payload,
-      };
-  }
+import filterReducer from './filter.reducer';
 
-  return state;
-};
+export const rootReducer = combineReducers({
+  filter: filterReducer,
+});
