@@ -12,12 +12,12 @@ export interface PetToCompare {
   type: boolean;
 }
 
-export interface ProfileInterface {
+export interface ProfileProps {
   breed: string;
   imgUrl: string;
 }
 
-export interface RateInterface {
+export interface RateProps {
   rate: number;
 }
 
