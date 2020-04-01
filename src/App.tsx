@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { ROUTES } from './shared/constants/routes.constants';
 import { Home } from './pages/Home';
-import { Auth } from './pages/Auth';
-import { Registration } from './pages/Registration';
 import { Search } from './pages/Search';
 import { Result } from './pages/result/result.component';
 import { User } from './pages/User';
@@ -19,8 +17,6 @@ function App() {
     <Router>
       <Switch>
         <Route exact path={ROUTES.home} component={Home}></Route>
-        <Route path={ROUTES.auth} component={Auth}></Route>
-        <Route path={ROUTES.registration} component={Registration}></Route>
         <Route path={ROUTES.search} component={Search}></Route>
         <Route path={ROUTES.result} component={Result}></Route>
         <Route path={ROUTES.user} component={User}></Route>
