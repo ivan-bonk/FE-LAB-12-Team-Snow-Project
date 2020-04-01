@@ -6,9 +6,7 @@ import style from './additional-item.module.scss';
 
 export const AdditionalItem: React.FC<AdditionalItemProps> = props => {
   const [open, setOpen] = useState(false);
-  const toggleText = () => {
-    setOpen(!open);
-  };
+  const toggleText = () => setOpen(!open);
   const text = props.content.map((item, index) => <li key={index}>{item}</li>);
   const arrowSrc = open ? arrowUp : arrowDown;
   return (

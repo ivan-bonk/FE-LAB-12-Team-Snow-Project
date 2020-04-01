@@ -18,9 +18,9 @@ export const CharacteristicsComponent: React.FC<CharacteristicsProps> = props =>
   const blocksArray = Object.entries(blocks);
   return (
     <ul>
-      {blocksArray.map((entry, index) => (
+      {blocksArray.map(([title, rating], index) => (
         <li className={style.charItem} key={index}>
-          <span>{entry[0]} </span> <Rating rating={entry[1]} />
+          <span>{title} </span> <Rating rating={rating} />
         </li>
       ))}
     </ul>

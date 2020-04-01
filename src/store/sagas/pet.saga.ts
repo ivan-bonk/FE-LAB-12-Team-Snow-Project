@@ -1,4 +1,4 @@
-import { put, call, take } from 'redux-saga/effects';
+import { put, call, take, fork, all } from 'redux-saga/effects';
 import {fetchPetProfile}  from '../actions/pet.action';
 
 async function fetchPet(id:number) {
@@ -33,6 +33,8 @@ export function* watchLoadPet() {
   yield call(handleFetch, id)
 }
 
-
+export function* petSaga() {
+  yield all([fork(watchLoadPet)])
+}
 
 

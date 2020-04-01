@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchPetProfile } from '../../store/actions/pet.action';
 import { PetProps, RootState } from './props.models';
 import { ObservationsComponent } from './components/observations/observations.component';
-import { AdditionalComponent } from './components/additional/additional.component';
+import { AdditionalInfoComponent } from './components/additionalInfo/additionalInfo.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import {PetProfile} from '../../shared/models'
 import { Logo } from './components/logo/logo.component';
@@ -40,7 +40,7 @@ export const Pet:React.FC<PetProps> = (props) => {
             </section>
             <section>
               <h2 className={style.sectionHeader}>Додаткова інформація</h2>
-              <AdditionalComponent data={additionalInfo} />
+              <AdditionalInfoComponent data={additionalInfo} />
             </section>
           </div>
         </div>

@@ -2,37 +2,37 @@ import { AdditionalInfo, Characteristics, Observations } from './pet.models'
 import {PetProfile} from '../../shared/models';
 
 export interface PetProps {
-    match: {
-      params: {
-        id: number;
-      };
+  match: {
+    params: {
+      id: number;
     };
+  };
 }
 
 export interface AdditionalProps {
-    data: AdditionalInfo;
+  data: AdditionalInfo;
 }
 
 export interface AdditionalItemProps {
-    title: string;
-    content: string[];
-  }
+  title: string;
+  content: string[];
+}
 
 export interface CharacteristicsProps {
-    data: Characteristics;
-  }
+  data: Characteristics;
+}
 
 export  interface ObservationProps {
-    data: Observations;
-  }
+  data: Observations;
+}
   
 export interface RatingProps {
-    rating: number;
-  }
+  rating: number;
+}
 
   export interface RootState {
-    pet: PetState;
-  }
+  pet: PetState;
+}
   
 interface PetState {
   currentPet: PetProfile;

@@ -2,7 +2,7 @@ import React from 'react';
 import { AdditionalProps } from '../../props.models';
 import { AdditionalItem } from '../additional-item/additional-item.component';
 
-export const AdditionalComponent: React.FC<AdditionalProps> = props => {
+export const AdditionalInfoComponent: React.FC<AdditionalProps> = props => {
   const { about, specialties, issues } = props.data;
   const blocks = {
     'Про породу': [about],
@@ -12,8 +12,8 @@ export const AdditionalComponent: React.FC<AdditionalProps> = props => {
   const blocksArray = Object.entries(blocks);
   return (
     <div>
-      {blocksArray.map((entry, index) => (
-        <AdditionalItem title={entry[0]} content={entry[1]} key={index} />
+      {blocksArray.map(([title, content], index) => (
+        <AdditionalItem title={title} content={content} key={index} />
       ))}
     </div>
   );
