@@ -1,3 +1,5 @@
+import { PetProfile } from '../../shared/interfaces';
+
 export interface Characteristics {
   spandTime: string;
   outlay: string;
@@ -5,16 +7,34 @@ export interface Characteristics {
 }
 
 export interface Pet {
-  id: number;
-  name: string;
+  _id: number;
+  breed: string;
   photos: [];
   characteristics: Characteristics;
 }
 
 export interface Data {
-  data: Array<Pet>;
+  data: Array<PetProfile>;
+}
+
+// export interface FilterValues {
+//   timeWolk: string;
+//   moneyPerMonth: string;
+//   timePerMounth: string;
+//   securityLevel: string;
+//   size: string;
+//   easyToTrain: boolean;
+//   family: boolean;
+//   apartment: boolean;
+//   allergy: boolean;
+// }
+
+export interface FilterValues {
+  carePrice: string;
+  careTime: string;
 }
 
 export interface RootState {
   resultReducer: Data;
+  searchReducer: FilterValues;
 }

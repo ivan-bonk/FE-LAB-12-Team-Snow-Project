@@ -1,6 +1,6 @@
-import { Characteristics } from '../../result.interfaces';
+import { Observations } from '../../../../shared/interfaces';
 
 export interface DogInfo {
   name: string;
-  characteristics: Characteristics;
+  observations: Observations;
 }

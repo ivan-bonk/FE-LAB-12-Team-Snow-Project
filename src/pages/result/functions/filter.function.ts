@@ -1,0 +1,32 @@
+import { FilterValues } from '../result.interfaces';
+import { PetProfile } from '../../../shared/interfaces';
+
+export const getFiltredPets = (pets: Array<PetProfile>, filterValues: FilterValues): Array<PetProfile> => {
+  const notation = 10;
+
+  const getComparisonResult = (petValue: string, userInputValue: string): boolean => {
+    const parsedUserInputValue = parseInt(userInputValue, notation);
+
+    const petMinValue = parseInt(petValue.match(/^\d+/g)![0], notation);
+    const petMaxValue = parseInt(petValue.match(/\d+$/g)![0], notation);
+
+    return (
+      (parsedUserInputValue >= petMinValue && parsedUserInputValue <= petMaxValue) ||
+      parsedUserInputValue >= petMaxValue
+    );
+  };
+
+  return pets.filter((pet: PetProfile) => {
+    let key: keyof FilterValues;
+
+    for (key in filterValues) {
+      if (filterValues[key] === 'any' || !filterValues[key] || !parseInt(filterValues[key], notation)) continue;
+
+      if (!getComparisonResult(pet.observations[key], filterValues[key])) {
+        return false;
+      }
+    }
+
+    return true;
+  });
+};
