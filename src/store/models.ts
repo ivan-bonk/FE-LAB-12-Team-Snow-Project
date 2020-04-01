@@ -1,10 +1,10 @@
 import {PetProfile} from '../shared/models';
 
 export interface RootState {
-  pet: petState;
+  pet: PetState;
 }
 
-export interface petState {
+export interface PetState {
   currentPet: PetProfile|object;
   errors: string|undefined;
   loading: boolean;

@@ -31,10 +31,10 @@ export interface RatingProps {
   }
 
   export interface RootState {
-    pet: petState;
+    pet: PetState;
   }
   
-interface petState {
+interface PetState {
   currentPet: PetProfile;
   errors: string|undefined;
   loading: boolean;
