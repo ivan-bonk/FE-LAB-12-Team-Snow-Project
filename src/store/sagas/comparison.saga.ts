@@ -1,30 +1,22 @@
-import { take, put, call } from 'redux-saga/effects';
-import { FIND_PETS, putPetsById } from '../actions/comparison.action';
+import { takeEvery, put, call, fork, all } from 'redux-saga/effects';
+import { GetPetsById } from '../actions/comparison.action';
 
+import fetchData from '../services/get-pets-by-id-fetch.api';
+import { ActionType } from 'typesafe-actions';
 
-async function fetchData(ids: string[]) {
-    let data = [];
-
-    for (let id of ids) {
-        // const pet = await fetch(`http://localhost:8080/pets/${id}`)
-        const pet = await fetch(`https://fathomless-ridge-53873.herokuapp.com/pets/${id}`)
-            .then(response => response.json())
-            .catch(err => {
-                console.error(err);
-            });
-        data.push(pet);
-    }
-
-   return data;
+function* getPetsByIdWorker(action: ActionType<typeof GetPetsById.request>) {
+  try {
+    const response = yield call(fetchData, action.payload);
+    yield put(GetPetsById.success(response));
+  } catch (err) {
+    yield put(GetPetsById.failure(err));
+  }
 }
 
-function* workerPets(ids: { payload: string[] }) {
-    const pets = yield call(fetchData, ids.payload)
-    yield put(putPetsById(pets));
+function* getPetsByIdWacher() {
+  yield takeEvery(GetPetsById.request, getPetsByIdWorker);
 }
 
-export function* watchPets() {
-
-    const ids = yield take(FIND_PETS)
-    yield call(workerPets, ids)
+export function* comparisonSaga() {
+  yield all([fork(getPetsByIdWacher)]);
 }
