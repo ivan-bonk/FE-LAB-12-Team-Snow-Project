@@ -26,6 +26,7 @@ function App() {
         <Route path={ROUTES.pet} component={Pet}></Route>
         <Route path={ROUTES.addpet} component={AddPet}></Route>
         <Route path={ROUTES.comparison} component={Comparison}></Route>
+        <Route path={ROUTES.filter} component={Search}></Route>
       </Switch>
     </Router>
   );
