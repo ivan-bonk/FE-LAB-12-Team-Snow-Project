@@ -13,7 +13,7 @@ import { Pet } from './pages/Pet';
 import { AddPet } from './pages/AddPet';
 import { Comparison } from './pages/comparison/comparison.component';
 
-function App() {
+const App: React.FC<{}> = () => {
   return (
     <Router>
       <Switch>
@@ -29,6 +29,6 @@ function App() {
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;
