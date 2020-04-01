@@ -5,6 +5,7 @@ import corgi1 from './images/corgi1.jpg';
 import corgi2Small2 from './images/corgi2-small2.jpg';
 import corgi3Small2 from './images/corgi3-small2.jpg';
 
+//images folder is temporary
 import './dog-images.styles.scss';
 
 export const DogImages: React.FC = (): React.ReactElement => {

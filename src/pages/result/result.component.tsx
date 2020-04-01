@@ -55,7 +55,7 @@ export const Result: React.FC = () => {
       return mapArrayOfPets(pets);
     }
 
-    return [];
+    return '';
   };
 
   return (
