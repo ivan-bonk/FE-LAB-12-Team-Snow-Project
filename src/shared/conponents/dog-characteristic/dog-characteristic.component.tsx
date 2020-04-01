@@ -1,7 +1,7 @@
 import React from 'react';
 import { PetCharacteristic } from './dog-characteristics.interfaces';
 
-import './dog-characteristic.styles.css';
+import './dog-characteristic.styles.scss';
 
 export const DogCharacteristic: React.FC<PetCharacteristic> = (props): React.ReactElement => {
   return (
