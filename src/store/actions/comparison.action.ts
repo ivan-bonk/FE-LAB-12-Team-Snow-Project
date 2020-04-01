@@ -1,12 +1,12 @@
-import {createAsyncAction, ActionType} from 'typesafe-actions';
+import { createAsyncAction, ActionType } from 'typesafe-actions';
 
-import {PetsToCompareList} from '../../pages/comparison/interfaces/pet.interface';
+import { PetsToCompareList } from '../../pages/comparison/interfaces/pet.interface';
 
-export const asyncGetPeysById = createAsyncAction(
+export const GetPetsById = createAsyncAction(
   '@comparison/PETS_BYID_REQUEST',
   '@comparison/PETS_BYID_SUCCESS',
-  '@comparison/PETS_BYID_FAILURE'
+  '@comparison/PETS_BYID_FAILURE',
 )<string[], PetsToCompareList[], Error>();
-export const actions = {asyncGetPeysById};
+export const actions = { GetPetsById };
 
 export type actionType = ActionType<typeof actions>;

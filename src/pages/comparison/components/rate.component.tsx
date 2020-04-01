@@ -6,7 +6,7 @@ import { RateInterface } from '../interfaces/pet.interface';
 export const Rate: React.FC<RateInterface> = props => {
   const { rate } = props;
 
-  let clases: string[] = ['gy', 'gy', 'gy', 'gy', 'gy']; // gy - grey
+  const clases: string[] = ['gy', 'gy', 'gy', 'gy', 'gy']; // gy - grey
 
   if (rate === 1) {
     clases[0] = 'r'; // r - red
@@ -20,7 +20,7 @@ export const Rate: React.FC<RateInterface> = props => {
     }
   }
 
-  let key: number = 0;
+  let key = 0;
   const items = clases.map(el => {
     return <div key={key++} className={el}></div>;
   });

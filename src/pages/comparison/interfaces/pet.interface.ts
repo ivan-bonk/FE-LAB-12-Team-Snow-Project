@@ -31,15 +31,15 @@ export type ComparisonProps = {
 };
 
 export interface RootState {
-  comparison: comparisonState;
+  comparison: ComparisonState;
 }
 
-interface comparisonState {
+export interface ComparisonState {
   petsToCompare: Array<PetsToCompareList>;
   loading: boolean;
   error: any;
 }
 
-export interface P {
+export interface CharacteristicProps {
   data: PetsToCompareList;
 }
