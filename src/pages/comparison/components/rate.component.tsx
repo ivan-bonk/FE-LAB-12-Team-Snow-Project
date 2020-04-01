@@ -1,31 +1,29 @@
 import React from 'react';
 import './rate.css';
 
-export const Rate = (props: { rate: number }) => {
-    const { rate } = props;
+import { RateInterface } from '../interfaces/pet.interface';
 
-    let clases: string[] = ['gy', 'gy', 'gy', 'gy', 'gy']; // gy - grey
+export const Rate: React.FC<RateInterface> = props => {
+  const { rate } = props;
 
-    if (rate === 1) {
-        clases[0] = 'r';                  // r - red
-    } else if (rate < 4) {
-        for (let i = 0; i < rate; i++) {
-            clases[i] = 'y';              // y - yellow
-        }
-    } else {
-        for (let i = 0; i < rate; i++) {
-            clases[i] = 'gr';             // gr - green
-        }
+  let clases: string[] = ['gy', 'gy', 'gy', 'gy', 'gy']; // gy - grey
+
+  if (rate === 1) {
+    clases[0] = 'r'; // r - red
+  } else if (rate < 4) {
+    for (let i = 0; i < rate; i++) {
+      clases[i] = 'y'; // y - yellow
     }
+  } else {
+    for (let i = 0; i < rate; i++) {
+      clases[i] = 'gr'; // gr - green
+    }
+  }
 
-    let key: number = 0;
-    const items = clases.map((el) => {
-        return <div key={key++} className={el}></div>;
-    })
+  let key: number = 0;
+  const items = clases.map(el => {
+    return <div key={key++} className={el}></div>;
+  });
 
-    return (
-        <div className="rate-bar">
-            {items}
-        </div>
-    );
-}
+  return <div className="rate-bar">{items}</div>;
+};
