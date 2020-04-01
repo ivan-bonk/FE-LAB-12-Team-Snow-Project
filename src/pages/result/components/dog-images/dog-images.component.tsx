@@ -11,9 +11,6 @@ import './dog-images.styles.scss';
 export const DogImages: React.FC = (): React.ReactElement => {
   const selectedImage = useRef<HTMLImageElement>(null);
 
-  //Handle clicks on images, something like image-switcher, haven't done yet
-  // const handleImageClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>): void => {};
-
   return (
     <div className="dog-images-container">
       <div className="selected-image-container">

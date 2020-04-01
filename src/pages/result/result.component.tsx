@@ -49,7 +49,7 @@ export const Result: React.FC = () => {
       return searchedPets.length ? searchedPets : searchPetsFail;
     }
 
-    if (Object.keys(filterValues).length !== 0) {
+    if (Object.keys(filterValues).length) {
       return mapArrayOfPets(getFiltredPets(pets, filterValues));
     } else if (pets.length) {
       return mapArrayOfPets(pets);

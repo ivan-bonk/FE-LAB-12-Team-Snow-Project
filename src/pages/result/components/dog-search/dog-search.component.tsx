@@ -6,7 +6,9 @@ import './dog-search.styles.scss';
 
 export const DogSearch: React.FC<PetsSearch> = props => {
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    props.renderPets(e.target.value.toLowerCase());
+    const userInput = e.target.value.toLowerCase();
+
+    props.renderPets(userInput);
   };
 
   return (
