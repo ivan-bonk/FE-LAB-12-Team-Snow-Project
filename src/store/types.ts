@@ -1,2 +1,3 @@
-export const PUT_PET :string = 'PUT_PET';
-export const LOAD_PET :string = 'LOAD_PET';
+export const FETCH_REQUEST = 'FETCH_REQUEST';
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const FETCH_ERROR = 'FETCH_ERROR';

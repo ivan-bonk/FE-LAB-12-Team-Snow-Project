@@ -2,9 +2,6 @@ import { put, call, take } from 'redux-saga/effects';
 import {fetchPetProfile}  from '../actions/pet.action';
 
 async function fetchPet(id:number) {
-  //For testing
-  // const idExample:string = '5e82203cfbbf2d2d6098ac0f';
-
   const dogProfile = await fetch(`https://fathomless-ridge-53873.herokuapp.com/pets/${id}`);
   if (dogProfile.ok) {
     return await dogProfile.json();  
