@@ -8,4 +8,5 @@ export const ROUTES = {
   pet: '/pet/:id',
   comparison: '/comparison/:ids',
   search: '/search',
+  filter: '/filter',
 };
