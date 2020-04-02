@@ -11,7 +11,7 @@ import { PetProfile } from '../../shared/interfaces';
 import { FilterValues } from './result.interfaces';
 import { getFiltredPets } from './functions/filter.function';
 
-import './result.styles.scss';
+import styles from './result.module.scss';
 
 export const Result: React.FC = () => {
   const [searchedPets, setSearchedPets] = useState<JSX.Element[] | string>('');
@@ -59,7 +59,7 @@ export const Result: React.FC = () => {
   };
 
   return (
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       <Logo />
       <DogSearch renderPets={handleSearchValue} pets={pets} />
       <FilterButton />

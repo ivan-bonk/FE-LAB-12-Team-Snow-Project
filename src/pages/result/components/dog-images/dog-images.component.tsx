@@ -6,22 +6,30 @@ import corgi2Small2 from './images/corgi2-small2.jpg';
 import corgi3Small2 from './images/corgi3-small2.jpg';
 
 //images folder is temporary
-import './dog-images.styles.scss';
+import styles from './dog-images.module.scss';
 
 export const DogImages: React.FC = (): React.ReactElement => {
   const selectedImage = useRef<HTMLImageElement>(null);
 
   return (
-    <div className="dog-images-container">
-      <div className="selected-image-container">
-        <img src={corgi1} className="image" ref={selectedImage} alt="Corgi1" />
+    <div className={styles.dogImagesContainer}>
+      <div className={styles.dogImagesContainer__selectedImageContainer}>
+        <img src={corgi1} className={styles.image} ref={selectedImage} alt="Corgi1" />
       </div>
-      <div className="non-selected-images-container">
-        <div className="image-container">
-          <img src={corgi2Small2} className="image non-selected-image" alt="Corgi2" />
+      <div className={styles.dogImagesContainer__nonSelectedImagesContainer}>
+        <div>
+          <img
+            src={corgi2Small2}
+            className={`${styles.image} ${styles.dogImagesContainer__nonSelectedImagesContainer__nonSelectedImages}`}
+            alt="Corgi2"
+          />
         </div>
-        <div className="image-container">
-          <img src={corgi3Small2} className="image non-selected-image" alt="Corgi3" />
+        <div>
+          <img
+            src={corgi3Small2}
+            className={`${styles.image} ${styles.dogImagesContainer__nonSelectedImagesContainer__nonSelectedImages}`}
+            alt="Corgi3"
+          />
         </div>
       </div>
     </div>
