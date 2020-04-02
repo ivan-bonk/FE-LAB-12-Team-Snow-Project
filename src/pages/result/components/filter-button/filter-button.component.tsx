@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../../../shared/constants/routes.constants';
 
-import './filter-button.styles.scss';
+import styles from './filter-button.module.scss';
 
 export const FilterButton: React.FC = () => {
   return (
-    <div className="filter-button-container">
-      <Link to={ROUTES.filter} className="filter-button">
-        <span className="filter-button-text">Застосувати фільтр</span>
+    <div className={styles.filterButtonContainer}>
+      <Link to={ROUTES.filter} className={styles.filterButtonContainer__filterButton}>
+        <span className={styles.filterButtonContainer__filterButton__filterButtonText}>Застосувати фільтр</span>
       </Link>
     </div>
   );

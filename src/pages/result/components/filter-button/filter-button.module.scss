@@ -1,0 +1,22 @@
+.filterButtonContainer {
+  margin-top: 15px;
+
+  &__filterButton {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 151px;
+    height: 32px;
+    background-color: #902111;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &__filterButtonText {
+      font-size: 14px;
+      line-height: 16px;
+      color: #ffffff;
+    }
+  }
+}

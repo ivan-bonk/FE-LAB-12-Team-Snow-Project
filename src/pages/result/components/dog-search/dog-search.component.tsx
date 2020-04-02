@@ -2,7 +2,7 @@ import React from 'react';
 
 import { PetsSearch } from './dog-search.interfaces';
 
-import './dog-search.styles.scss';
+import styles from './dog-search.module.scss';
 
 export const DogSearch: React.FC<PetsSearch> = props => {
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -12,9 +12,14 @@ export const DogSearch: React.FC<PetsSearch> = props => {
   };
 
   return (
-    <div className="search-container">
-      <h2 className="searh-header">Знайти</h2>
-      <input type="text" className="search-input" placeholder="Мопс..." onChange={onInputChange} />
+    <div className={styles.searchContainer}>
+      <h2 className={styles.searchContainer__searchHeader}>Знайти</h2>
+      <input
+        type="text"
+        className={styles.searchContainer__searchInput}
+        placeholder="Мопс..."
+        onChange={onInputChange}
+      />
     </div>
   );
 };
