@@ -1,15 +1,15 @@
 import React from 'react';
 import Logo from '../../../../images/paw-solid.svg';
-import './filter-header.scss';
+import styles from './filter-header.module.scss';
 
 export const FilterHeader: React.FC = () => {
   return (
-    <div className="header">
-      <div className="filter-logo-container">
-        <img className="filter-logo" src={Logo} alt="pet-logo" />
+    <div className={styles.header}>
+      <div className={styles.filter_logo__container}>
+        <img className={styles.filter__logo} src={Logo} alt="pet-logo" />
         <span>МійПес </span>
       </div>
-      <h1 className="filter-header">Фільтр</h1>
+      <h1 className={styles.filter__header}>Фільтр</h1>
     </div>
   );
 };

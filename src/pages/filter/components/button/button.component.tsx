@@ -1,6 +1,6 @@
 import React from 'react';
-import { ButtonProps } from '../../../comparison/interfaces/filter.interface';
-import './button.scss';
+import { ButtonProps } from './button.interface';
+import './button.module.scss';
 
 export const Button: React.FC<ButtonProps> = props => {
   return (

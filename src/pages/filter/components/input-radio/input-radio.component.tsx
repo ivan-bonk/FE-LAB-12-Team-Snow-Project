@@ -1,5 +1,6 @@
 import React from 'react';
-import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
+import { InputRadioProps } from '../../filter.interface';
+import './input-radio.module.scss';
 
 export const InputRadio: React.FC<Partial<InputRadioProps>> = props => {
   return (

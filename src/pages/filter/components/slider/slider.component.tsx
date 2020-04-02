@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
-import './slider.scss';
+import { InputRadioProps } from '../../filter.interface';
+import './slider.module.scss';
 
 export const Slider: React.FC<Partial<InputRadioProps>> = props => {
   const [inpValue, setInpValue] = useState('0');

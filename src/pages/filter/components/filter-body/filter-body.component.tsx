@@ -8,8 +8,8 @@ import { PetSizeCheckboxes } from '../petSize-checkboxes/petSize-checkboxes.comp
 import { SliderSection } from '../slider-section/slider-section.component';
 import { TimePerMonthCheckboxes } from '../timePerMonth-checkboxes/timePerMonth-checkboxes.component';
 import { Button } from '../button/button.component';
-import { BodyProps, Data } from '../../../comparison/interfaces/filter.interface';
-import './filter-body.scss';
+import { BodyProps, Data } from './bodyFilter.intarface';
+import styles from './filter-body.module.scss';
 
 export const FilterBody: React.FC<Partial<BodyProps>> = () => {
   const { register, handleSubmit, errors } = useForm<Data>();
@@ -54,7 +54,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
       />
 
       <TimePerMonthCheckboxes refAttribute={register({ required: true })} />
-      {errors.timePerMonth && <p className="error">Будь-ласка виберіть час який зможете приділяти собаці </p>}
+      {errors.timePerMonth && <p className={styles.error}>Будь-ласка виберіть час який зможете приділяти собаці </p>}
 
       <SliderSection
         name="securityLevel"
@@ -68,12 +68,12 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
       />
 
       <PetSizeCheckboxes refAttribute={register({ required: true })} />
-      {errors.petSize && <p className="error">Будь-ласка виберіть розмір собаки</p>}
+      {errors.petSize && <p className={styles.error}>Будь-ласка виберіть розмір собаки</p>}
 
       <OverviewCheckboxes refAttribute={register} />
 
-      <Button className="btn btn-apply" text="Застосувати" onClick={handleSubmit(onSubmit)} />
-      <Button className="btn btn-cancel" text="Назад" onClick={goBack} />
+      <Button className="btn btn__apply" text="Застосувати" onClick={handleSubmit(onSubmit)} />
+      <Button className="btn btn__cancel" text="Назад" onClick={goBack} />
     </form>
   );
 };

@@ -1,6 +1,6 @@
 import { createReducer, ActionType } from 'typesafe-actions';
 import * as Actions from '../actions/filter.action';
-import { Data } from '../../../pages/comparison/interfaces/filter.interface';
+import { Data } from '../../../pages/filter/components/filter-body/bodyFilter.intarface';
 
 export type ProfileAction = ActionType<typeof Actions>;
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { InputRadio } from '../input-radio/input-radio.component';
-
-import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
+import { InputRadioProps } from '../../filter.interface';
 
 export const PetSizeCheckboxes: React.FC<Partial<InputRadioProps>> = props => {
   return (
