@@ -14,7 +14,7 @@ export interface Pet {
 }
 
 export interface ResultStore {
-  resultStore: Array<PetProfile>;
+  resultStore: PetProfile[];
 }
 
 export interface FilterValues {

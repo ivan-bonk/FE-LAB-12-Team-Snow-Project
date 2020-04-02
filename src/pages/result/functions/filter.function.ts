@@ -1,13 +1,14 @@
 import { FilterValues } from '../result.interfaces';
 import { PetProfile } from '../../../shared/interfaces';
 
-export const getFiltredPets = (pets: Array<PetProfile>, filterValues: FilterValues): Array<PetProfile> => {
+export const getFiltredPets = (pets: PetProfile[], filterValues: FilterValues): PetProfile[] => {
   const notation = 10;
 
   const getComparisonResult = (petValue: string, userInputValue: string): boolean => {
     const parsedUserInputValue = parseInt(userInputValue, notation);
 
     const petMinValue = parseInt(petValue.toString().match(/\d+/g)![0], notation);
+
     //in this case index have to be 1, but some values in DB haven't range value yet
     const petMaxValue = parseInt(petValue.toString().match(/\d+/g)![0], notation);
 
