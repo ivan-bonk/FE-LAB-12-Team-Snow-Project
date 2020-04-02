@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPetProfile } from '../../store/pet/action/pet.action';
+import { fetchPetProfile } from '../../store/pet/actions/pet.actions';
 import { PetProps, RootState } from './props.models';
 import { ObservationsComponent } from './components/observations/observations.component';
 import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';

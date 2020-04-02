@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '../../../../shared/constants/routes.constants'
+import { ROUTES } from '../../../../shared/constants/routes.constants';
 
 import img2 from '../../../../images/Landing 2.png';
 import dialogs from '../../../../images/dialog.svg';

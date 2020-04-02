@@ -1,5 +1,5 @@
 import { put, call, take, fork, all } from 'redux-saga/effects';
-import { fetchPetProfile } from '../action/pet.action';
+import { fetchPetProfile } from '../actions/pet.actions';
 async function fetchPet(id: number) {
   const dogProfile = await fetch(`https://fathomless-ridge-53873.herokuapp.com/pets/${id.toString()}`);
   if (dogProfile.ok) {

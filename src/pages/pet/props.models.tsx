@@ -1,5 +1,5 @@
-import { AdditionalInfo, Characteristics, Observations } from './pet.models'
-import {PetProfile} from '../../shared/models';
+import { AdditionalInfo, Characteristics, Observations } from './pet.models';
+import { PetProfile } from '../../shared/models';
 
 export interface PetProps {
   match: {
@@ -22,20 +22,20 @@ export interface CharacteristicsProps {
   data: Characteristics;
 }
 
-export  interface ObservationProps {
+export interface ObservationProps {
   data: Observations;
 }
-  
+
 export interface RatingProps {
   rating: number;
 }
 
-  export interface RootState {
+export interface RootState {
   pet: PetState;
 }
-  
+
 interface PetState {
   currentPet: PetProfile;
-  errors: string|undefined;
+  errors: string | undefined;
   loading: boolean;
 }

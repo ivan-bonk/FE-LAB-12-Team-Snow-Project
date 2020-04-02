@@ -1,15 +1,23 @@
 import { createReducer } from 'typesafe-actions';
-import {PetState} from '../models'
-import {fetchPetProfile} from '../action/pet.action';
+import { PetState } from '../pet.models';
+import { fetchPetProfile } from '../actions/pet.actions';
+import { PetProfile } from '../../../shared/models';
 
-const initialState:PetState = {
+const initialState: PetState = {
   currentPet: {},
   errors: undefined,
-  loading: false
-}
+  loading: false,
+};
 
 export const petReducer = createReducer(initialState)
-.handleAction(fetchPetProfile.success, (state:PetState, action:any) => ({ ...state, loading: false, currentPet: action.payload }))
-.handleAction(fetchPetProfile.request, (state:PetState, action:any) => ({ ...state, loading: true }))
-.handleAction(fetchPetProfile.failure, (state:PetState, action:any) => ({ ...state, loading: false, errors: action.payload }))
-
+  .handleAction(fetchPetProfile.success, (state: PetState, action: { payload: PetProfile }) => ({
+    ...state,
+    loading: false,
+    currentPet: action.payload,
+  }))
+  .handleAction(fetchPetProfile.request, (state: PetState) => ({ ...state, loading: true }))
+  .handleAction(fetchPetProfile.failure, (state: PetState, action: { payload: string }) => ({
+    ...state,
+    loading: false,
+    errors: action.payload,
+  }));

@@ -24,4 +24,3 @@ export interface AdditionalInfo {
   specialties: string[];
   issues: string[];
 }
-
