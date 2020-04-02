@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { PetsSearch } from './dog-search.interfaces';
+import { DogSearchProps } from './dog-search.interfaces';
 
 import styles from './dog-search.module.scss';
 
-export const DogSearch: React.FC<PetsSearch> = props => {
+export const DogSearch: React.FC<DogSearchProps> = props => {
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const userInput = e.target.value.toLowerCase();
 

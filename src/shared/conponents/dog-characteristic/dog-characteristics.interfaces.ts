@@ -1,4 +1,4 @@
-export interface PetCharacteristic {
+export interface PetCharacteristicProps {
   title: string;
   value: string;
 }

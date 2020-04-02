@@ -1,6 +1,6 @@
 import { Observations } from '../../../../shared/interfaces';
 
-export interface DogInfo {
+export interface DogInfoProps {
   name: string;
   observations: Observations;
 }
