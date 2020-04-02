@@ -9,7 +9,7 @@ const initiatState = {
 
 export const resultReducer = createReducer(initiatState).handleAction(
   fetchPetsAsync.success,
-  (state: StoreData, action: { payload: Array<Pet> }) => {
+  (state: StoreData, action: { payload: Pet[] }) => {
     return { ...state, resultStore: action.payload };
   },
 );
