@@ -1,10 +1,10 @@
 .header {
   display: flex;
 
-  .filter-logo-container {
+  .filter_logo__container {
     width: 30px;
 
-    .filter-logo {
+    .filter_logo {
       width: 30px;
       color: #5c4937;
     }
@@ -18,7 +18,7 @@
     }
   }
 
-  .filter-header {
+  .filter__header {
     font-family: Roboto;
     font-size: 1.5em;
     margin: 10px auto;

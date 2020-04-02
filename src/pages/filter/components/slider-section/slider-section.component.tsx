@@ -1,10 +1,11 @@
 import React from 'react';
-import { InputRadioProps } from '../../../comparison/interfaces/filter.interface';
+import { InputRadioProps } from '../../filter.interface';
 import { Slider } from '../slider/slider.component';
+import styles from './slider-section.module.scss';
 
 export const SliderSection: React.FC<Partial<InputRadioProps>> = props => {
   return (
-    <section className="range-slider">
+    <section className={styles.range__slider}>
       <label>{props.lable}</label>
       <Slider
         name={props.name}
