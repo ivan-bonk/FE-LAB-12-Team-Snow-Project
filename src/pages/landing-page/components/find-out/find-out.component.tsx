@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '../../../../shared/constants/routes.constants'
+import { ROUTES } from '../../../../shared/constants/routes.constants';
 
 import img1 from '../../../../images/Landing 3.png';
 import dog from './bigl.svg';

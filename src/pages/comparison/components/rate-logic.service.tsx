@@ -1,4 +1,3 @@
-
 export default (rate: number) => {
   const clases: string[] = ['gy', 'gy', 'gy', 'gy', 'gy']; // gy - grey
 
