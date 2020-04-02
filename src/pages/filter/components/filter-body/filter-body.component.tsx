@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { filterAction } from '../../../../store/actions/filter.action';
+import { filterAction } from '../../../../store/filter/actions/filter.action';
 import { OverviewCheckboxes } from '../overview-checkboxes/overview-checkboxes.component';
 import { PetSizeCheckboxes } from '../petSize-checkboxes/petSize-checkboxes.component';
 import { SliderSection } from '../slider-section/slider-section.component';

@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { ROUTES } from './shared/constants/routes.constants';
+import { LandinPage } from './pages/landing-page/landing-page.component';
 import { Search } from './pages/Search';
 import { Result } from './pages/result/result.component';
 import { Pet } from './pages/pet/pet.component';
@@ -14,6 +15,7 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path={ROUTES.home} component={LandinPage}></Route>
         <Route path={ROUTES.search} component={Search}></Route>
         <Route path={ROUTES.result} component={Result}></Route>
         <Route path={ROUTES.pet('')} component={Pet}></Route>
