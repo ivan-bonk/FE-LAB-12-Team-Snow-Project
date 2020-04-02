@@ -8,7 +8,7 @@ import corgi3Small2 from './images/corgi3-small2.jpg';
 //images folder is temporary
 import styles from './dog-images.module.scss';
 
-export const DogImages: React.FC = (): React.ReactElement => {
+export const DogImages: React.FC = () => {
   const selectedImage = useRef<HTMLImageElement>(null);
 
   return (

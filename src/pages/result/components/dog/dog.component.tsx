@@ -1,11 +1,11 @@
 import React from 'react';
 import { DogImages } from '../dog-images/dog-images.component';
 import { DogCharacteristic } from '../../../../shared/conponents/dog-characteristic/dog-characteristic.component';
-import { DogInfo } from './dog.interfaces';
+import { DogInfoProps } from './dog.interfaces';
 
 import styles from './dog.module.scss';
 
-export const Dog: React.FC<DogInfo> = props => {
+export const Dog: React.FC<DogInfoProps> = props => {
   return (
     <div className={styles.dogContainer}>
       <div className={styles.dogContainer__dogName}>

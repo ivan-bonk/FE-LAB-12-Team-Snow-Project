@@ -1,6 +1,6 @@
 import { PetProfile } from '../../../../shared/interfaces';
 
-export interface PetsSearch {
+export interface DogSearchProps {
   renderPets: (searchString: string) => void;
   pets: Array<PetProfile>;
 }
