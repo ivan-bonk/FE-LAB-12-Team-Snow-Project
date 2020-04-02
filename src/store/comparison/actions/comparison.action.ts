@@ -1,6 +1,6 @@
 import { createAsyncAction, ActionType } from 'typesafe-actions';
 
-import { PetsToCompareList } from '../../pages/comparison/interfaces/pet.interface';
+import { PetsToCompareList } from '../../../pages/comparison/comparison.interface';
 
 export const GetPetsById = createAsyncAction(
   '@comparison/PETS_BYID_REQUEST',

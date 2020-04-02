@@ -1,4 +1,4 @@
-export default (rate: number) => {
+export const rate = (rate: number) => {
   const clases: string[] = ['gy', 'gy', 'gy', 'gy', 'gy']; // gy - grey
 
   if (rate === 1) {

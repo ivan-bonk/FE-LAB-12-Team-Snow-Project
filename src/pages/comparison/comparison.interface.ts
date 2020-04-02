@@ -12,15 +12,6 @@ export interface PetToCompare {
   type: boolean;
 }
 
-export interface ProfileProps {
-  breed: string;
-  imgUrl: string;
-}
-
-export interface RateProps {
-  rate: number;
-}
-
 export type ComparisonProps = {
   name: string;
   match: {
@@ -38,8 +29,4 @@ export interface ComparisonState {
   petsToCompare: Array<PetsToCompareList>;
   loading: boolean;
   error: any;
-}
-
-export interface CharacteristicProps {
-  data: PetsToCompareList;
 }

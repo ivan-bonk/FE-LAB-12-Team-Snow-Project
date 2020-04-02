@@ -1,7 +1,8 @@
 import React from 'react';
-import { ComparisonElement } from './comparison-element.component';
-import '../comparison.scss';
-import { CharacteristicProps, PetToCompare } from '../interfaces/pet.interface';
+import { ComparisonElement } from '../comparison-element/comparison-element.component';
+import '../../comparison.scss';
+import { PetToCompare } from '../../comparison.interface';
+import { CharacteristicProps } from './characteristics.interface';
 
 export const Characteristics: React.FC<CharacteristicProps> = props => {
   const items = props.data.pets.map((pet: PetToCompare) => {

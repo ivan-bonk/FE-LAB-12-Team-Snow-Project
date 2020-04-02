@@ -1,6 +1,6 @@
 import { createReducer } from 'typesafe-actions';
 import { actionType } from '../actions/comparison.action';
-import { ComparisonState } from '../../pages/comparison/interfaces/pet.interface';
+import { ComparisonState } from '../../../pages/comparison/comparison.interface';
 
 const initialState: ComparisonState = {
   petsToCompare: [],
@@ -8,7 +8,7 @@ const initialState: ComparisonState = {
   loading: false,
 };
 
-export default createReducer<any, actionType>(initialState, {
+export const comparisonReducer = createReducer<any, actionType>(initialState, {
   '@comparison/PETS_BYID_SUCCESS': (state, action) => {
     return { ...state, loading: false, petsToCompare: action.payload };
   },
