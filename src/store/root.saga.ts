@@ -2,7 +2,7 @@ import createSagaMiddleware from 'redux-saga';
 import { all, fork } from 'redux-saga/effects';
 import { resultSaga } from './result/sagas/result.saga';
 import { comparisonSaga } from './sagas/comparison.saga';
-import { petSaga } from './sagas/pet.saga';
+import { petSaga } from './pet/sagas/pet.saga';
 
 export const saga = createSagaMiddleware();
 

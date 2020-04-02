@@ -1,6 +1,6 @@
 import { createReducer } from 'typesafe-actions';
 import {PetState} from '../models'
-import {fetchPetProfile} from '../actions/pet.action';
+import {fetchPetProfile} from '../action/pet.action';
 
 const initialState:PetState = {
   currentPet: {},
