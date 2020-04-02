@@ -23,6 +23,6 @@ export interface FilterValues {
 }
 
 export interface RootState {
-  resultReducer: Data;
+  result: Data;
   searchReducer: FilterValues;
 }
