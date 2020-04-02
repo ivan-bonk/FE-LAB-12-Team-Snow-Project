@@ -22,7 +22,7 @@ export const Result: React.FC = () => {
     dispatch(fetchPetsAsync.request());
   }, []);
 
-  const pets = useSelector((state: RootState) => state.result.data);
+  const pets = useSelector((state: RootState) => state.result.resultStore);
 
   // Hardcoden values for filter
   const filterValues: FilterValues = {

@@ -4,12 +4,12 @@ import { StoreData } from './reducers.interfaces';
 import { Pet } from '../../../pages/result/result.interfaces';
 
 const initiatState = {
-  data: [],
+  resultStore: [],
 };
 
 export const resultReducer = createReducer(initiatState).handleAction(
   fetchPetsAsync.success,
   (state: StoreData, action: { payload: Array<Pet> }) => {
-    return { ...state, data: action.payload };
+    return { ...state, resultStore: action.payload };
   },
 );

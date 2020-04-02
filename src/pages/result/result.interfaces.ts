@@ -13,8 +13,8 @@ export interface Pet {
   characteristics: Characteristics;
 }
 
-export interface Data {
-  data: Array<PetProfile>;
+export interface ResultStore {
+  resultStore: Array<PetProfile>;
 }
 
 export interface FilterValues {
@@ -23,6 +23,6 @@ export interface FilterValues {
 }
 
 export interface RootState {
-  result: Data;
+  result: ResultStore;
   searchReducer: FilterValues;
 }
