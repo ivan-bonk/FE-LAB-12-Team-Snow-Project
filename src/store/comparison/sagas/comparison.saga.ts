@@ -1,7 +1,7 @@
 import { takeEvery, put, call, fork, all } from 'redux-saga/effects';
 import { GetPetsById } from '../actions/comparison.action';
 
-import fetchData from '../services/get-pets-by-id-fetch.api';
+import { fetchData } from '../services/get-pets-by-id-fetch.api';
 import { ActionType } from 'typesafe-actions';
 
 function* getPetsByIdWorker(action: ActionType<typeof GetPetsById.request>) {

@@ -1,24 +1,24 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetPetsById } from '../../store/actions/comparison.action';
+import { GetPetsById } from '../../store/comparison/actions/comparison.action';
 
 import * as CR from './comparison.constants';
 import './comparison.scss';
 
-import { Logo } from '../../shared/logotype/logo';
-import { Characteristics } from './components/characteristics.component';
+import { Logo } from '../../shared/logo/logo.component';
+import { Characteristics } from './components/characteristics/characteristics.component';
 
-import { ComparisonProps, PetsToCompareList, RootState } from './interfaces/pet.interface';
+import { ComparisonProps, PetsToCompareList, RootState } from './comparison.interface';
 
 export const Comparison: React.FC<ComparisonProps> = props => {
-  const { ids } = props.match.params; //extract pets to compare id from pathname
+  const { ids } = props.match.params; 
 
   const dispatch = useDispatch();
 
   const pets: PetsToCompareList[] = useSelector((state: RootState) => state.comparison.petsToCompare);
 
   useEffect(() => {
-    dispatch(GetPetsById.request(ids.split('-'))); //run action, which fetch pets by id from database
+    dispatch(GetPetsById.request(ids.split('-'))); 
   }, []);
 
   return (

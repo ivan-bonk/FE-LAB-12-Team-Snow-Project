@@ -1,8 +1,8 @@
-import { PetProfile } from '../../shared/interfaces/pet-profile.interface';
-import { PetsToCompareList } from '../../pages/comparison/interfaces/pet.interface';
-import { ZERO } from '../../pages/comparison/comparison.constants';
+import { PetProfile } from '../../../shared/interfaces/pet-profile.interface';
+import { PetsToCompareList } from '../../../pages/comparison/comparison.interface';
+import { ZERO } from '../../../pages/comparison/comparison.constants';
 
-export default function transformData(data: PetProfile[]) {
+export const transformData = (data: PetProfile[]) => {
   const result = [];
   const characteristicsList = data[ZERO].characteristics;
   const observationsList = data[ZERO].observations;

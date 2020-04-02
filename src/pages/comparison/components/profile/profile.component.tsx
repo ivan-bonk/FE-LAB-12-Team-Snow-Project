@@ -1,8 +1,8 @@
 import React from 'react';
 
-import '../comparison.scss';
+import './profile.scss';
 
-import { ProfileProps } from '../interfaces/pet.interface';
+import { ProfileProps } from './profile.interface';
 
 export const Profile: React.FC<ProfileProps> = props => {
   return (

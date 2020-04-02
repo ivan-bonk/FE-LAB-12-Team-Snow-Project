@@ -1,6 +1,6 @@
-import transformData from '../services/transform-data.comparison';
+import { transformData } from '../services/transform-data.comparison';
 
-export default async function fetchData(ids: string[]) {
+export const fetchData = async (ids: string[]) => {
   const data = [];
 
   for (const id of ids) {

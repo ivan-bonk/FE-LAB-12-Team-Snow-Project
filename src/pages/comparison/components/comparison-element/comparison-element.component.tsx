@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Profile } from './profile.component';
-import { Rate } from './rate.component';
-import { ROUTES } from '../../../shared/constants/routes.constants';
+import { Profile } from '../profile/profile.component';
+import { Rate } from '../rate/rate.component';
+import { ROUTES } from '../../../../shared/constants/routes.constants';
 
-import '../comparison.scss';
+import './comparison-element.scss';
 
-import { PetToCompare } from '../interfaces/pet.interface';
+import { PetToCompare } from '../../comparison.interface';
 
 export const ComparisonElement: React.FC<PetToCompare> = props => {
   return (

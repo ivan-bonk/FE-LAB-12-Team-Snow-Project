@@ -1,11 +1,11 @@
 import React from 'react';
 import './rate.scss';
-import clases from './rate-logic.service';
+import { rate } from './rate-logic.service';
 
-import { RateProps } from '../interfaces/pet.interface';
+import { RateProps } from './rate.interface';
 
 export const Rate: React.FC<RateProps> = props => {
-  const items = clases(props.rate).map((el, index) => {
+  const items = rate(props.rate).map((el, index) => {
     return <div key={index} className={el}></div>;
   });
 
