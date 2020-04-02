@@ -2,7 +2,9 @@ import { put, call, take, fork, all } from 'redux-saga/effects';
 import {fetchPetProfile}  from '../actions/pet.action';
 
 async function fetchPet(id:number) {
-  const dogProfile = await fetch(`https://fathomless-ridge-53873.herokuapp.com/pets/${id}`);
+  
+  const dogProfile = await fetch(`https://fathomless-ridge-53873.herokuapp.com/pets/${id.toString()}`);
+  // const dogProfile = await fetch(`https://fathomless-ridge-53873.herokuapp.com/pets/5e82206cfbbf2d2d6098ac10`);
   if (dogProfile.ok) {
     return await dogProfile.json();  
   } else {

@@ -12,7 +12,7 @@ import style from './pet.module.scss';
 
 export const Pet:React.FC<PetProps> = (props) => {
   const petId: number = props.match.params.id;
-
+  console.log(props);
   const dispatch = useDispatch();
   const petProfile: PetProfile = useSelector((state:RootState) => state.pet.currentPet);
   const {imgUrl,breed,characteristics,observations,additionalInfo} = petProfile;
