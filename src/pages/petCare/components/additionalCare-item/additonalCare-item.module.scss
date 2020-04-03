@@ -1,0 +1,18 @@
+.additionalSection {
+  margin-top: 20px;
+  .addTitle {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    .arrow {
+      padding-right: 10px;
+      height: 14px;
+    }
+  }
+
+  .plainText {
+    font-size: 14px;
+    margin: 8px 0;
+    text-indent: 16px;
+  }
+}

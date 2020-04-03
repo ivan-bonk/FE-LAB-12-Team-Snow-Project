@@ -6,4 +6,5 @@ export const ROUTES = {
   comparison: '/comparison/:ids',
   search: '/search',
   filter: '/filter',
+  petCare: '/petCare',
 };
