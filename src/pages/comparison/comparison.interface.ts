@@ -16,7 +16,7 @@ export type ComparisonProps = {
   name: string;
   match: {
     params: {
-      ids: string;
+      0: string;
     };
   };
 };

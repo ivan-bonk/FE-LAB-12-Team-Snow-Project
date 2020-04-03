@@ -1,6 +1,6 @@
 import React from 'react';
 import { DogImages } from '../dog-images/dog-images.component';
-import { DogCharacteristic } from '../../../../shared/conponents/dog-characteristic/dog-characteristic.component';
+import { DogCharacteristic } from '../../../../shared/components/dog-characteristic/dog-characteristic.component';
 import { DogInfoProps } from './dog.interfaces';
 
 import styles from './dog.module.scss';
