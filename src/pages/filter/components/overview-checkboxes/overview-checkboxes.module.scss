@@ -1,0 +1,14 @@
+:global {
+  .general {
+    margin-top: 35px;
+  }
+
+  .general label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: Roboto;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,38 @@
+body,
+p,
+h1,
+h2,
+h3,
+ul,
+li,
+div,
+span {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  line-height: 28px;
+}
+
+.comparison-page {
+  box-sizing: border-box;
+  padding: 18px;
+
+  .header {
+    font-size: 28px;
+    margin-top: 25px;
+  }
+}
+
+.characteristics,
+.specificity-care {
+  h2 {
+    font-weight: 500;
+    font-size: 25px;
+    margin: 25px 0;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,24 @@
+.dogImagesContainer {
+  display: flex;
+  justify-content: space-between;
+
+  &__selectedImageContainer {
+    width: 77%;
+  }
+
+  &__nonSelectedImagesContainer {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__nonSelectedImages {
+      cursor: pointer;
+    }
+  }
+}
+
+.image {
+  max-width: 100%;
+  border-radius: 5px;
+}
