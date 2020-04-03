@@ -9,7 +9,7 @@ import { fetchPetsAsync } from '../../store/result/actions/result.actions';
 import { RootState } from './result.interfaces';
 import { PetProfile } from '../../shared/interfaces';
 import { FilterValues } from './result.interfaces';
-import { getFiltredPets } from './functions/filter.function';
+import { getFiltredPets } from './utils/filter.util';
 
 import styles from './result.module.scss';
 
