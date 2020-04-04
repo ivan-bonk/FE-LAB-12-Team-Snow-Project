@@ -9,12 +9,13 @@ import { fetchPetsAsync } from '../../store/result/actions/result.actions';
 import { RootState } from './result.interfaces';
 import { PetProfile } from '../../shared/interfaces';
 import { FilterValues } from './result.interfaces';
-import { getFiltredPets } from './functions/filter.function';
+import { getFiltredPets } from './utils/filter.util';
 
 import styles from './result.module.scss';
 
 export const Result: React.FC = () => {
-  const [searchedPets, setSearchedPets] = useState<JSX.Element[] | string>('');
+  const [searchedPetsArray, setSearchedPetsArray] = useState<JSX.Element[]>([]);
+  const [searchedPetsValue, setSearchedPetsValue] = useState<string>('');
 
   const dispatch = useDispatch();
 
@@ -24,7 +25,7 @@ export const Result: React.FC = () => {
 
   const pets = useSelector((state: RootState) => state.result.resultStore);
 
-  // Hardcoden values for filter
+  // Hardcoded values for filter
   const filterValues: FilterValues = {
     carePrice: '1000',
     price: 'any',
@@ -35,27 +36,31 @@ export const Result: React.FC = () => {
   };
 
   const handleSearchValue = (searchText: string): void => {
-    if (!searchText) setSearchedPets(searchText);
+    if (searchText) {
+      const filtredPets = pets.filter(pet => pet.breed.toLowerCase().includes(searchText));
 
-    const filtredPets = pets.filter(pet => pet.breed.toLowerCase().includes(searchText));
-
-    setSearchedPets(mapArrayOfPets(filtredPets));
+      setSearchedPetsValue(searchText);
+      setSearchedPetsArray(mapArrayOfPets(filtredPets));
+    } else {
+      setSearchedPetsValue(searchText);
+    }
   };
 
-  const renderPets = (): string | JSX.Element | JSX.Element[] => {
-    if (searchedPets) {
-      const searchPetsFail = <h4>За вашим запитом нічого не знайдено...</h4>;
+  const renderPets = (): JSX.Element[] => {
+    if (searchedPetsValue) {
+      const key = 1;
+      //This array doesn't change, it has permanent state, so i desided to use hardcoded key value
+      //I'll remove this commend in next Pull Request
+      const searchPetsFail = [<h4 key={key}>За вашим запитом нічого не знайдено...</h4>];
 
-      return searchedPets.length ? searchedPets : searchPetsFail;
+      return searchedPetsArray.length ? searchedPetsArray : searchPetsFail;
     }
 
     if (Object.keys(filterValues).length) {
       return mapArrayOfPets(getFiltredPets(pets, filterValues));
-    } else if (pets.length) {
-      return mapArrayOfPets(pets);
     }
 
-    return '';
+    return mapArrayOfPets(pets);
   };
 
   return (
