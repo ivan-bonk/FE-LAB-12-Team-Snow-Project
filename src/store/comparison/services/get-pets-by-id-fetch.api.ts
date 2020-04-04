@@ -14,4 +14,4 @@ export const fetchData = async (ids: string[]) => {
     }
   }
   return transformData(data);
-}
+};

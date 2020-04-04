@@ -1,0 +1,22 @@
+.addPetLink {
+  text-decoration: none;
+}
+
+.addPetBtn {
+  width: 110px;
+  background-color: #e5ffe1;
+  color: black;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 50px;
+
+  &::first-letter {
+    margin-right: 7px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(183, 250, 173);
+  }
+}
