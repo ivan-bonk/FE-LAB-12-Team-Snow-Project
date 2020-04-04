@@ -8,8 +8,8 @@ import styles from './dog.module.scss';
 export const Dog: React.FC<DogInfoProps> = props => {
   return (
     <div className={styles.dogContainer}>
-      <div className={styles.dogContainer__dogName}>
-        <h3 className="dog-name-text">{props.name}</h3>
+      <div className={styles.dogContainer__dogBreed}>
+        <h3 className={styles.dogContainer__dogBreed__dogBreedText}>{props.name}</h3>
       </div>
       <DogImages />
       <div className={styles.dogContainer__dogCharacteristicContainer}>

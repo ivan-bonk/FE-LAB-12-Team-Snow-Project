@@ -1,8 +1,13 @@
 .dogContainer {
   margin-top: 30px;
 
-  &__dogName {
+  &__dogBreed {
     margin-bottom: 15px;
+
+    &__dogBreedtext {
+      font-size: 24px;
+      line-height: 28px;
+    }
   }
 
   &__dogCharacteristicContainer {
