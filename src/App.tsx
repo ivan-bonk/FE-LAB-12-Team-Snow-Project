@@ -10,7 +10,7 @@ import { Pet } from './pages/pet/pet.component';
 import { AddPet } from './pages/AddPet';
 import { Comparison } from './pages/comparison/comparison.component';
 import { Filter } from './pages/filter/filter.component';
-import { PetCare } from './pages/petCare/petCare.component';
+import { PetCare } from './pages/petCare/pet-care.component';
 
 function App() {
   return (

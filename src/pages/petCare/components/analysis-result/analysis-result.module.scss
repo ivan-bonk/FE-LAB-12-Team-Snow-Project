@@ -1,0 +1,39 @@
+:global {
+  .result {
+    width: 100%;
+    background: linear-gradient(270deg, #e6ffe2 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 10px;
+    padding: 5px;
+
+    &:nth-child(1) {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      color: #30d158;
+    }
+
+    &:nth-child(2) {
+      font-weight: normal;
+      font-size: 14px;
+      color: #c4c4c4;
+    }
+  }
+  .result_red {
+    width: 100%;
+    background: linear-gradient(270deg, #ffe9c7 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 10px;
+    padding: 5px;
+
+    &:nth-child(1) {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      color: #ff9f0a;
+    }
+    &:nth-child(2) {
+      font-weight: normal;
+      font-size: 14px;
+      color: #c4c4c4;
+    }
+  }
+}

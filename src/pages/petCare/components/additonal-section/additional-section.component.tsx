@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdditionalItemCare } from '../additionalCare-item/additonalCare-item.component';
+import { AdditionalItemCare } from '../additional-item/additonal-item.component';
 import styles from './additional-section.module.scss';
 
 const content =
@@ -7,8 +7,8 @@ const content =
 
 export const AdditionalSection: React.FC = () => {
   return (
-    <div className={styles.footer}>
-      <h2>Додаткова інформація</h2>
+    <div className={styles.petCareFooter}>
+      <h2 className={styles.petCareFooter__title}>Додаткова інформація</h2>
       <AdditionalItemCare content={content} />
     </div>
   );
