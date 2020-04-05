@@ -4,12 +4,15 @@ export interface CareBodyPet {
   additonal?: string;
   imgUrl?: [] | undefined;
   observations?: Observations;
-  classAtr?: string;
+  adviseTitle?: string;
+  title?: string;
+  userNumber?: string;
   data?: string[];
   walkNumber?: number;
   mealNumber?: number;
   mealWeight?: number;
   MedCheckUp?: number;
+  additionalInfo?: AdditionalInfo;
 }
 
 export interface CareBodyProps {

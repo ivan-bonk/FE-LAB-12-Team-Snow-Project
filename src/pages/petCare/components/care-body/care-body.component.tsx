@@ -7,8 +7,10 @@ import { CareBodyPet } from './careBody.interface';
 import styles from './care-body.module.scss';
 import { BodyHeader } from '../body-header/body-header.component';
 import { AnalysisSection } from '../analysis-section/analysis-section.component';
+import { AdditionalSection } from '../additonal-section/additional-section.component';
 
 export const PetCareBody: React.FC = () => {
+  const petBreed = 'Акіта';
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +21,7 @@ export const PetCareBody: React.FC = () => {
 
   const pets = useSelector((state: ResultStore) => state.care);
   Object.entries(pets).forEach(el => {
-    if (el[1].breed === 'Акіта') {
+    if (el[1].breed === petBreed) {
       pet = Object.assign({}, el[1]);
     }
   });
@@ -27,6 +29,7 @@ export const PetCareBody: React.FC = () => {
     <div className={styles.careBody}>
       <BodyHeader pet={pet} />
       <AnalysisSection pet={pet} />
+      <AdditionalSection pet={pet} />
     </div>
   );
 };

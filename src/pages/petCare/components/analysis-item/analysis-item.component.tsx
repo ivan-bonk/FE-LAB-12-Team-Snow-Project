@@ -3,8 +3,6 @@ import styles from './analysis-item.module.scss';
 import { AnalysisResult } from '../analysis-result/analysis-result.component';
 import { CareBodyProps } from '../care-body/careBody.interface';
 
-const red = 'result_red';
-const green = 'result';
 const title = [
   'Вага',
   'Кількість вигулювань',
@@ -12,60 +10,64 @@ const title = [
   'Кількість грам в порції',
   'Кількість медичних чекапів на рік',
 ];
+const userNumber = '8';
 
 export const AnalysisItem: React.FC<CareBodyProps> = props => {
-  // const walkNumber = props.pet.observations?.weight;
-  // const mealNumber = props.pet.observations?.weight;
-  // const mealWeight = props.pet.observations?.weight;
-  // const MedCheckUp = props.pet.observations?.weight;
+  // -------------------
+  // we don't have this data so i need to comment this part of code:
+  // -------------------
+  // const walkNumber = props.pet.observations?.walkNumber as string;
+  // const mealNumber = props.pet.observations?.mealNumber as string;
+  // const mealWeight = props.pet.observations?.mealWeight as string;
+  // const medCheckUp = props.pet.observations?.MedCheckUp as string;
+  const walkNumber = ' 9-11 вигулювання ';
+  const mealNumber = ' 3-5 прийомів';
+  const mealWeight = ' 1-20 грам ';
+  const medCheckUp = ' 8-12 чекап ';
   const weight = props.pet.observations?.weight as string;
-  console.log(weight);
-
-  const num = 7;
 
   const getNumber = (str: string) => {
-    // const result = {
-    //   message: '',
-    //   classAtr: '',
-    // };
-
     let result: string[] = [];
 
     let userData;
     if (str !== undefined) {
       userData = str.replace(/[^\d-]/g, '').split('-');
     }
-    if (userData && num < parseInt(userData[0])) {
-      // result.message = ' Збільшити ..';
-      // result.classAtr = 'result_red';
-      result = ['Збільшити', 'result_red'];
-    } else if (userData && num > parseInt(userData[1])) {
-      // result.message = 'Зменшити ..';
-      // result.classAtr = 'result_red';
-      result = ['Зменшити', 'result_red', str];
+    if (userData && parseInt(userNumber) < parseInt(userData[0])) {
+      result = ['Збільшити', 'result_red', str, userNumber];
+    } else if (userData && parseInt(userNumber) > parseInt(userData[1])) {
+      result = ['Зменшити', 'result_red', str, userNumber];
     } else {
-      result = ['', 'result', str];
+      result = ['', 'result', str, userNumber];
     }
     return result;
   };
-  console.log(getNumber(weight));
 
   return (
     <div className={styles.analysisItem}>
+      {/* --------------- */}
+      {/* it is commented on until the base and filter are ready */}
+      {/* --------------- */}
+      {/* {title.map((item, index) => (
+        <>
+          <h1 className={styles.analysisItem__title}>{title[index]} кг</h1>
+          <AnalysisResult title={title[index]} data={getNumber(weight)} />
+        </>
+      ))} */}
       <h1 className={styles.analysisItem__title}>{title[0]} кг</h1>
-      <AnalysisResult classAtr={green} data={getNumber(weight)} />
+      <AnalysisResult title={title[0]} data={getNumber(weight)} />
 
       <h1 className={styles.analysisItem__title}>{title[1]}</h1>
-      <AnalysisResult classAtr={red} data={getNumber(weight)} />
+      <AnalysisResult title={title[1]} data={getNumber(walkNumber)} />
 
       <h1 className={styles.analysisItem__title}>{title[2]}</h1>
-      <AnalysisResult classAtr={red} data={getNumber(weight)} />
+      <AnalysisResult title={title[2]} data={getNumber(mealNumber)} />
 
       <h1 className={styles.analysisItem__title}>{title[3]}</h1>
-      <AnalysisResult classAtr={red} data={getNumber(weight)} />
+      <AnalysisResult title={title[3]} data={getNumber(mealWeight)} />
 
       <h1 className={styles.analysisItem__title}>{title[4]}</h1>
-      <AnalysisResult classAtr={red} data={getNumber(weight)} />
+      <AnalysisResult title={title[4]} data={getNumber(medCheckUp)} />
     </div>
   );
 };

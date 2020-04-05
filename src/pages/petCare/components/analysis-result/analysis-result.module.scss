@@ -4,14 +4,14 @@
     background: linear-gradient(270deg, #e6ffe2 0%, rgba(255, 255, 255, 0) 100%);
     border-radius: 10px;
     padding: 5px;
-
-    &:nth-child(1) {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
-      color: #30d158;
+    h4 {
+      &:nth-child(1) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        color: #30d158;
+      }
     }
-
     span {
       font-weight: normal;
       font-size: 14px;
@@ -24,16 +24,29 @@
     border-radius: 10px;
     padding: 5px;
 
-    &:nth-child(1) {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
-      color: #ff9f0a;
+    h4 {
+      &:nth-child(1) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        color: #ff9f0a;
+      }
+      &:nth-child(3) {
+        font-weight: 600;
+        font-size: 14px;
+      }
     }
     span {
       font-weight: normal;
       font-size: 14px;
       color: #c4c4c4;
+      &:nth-child(4) {
+        color: #000000;
+      }
+      &:nth-child(5) {
+        color: #000000;
+        text-transform: lowercase;
+      }
     }
   }
 }
