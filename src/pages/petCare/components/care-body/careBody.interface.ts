@@ -1,11 +1,19 @@
-export interface CareBodyProps {
+export interface CareBodyPet {
   breed?: string;
   weight?: string;
-  numberWolk?: string;
-  amountFood?: string;
-  weightFood?: string;
-  mediсalCheck?: string;
   additonal?: string;
+  imgUrl?: [] | undefined;
+  observations?: Observations;
+  classAtr?: string;
+  data?: string[];
+  walkNumber?: number;
+  mealNumber?: number;
+  mealWeight?: number;
+  MedCheckUp?: number;
+}
+
+export interface CareBodyProps {
+  pet: CareBodyPet;
 }
 
 export interface Characteristics {
@@ -22,7 +30,7 @@ export interface Pet {
 }
 
 export interface ResultStore {
-  care: PetProfile[];
+  care: PetProfile;
 }
 
 export interface FilterValues {
