@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Profile } from '../profile/profile.component';
-import { Rating } from '../../../../shared/components/rating/rating.component';
-import { ROUTES } from '../../../../shared/constants/routes.constants';
+import { Rating } from 'shared/components/rating/rating.component';
+import { ROUTES } from 'shared/constants/routes.constants';
 
 import style from './comparison-element.module.scss';
 

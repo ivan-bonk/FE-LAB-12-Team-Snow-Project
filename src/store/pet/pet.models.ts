@@ -1,4 +1,4 @@
-import { PetProfile } from '../../shared/models';
+import { PetProfile } from 'shared/models';
 
 export interface RootState {
   pet: PetState;

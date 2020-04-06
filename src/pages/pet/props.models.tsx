@@ -1,5 +1,5 @@
 import { AdditionalInfo, Characteristics, Observations } from './pet.models';
-import { PetProfile } from '../../shared/models';
+import { PetProfile } from 'shared/models';
 
 export interface PetProps {
   match: {
