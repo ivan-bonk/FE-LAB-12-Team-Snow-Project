@@ -27,7 +27,7 @@ export interface AdditionalInfo {
 }
 
 export interface PetProfile {
-  _id: number;
+  _id: string;
   breed: string;
   imgUrl: [];
   characteristics: Characteristics;

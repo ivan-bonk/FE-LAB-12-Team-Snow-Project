@@ -1,0 +1,33 @@
+.addBlock {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+
+  &__tick {
+    color: #30d158;
+    margin-right: 15px;
+    font-size: 20px;
+  }
+
+  &__addBtn {
+    color: #0a84ff;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &__added {
+    color: black;
+  }
+
+  &__toCompareLink {
+    text-decoration: none;
+    color: #0a84ff;
+    margin-left: 10px;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

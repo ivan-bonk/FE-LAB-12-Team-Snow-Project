@@ -9,12 +9,13 @@ import { PetProfile } from '../../shared/models';
 import { Logo } from './components/logo/logo.component';
 import { BackBtn } from './components/back-btn/back-btn.component';
 import style from './pet.module.scss';
+import { AddPetToCompare } from '../../shared/components/add-pet-to-compare/add-pet-to-compare.component';
 
 export const Pet: React.FC<PetProps> = props => {
   const petId: number = props.match.params.id;
   const dispatch = useDispatch();
   const petProfile: PetProfile = useSelector((state: RootState) => state.pet.currentPet);
-  const { imgUrl, breed, characteristics, observations, additionalInfo } = petProfile;
+  const { imgUrl, breed, characteristics, observations, additionalInfo, _id } = petProfile;
   const dataReady = !!Object.keys(petProfile).length;
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export const Pet: React.FC<PetProps> = props => {
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>
           <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
+          <AddPetToCompare id={_id}/>
           <div className={style.container}>
             <section>
               <h2 className={style.sectionHeader}>Характеристики</h2>

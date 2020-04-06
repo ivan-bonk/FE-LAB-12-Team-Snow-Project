@@ -11,6 +11,8 @@ import { PetProfile } from '../../shared/interfaces';
 import { FilterValues } from './result.interfaces';
 import { getFiltredPets } from './utils/filter.util';
 
+import { AddPetToCompare } from '../../shared/components/add-pet-to-compare/add-pet-to-compare.component';
+
 import styles from './result.module.scss';
 
 export const Result: React.FC = () => {
@@ -32,7 +34,14 @@ export const Result: React.FC = () => {
   };
 
   const mapArrayOfPets = (petsArray: PetProfile[]): JSX.Element[] => {
-    return petsArray.map(pet => <Dog key={pet._id} name={pet.breed} observations={pet.observations} />);
+    return petsArray.map(pet => {
+      return (
+        <>
+          <Dog key={pet._id} name={pet.breed} observations={pet.observations} />
+          <AddPetToCompare id={pet._id}/>
+        </>
+      );
+    });
   };
 
   const handleSearchValue = (searchText: string): void => {

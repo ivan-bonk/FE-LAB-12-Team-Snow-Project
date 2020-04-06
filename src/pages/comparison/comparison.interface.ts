@@ -26,7 +26,7 @@ export interface RootState {
 }
 
 export interface ComparisonState {
-  petsToCompare: Array<PetsToCompareList>;
+  petsToCompare: PetsToCompareList[];
   loading: boolean;
   error: any;
 }
