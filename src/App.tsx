@@ -11,6 +11,7 @@ import { AddPet } from 'pages/AddPet';
 import { Comparison } from 'pages/comparison/comparison.component';
 import { Filter } from 'pages/filter/filter.component';
 
+
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
         <Route path={ROUTES.addpet} component={AddPet}></Route>
         <Route path={ROUTES.comparison} component={Comparison}></Route>
         <Route path={ROUTES.filter} component={Filter}></Route>
+        <Route path={ROUTES.petCare} component={PetCare}></Route>
       </Switch>
     </Router>
   );

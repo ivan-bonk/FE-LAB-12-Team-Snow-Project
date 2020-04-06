@@ -1,28 +1,22 @@
 import { PetProfile } from 'shared/interfaces';
 
-export interface Characteristics {
-  spandTime: string;
-  outlay: string;
-  size: string;
-}
-
-export interface Pet {
-  _id: number;
-  breed: string;
-  photos: [];
-  characteristics: Characteristics;
-}
-
 export interface ResultStore {
   resultStore: PetProfile[];
 }
 
-export interface FilterValues {
-  carePrice: string;
-  price: string;
-}
-
 export interface RootState {
   result: ResultStore;
-  searchReducer: FilterValues;
+  filter: FilterValues;
+}
+
+export interface FilterValues {
+  timeWolk: string;
+  moneyPerMonth: string;
+  timePerMonth: string;
+  securityLevel: string;
+  petSize: string;
+  easyToTrain: boolean;
+  family: boolean;
+  apartment: boolean;
+  allergy: boolean;
 }
