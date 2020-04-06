@@ -1,11 +1,11 @@
 import React, { useEffect, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPetProfile } from '../../store/pet/actions/pet.actions';
+import { fetchPetProfile } from 'store/pet/actions/pet.actions';
 import { PetProps, RootState } from './props.models';
 import { ObservationsComponent } from './components/observations/observations.component';
 import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
-import { PetProfile } from '../../shared/models';
+import { PetProfile } from 'shared/models';
 import { Logo } from './components/logo/logo.component';
 import { BackBtn } from './components/back-btn/back-btn.component';
 import style from './pet.module.scss';

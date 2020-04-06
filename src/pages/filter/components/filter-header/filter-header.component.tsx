@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../../../images/paw-solid.svg';
+import Logo from 'images/paw-solid.svg';
 import styles from './filter-header.module.scss';
 
 export const FilterHeader: React.FC = () => {

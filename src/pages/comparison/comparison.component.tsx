@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetPetsById } from '../../store/comparison/actions/comparison.action';
+import { GetPetsById } from 'store/comparison/actions/comparison.action';
 
 import { ComparisonDisplay } from './components/comparison-display/comparison-display.component';
 import { Empty } from './components/empty/empty.component';
 
 import style from './comparison.module.scss';
 
-import { Logo } from '../../shared/logo/logo.component';
+import { Logo } from 'shared/logo/logo.component';
 
 import { ComparisonProps, PetsToCompareList, RootState } from './comparison.interface';
 

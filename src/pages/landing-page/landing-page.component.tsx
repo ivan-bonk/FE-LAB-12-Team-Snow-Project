@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './landing-page.module.scss';
-import logo from '../../images/paw-solid.svg';
+import logo from 'images/paw-solid.svg';
 
 import { FindOut } from './components/find-out/find-out.component';
 import { ToPickUp } from './components/to-pick-up/to-pick-up.component';

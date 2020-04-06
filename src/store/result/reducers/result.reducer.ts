@@ -1,7 +1,7 @@
 import { createReducer } from 'typesafe-actions';
 import { fetchPetsAsync } from '../actions/result.actions';
 import { StoreData } from './reducers.interfaces';
-import { Pet } from '../../../pages/result/result.interfaces';
+import { Pet } from 'pages/result/result.interfaces';
 
 const initiatState = {
   resultStore: [],

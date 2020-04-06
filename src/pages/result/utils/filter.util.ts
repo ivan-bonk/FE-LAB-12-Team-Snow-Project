@@ -1,5 +1,5 @@
 import { FilterValues } from '../result.interfaces';
-import { PetProfile } from '../../../shared/interfaces';
+import { PetProfile } from 'shared/interfaces';
 
 export const getFiltredPets = (pets: PetProfile[], filterValues: FilterValues): PetProfile[] => {
   const notation = 10;
