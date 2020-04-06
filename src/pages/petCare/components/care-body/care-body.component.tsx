@@ -10,7 +10,7 @@ import { AnalysisSection } from '../analysis-section/analysis-section.component'
 import { AdditionalSection } from '../additonal-section/additional-section.component';
 
 export const PetCareBody: React.FC = () => {
-  const petBreed = 'Акіта';
+  const petBreed = 'Акіта іну';
   const dispatch = useDispatch();
 
   useEffect(() => {

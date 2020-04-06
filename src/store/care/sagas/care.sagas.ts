@@ -1,8 +1,9 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
 import { getPets } from '../actions/care.actions';
+import { api } from '../../../shared/constants/api';
 
 function fetchPets() {
-  return fetch('https://fathomless-ridge-53873.herokuapp.com/pets').then(response => response.json());
+  return fetch(`${api}/pets`).then(response => response.json());
 }
 
 function* petsWatcher() {

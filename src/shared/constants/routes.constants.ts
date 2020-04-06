@@ -4,7 +4,7 @@ export const ROUTES = {
   result: '/result',
   pet: {
     path: '/pet/:id',
-    route: (id: string) => `/pet/${id}`
+    route: (id: string) => `/pet/${id}`,
   },
   comparison: '/comparison/*',
   search: '/search',
