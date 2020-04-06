@@ -4,8 +4,35 @@ import { PetProfile } from '../../../shared/interfaces';
 export const getFiltredPets = (pets: PetProfile[], filterValues: FilterValues): PetProfile[] => {
   const notation = 10;
 
-  const getComparisonResult = (petValue: string, userInputValue: string): boolean => {
+  const getComplicatedComparisonResult = (petValue: any, userInputValue: any): boolean => {
+    const low = 2,
+      average = 3,
+      high = 4;
+
+    if (typeof userInputValue === 'boolean') {
+      return petValue >= average;
+    } else if (typeof userInputValue === 'string') {
+      switch (userInputValue) {
+        case 'low':
+          return petValue <= low;
+        case 'averege':
+          return petValue === average;
+        case 'high':
+          return petValue >= high;
+        default:
+          return false;
+      }
+    }
+
+    return false;
+  };
+
+  const getComparisonResult = (petValue: any, userInputValue: any): boolean => {
     const parsedUserInputValue = parseInt(userInputValue, notation);
+
+    if (!parsedUserInputValue) {
+      return getComplicatedComparisonResult(petValue, userInputValue);
+    }
 
     const petMinValue = parseInt(petValue.toString().match(/\d+/g)![0], notation);
 
@@ -21,15 +48,21 @@ export const getFiltredPets = (pets: PetProfile[], filterValues: FilterValues): 
   return pets.filter((pet: PetProfile) => {
     let key: keyof FilterValues;
 
+    const petValues: any = {
+      moneyPerMonth: pet.observations.carePrice,
+      petSize: pet.characteristics.size,
+      easyToTrain: pet.characteristics.training,
+      family: pet.characteristics.childFriendly,
+    };
+
     for (key in filterValues) {
-      const defaultFormValue =
-        filterValues[key] === 'any' || !filterValues[key] || !parseInt(filterValues[key], notation);
+      const defaultFormValue = filterValues[key] === 'any' || !filterValues[key] || filterValues[key] === '0';
 
       if (defaultFormValue) {
         continue;
       }
 
-      if (!getComparisonResult(pet.observations[key], filterValues[key])) {
+      if (!getComparisonResult(petValues[key], filterValues[key])) {
         return false;
       }
     }
