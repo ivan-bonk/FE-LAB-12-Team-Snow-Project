@@ -4,6 +4,7 @@ import { petReducer } from './pet/reducers/pet.reducer';
 import filterReducer from './filter/reducers/filter.reducer';
 import { comparisonReducer } from './comparison/reducers/comparison.reducer';
 import { comparisonHandlerReducer } from './comparison/reducers/comparison-handler.reducer';
+import { careReducer } from './care/reducers/care.reducers';
 
 export const rootReducer = combineReducers({
   filter: filterReducer,
@@ -11,4 +12,5 @@ export const rootReducer = combineReducers({
   comparison: comparisonReducer,
   result: resultReducer,
   comparisonHandler: comparisonHandlerReducer,
+  care: careReducer,
 });

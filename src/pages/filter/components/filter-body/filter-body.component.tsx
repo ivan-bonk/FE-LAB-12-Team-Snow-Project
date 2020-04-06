@@ -18,7 +18,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
 
   const goBack = (): void => {
     dispatch(filterAction(null));
-    history.push('/search');
+    history.push('/result');
   };
   const onSubmit = (data: Data): void => {
     dispatch(filterAction(data));

@@ -22,7 +22,12 @@ export const getFiltredPets = (pets: PetProfile[], filterValues: FilterValues): 
     let key: keyof FilterValues;
 
     for (key in filterValues) {
-      if (filterValues[key] === 'any' || !filterValues[key] || !parseInt(filterValues[key], notation)) continue;
+      const defaultFormValue =
+        filterValues[key] === 'any' || !filterValues[key] || !parseInt(filterValues[key], notation);
+
+      if (defaultFormValue) {
+        continue;
+      }
 
       if (!getComparisonResult(pet.observations[key], filterValues[key])) {
         return false;
