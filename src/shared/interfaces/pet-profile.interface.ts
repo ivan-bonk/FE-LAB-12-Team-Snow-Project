@@ -24,7 +24,7 @@ export interface Observations {
   MedCheckUp: number;
 }
 
-export interface ownerInfo {
+export interface OwnerInfo {
   easyTrain: boolean;
   familyFit: boolean;
   apartmentFit: boolean;
@@ -44,4 +44,5 @@ export interface PetProfile {
   characteristics: Characteristics;
   observations: Observations;
   additionalInfo: AdditionalInfo;
+  ownerInfo: OwnerInfo;
 }
