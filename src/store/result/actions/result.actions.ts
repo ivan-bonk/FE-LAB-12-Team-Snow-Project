@@ -1,8 +1,8 @@
 import { createAsyncAction } from 'typesafe-actions';
-import { Pet } from '../../../pages/result/result.interfaces';
+import { PetProfile } from '../../../shared/interfaces/pet-profile.interface';
 
 export const fetchPetsAsync = createAsyncAction('FETCH_PETS_REQUEST', 'FETCH_PETS_SUCCESS', 'FETCH_PETS_FAILTURE')<
   void,
-  Pet[],
+  PetProfile[],
   string
 >();
