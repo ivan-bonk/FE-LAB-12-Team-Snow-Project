@@ -1,16 +1,17 @@
 import React from 'react';
-import './App.css';
+import 'App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { ROUTES } from './shared/constants/routes.constants';
-import { LandinPage } from './pages/landing-page/landing-page.component';
-import { Search } from './pages/Search';
-import { Result } from './pages/result/result.component';
-import { Pet } from './pages/pet/pet.component';
-import { AddPet } from './pages/AddPet';
-import { Comparison } from './pages/comparison/comparison.component';
-import { Filter } from './pages/filter/filter.component';
-import { PetCare } from './pages/petCare/pet-care.component';
+import { ROUTES } from 'shared/constants/routes.constants';
+import { LandinPage } from 'pages/landing-page/landing-page.component';
+import { Search } from 'pages/Search';
+import { Result } from 'pages/result/result.component';
+import { Pet } from 'pages/pet/pet.component';
+import { AddPet } from 'pages/AddPet';
+import { Comparison } from 'pages/comparison/comparison.component';
+import { Filter } from 'pages/filter/filter.component';
+import { PetCare } from 'pages/petCare/pet-care.component';
+
 
 function App() {
   return (
