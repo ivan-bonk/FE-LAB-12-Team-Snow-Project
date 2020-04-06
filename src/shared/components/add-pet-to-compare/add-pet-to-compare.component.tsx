@@ -12,13 +12,13 @@ export const AddPetToCompare: React.FC<AddPetToCompareProps> = props => {
 
   const idsToCompare: string[] = useSelector((state: ComparisonState) => state.comparisonHandler.idsToCompare);
 
-  const findId = () => {
+  const hasId = () => {
     return idsToCompare.indexOf(props.id) !== -1 ? true : false;
   };
-  let addedToCompare: boolean = findId();
+  let addedToCompare: boolean = hasId();
 
   useEffect(() => {
-    addedToCompare = findId();
+    addedToCompare = hasId();
   }, [idsToCompare]);
 
   const onAddPet = () => {
