@@ -20,3 +20,19 @@ export interface FilterValues {
   apartment: boolean;
   allergy: boolean;
 }
+
+export interface PetValues {
+  timeWolk: number;
+  moneyPerMonth: number;
+  timePerMonth: string;
+  securityLevel: number;
+  petSize: number;
+  easyToTrain: boolean;
+  family: boolean;
+  apartment: boolean;
+  allergy: boolean;
+}
+
+// I know that it isn't Okay.
+// I don't know how to change it yet.(about pipes --> '|')
+export type PetCharacteristicType = string | boolean | number;

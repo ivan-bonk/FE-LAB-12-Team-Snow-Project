@@ -10,7 +10,7 @@ import { RootState } from './result.interfaces';
 import { PetProfile } from 'shared/interfaces';
 import { getFiltredPets } from './utils/filter.util';
 
-import { AddPetToCompare } from '../../shared/components/add-pet-to-compare/add-pet-to-compare.component';
+import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 
 import styles from './result.module.scss';
 
@@ -30,10 +30,10 @@ export const Result: React.FC = () => {
   const mapArrayOfPets = (petsArray: PetProfile[]): JSX.Element[] => {
     return petsArray.map(pet => {
       return (
-        <>
-          <Dog key={pet._id} name={pet.breed} observations={pet.observations} />
-          <AddPetToCompare id={pet._id}/>
-        </>
+        <div key={pet._id}>
+          <Dog name={pet.breed} observations={pet.observations} images={pet.imgUrl} />
+          <AddPetToCompare id={pet._id} />
+        </div>
       );
     });
   };
@@ -41,7 +41,7 @@ export const Result: React.FC = () => {
   const handleSearchValue = (searchText: string): void => {
     if (searchText) {
       const filtredPets = getFiltredPets(pets, filterValues).filter(pet =>
-        pet.breed.toLowerCase().startsWith(searchText),
+        pet.breed.toLowerCase().includes(searchText),
       );
 
       setSearchedPetsValue(searchText);
