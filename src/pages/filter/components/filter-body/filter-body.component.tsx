@@ -25,8 +25,8 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
     history.push('/result');
   };
 
-  const deltaPositionTime = 0.0155;
-  const deltaPositionMoney = 0.00089;
+  const deltaPositionTime = 0.0038;
+  const deltaPositionMoney = 0.00035;
   const deltaPositionSecurity = 0.0093;
 
   return (
@@ -36,8 +36,8 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         refAttribute={register}
         delta={deltaPositionTime}
         min="0"
-        max="60"
-        step="1"
+        max="240"
+        step="10"
         units="хв"
         lable="Щодня зможу проводити з ним"
       />
@@ -47,7 +47,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         refAttribute={register}
         delta={deltaPositionMoney}
         min="0"
-        max="1000"
+        max="2500"
         step="50"
         units="грн"
         lable="На місяць зможу витрачати максимум"

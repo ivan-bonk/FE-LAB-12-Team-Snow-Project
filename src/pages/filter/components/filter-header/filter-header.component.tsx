@@ -7,8 +7,7 @@ export const FilterHeader: React.FC = () => {
     <div className={styles.header}>
       <div className={styles.filter_logo__container}>
         <Logo />
-        <div className="logo"></div>
-        <span>МійПес </span>
+        <span>МійПес</span>
       </div>
       <h1 className={styles.filter__header}>Фільтр</h1>
     </div>
