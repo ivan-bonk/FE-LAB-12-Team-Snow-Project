@@ -12,7 +12,6 @@ import { Comparison } from 'pages/comparison/comparison.component';
 import { Filter } from 'pages/filter/filter.component';
 import { PetCare } from 'pages/petCare/pet-care.component';
 
-
 function App() {
   return (
     <Router>
