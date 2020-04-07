@@ -2,7 +2,7 @@ export interface CareBodyPet {
   breed?: string;
   weight?: string;
   additonal?: string;
-  imgUrl?: [] | undefined;
+  imgUrl?: string[];
   observations?: Observations;
   adviseTitle?: string;
   title?: string;

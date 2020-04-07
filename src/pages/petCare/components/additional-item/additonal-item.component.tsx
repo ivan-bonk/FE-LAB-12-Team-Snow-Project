@@ -4,7 +4,7 @@ import arrowDown from './arrow.svg';
 import { AdditionalProps } from './additional.interface';
 import styles from './additonal-item.module.scss';
 
-export const AdditionalItemCare: React.FC<AdditionalProps> = props => {
+export const AdditionalItemCare: React.FC<Partial<AdditionalProps>> = props => {
   const [open, setOpen] = useState(false);
   const toggleText = () => setOpen(!open);
   const arrowSrc = open ? arrowUp : arrowDown;
