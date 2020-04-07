@@ -1,6 +1,8 @@
-import { PetProfile } from '../../../shared/interfaces/pet-profile.interface';
-import { PetsToCompareList } from '../../../pages/comparison/comparison.interface';
-import { ZERO } from '../../../pages/comparison/comparison.constants';
+import { PetProfile } from 'shared/interfaces/pet-profile.interface';
+import { PetsToCompareList } from 'pages/comparison/comparison.interface';
+import { ZERO } from 'pages/comparison/comparison.constants';
+
+//Todo: change data structure to more useful @ Bonk I.
 
 export const transformData = (data: PetProfile[]) => {
   const result = [];
@@ -41,4 +43,4 @@ export const transformData = (data: PetProfile[]) => {
   }
 
   return result;
-}
+};

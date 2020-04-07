@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { filterAction } from '../../../../store/filter/actions/filter.action';
+import { filterAction } from 'store/filter/actions/filter.action';
 import { OverviewCheckboxes } from '../overview-checkboxes/overview-checkboxes.component';
 import { PetSizeCheckboxes } from '../petSize-checkboxes/petSize-checkboxes.component';
 import { SliderSection } from '../slider-section/slider-section.component';
@@ -18,15 +18,15 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
 
   const goBack = (): void => {
     dispatch(filterAction(null));
-    history.push('/search');
+    history.push('/result');
   };
   const onSubmit = (data: Data): void => {
     dispatch(filterAction(data));
     history.push('/result');
   };
 
-  const deltaPositionTime = 0.0155;
-  const deltaPositionMoney = 0.00089;
+  const deltaPositionTime = 0.0038;
+  const deltaPositionMoney = 0.00035;
   const deltaPositionSecurity = 0.0093;
 
   return (
@@ -36,8 +36,8 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         refAttribute={register}
         delta={deltaPositionTime}
         min="0"
-        max="60"
-        step="1"
+        max="240"
+        step="10"
         units="хв"
         lable="Щодня зможу проводити з ним"
       />
@@ -47,7 +47,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         refAttribute={register}
         delta={deltaPositionMoney}
         min="0"
-        max="1000"
+        max="2500"
         step="50"
         units="грн"
         lable="На місяць зможу витрачати максимум"

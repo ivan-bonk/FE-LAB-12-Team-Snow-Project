@@ -1,7 +1,7 @@
 import { createReducer } from 'typesafe-actions';
 import { PetState } from '../pet.models';
 import { fetchPetProfile } from '../actions/pet.actions';
-import { PetProfile } from '../../../shared/models';
+import { PetProfile } from 'shared/models';
 
 const initialState: PetState = {
   currentPet: {},

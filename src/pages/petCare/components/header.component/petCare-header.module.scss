@@ -1,0 +1,35 @@
+.petCareHeader {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+
+  .logoSection {
+    width: 47px;
+    height: 43px;
+    position: relative;
+
+    &__logo {
+      width: 30px;
+      position: absolute;
+    }
+
+    &__logo2 {
+      width: 30px;
+      padding: 3px;
+      position: absolute;
+      left: 21px;
+      top: 13px;
+    }
+  }
+
+  &__title {
+    width: 60%;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    line-height: 16px;
+    margin: 0 auto;
+  }
+}

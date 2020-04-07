@@ -13,7 +13,7 @@ export const TimePerMonthCheckboxes: React.FC<Partial<InputRadioProps>> = props 
           id="radio-2"
           name="timePerMonth"
           lable="Середню"
-          value="averege"
+          value="average"
           refAttribute={props.refAttribute}
         />
 

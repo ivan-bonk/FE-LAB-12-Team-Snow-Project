@@ -16,7 +16,7 @@ export type ComparisonProps = {
   name: string;
   match: {
     params: {
-      ids: string;
+      0: string;
     };
   };
 };
@@ -26,7 +26,7 @@ export interface RootState {
 }
 
 export interface ComparisonState {
-  petsToCompare: Array<PetsToCompareList>;
+  petsToCompare: PetsToCompareList[];
   loading: boolean;
   error: any;
 }

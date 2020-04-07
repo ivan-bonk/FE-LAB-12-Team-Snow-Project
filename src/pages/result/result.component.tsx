@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Logo } from '../../shared/logo/logo.component';
+import { Logo } from 'shared/logo/logo.component';
 import { DogSearch } from './components/dog-search/dog-search.component';
 import { FilterButton } from './components/filter-button/filter-button.component';
 import { Dog } from './components/dog/dog.component';
-import { fetchPetsAsync } from '../../store/result/actions/result.actions';
+import { fetchPetsAsync } from 'store/result/actions/result.actions';
 import { RootState } from './result.interfaces';
-import { PetProfile } from '../../shared/interfaces';
-import { FilterValues } from './result.interfaces';
-import { getFiltredPets } from './functions/filter.function';
+import { PetProfile } from 'shared/interfaces';
+import { getFiltredPets } from './utils/filter.util';
+
+import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 
 import styles from './result.module.scss';
 
 export const Result: React.FC = () => {
-  const [searchedPets, setSearchedPets] = useState<JSX.Element[] | string>('');
+  const [searchedPetsArray, setSearchedPetsArray] = useState<JSX.Element[]>([]);
+  const [searchedPetsValue, setSearchedPetsValue] = useState<string>('');
 
   const dispatch = useDispatch();
 
@@ -23,39 +25,62 @@ export const Result: React.FC = () => {
   }, []);
 
   const pets = useSelector((state: RootState) => state.result.resultStore);
-
-  // Hardcoden values for filter
-  const filterValues: FilterValues = {
-    carePrice: '1000',
-    price: 'any',
-  };
+  const filterValues = useSelector((state: RootState) => state.filter);
 
   const mapArrayOfPets = (petsArray: PetProfile[]): JSX.Element[] => {
-    return petsArray.map(pet => <Dog key={pet._id} name={pet.breed} observations={pet.observations} />);
+    return petsArray.map(pet => {
+      return (
+        <div key={pet._id}>
+          <Dog name={pet.breed} observations={pet.observations} images={pet.imgUrl} />
+          <AddPetToCompare id={pet._id} />
+        </div>
+      );
+    });
   };
 
   const handleSearchValue = (searchText: string): void => {
-    if (!searchText) setSearchedPets(searchText);
+    if (searchText) {
+      const filtredPets = getFiltredPets(pets, filterValues).filter(pet =>
+        pet.breed.toLowerCase().includes(searchText),
+      );
 
-    const filtredPets = pets.filter(pet => pet.breed.toLowerCase().includes(searchText));
-
-    setSearchedPets(mapArrayOfPets(filtredPets));
+      setSearchedPetsValue(searchText);
+      setSearchedPetsArray(mapArrayOfPets(filtredPets));
+    } else {
+      setSearchedPetsValue(searchText);
+    }
   };
 
-  const renderPets = (): string | JSX.Element | JSX.Element[] => {
-    if (searchedPets) {
-      const searchPetsFail = <h4>За вашим запитом нічого не знайдено...</h4>;
+  const renderPets = (): JSX.Element[] => {
+    const key = 1;
 
-      return searchedPets.length ? searchedPets : searchPetsFail;
+    if (pets.length === 0) {
+      return [
+        <h4 key={key} className={styles.searchPetsFail}>
+          Загрузка собачок
+        </h4>,
+      ];
     }
 
-    if (Object.keys(filterValues).length) {
-      return mapArrayOfPets(getFiltredPets(pets, filterValues));
-    } else if (pets.length) {
-      return mapArrayOfPets(pets);
+    if (searchedPetsValue) {
+      const searchPetsFail = [
+        <h4 key={key} className={styles.searchPetsFail}>
+          За вашим запитом нічого не знайдено...
+        </h4>,
+      ];
+
+      return searchedPetsArray.length ? searchedPetsArray : searchPetsFail;
     }
 
-    return '';
+    const petsArray = mapArrayOfPets(getFiltredPets(pets, filterValues));
+
+    return petsArray.length === 0
+      ? [
+          <h4 key={key} className={styles.searchPetsFail}>
+            За вказаним фільтром немає результатів.
+          </h4>,
+        ]
+      : petsArray;
   };
 
   return (

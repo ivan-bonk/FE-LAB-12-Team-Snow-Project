@@ -1,0 +1,17 @@
+.characteristicContainer {
+  margin-top: 10px;
+
+  &__characteristicTitle {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #8e8e93;
+  }
+
+  &__characteristicValue {
+    font-size: 14px;
+    line-height: 16px;
+    color: #1f1712;
+    margin-top: 5px;
+  }
+}

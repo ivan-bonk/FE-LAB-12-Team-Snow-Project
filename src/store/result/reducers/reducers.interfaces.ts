@@ -1,5 +1,6 @@
-import { Pet } from '../../../pages/result/result.interfaces';
+import { PetProfile } from '../../../shared/interfaces/pet-profile.interface';
+
 
 export interface StoreData {
-  data: Pet[];
+  data: PetProfile[];
 }

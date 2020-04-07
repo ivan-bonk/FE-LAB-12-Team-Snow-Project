@@ -15,9 +15,19 @@ export interface Observations {
   height: string;
   wiidth: string;
   price: string;
-  carePrice: string;
-  careTime: string;
-  size: string;
+  carePrice: number;
+  careTime: number;
+  careComplications: string;
+  walkNumber: number;
+  mealNumber: number;
+  mealWeight: number;
+}
+
+export interface OwnerInfo {
+  easyTrain: boolean;
+  familyFit: boolean;
+  apartmentFit: boolean;
+  hypoallergenicity: boolean;
 }
 
 export interface AdditionalInfo {
@@ -27,10 +37,11 @@ export interface AdditionalInfo {
 }
 
 export interface PetProfile {
-  _id: number;
+  _id: string;
   breed: string;
-  imgUrl: [];
+  imgUrl: string[];
   characteristics: Characteristics;
   observations: Observations;
   additionalInfo: AdditionalInfo;
+  ownerInfo: OwnerInfo;
 }

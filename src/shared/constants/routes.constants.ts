@@ -2,8 +2,12 @@ export const ROUTES = {
   home: '/',
   addpet: '/addpet',
   result: '/result',
-  pet: (id: string) => `/pet/:id${id}`,
-  comparison: '/comparison/:ids',
+  pet: {
+    path: '/pet/:id',
+    route: (id: string) => `/pet/${id}`,
+  },
+  comparison: '/comparison/*',
   search: '/search',
   filter: '/filter',
+  petCare: '/petCare',
 };

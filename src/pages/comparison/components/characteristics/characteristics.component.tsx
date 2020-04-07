@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComparisonElement } from '../comparison-element/comparison-element.component';
-import '../../comparison.scss';
+import style from './characteristics.module.scss';
 import { PetToCompare } from '../../comparison.interface';
 import { CharacteristicProps } from './characteristics.interface';
 
@@ -19,5 +19,5 @@ export const Characteristics: React.FC<CharacteristicProps> = props => {
     );
   });
 
-  return <ul>{items}</ul>;
+  return <ul className={style.characteristicsList}>{items}</ul>;
 };
