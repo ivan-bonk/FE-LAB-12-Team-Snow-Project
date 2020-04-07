@@ -12,9 +12,12 @@ import { Comparison } from './pages/comparison/comparison.component';
 import { Filter } from './pages/filter/filter.component';
 import { PetCare } from './pages/petCare/pet-care.component';
 
+import { Header } from './shared/components/header/header.component';
+
 function App() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route exact path={ROUTES.home} component={LandinPage}></Route>
         <Route path={ROUTES.search} component={Search}></Route>

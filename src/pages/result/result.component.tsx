@@ -32,7 +32,7 @@ export const Result: React.FC = () => {
       return (
         <>
           <Dog key={pet._id} name={pet.breed} observations={pet.observations} />
-          <AddPetToCompare id={pet._id}/>
+          <AddPetToCompare id={pet._id} />
         </>
       );
     });
