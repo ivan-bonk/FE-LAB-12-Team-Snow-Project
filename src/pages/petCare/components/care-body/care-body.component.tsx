@@ -15,7 +15,7 @@ export const PetCareBody: React.FC = () => {
 
   useEffect(() => {
     dispatch(getPets.request());
-  });
+  }, []);
 
   let pet: CareBodyPet = {};
 
