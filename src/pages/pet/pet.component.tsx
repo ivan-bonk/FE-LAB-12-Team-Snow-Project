@@ -15,13 +15,24 @@ export const Pet: React.FC<PetProps> = props => {
   const petId: number = props.match.params.id;
   const dispatch = useDispatch();
   const petProfile: PetProfile = useSelector((state: RootState) => state.pet.currentPet);
+  const error: string | undefined = useSelector((state: RootState) => state.pet.errors);
   const { imgUrl, breed, characteristics, observations, additionalInfo, _id } = petProfile;
   const dataReady = !!Object.keys(petProfile).length;
 
   useEffect(() => {
     dispatch(fetchPetProfile.request(petId));
-  }, []);
+  }, [petId]);
 
+  if(error){
+    return (
+      <Fragment>
+        <Logo />
+        <div className={style.container}>
+              <h2 className={style.sectionHeader}>Упс, щось пішло не так</h2>
+        </div>
+      </Fragment>
+    )
+  }
   //TODO: Skeleton or placeholder. Add during loading the page @O.Khabrovska
   return (
     <Fragment>
