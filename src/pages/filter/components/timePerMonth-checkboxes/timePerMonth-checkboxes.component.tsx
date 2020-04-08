@@ -19,7 +19,7 @@ export const TimePerMonthCheckboxes: React.FC<Partial<InputRadioProps>> = props 
 
         <InputRadio id="radio-3" name="timePerMonth" lable="Високу" value="high" refAttribute={props.refAttribute} />
 
-        <InputRadio id="radio-4" name="timePerMonth" lable="Будь-яку" value="any" refAttribute={props.refAttribute} />
+        {/* <InputRadio id="radio-4" name="timePerMonth" lable="Будь-яку" value="any" refAttribute={props.refAttribute} /> */}
       </section>
     </>
   );

@@ -12,6 +12,7 @@ const initialState: Data = {
   timePerMonth: '0',
   securityLevel: '0',
   petSize: '0',
+  defaultValue: '0',
   easyToTrain: false,
   family: false,
   apartment: false,
