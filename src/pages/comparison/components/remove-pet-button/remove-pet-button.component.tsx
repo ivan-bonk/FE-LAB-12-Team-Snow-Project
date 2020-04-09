@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Profile } from '../profile/profile.component';
 import { RemoveButtonProps } from './remove-pet-button.interface';
-import { removeComparisonPet } from '../../../../store/comparison/actions/comparison-handler.action'
+import { removeComparisonPet } from '../../../../store/comparison/actions/comparison-handler.action';
 
 import style from './remove-pet-button.module.scss';
 
