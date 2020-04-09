@@ -6,10 +6,10 @@ import { ObservationsComponent } from './components/observations/observations.co
 import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { PetProfile } from 'shared/models';
-import { Logo } from './components/logo/logo.component';
+import { Logo } from 'shared/logo/logo.component'
 import { BackBtn } from './components/back-btn/back-btn.component';
 import style from './pet.module.scss';
-import { AddPetToCompare } from '../../shared/components/add-pet-to-compare/add-pet-to-compare.component';
+import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 
 export const Pet: React.FC<PetProps> = props => {
   const petId: number = props.match.params.id;
@@ -36,7 +36,7 @@ export const Pet: React.FC<PetProps> = props => {
   //TODO: Skeleton or placeholder. Add during loading the page @O.Khabrovska
   return (
     <Fragment>
-      <Logo />
+       <div className={style.logoContainer}><Logo /></div>    
       {dataReady && (
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>

@@ -27,7 +27,7 @@ export const AddPetToCompare: React.FC<AddPetToCompareProps> = props => {
 
   return (
     <div className={style.addBlock}>
-      {addedToCompare && <span className={style.addBlock__tick}>&#10004;</span>}
+      {addedToCompare && <span className={style.addBlock__tick}> <span className="material-icons">check</span></span>}
       {!addedToCompare && (
         <span className={style.addBlock__addBtn} onClick={onAddPet}>
           Додати до порівняння
