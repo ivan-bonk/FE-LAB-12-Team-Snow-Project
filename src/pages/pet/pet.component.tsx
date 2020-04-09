@@ -41,7 +41,9 @@ export const Pet: React.FC<PetProps> = props => {
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>
           <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
-          <AddPetToCompare id={_id} />
+          <div className={style.addPetBtn}>
+            <AddPetToCompare id={_id} />
+          </div>
           <div className={style.container}>
             <section>
               <h2 className={style.sectionHeader}>Характеристики</h2>

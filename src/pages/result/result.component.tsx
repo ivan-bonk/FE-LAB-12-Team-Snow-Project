@@ -32,7 +32,9 @@ export const Result: React.FC = () => {
       return (
         <div key={pet._id}>
           <Dog name={pet.breed} observations={pet.observations} images={pet.imgUrl} />
-          <AddPetToCompare id={pet._id} />
+          <div className={styles.addPetBtn}>
+            <AddPetToCompare id={pet._id} />
+          </div>
         </div>
       );
     });
