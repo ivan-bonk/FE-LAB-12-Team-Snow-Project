@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Profile } from '../profile/profile.component';
 import { RemoveButtonProps } from './remove-pet-button.interface';
-import { removeComparisonPet } from '../../../../store/comparison/actions/comparison-handler.action';
+import { removeComparisonPet } from 'store/comparison/actions/comparison-handler.action'
+
 
 import style from './remove-pet-button.module.scss';
 
@@ -27,7 +28,7 @@ export const RemovePetButton: React.FC<RemoveButtonProps> = props => {
     <div className={style.removePet}>
       <Profile breed={props.name} imgUrl={props.imgUrl} />
       <Link to={removeUrl(props.ids, props.id)} onClick={onClick} className={style.removePet__link}>
-        <div className={style.removePet__link__cross}>&#10006;</div>
+        <div className={style.removePet__link__cross}><span className="material-icons">clear</span></div>
       </Link>
     </div>
   );
