@@ -9,10 +9,8 @@ import { SliderSection } from '../slider-section/slider-section.component';
 import { TimePerMonthCheckboxes } from '../timePerMonth-checkboxes/timePerMonth-checkboxes.component';
 import { Button } from '../button/button.component';
 import { BodyProps, Data, RootState } from './bodyFilter.intarface';
-// import styles from './filter-body.module.scss';
 
 export const FilterBody: React.FC<Partial<BodyProps>> = () => {
-  // const { register, handleSubmit, errors } = useForm<Data>();
   const { register, handleSubmit } = useForm<Data>();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -58,8 +56,6 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
       />
 
       <TimePerMonthCheckboxes refAttribute={register()} />
-      {/* <TimePerMonthCheckboxes refAttribute={register({ required: true })} /> */}
-      {/* {errors.timePerMonth && <p className={styles.error}>Будь-ласка виберіть час який зможете приділяти собаці </p>} */}
 
       <SliderSection
         name="securityLevel"
@@ -74,8 +70,6 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
       />
 
       <PetSizeCheckboxes refAttribute={register()} />
-      {/* <PetSizeCheckboxes refAttribute={register({ required: true })} /> */}
-      {/* {errors.petSize && <p className={styles.error}>Будь-ласка виберіть розмір собаки</p>} */}
 
       <OverviewCheckboxes refAttribute={register} />
 
