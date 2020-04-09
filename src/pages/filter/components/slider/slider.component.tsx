@@ -37,7 +37,6 @@ export const Slider: React.FC<Partial<InputRadioProps>> = props => {
         max={props.max}
         step={props.step}
         value={inpValue}
-        // defaultChecked
         onChange={(e): void => {
           handlePostion(e);
         }}
