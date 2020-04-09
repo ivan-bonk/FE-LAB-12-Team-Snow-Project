@@ -6,13 +6,14 @@ import { ObservationsComponent } from './components/observations/observations.co
 import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { PetProfile } from 'shared/models';
-import { Logo } from 'shared/logo/logo.component'
-import { BackBtn } from './components/back-btn/back-btn.component';
+import { Logo } from 'shared/logo/logo.component';
 import style from './pet.module.scss';
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
+import { Link } from 'react-router-dom';
+import { ROUTES } from 'shared/constants/routes.constants';
 
 export const Pet: React.FC<PetProps> = props => {
-  const petId: number = props.match.params.id;
+  const petId: string = props.match.params.id;
   const dispatch = useDispatch();
   const petProfile: PetProfile = useSelector((state: RootState) => state.pet.currentPet);
   const error: string | undefined = useSelector((state: RootState) => state.pet.errors);
@@ -55,10 +56,14 @@ export const Pet: React.FC<PetProps> = props => {
               <h2 className={style.sectionHeader}>Додаткова інформація</h2>
               <AdditionalInfoComponent data={additionalInfo} />
             </section>
+            <Link to={ROUTES.starterPack.route(_id)} className={style.starterBtn}>
+            <span className="material-icons">flag</span>
+            {/* //TODO: Remove this silly joke and come up with the better idea for this text @O.Khabrovska */}
+            <span className={style.starterBtnText}>Потрібен стартовий пакет ?</span> 
+            </Link>
           </div>
         </div>
-      )}
-      <BackBtn />
+      )}  
     </Fragment>
   );
 };
