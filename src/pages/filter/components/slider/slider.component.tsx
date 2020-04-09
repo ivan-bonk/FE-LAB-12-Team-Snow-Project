@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { InputRadioProps } from '../../filter.interface';
+import { InputRadioProps } from 'pages/filter/filter.interface';
 import './slider.module.scss';
 
 export const Slider: React.FC<Partial<InputRadioProps>> = props => {

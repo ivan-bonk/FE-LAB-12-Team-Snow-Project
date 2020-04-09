@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { InputRadioProps } from '../../filter.interface';
+import { InputRadioProps } from 'pages/filter/filter.interface';
 import { RootState } from '../filter-body/bodyFilter.intarface';
 import style from './input-switch.module.scss';
 
