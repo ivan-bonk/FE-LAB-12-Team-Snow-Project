@@ -15,6 +15,8 @@ export const SliderSection: React.FC<Partial<InputRadioProps>> = props => {
         max={props.max}
         step={props.step}
         units={props.units}
+        value={props.value}
+        defaultValue={props.defaultValue}
       />
     </section>
   );

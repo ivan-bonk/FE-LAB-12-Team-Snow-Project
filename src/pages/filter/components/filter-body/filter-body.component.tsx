@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { filterAction } from 'store/filter/actions/filter.action';
 import { OverviewCheckboxes } from '../overview-checkboxes/overview-checkboxes.component';
@@ -8,13 +8,13 @@ import { PetSizeCheckboxes } from '../petSize-checkboxes/petSize-checkboxes.comp
 import { SliderSection } from '../slider-section/slider-section.component';
 import { TimePerMonthCheckboxes } from '../timePerMonth-checkboxes/timePerMonth-checkboxes.component';
 import { Button } from '../button/button.component';
-import { BodyProps, Data } from './bodyFilter.intarface';
-import styles from './filter-body.module.scss';
+import { BodyProps, Data, RootState } from './bodyFilter.intarface';
 
 export const FilterBody: React.FC<Partial<BodyProps>> = () => {
-  const { register, handleSubmit, errors } = useForm<Data>();
+  const { register, handleSubmit } = useForm<Data>();
   const dispatch = useDispatch();
   const history = useHistory();
+  const filterData = useSelector((state: RootState) => state.filter);
 
   const goBack = (): void => {
     dispatch(filterAction(null));
@@ -25,9 +25,9 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
     history.push('/result');
   };
 
-  const deltaPositionTime = 0.0038;
-  const deltaPositionMoney = 0.00035;
-  const deltaPositionSecurity = 0.0093;
+  const deltaPositionTime = 0.00323;
+  const deltaPositionMoney = 0.0003;
+  const deltaPositionSecurity = 0.0078;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -35,6 +35,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         name="timeWolk"
         refAttribute={register}
         delta={deltaPositionTime}
+        defaultValue={filterData ? filterData.timeWolk : '0'}
         min="0"
         max="240"
         step="10"
@@ -46,6 +47,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         name="moneyPerMonth"
         refAttribute={register}
         delta={deltaPositionMoney}
+        defaultValue={filterData ? filterData.moneyPerMonth : '0'}
         min="0"
         max="2500"
         step="50"
@@ -53,13 +55,13 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         lable="На місяць зможу витрачати максимум"
       />
 
-      <TimePerMonthCheckboxes refAttribute={register({ required: true })} />
-      {errors.timePerMonth && <p className={styles.error}>Будь-ласка виберіть час який зможете приділяти собаці </p>}
+      <TimePerMonthCheckboxes refAttribute={register()} />
 
       <SliderSection
         name="securityLevel"
         refAttribute={register}
         delta={deltaPositionSecurity}
+        defaultValue={filterData ? filterData.securityLevel : '0'}
         min="0"
         max="100"
         step="1"
@@ -67,8 +69,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         lable="Захисник та охоронець на"
       />
 
-      <PetSizeCheckboxes refAttribute={register({ required: true })} />
-      {errors.petSize && <p className={styles.error}>Будь-ласка виберіть розмір собаки</p>}
+      <PetSizeCheckboxes refAttribute={register()} />
 
       <OverviewCheckboxes refAttribute={register} />
 

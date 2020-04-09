@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
-import { InputRadioProps } from '../../filter.interface';
+import { useEffect } from 'react';
+import { InputRadioProps } from 'pages/filter/filter.interface';
 import './slider.module.scss';
 
 export const Slider: React.FC<Partial<InputRadioProps>> = props => {
-  const [inpValue, setInpValue] = useState('0');
+  const [inpValue, setInpValue] = useState(props.defaultValue);
   const [positionValue, setPositionValue] = useState(0);
+  const windowsWidth = window.innerWidth > 560 ? 610 : window.innerWidth;
 
   const handlePostion = (e: React.FormEvent<EventTarget>): void => {
     const target = e.target as HTMLInputElement;
+
     if (props.delta) {
-      setPositionValue(props.delta * parseInt(target.value) * target.offsetWidth);
+      setPositionValue(props.delta * parseInt(target.value) * windowsWidth);
       setInpValue(target.value);
     }
   };
+
+  useEffect(() => {
+    if (props.delta && props.defaultValue) {
+      setPositionValue(props.delta * parseInt(props.defaultValue) * windowsWidth);
+    }
+  }, []);
 
   return (
     <>
