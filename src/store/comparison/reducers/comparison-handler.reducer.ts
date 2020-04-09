@@ -10,7 +10,5 @@ export const comparisonHandlerReducer = createReducer(initialState)
     return { ...state, idsToCompare: [...state.idsToCompare, action.payload] };
   })
   .handleAction('@comparison/REMOVE_COMPARISON_PET', (state: ComparisonHandlerState, action: { payload: string }) => {
-    return { ...state, idsToCompare: removePet(state.idsToCompare, action.payload)};
+    return { ...state, idsToCompare: removePet(state.idsToCompare, action.payload) };
   });
-
-

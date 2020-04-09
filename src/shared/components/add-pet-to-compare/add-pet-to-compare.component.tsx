@@ -34,8 +34,11 @@ export const AddPetToCompare: React.FC<AddPetToCompareProps> = props => {
         </span>
       )}
       {addedToCompare && <span className={style.addBlock__addBtn__added}>Доданий до порівняння.</span>}
-      {addedToCompare && <Link to={`/comparison/${idsToCompare.join('-')}`} className={style.addBlock__toCompareLink}>Перейти</Link>}
+      {addedToCompare && (
+        <Link to={`/comparison/${idsToCompare.join('-')}`} className={style.addBlock__toCompareLink}>
+          Перейти
+        </Link>
+      )}
     </div>
   );
 };
-
