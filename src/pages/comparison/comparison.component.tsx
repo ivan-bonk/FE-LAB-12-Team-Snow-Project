@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetPetsById } from 'store/comparison/actions/comparison.action';
+import { GetPetsById, clearListToCompare } from 'store/comparison/actions/comparison.action';
 
 import { ComparisonDisplay } from './components/comparison-display/comparison-display.component';
 import { Empty } from './components/empty/empty.component';
@@ -22,7 +22,7 @@ export const Comparison: React.FC<ComparisonProps> = props => {
     if (ids) {
       dispatch(GetPetsById.request(ids.split('-')));
     } else {
-      dispatch(GetPetsById.request([]));
+      dispatch(clearListToCompare());
     }
   }, [ids]);
 
