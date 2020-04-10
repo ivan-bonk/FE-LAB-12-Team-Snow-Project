@@ -27,7 +27,7 @@ export const StarterPack: React.FC<StarterProps> = (props) => {
         <div>
         {/* //TODO: Remove this silly joke and come up with the better idea for this text @O.Khabrovska */}
         <h1 className={style.pageHeader}>
-          Стартовий пакет для породи {breed}
+          Початковий набір для породи {breed}
         </h1>
         <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
       </div>
