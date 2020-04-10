@@ -4,6 +4,7 @@ import { GetPetsById, clearListToCompare } from 'store/comparison/actions/compar
 import { addComparisonPet } from 'store/comparison/actions/comparison-handler.action';
 import { ComparisonDisplay } from './components/comparison-display/comparison-display.component';
 import { Empty } from './components/empty/empty.component';
+import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 
 import style from './comparison.module.scss';
 
@@ -35,7 +36,7 @@ export const Comparison: React.FC<ComparisonProps> = props => {
   }, [ids]);
 
   // Todo: Add cool animated loader component @ Bonk I.
-  const loading = pets.length > 0 ? null : <div>Собачки завантажуються...</div>;
+  const loading = pets.length > 0 ? null : <LoadingSpinner />;
 
   const isEmpty = ids ? loading : <Empty />;
 

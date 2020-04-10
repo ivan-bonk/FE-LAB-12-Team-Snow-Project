@@ -9,6 +9,7 @@ import { fetchPetsAsync } from 'store/result/actions/result.actions';
 import { RootState } from './result.interfaces';
 import { PetProfile } from 'shared/interfaces';
 import { getFiltredPets } from './utils/filter.util';
+import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 
@@ -57,11 +58,7 @@ export const Result: React.FC = () => {
     const key = 1;
 
     if (pets.length === 0) {
-      return [
-        <h4 key={key} className={styles.searchPetsFail}>
-          Загрузка собачок
-        </h4>,
-      ];
+      return [<LoadingSpinner />];
     }
 
     if (searchedPetsValue) {
