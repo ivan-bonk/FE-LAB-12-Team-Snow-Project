@@ -23,7 +23,7 @@ function App() {
         <Route path={ROUTES.addpet} component={AddPet}></Route>
         <Route path={ROUTES.comparison} component={Comparison}></Route>
         <Route path={ROUTES.filter} component={Filter}></Route>
-        <Route path={ROUTES.petCare} component={PetCare}></Route>
+        <Route path={ROUTES.care} component={PetCare}></Route>
       </Switch>
     </Router>
   );

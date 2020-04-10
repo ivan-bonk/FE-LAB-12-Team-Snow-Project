@@ -9,5 +9,5 @@ export const ROUTES = {
   comparison: '/comparison/*',
   search: '/search',
   filter: '/filter',
-  petCare: '/petCare',
+  care: '/care',
 };

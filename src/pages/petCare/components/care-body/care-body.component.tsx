@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPets } from '../../../../store/care/actions/care.actions';
+import { getPets } from 'store/care/actions/care.actions';
 import { ResultStore } from './careBody.interface';
 import { CareBodyPet } from './careBody.interface';
 
