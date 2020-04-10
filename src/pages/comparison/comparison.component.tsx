@@ -22,10 +22,10 @@ export const Comparison: React.FC<ComparisonProps> = props => {
   const idsToCompare: string[] = useSelector((state: ComparisonState) => state.comparisonHandler.idsToCompare);
 
   ids.split('-').forEach((el, index) => {
-    if(el !== idsToCompare[index]) {
+    if (el !== idsToCompare[index]) {
       dispatch(addComparisonPet(el));
     }
-  })
+  });
 
   useEffect(() => {
     if (ids) {

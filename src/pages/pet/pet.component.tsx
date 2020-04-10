@@ -40,7 +40,7 @@ export const Pet: React.FC<PetProps> = props => {
       <div className={style.logoContainer}>
         <Logo />
       </div>
-      {!dataReady && (<LoadingSpinner />)}
+      {!dataReady && <LoadingSpinner />}
       {dataReady && (
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>

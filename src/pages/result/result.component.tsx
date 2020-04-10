@@ -58,7 +58,11 @@ export const Result: React.FC = () => {
     const key = 1;
 
     if (pets.length === 0) {
-      return [<LoadingSpinner />];
+      return [
+        <div key={key}>
+          <LoadingSpinner />
+        </div>,
+      ];
     }
 
     if (searchedPetsValue) {

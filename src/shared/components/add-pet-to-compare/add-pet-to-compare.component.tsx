@@ -27,7 +27,7 @@ export const AddPetToCompare: React.FC<AddPetToCompareProps> = props => {
 
   const onRemovePet = () => {
     dispatch(removeComparisonPet(props.id));
-  }
+  };
 
   return (
     <div className={style.addBlock}>
@@ -50,7 +50,9 @@ export const AddPetToCompare: React.FC<AddPetToCompareProps> = props => {
           </div>
           <div className={style.addBlock__element}>
             <span className={`material-icons ${style.addBlock__element__clear}`}>clear</span>
-            <span className={style.addBlock__element__removePetBtn} onClick={onRemovePet}>Видалити</span>
+            <span className={style.addBlock__element__removePetBtn} onClick={onRemovePet}>
+              Видалити
+            </span>
           </div>
         </>
       )}
