@@ -11,7 +11,7 @@ export const LandinPage: React.FC = () => {
     <div>
       <header className={styles.header}>
         <div className={styles.header__logo}>
-          <img src={logo}></img>
+          <img src={logo} alt="logo"></img>
           <span>МійПес</span>
         </div>
       </header>

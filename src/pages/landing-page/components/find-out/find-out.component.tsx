@@ -10,13 +10,13 @@ export const FindOut: React.FC = () => {
   return (
     <div className={styles.block}>
       <h2 className={styles.block__title}>Дізнайтеся чи правильно ви доглядаєте за соїм улюбленцем</h2>
-      <img src={img1} width="200" className={styles.block__img}></img>
+      <img src={img1} width="200" className={styles.block__img} alt="dog with man"></img>
 
       <table className={styles.table}>
         <thead className={styles.table__head}>
           <tr>
             <th className={styles.table__row1}>
-              <img src={dog} />
+              <img src={dog} alt="Dog" />
               <span className={styles.table__name}>Бігль</span>
             </th>
             <th className={styles.table__row2}>Дані</th>
@@ -46,7 +46,7 @@ export const FindOut: React.FC = () => {
           </tr>
         </tbody>
       </table>
-      <Link to={ROUTES.home} className={styles.block__link}>
+      <Link to={ROUTES.filter} className={styles.block__link}>
         Дізнатися →
       </Link>
     </div>
