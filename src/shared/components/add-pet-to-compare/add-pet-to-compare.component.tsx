@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import style from './add-pet-to-compare.module.scss';
-import { addComparisonPet } from '../../../store/comparison/actions/comparison-handler.action';
+import { addComparisonPet, removeComparisonPet } from 'store/comparison/actions/comparison-handler.action';
 
 import { AddPetToCompareProps } from './add-pet-to-compare.interface';
 import { ComparisonState } from './add-pet-to-compare.interface';
@@ -25,24 +25,36 @@ export const AddPetToCompare: React.FC<AddPetToCompareProps> = props => {
     dispatch(addComparisonPet(props.id));
   };
 
+  const onRemovePet = () => {
+    dispatch(removeComparisonPet(props.id));
+  };
+
   return (
     <div className={style.addBlock}>
-      {addedToCompare && (
-        <span className={style.addBlock__tick}>
-          {' '}
-          <span className="material-icons">check</span>
-        </span>
-      )}
       {!addedToCompare && (
-        <span className={style.addBlock__addBtn} onClick={onAddPet}>
+        <div className={style.addBlock__addBtn} onClick={onAddPet}>
           Додати до порівняння
-        </span>
+        </div>
       )}
-      {addedToCompare && <span className={style.addBlock__addBtn__added}>Доданий до порівняння.</span>}
       {addedToCompare && (
-        <Link to={`/comparison/${idsToCompare.join('-')}`} className={style.addBlock__toCompareLink}>
-          Перейти
-        </Link>
+        <>
+          <div className={style.addBlock__element}>
+            <span className={`material-icons ${style.addBlock__element__tick}`}>check</span>
+            <span className={style.addBlock__element__added}>Додано</span>
+          </div>
+          <div className={style.addBlock__element}>
+            <span className={`material-icons ${style.addBlock__element__thumbs}`}>thumbs_up_down</span>
+            <Link to={`/comparison/${idsToCompare.join('-')}`} className={style.addBlock__element__toCompareLink}>
+              Перейти
+            </Link>
+          </div>
+          <div className={style.addBlock__element}>
+            <span className={`material-icons ${style.addBlock__element__clear}`}>clear</span>
+            <span className={style.addBlock__element__removePetBtn} onClick={onRemovePet}>
+              Видалити
+            </span>
+          </div>
+        </>
       )}
     </div>
   );

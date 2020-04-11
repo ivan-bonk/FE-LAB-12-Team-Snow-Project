@@ -7,6 +7,8 @@ import { AdditionalInfoComponent } from './components/additional-info/additional
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { PetProfile } from 'shared/models';
 import { Logo } from 'shared/logo/logo.component';
+import { BackBtn } from './components/back-btn/back-btn.component';
+import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import style from './pet.module.scss';
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 import { Link } from 'react-router-dom';
@@ -40,6 +42,7 @@ export const Pet: React.FC<PetProps> = props => {
       <div className={style.logoContainer}>
         <Logo />
       </div>
+      {!dataReady && <LoadingSpinner />}
       {dataReady && (
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>
@@ -64,6 +67,7 @@ export const Pet: React.FC<PetProps> = props => {
               <span className={style.starterBtnText}>Потрібен стартовий пакет ?</span>
             </Link>
           </div>
+          <BackBtn />
         </div>
       )}
     </Fragment>

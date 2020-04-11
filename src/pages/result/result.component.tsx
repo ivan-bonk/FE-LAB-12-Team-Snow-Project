@@ -9,6 +9,7 @@ import { fetchPetsAsync } from 'store/result/actions/result.actions';
 import { RootState } from './result.interfaces';
 import { PetProfile } from 'shared/interfaces';
 import { getFiltredPets } from './utils/filter.util';
+import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 
@@ -31,8 +32,10 @@ export const Result: React.FC = () => {
     return petsArray.map(pet => {
       return (
         <div key={pet._id}>
-          <Dog name={pet.breed} observations={pet.observations} images={pet.imgUrl} />
-          <AddPetToCompare id={pet._id} />
+          <Dog name={pet.breed} observations={pet.observations} images={pet.imgUrl} id={pet._id} />
+          <div className={styles.addPetBtn}>
+            <AddPetToCompare id={pet._id} />
+          </div>
         </div>
       );
     });
@@ -56,9 +59,9 @@ export const Result: React.FC = () => {
 
     if (pets.length === 0) {
       return [
-        <h4 key={key} className={styles.searchPetsFail}>
-          Загрузка собачок
-        </h4>,
+        <div key={key}>
+          <LoadingSpinner />
+        </div>,
       ];
     }
 

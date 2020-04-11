@@ -7,11 +7,12 @@ export type ProfileAction = ActionType<typeof Actions>;
 type State = Data | null;
 
 const initialState: Data = {
-  timeWolk: '0',
-  moneyPerMonth: '0',
+  timeWolk: '40',
+  moneyPerMonth: '360',
   timePerMonth: '0',
-  securityLevel: '0',
+  securityLevel: '20',
   petSize: '0',
+  defaultValue: '0',
   easyToTrain: false,
   family: false,
   apartment: false,
