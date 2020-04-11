@@ -1,4 +1,4 @@
-import { createReducer } from 'typesafe-actions';
+import { createReducer, action } from 'typesafe-actions';
 import { actionType } from '../actions/comparison.action';
 import { ComparisonState } from 'pages/comparison/comparison.interface';
 
@@ -17,5 +17,8 @@ export const comparisonReducer = createReducer<any, actionType>(initialState, {
   },
   '@comparison/PETS_BYID_REQUEST': (state, action) => {
     return { ...state, loading: true };
+  },
+  '@comparison/REMOVE_COMPARISON_LIST': (state, action) => {
+    return { ...state, petsToCompare: [] };
   },
 });

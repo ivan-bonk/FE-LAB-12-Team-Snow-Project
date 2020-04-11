@@ -5,6 +5,7 @@ import { Profile } from '../profile/profile.component';
 import { RemoveButtonProps } from './remove-pet-button.interface';
 import { removeComparisonPet } from 'store/comparison/actions/comparison-handler.action'
 
+
 import style from './remove-pet-button.module.scss';
 
 function removeUrl(ids: string, id: string): string {

@@ -24,15 +24,15 @@ export const Pet: React.FC<PetProps> = props => {
     dispatch(fetchPetProfile.request(petId));
   }, [petId]);
 
-  if(error){
+  if (error) {
     return (
       <Fragment>
         <Logo />
         <div className={style.container}>
-              <h2 className={style.sectionHeader}>Упс, щось пішло не так</h2>
+          <h2 className={style.sectionHeader}>Упс, щось пішло не так</h2>
         </div>
       </Fragment>
-    )
+    );
   }
   //TODO: Skeleton or placeholder. Add during loading the page @O.Khabrovska
   return (
@@ -42,7 +42,9 @@ export const Pet: React.FC<PetProps> = props => {
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>
           <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
-          <AddPetToCompare id={_id}/>
+          <div className={style.addPetBtn}>
+            <AddPetToCompare id={_id} />
+          </div>
           <div className={style.container}>
             <section>
               <h2 className={style.sectionHeader}>Характеристики</h2>
