@@ -1,0 +1,46 @@
+.additional {
+  font-family: Roboto, sans-serif;
+  padding: 25px;
+  &__header {
+    display: flex;
+    align-items: center;
+    &__info {
+      font-size: 28px;
+      color: #ff9f0a;
+    }
+
+    &__title {
+      margin-left: 15px;
+      font-size: 23px;
+      font-weight: 600;
+    }
+  }
+
+  &__block {
+    margin: 15px 0;
+
+    &__header{
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__title {
+      margin-left: 20px;
+    }
+
+    &__info {
+      font-size: 14px;
+      margin-top: 15px;
+      line-height: 18px;
+
+      ol {
+        margin-left: 40px;
+      }
+
+      p {
+        text-indent: 15px;
+      }
+    }
+  }
+}

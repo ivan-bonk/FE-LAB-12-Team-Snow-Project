@@ -1,13 +1,18 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPetProfile } from 'store/pet/actions/pet.actions';
-import {StarterProps} from './starter-pack.interfaces';
-import {PetProfile} from 'shared/models';
+import { StarterProps } from './starter-pack.interfaces';
+import { PetProfile } from 'shared/models';
 import { Logo } from 'shared/logo/logo.component';
+import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
+import { ToBuy } from './components/to-buy/to-buy.component';
+import { FromBreeder } from './components/from-breeder/from-breeder.component';
+import { AdditionalInfo } from './components/additional-info/additional-info.component';
+import { BackBtn } from './components/back-btn/back-btn.component';
+
 import style from './starter-pack.module.scss';
 
-
-export const StarterPack: React.FC<StarterProps> = (props) => {
+export const StarterPack: React.FC<StarterProps> = props => {
   const petId: string = props.match.params.id;
   const dispatch = useDispatch();
   const petProfile: PetProfile = useSelector((state: any) => state.pet.currentPet);
@@ -15,23 +20,27 @@ export const StarterPack: React.FC<StarterProps> = (props) => {
   const dataReady = !!petProfile._id;
 
   useEffect(() => {
-    if(petId !== _id){
+    if (petId !== _id) {
       dispatch(fetchPetProfile.request(petId));
-    }  
+    }
   }, [petId]);
 
   return (
-<Fragment>
-       <div className={style.logoContainer}><Logo /></div>
-       {dataReady && (
-        <div>
-        {/* //TODO: Remove this silly joke and come up with the better idea for this text @O.Khabrovska */}
-        <h1 className={style.pageHeader}>
-          Стартовий пакет для породи {breed}
-        </h1>
-        <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
+    <>
+      <div className={style.logoContainer}>
+        <Logo />
       </div>
-       )}  
-    </Fragment>
+      {!dataReady && <LoadingSpinner />}
+      {dataReady && (
+        <div>
+          <h1 className={style.pageHeader}>Початковий набір для породи {breed}</h1>
+          <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
+          <ToBuy observations={observations} />
+          <FromBreeder />
+          <AdditionalInfo />
+          <BackBtn id={petId} />
+        </div>
+      )}
+    </>
   );
 };
