@@ -1,7 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styles from './analysis-item.module.scss';
 import { AnalysisResult } from '../analysis-result/analysis-result.component';
 import { CareBodyProps } from '../care-body/careBody.interface';
+import { QuizData } from './analysis-item.interface';
 
 const title = [
   'Вага',
@@ -13,10 +15,13 @@ const title = [
 const weightStrLength = 5;
 
 export const AnalysisItem: React.FC<CareBodyProps> = props => {
-  // -------------------
-  // we don't have this data so i need this for meet show :
-  const userNumber = '35';
-  // -------------------
+  const quizData = useSelector((state: QuizData) => state.quiz);
+
+  const userMealNumber = quizData.mealNumber;
+  const userMealWeight = quizData.mealWeight;
+  const userMedChekUp = quizData.medChekUp;
+  const userWalkNumber = quizData.walkNumber;
+  const userWeight = quizData.weight;
 
   const walkNumber = props.pet.observations?.walkNumber as string;
   const mealNumber = props.pet.observations?.mealNumber as string;
@@ -32,21 +37,24 @@ export const AnalysisItem: React.FC<CareBodyProps> = props => {
     }
   };
 
-  const getNumber = (str: string) => {
-    const tipIncrease = ['Збільшити', 'result_red', str, userNumber];
-    const tipReduce = ['Зменшити', 'result_red', str, userNumber];
-    const checkOk = ['', 'result', str, userNumber];
-    const userData = transformData(str);
+  const compare = (user: any, recomend: string) => {
+    const tipIncrease = ['Збільшити', 'result_red', recomend, user];
+    const tipReduce = ['Зменшити', 'result_red', recomend, user];
+    const checkOk = ['', 'result', recomend, user];
+    const userData = transformData(user);
+    const recomendData = transformData(recomend);
     let result: string[] = [];
 
-    if (userData) {
-      if (parseInt(userNumber) < parseInt(userData[0])) {
+    if (recomendData) {
+      console.log(userData);
+      console.log(recomendData);
+      if (parseInt(userData[0]) < parseInt(recomendData[0])) {
         result = tipIncrease;
-      } else if (parseInt(userNumber) > parseInt(userData[1])) {
+      } else if (parseInt(userData[1]) > parseInt(recomendData[1])) {
         result = tipReduce;
-      } else if (!userData[1] && parseInt(userData[0]) > parseInt(userNumber)) {
+      } else if (!recomendData[1] && parseInt(recomendData[0]) > parseInt(userData[0])) {
         result = tipIncrease;
-      } else if (!userData[1] && parseInt(userData[0]) < parseInt(userNumber)) {
+      } else if (!recomendData[1] && parseInt(recomendData[0]) < parseInt(userData[0])) {
         result = tipReduce;
       } else {
         result = checkOk;
@@ -66,23 +74,17 @@ export const AnalysisItem: React.FC<CareBodyProps> = props => {
           <AnalysisResult title={title[index]} data={getNumber(weight)} />
         </>
       ))} */}
-
       {/* --------------- */}
-
       <h1 className={styles.analysisItem__title}>{title[0]} кг</h1>
-      <AnalysisResult title={title[0]} data={getNumber(weight)} />
-
+      <AnalysisResult title={title[0]} data={compare(userWeight, weight)} />
       <h1 className={styles.analysisItem__title}>{title[1]}</h1>
-      <AnalysisResult title={title[1]} data={getNumber(walkNumber)} />
-
+      <AnalysisResult title={title[1]} data={compare(userWalkNumber, walkNumber)} />
       <h1 className={styles.analysisItem__title}>{title[2]}</h1>
-      <AnalysisResult title={title[2]} data={getNumber(mealNumber)} />
-
+      <AnalysisResult title={title[2]} data={compare(userMealNumber, mealNumber)} />
       <h1 className={styles.analysisItem__title}>{title[3]}</h1>
-      <AnalysisResult title={title[3]} data={getNumber(mealWeight)} />
-
+      <AnalysisResult title={title[3]} data={compare(userMealWeight, mealWeight)} />
       <h1 className={styles.analysisItem__title}>{title[4]}</h1>
-      <AnalysisResult title={title[4]} data={getNumber(medCheckUp)} />
+      <AnalysisResult title={title[4]} data={compare(userMedChekUp, medCheckUp)} />
     </div>
   );
 };
