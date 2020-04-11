@@ -4,7 +4,7 @@ import { PetProfile } from 'shared/models';
 export interface PetProps {
   match: {
     params: {
-      id: number;
+      id: string;
     };
   };
 }
