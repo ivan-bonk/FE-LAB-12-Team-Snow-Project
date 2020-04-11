@@ -6,6 +6,7 @@ import { comparisonReducer } from './comparison/reducers/comparison.reducer';
 import { quizReducer } from './quiz/reducers/quiz.reducer';
 import { comparisonHandlerReducer } from './comparison/reducers/comparison-handler.reducer';
 import { careReducer } from './care/reducers/care.reducers';
+import { nameGeneratorReducer } from './name-generator/reducers/name-generator.reducers';
 
 export const rootReducer = combineReducers({
   filter: filterReducer,
@@ -15,4 +16,5 @@ export const rootReducer = combineReducers({
   quiz: quizReducer,
   comparisonHandler: comparisonHandlerReducer,
   care: careReducer,
+  nameGenerator: nameGeneratorReducer,
 });

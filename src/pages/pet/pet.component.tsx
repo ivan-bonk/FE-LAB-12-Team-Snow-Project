@@ -62,14 +62,14 @@ export const Pet: React.FC<PetProps> = props => {
               <AdditionalInfoComponent data={additionalInfo} />
             </section>
             <Link to={ROUTES.starterPack.route(_id)} className={style.starterBtn}>
-            <span className="material-icons">flag</span>
-            {/* //TODO: Remove this silly joke and come up with the better idea for this text @O.Khabrovska */}
-            <span className={style.starterBtnText}>Потрібен стартовий пакет ?</span> 
+              <span className="material-icons">flag</span>
+              {/* //TODO: Remove this silly joke and come up with the better idea for this text @O.Khabrovska */}
+              <span className={style.starterBtnText}>Потрібен стартовий пакет ?</span>
             </Link>
           </div>
           <BackBtn />
         </div>
-      )}  
+      )}
     </Fragment>
   );
 };
