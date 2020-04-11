@@ -22,7 +22,13 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
   };
   const onSubmit = (data: Data): void => {
     dispatch(filterAction(data));
-    history.push('/result');
+
+    const location = {
+      pathname: '/result',
+      search: `?filter:tW=${data.timeWolk}&mPM=${data.moneyPerMonth}&tPM=${data.timePerMonth}&sLv=${data.securityLevel}&pS=${data.petSize}&eTT=${data.easyToTrain}&fml=${data.family}&aprt=${data.apartment}&alrg=${data.allergy}`,
+      state: { filter: data },
+    };
+    history.push(location);
   };
 
   const deltaPositionTime = 0.0038;
