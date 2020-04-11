@@ -10,7 +10,7 @@ export const FindOut: React.FC = () => {
   return (
     <div className={styles.block}>
       <h2 className={styles.block__title}>Дізнайтеся чи правильно ви доглядаєте за соїм улюбленцем</h2>
-      <img src={img1} width="200" className={styles.block__img} alt="Img"></img>
+      <img src={img1} width="200" className={styles.block__img} alt="dog with man"></img>
 
       <table className={styles.table}>
         <thead className={styles.table__head}>

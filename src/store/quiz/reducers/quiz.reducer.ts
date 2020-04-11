@@ -4,16 +4,16 @@ import { Data } from '../../../pages/quiz-page/quiz-page.intarface';
 
 export type ProfileAction = ActionType<typeof Actions>;
 
-type State = Data | null;
+type State = Data;
 
 const initialState: Data = {
-  breed: null,
-  birth: null,
-  weight: null,
-  walkNumber: null,
-  mealNumber: null,
-  mealWeight: null,
-  medChekUp: null,
+  breed: '',
+  birth: '',
+  weight: 0,
+  walkNumber: 0,
+  mealNumber: 0,
+  mealWeight: 0,
+  medChekUp: 0,
 };
 
 export const quizReducer = createReducer<State, ProfileAction>(initialState).handleType(

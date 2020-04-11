@@ -9,11 +9,11 @@ export interface RootState {
 }
 
 export interface Data {
-  breed: string | null;
-  birth: string | null;
-  weight: number | null;
-  walkNumber: number | null;
-  mealNumber: number | null;
-  mealWeight: number | null;
-  medChekUp: number | null;
+  breed: string;
+  birth: string;
+  weight: number;
+  walkNumber: number;
+  mealNumber: number;
+  mealWeight: number;
+  medChekUp: number;
 }
