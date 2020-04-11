@@ -10,9 +10,9 @@ export const ToPickUp: React.FC = () => {
   return (
     <div className={styles.block}>
       <h2 className={styles.block__title}>Підберіть свого ідеального собаку</h2>
-      <img src={img2} width="200" className={styles.block__img}></img>
-      <img src={dialogs} className={styles.block__img}></img>
-      <Link to={ROUTES.home} className={styles.block__link}>
+      <img src={img2} width="200" className={styles.block__img} alt="Img"></img>
+      <img src={dialogs} className={styles.block__img} alt="Dialogs"></img>
+      <Link to={ROUTES.result} className={styles.block__link}>
         Підібрати →
       </Link>
     </div>

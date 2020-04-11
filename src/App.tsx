@@ -12,6 +12,7 @@ import { Comparison } from 'pages/comparison/comparison.component';
 import { Filter } from 'pages/filter/filter.component';
 import { PetCare } from 'pages/petCare/pet-care.component';
 import {StarterPack} from 'pages/starter-pack/starter-pack.component';
+import { QuizPage } from './pages/quiz-page/quiz-page.component';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path={ROUTES.addpet} component={AddPet}></Route>
         <Route path={ROUTES.comparison} component={Comparison}></Route>
         <Route path={ROUTES.filter} component={Filter}></Route>
+        <Route path={ROUTES.quiz} component={QuizPage} />
         <Route path={ROUTES.care} component={PetCare}></Route>
       </Switch>
     </Router>

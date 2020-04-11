@@ -13,5 +13,6 @@ export const ROUTES = {
   comparison: '/comparison/*',
   search: '/search',
   filter: '/filter',
+  quiz: '/quiz-page',
   care: '/care',
 };
