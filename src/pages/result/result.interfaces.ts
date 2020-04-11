@@ -1,28 +1,38 @@
-import { PetProfile } from '../../shared/interfaces';
-
-export interface Characteristics {
-  spandTime: string;
-  outlay: string;
-  size: string;
-}
-
-export interface Pet {
-  _id: number;
-  breed: string;
-  photos: [];
-  characteristics: Characteristics;
-}
+import { PetProfile } from 'shared/interfaces';
 
 export interface ResultStore {
   resultStore: PetProfile[];
 }
 
-export interface FilterValues {
-  carePrice: string;
-  price: string;
-}
-
 export interface RootState {
   result: ResultStore;
-  searchReducer: FilterValues;
+  filter: FilterValues;
 }
+
+export interface FilterValues {
+  timeWolk: string;
+  moneyPerMonth: string;
+  timePerMonth: string;
+  securityLevel: string;
+  petSize: string;
+  easyToTrain: boolean;
+  family: boolean;
+  apartment: boolean;
+  allergy: boolean;
+}
+
+export interface PetValues {
+  timeWolk: number;
+  moneyPerMonth: number;
+  timePerMonth: string;
+  securityLevel: number;
+  petSize: number;
+  easyToTrain: boolean;
+  family: boolean;
+  apartment: boolean;
+  allergy: boolean;
+}
+
+// I know that it isn't Okay.
+// I don't know how to change it yet.(about pipes --> '|')
+export type PetCharacteristicType = string | boolean | number;

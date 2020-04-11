@@ -2,25 +2,20 @@
   display: flex;
 
   .filter_logo__container {
-    width: 30px;
-
-    .filter_logo {
-      width: 30px;
-      color: #5c4937;
-    }
+    width: 63px;
+    text-align: center;
 
     span {
-      font-family: Raleway;
       font-weight: bold;
       font-size: 14px;
-      line-height: 16px;
       color: #5c4937;
+      margin: 0 auto;
     }
   }
 
   .filter__header {
     font-family: Roboto;
     font-size: 1.5em;
-    margin: 10px auto;
+    margin: 25px auto;
   }
 }

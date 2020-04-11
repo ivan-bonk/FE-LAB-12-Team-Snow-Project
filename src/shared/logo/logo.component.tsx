@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../constants/routes.constants';
 
-import logo from './logo.image.svg';
-import logo2 from './logo2.image.svg';
+import logo from 'images/Logo/logo.image.svg';
+import logo2 from 'images/Logo/logo2.image.svg';
 
 import './logo.styles.css';
 

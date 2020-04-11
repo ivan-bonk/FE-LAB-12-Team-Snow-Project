@@ -1,35 +1,65 @@
-import { FilterValues } from '../result.interfaces';
-import { PetProfile } from '../../../shared/interfaces';
+import { FilterValues, PetValues, PetCharacteristicType } from '../result.interfaces';
+import { PetProfile } from 'shared/interfaces';
 
 export const getFiltredPets = (pets: PetProfile[], filterValues: FilterValues): PetProfile[] => {
   const notation = 10;
+  const minutesInHour = 60;
+  const percentagesStep = 20;
 
-  const getComparisonResult = (petValue: string, userInputValue: string): boolean => {
-    const parsedUserInputValue = parseInt(userInputValue, notation);
+  const getDeepComparisonResult = (petValue: PetCharacteristicType, userInputValue: PetCharacteristicType): boolean => {
+    const low = 2,
+      average = 3,
+      high = 4;
+    const petValueType = typeof petValue;
 
-    const petMinValue = parseInt(petValue.toString().match(/\d+/g)![0], notation);
+    if (petValueType === 'string' || petValueType === 'boolean') {
+      return petValue === userInputValue;
+    }
+    switch (userInputValue) {
+      case 'low':
+        return petValue <= low;
+      case 'average':
+        return petValue === average;
+      case 'high':
+        return petValue >= high;
+      default:
+        return false;
+    }
+  };
 
-    //in this case index have to be 1, but some values in DB haven't range value yet
-    const petMaxValue = parseInt(petValue.toString().match(/\d+/g)![0], notation);
+  const getComparisonResult = (petValue: PetCharacteristicType, userInputValue: PetCharacteristicType): boolean => {
+    const parsedUserInputValue = parseInt(userInputValue.toString(), notation);
 
-    return (
-      (parsedUserInputValue >= petMinValue && parsedUserInputValue <= petMaxValue) ||
-      parsedUserInputValue >= petMaxValue
-    );
+    if (!parsedUserInputValue) {
+      return getDeepComparisonResult(petValue, userInputValue);
+    }
+
+    return parsedUserInputValue >= petValue;
   };
 
   return pets.filter((pet: PetProfile) => {
     let key: keyof FilterValues;
 
+    const petValues: PetValues = {
+      timeWolk: pet.observations.careTime * minutesInHour,
+      moneyPerMonth: pet.observations.carePrice,
+      timePerMonth: pet.observations.careComplications,
+      securityLevel: pet.characteristics.security * percentagesStep,
+      petSize: pet.characteristics.size,
+      easyToTrain: pet.ownerInfo.easyTrain,
+      family: pet.ownerInfo.familyFit,
+      apartment: pet.ownerInfo.apartmentFit,
+      allergy: pet.ownerInfo.hypoallergenicity,
+    };
+
     for (key in filterValues) {
-      const defaultFormValue =
-        filterValues[key] === 'any' || !filterValues[key] || !parseInt(filterValues[key], notation);
+      const defaultFormValue = filterValues[key] === 'any' || !filterValues[key] || filterValues[key] === '0';
 
       if (defaultFormValue) {
         continue;
       }
 
-      if (!getComparisonResult(pet.observations[key], filterValues[key])) {
+      if (!getComparisonResult(petValues[key], filterValues[key])) {
         return false;
       }
     }

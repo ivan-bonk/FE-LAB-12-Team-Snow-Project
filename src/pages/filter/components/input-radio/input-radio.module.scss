@@ -2,7 +2,7 @@
   .form_radio_group {
     display: flex;
     justify-content: space-between;
-    margin-top: 25px;
+    margin-top: 15px;
   }
 
   .form_radio_group input[type='radio'] {
@@ -13,8 +13,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 74px;
-    height: 31px;
+    width: 90px;
+    height: 34px;
     background: #f7f7f6;
     border-radius: 15px;
   }
@@ -30,7 +30,7 @@
 
   /* Checked */
   .form_radio_group input[type='radio']:checked + label {
-    background: #902111;
+    background: #ff453a;
     color: #ffffff;
   }
 

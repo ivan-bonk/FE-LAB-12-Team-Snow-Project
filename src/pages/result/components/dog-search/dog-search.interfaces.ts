@@ -1,4 +1,4 @@
-import { PetProfile } from '../../../../shared/interfaces';
+import { PetProfile } from 'shared/interfaces';
 
 export interface DogSearchProps {
   renderPets: (searchString: string) => void;
