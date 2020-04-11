@@ -36,7 +36,7 @@ export const ToBuy: React.FC<ToBuyProps> = props => {
         </li>
         <li className={style.toBuy__element}>
           <span className={style.toBuy__element__title}>Іграшки</span>
-          <span className={style.toBuy__element__definition}>М'ячик, кісточка</span>
+          <span className={style.toBuy__element__definition}>М&#39;ячик, кісточка</span>
         </li>
         <li className={style.toBuy__element}>
           <span className={style.toBuy__element__title}>Смаколики</span>

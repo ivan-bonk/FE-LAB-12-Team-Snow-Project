@@ -11,7 +11,7 @@ import { AddPet } from 'pages/AddPet';
 import { Comparison } from 'pages/comparison/comparison.component';
 import { Filter } from 'pages/filter/filter.component';
 import { PetCare } from 'pages/petCare/pet-care.component';
-import {StarterPack} from 'pages/starter-pack/starter-pack.component';
+import { StarterPack } from 'pages/starter-pack/starter-pack.component';
 
 function App() {
   return (

@@ -17,7 +17,7 @@ export const FromBreeder: React.FC = () => {
         <div className={style.fromBreeder__info}>
           <span className={style.fromBreeder__info__title}>Інформація</span>
           <span className={style.fromBreeder__info__text}>Щеплення</span>
-          <span className={style.fromBreeder__info__text}>Здоров'я батьків</span>
+          <span className={style.fromBreeder__info__text}>Здоров&#39;я батьків</span>
         </div>
       </div>
       <div className={style.fromBreeder__another}>
