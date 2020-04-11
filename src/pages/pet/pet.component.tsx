@@ -24,25 +24,27 @@ export const Pet: React.FC<PetProps> = props => {
     dispatch(fetchPetProfile.request(petId));
   }, [petId]);
 
-  if(error){
+  if (error) {
     return (
       <Fragment>
         <Logo />
         <div className={style.container}>
-              <h2 className={style.sectionHeader}>Упс, щось пішло не так</h2>
+          <h2 className={style.sectionHeader}>Упс, щось пішло не так</h2>
         </div>
       </Fragment>
-    )
+    );
   }
   //TODO: Skeleton or placeholder. Add during loading the page @O.Khabrovska
   return (
     <Fragment>
-       <div className={style.logoContainer}><Logo /></div>    
+      <div className={style.logoContainer}>
+        <Logo />
+      </div>
       {dataReady && (
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>
           <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
-          <AddPetToCompare id={_id}/>
+          <AddPetToCompare id={_id} />
           <div className={style.container}>
             <section>
               <h2 className={style.sectionHeader}>Характеристики</h2>
@@ -57,13 +59,13 @@ export const Pet: React.FC<PetProps> = props => {
               <AdditionalInfoComponent data={additionalInfo} />
             </section>
             <Link to={ROUTES.starterPack.route(_id)} className={style.starterBtn}>
-            <span className="material-icons">flag</span>
-            {/* //TODO: Remove this silly joke and come up with the better idea for this text @O.Khabrovska */}
-            <span className={style.starterBtnText}>Потрібен стартовий пакет ?</span> 
+              <span className="material-icons">flag</span>
+              {/* //TODO: Remove this silly joke and come up with the better idea for this text @O.Khabrovska */}
+              <span className={style.starterBtnText}>Потрібен стартовий пакет ?</span>
             </Link>
           </div>
         </div>
-      )}  
+      )}
     </Fragment>
   );
 };
