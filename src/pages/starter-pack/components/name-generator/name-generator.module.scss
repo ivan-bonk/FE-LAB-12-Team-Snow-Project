@@ -1,0 +1,45 @@
+%button{
+    padding: 6px 21px;
+    margin: 0 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+}
+.generator {
+    &__name{
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        padding-top: 16px;
+    }
+    &__switch{
+        display: flex;
+        align-items: baseline;
+        padding: 16px 0;
+    }
+    &__header {
+        font-size: 20px;
+        font-weight: 500;
+        padding-right: 16px;
+        flex: 1;
+    }
+    &__button {
+        &_blue {
+            background-color: #E1F6FF;
+            @extend %button;
+        }
+        &_pink {
+            background-color: #FFF0FF;
+            @extend %button;
+        }
+        &_activeBlue {
+            background-color: #0A84FF;
+            @extend %button;
+        }
+        &_activePink {
+            background-color: #FFA4FF;
+            @extend %button;
+        }
+    }
+}

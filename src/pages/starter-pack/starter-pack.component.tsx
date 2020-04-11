@@ -9,8 +9,8 @@ import { ToBuy } from './components/to-buy/to-buy.component';
 import { FromBreeder } from './components/from-breeder/from-breeder.component';
 import { AdditionalInfo } from './components/additional-info/additional-info.component';
 import { BackBtn } from './components/back-btn/back-btn.component';
-
 import style from './starter-pack.module.scss';
+import { NamesGenerator } from './components/name-generator/name-generator.component';
 
 export const StarterPack: React.FC<StarterProps> = props => {
   const petId: string = props.match.params.id;
@@ -35,6 +35,9 @@ export const StarterPack: React.FC<StarterProps> = props => {
         <div>
           <h1 className={style.pageHeader}>Початковий набір для породи {breed}</h1>
           <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
+          <div className={style.container}>
+            <NamesGenerator />
+          </div>
           <ToBuy observations={observations} />
           <FromBreeder />
           <AdditionalInfo />
