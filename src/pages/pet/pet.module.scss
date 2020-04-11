@@ -30,3 +30,19 @@
   object-position: 50% 50%;
   padding: 16px 0;
 }
+
+.starterBtn{
+  color: #FF9F0A;
+  padding: 16px 0;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+
+  &Text {
+    padding-left: 10px;
+  }
+}
+.addPetBtn{
+  margin-left: 20px;
+}

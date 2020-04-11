@@ -11,6 +11,7 @@ import { AddPet } from 'pages/AddPet';
 import { Comparison } from 'pages/comparison/comparison.component';
 import { Filter } from 'pages/filter/filter.component';
 import { PetCare } from 'pages/petCare/pet-care.component';
+import {StarterPack} from 'pages/starter-pack/starter-pack.component';
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
         <Route path={ROUTES.search} component={Search}></Route>
         <Route path={ROUTES.result} component={Result}></Route>
         <Route path={ROUTES.pet.path} component={Pet}></Route>
+        <Route path={ROUTES.starterPack.path} component={StarterPack}></Route>
         <Route path={ROUTES.addpet} component={AddPet}></Route>
         <Route path={ROUTES.comparison} component={Comparison}></Route>
         <Route path={ROUTES.filter} component={Filter}></Route>
-        <Route path={ROUTES.petCare} component={PetCare}></Route>
+        <Route path={ROUTES.care} component={PetCare}></Route>
       </Switch>
     </Router>
   );
