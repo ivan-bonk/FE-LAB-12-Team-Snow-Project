@@ -1,31 +1,56 @@
 .addBlock {
   display: flex;
   align-items: center;
-  height: 27px;
+  justify-content: space-around;
+  height: 35px;
 
-  &__tick {
-    color: #30d158;
-    margin-right: 15px;
-    font-size: 20px;
+  &__element {
     display: flex;
+    align-items: center;
+
+    &__tick {
+      color: #30d158;
+      padding: 5px;
+    }
+
+    &__added {
+      color: black;
+      padding: 5px;
+    }
+
+    &__thumbs {
+      color: #0a84ff;
+      padding: 5px;
+    }
+ 
+    &__clear {
+      color: #FF453A;
+      padding: 5px;
+    }
+
+    &__removePetBtn {
+      color: #FF453A;
+      padding: 5px;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    &__toCompareLink {
+      text-decoration: none;
+      color: #0a84ff;
+      padding: 5px;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
   }
 
   &__addBtn {
     color: #0a84ff;
-    &:hover {
-      cursor: pointer;
-      text-decoration: underline;
-    }
-  }
-
-  &__added {
-    color: black;
-  }
-
-  &__toCompareLink {
-    text-decoration: none;
-    color: #0a84ff;
-    margin-left: 10px;
+    
     &:hover {
       cursor: pointer;
       text-decoration: underline;
