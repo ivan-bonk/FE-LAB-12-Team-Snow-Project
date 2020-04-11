@@ -7,6 +7,7 @@ export interface InputRadioProps {
   posTime: number;
   time: string;
   delta: number;
+  deltaMin: number;
   min: string;
   max: string;
   step: string;

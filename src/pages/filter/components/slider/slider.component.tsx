@@ -11,15 +11,15 @@ export const Slider: React.FC<Partial<InputRadioProps>> = props => {
   const handlePostion = (e: React.FormEvent<EventTarget>): void => {
     const target = e.target as HTMLInputElement;
 
-    if (props.delta) {
-      setPositionValue(props.delta * parseInt(target.value) * windowsWidth);
+    if (props.delta && props.deltaMin) {
+      setPositionValue(props.delta * (parseInt(target.value) - props.deltaMin) * windowsWidth);
       setInpValue(target.value);
     }
   };
 
   useEffect(() => {
-    if (props.delta && props.defaultValue) {
-      setPositionValue(props.delta * parseInt(props.defaultValue) * windowsWidth);
+    if (props.delta && props.defaultValue && props.deltaMin) {
+      setPositionValue(props.delta * (parseInt(props.defaultValue) - props.deltaMin) * windowsWidth);
     }
   }, []);
 

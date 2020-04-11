@@ -25,9 +25,12 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
     history.push('/result');
   };
 
-  const deltaPositionTime = 0.00323;
-  const deltaPositionMoney = 0.0003;
-  const deltaPositionSecurity = 0.0078;
+  const deltaPositionTime = 0.0038;
+  const deltaMinTime = 40;
+  const deltaPositionMoney = 0.000345;
+  const deltaMinMoney = 360;
+  const deltaPositionSecurity = 0.0096;
+  const deltaMinSecurity = 20;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -35,8 +38,9 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         name="timeWolk"
         refAttribute={register}
         delta={deltaPositionTime}
-        defaultValue={filterData ? filterData.timeWolk : '0'}
-        min="0"
+        deltaMin={deltaMinTime}
+        defaultValue={filterData ? filterData.timeWolk : deltaMinTime.toString()}
+        min="40"
         max="240"
         step="10"
         units="хв"
@@ -47,29 +51,31 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         name="moneyPerMonth"
         refAttribute={register}
         delta={deltaPositionMoney}
-        defaultValue={filterData ? filterData.moneyPerMonth : '0'}
-        min="0"
+        deltaMin={deltaMinMoney}
+        defaultValue={filterData ? filterData.moneyPerMonth : deltaMinMoney.toString()}
+        min="360"
         max="2500"
-        step="50"
+        step="20"
         units="грн"
         lable="На місяць зможу витрачати максимум"
       />
 
-      <TimePerMonthCheckboxes refAttribute={register()} />
+      <TimePerMonthCheckboxes refAttribute={register} />
 
       <SliderSection
         name="securityLevel"
         refAttribute={register}
         delta={deltaPositionSecurity}
-        defaultValue={filterData ? filterData.securityLevel : '0'}
-        min="0"
+        deltaMin={deltaMinSecurity}
+        defaultValue={filterData ? filterData.securityLevel : deltaMinSecurity.toString()}
+        min="20"
         max="100"
         step="1"
         units="%"
         lable="Захисник та охоронець на"
       />
 
-      <PetSizeCheckboxes refAttribute={register()} />
+      <PetSizeCheckboxes refAttribute={register} />
 
       <OverviewCheckboxes refAttribute={register} />
 
