@@ -11,6 +11,7 @@ import { RootState, Data } from './quiz-page.intarface';
 import { quizAction } from '../../store/quiz/actions/quiz.action';
 import { fetchPetsAsync } from '../../store/result/actions/result.actions';
 import styles from './quiz-page.module.scss';
+import { useHistory } from 'react-router-dom';
 
 import { SliderSection } from '../filter/components/slider-section/slider-section.component';
 
@@ -20,9 +21,11 @@ export const QuizPage: React.FC = () => {
   const { register, handleSubmit } = useForm<Data>();
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const onSubmit = (data: Data): void => {
     dispatch(quizAction(data));
+    history.push('/care');
   };
 
   useEffect(() => {
