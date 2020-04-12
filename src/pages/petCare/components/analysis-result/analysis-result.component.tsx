@@ -24,7 +24,7 @@ export const AnalysisResult: React.FC<Partial<CareBodyPet>> = props => {
         <>
           <h4>Порада:</h4>
           <span>{advice}</span>
-          <span>{props.title === 'Вага' ? ' Вагу' : props.title}</span>
+          <span>{props.title === 'Вага' ? 'Вагу' : props.title}</span>
         </>
       )}
     </div>

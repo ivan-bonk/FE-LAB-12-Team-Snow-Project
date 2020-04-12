@@ -39,8 +39,8 @@ export const AnalysisItem: React.FC<CareBodyProps> = props => {
   };
 
   const compare = (user: any, recomend: string) => {
-    const tipIncrease = ['Збільшити', 'result_red', recomend, user];
-    const tipReduce = ['Зменшити', 'result_red', recomend, user];
+    const tipIncrease = ['Збільшити ', 'result_red', recomend, user];
+    const tipReduce = ['Зменшити ', 'result_red', recomend, user];
     const checkOk = ['', 'result', recomend, user];
     const userData = transformData(user);
     const recomendData = transformData(recomend);
