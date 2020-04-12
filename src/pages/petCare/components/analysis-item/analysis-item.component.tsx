@@ -12,15 +12,16 @@ const title = [
   'Кількість грам в порції',
   'Кількість медичних чекапів на рік',
 ];
+
 const weightStrLength = 5;
 
 export const AnalysisItem: React.FC<CareBodyProps> = props => {
   const quizData = useSelector((state: QuizData) => state.quiz);
 
+  const userWalkNumber = quizData.walkNumber;
   const userMealNumber = quizData.mealNumber;
   const userMealWeight = quizData.mealWeight;
   const userMedChekUp = quizData.medChekUp;
-  const userWalkNumber = quizData.walkNumber;
   const userWeight = quizData.weight;
 
   const walkNumber = props.pet.observations?.walkNumber as string;
@@ -46,15 +47,17 @@ export const AnalysisItem: React.FC<CareBodyProps> = props => {
     let result: string[] = [];
 
     if (recomendData) {
-      console.log(userData);
-      console.log(recomendData);
-      if (parseInt(userData[0]) < parseInt(recomendData[0])) {
+      if (!userData[1] && !recomendData[1] && parseInt(userData[0]) < parseInt(recomendData[0])) {
         result = tipIncrease;
-      } else if (parseInt(userData[1]) > parseInt(recomendData[1])) {
+      } else if (!userData[1] && !recomendData[1] && parseInt(userData[0]) > parseInt(recomendData[0])) {
         result = tipReduce;
-      } else if (!recomendData[1] && parseInt(recomendData[0]) > parseInt(userData[0])) {
+      } else if (!userData[1] && parseInt(userData[0]) < parseInt(recomendData[0])) {
         result = tipIncrease;
-      } else if (!recomendData[1] && parseInt(recomendData[0]) < parseInt(userData[0])) {
+      } else if (!userData[1] && parseInt(userData[0]) > parseInt(recomendData[1])) {
+        result = tipReduce;
+      } else if (!recomendData[1] && parseInt(userData[0]) < parseInt(recomendData[0])) {
+        result = tipIncrease;
+      } else if (!recomendData[1] && parseInt(userData[1]) > parseInt(recomendData[0])) {
         result = tipReduce;
       } else {
         result = checkOk;
@@ -65,16 +68,6 @@ export const AnalysisItem: React.FC<CareBodyProps> = props => {
 
   return (
     <div className={styles.analysisItem}>
-      {/* --------------- */}
-      {/* it is commented on until the add page will be ready */}
-      {/* --------------- */}
-      {/* {title.map((item, index) => (
-        <>
-          <h1 className={styles.analysisItem__title}>{title[index]} кг</h1>
-          <AnalysisResult title={title[index]} data={getNumber(weight)} />
-        </>
-      ))} */}
-      {/* --------------- */}
       <h1 className={styles.analysisItem__title}>{title[0]} кг</h1>
       <AnalysisResult title={title[0]} data={compare(userWeight, weight)} />
       <h1 className={styles.analysisItem__title}>{title[1]}</h1>

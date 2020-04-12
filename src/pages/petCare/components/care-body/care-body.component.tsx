@@ -8,9 +8,12 @@ import styles from './care-body.module.scss';
 import { BodyHeader } from '../body-header/body-header.component';
 import { AnalysisSection } from '../analysis-section/analysis-section.component';
 import { AdditionalSection } from '../additonal-section/additional-section.component';
+import { QuizData } from '../analysis-item/analysis-item.interface';
 
 export const PetCareBody: React.FC = () => {
-  const petBreed = 'Акіта іну';
+  const quizData = useSelector((state: QuizData) => state.quiz);
+
+  const petBreed = quizData.breed;
   const dispatch = useDispatch();
 
   useEffect(() => {
