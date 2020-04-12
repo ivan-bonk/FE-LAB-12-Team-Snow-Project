@@ -9,15 +9,23 @@ import { fetchPetsAsync } from 'store/result/actions/result.actions';
 import { RootState } from './result.interfaces';
 import { PetProfile } from 'shared/interfaces';
 import { getFiltredPets } from './utils/filter.util';
+import { getUrlFilterValues } from './utils/getUrlValues.util';
 import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 
 import styles from './result.module.scss';
 
-export const Result: React.FC = () => {
+interface ResultProps {
+  location: {
+    search: string;
+  };
+}
+
+export const Result: React.FC<ResultProps> = props => {
   const [searchedPetsArray, setSearchedPetsArray] = useState<JSX.Element[]>([]);
   const [searchedPetsValue, setSearchedPetsValue] = useState<string>('');
+  const storeFilterValues = useSelector((state: RootState) => state.filter);
 
   const dispatch = useDispatch();
 
@@ -26,7 +34,7 @@ export const Result: React.FC = () => {
   }, []);
 
   const pets = useSelector((state: RootState) => state.result.resultStore);
-  const filterValues = useSelector((state: RootState) => state.filter);
+  const filterValues = props.location.search ? getUrlFilterValues(props.location.search) : storeFilterValues;
 
   const mapArrayOfPets = (petsArray: PetProfile[]): JSX.Element[] => {
     return petsArray.map(pet => {

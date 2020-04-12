@@ -1,7 +1,7 @@
 export const ROUTES = {
   home: '/',
   addpet: '/addpet',
-  result: '/result',
+  result: '/result/',
   pet: {
     path: '/pet/:id',
     route: (id: string) => `/pet/${id}`,
