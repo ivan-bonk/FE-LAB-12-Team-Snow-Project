@@ -6,21 +6,15 @@ import { DogSearch } from './components/dog-search/dog-search.component';
 import { FilterButton } from './components/filter-button/filter-button.component';
 import { Dog } from './components/dog/dog.component';
 import { fetchPetsAsync } from 'store/result/actions/result.actions';
-import { RootState } from './result.interfaces';
+import { RootState, ResultProps } from './result.interfaces';
 import { PetProfile } from 'shared/interfaces';
 import { getFiltredPets } from './utils/filter.util';
 import { getUrlFilterValues } from './utils/getUrlValues.util';
+import { getNumberOfFilters } from './utils/numberOfFilters.util';
 import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
-
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 
 import styles from './result.module.scss';
-
-interface ResultProps {
-  location: {
-    search: string;
-  };
-}
 
 export const Result: React.FC<ResultProps> = props => {
   const [searchedPetsArray, setSearchedPetsArray] = useState<JSX.Element[]>([]);
@@ -98,7 +92,7 @@ export const Result: React.FC<ResultProps> = props => {
     <div className={styles.wrapper}>
       <Logo />
       <DogSearch renderPets={handleSearchValue} pets={pets} />
-      <FilterButton />
+      <FilterButton numberOfFilters={getNumberOfFilters(filterValues)} />
       {renderPets()}
     </div>
   );
