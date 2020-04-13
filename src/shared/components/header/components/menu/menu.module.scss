@@ -1,11 +1,29 @@
 .menuContainer {
-    height: 100vh;
-    width: 80%;
-    border-radius: 10px 0px 0px 10px;
-    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.25);
-    position: absolute;
-    background-color: #fff;
-    z-index: 1000;
-    top: 0;
-    right: 0;
+  height: 100vh;
+  width: 80%;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+
+  &__menu {
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    margin: 94px 0 0 30px;
+
+    &__menuItem {
+      margin-bottom: 36px;
+    }
+  }
+}
+
+.menuLink {
+  display: block;
+  color: #000;
+  text-decoration: none;
 }

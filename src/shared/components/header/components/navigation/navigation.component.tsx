@@ -13,11 +13,15 @@ export const Navigation: React.FC = () => {
     setNavigationMenu(!navigationMenu);
   };
 
+  const onLinkClick = () => {
+    setNavigationMenu(!navigationMenu);
+  };
+
   const renderContent = () => {
     if (navigationMenu) {
       return (
         <>
-          <Menu />
+          <Menu onLinkClick={onLinkClick} />
           <img src={cross} className={styles.icon} alt="burger-menu-icon" onClick={onBurgerClick} />
         </>
       );
