@@ -12,8 +12,8 @@
   &__menu {
     list-style-type: none;
     font-weight: 500;
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 24px;
     margin: 94px 0 0 30px;
 
     &__menuItem {
@@ -23,7 +23,8 @@
 }
 
 .menuLink {
-  display: block;
+  display: inline-block;
+  margin-left: 16px;
   color: #000;
   text-decoration: none;
 }
