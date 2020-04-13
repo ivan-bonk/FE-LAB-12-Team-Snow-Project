@@ -15,7 +15,7 @@ export const Radio: React.FC<RadioProps> = ({ name, lable, value, refAttribute }
 
   return (
     <div className={styles.radio}>
-      <p>{lable}</p>
+      <p className={styles.radio__header}>{lable}</p>
       {inputs}
     </div>
   );

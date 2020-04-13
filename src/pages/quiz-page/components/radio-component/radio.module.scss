@@ -1,5 +1,13 @@
 .radio {
-    margin: 10px 5px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    &__header{
+        font-size: 14px;
+        font-weight: 500;
+        padding-bottom: 20px;
+    }
     &__check{
         display: none;
     }
@@ -7,6 +15,7 @@
         display: block;
         font-size: 14px;
         line-height: 16px;
+        padding: 5px 0;
     }
 
     &__title{
