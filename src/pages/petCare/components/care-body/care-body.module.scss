@@ -13,39 +13,48 @@
   background-image: linear-gradient(
       90deg,
       rgba(rgb(238, 238, 238), 0) 0,
-      rgba(rgb(238, 238, 238), 0.5) 50%,
+      rgba(rgb(238, 238, 238), 0.7) 50%,
       rgba(rgb(238, 238, 238), 0) 100%
     ),
-    linear-gradient(white 200px, transparent 0),
-    //avatar
-      linear-gradient(white 70px, transparent 0),
+    linear-gradient(rgb(223, 223, 223) 50px, transparent 0),
     //title
-      linear-gradient(white 70px, transparent 0),
+      linear-gradient(rgb(223, 223, 223) 200px, transparent 0),
+    //avatar
+      linear-gradient(rgb(223, 223, 223) 25px, transparent 0),
+    //title
+      linear-gradient(rgb(223, 223, 223) 70px, transparent 0),
     //desc1
-      linear-gradient(white 70px, transparent 0),
+      linear-gradient(rgb(223, 223, 223) 25px, transparent 0),
     //desc2
-      linear-gradient(white 70px, transparent 0),
+      linear-gradient(rgb(223, 223, 223) 70px, transparent 0),
     //desc3
-      linear-gradient(white 70px, transparent 0),
-    //footer bar
+      linear-gradient(rgb(223, 223, 223) 25px, transparent 0),
+    //desc4
+      linear-gradient(rgb(223, 223, 223) 70px, transparent 0),
+    //desc5
       linear-gradient(rgb(238, 238, 238) 100vh, transparent 0);
 
-  background-size: 250px 100vh, 100% 200px, 60% 70px, 60% 70px, 60% 70px, 60% 70px, 60% 70px, 100% 100%;
+  background-size: 250px 100vh, 30% 50px, 100% 200px, 20% 25px, 60% 70px, 20% 25px, 60% 70px, 25% 25px, 60% 70px,
+    100% 100%;
 
   background-position: -150% 0,
     //animation
-      0px 30px,
-    //avatar
-      30px 270px,
+      30px 30px,
     //title
-      30px 370px,
+      0px 100px,
+    //avatar
+      30px 330px,
+    //title
+      30px 365px,
     //desc1
-      30px 470px,
+      30px 465px,
     //desc2
-      30px 570px,
+      30px 500px,
     //desc3
-      30px 670px,
-    //footer bar
+      30px 600px,
+    //desc4
+      30px 635px,
+    //desc5
       0 0;
 
   background-repeat: no-repeat;
@@ -54,6 +63,7 @@
 
 @keyframes loading {
   to {
-    background-position: 350% 0, 0px 30px, 30px 270px, 30px 370px, 30px 470px, 30px 570px, 30px 670px, 0 0;
+    background-position: 350% 0, 30px 30px, 0px 100px, 30px 330px, 30px 365px, 30px 465px, 30px 500px, 30px 600px,
+      30px 635px, 0 0;
   }
 }
