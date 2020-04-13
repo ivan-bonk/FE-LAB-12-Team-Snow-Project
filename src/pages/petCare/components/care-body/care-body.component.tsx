@@ -28,18 +28,20 @@ export const PetCareBody: React.FC = () => {
       pet = Object.assign({}, el[1]);
     }
   });
-  let result;
-  if (pet.imgUrl) {
-    result = (
-      <div className={styles.careBody}>
-        <BodyHeader pet={pet} />
-        <AnalysisSection pet={pet} />
-        <AdditionalSection pet={pet} />
-      </div>
-    );
-  } else {
-    result = <div className={styles.card}></div>;
-  }
 
-  return <>{result}</>;
+  const renderBody = () => {
+    if (pet.imgUrl) {
+      return (
+        <div className={styles.careBody}>
+          <BodyHeader pet={pet} />
+          <AnalysisSection pet={pet} />
+          <AdditionalSection pet={pet} />
+        </div>
+      );
+    } else {
+      return <div className={styles.card}></div>;
+    }
+  };
+
+  return <>{renderBody()}</>;
 };
