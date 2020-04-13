@@ -10,7 +10,6 @@ export interface RootState {
 
 export interface Data {
   breed: string;
-  birth: string;
   weight: number;
   walkNumber: number;
   mealNumber: number;

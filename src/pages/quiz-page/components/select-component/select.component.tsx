@@ -12,13 +12,13 @@ export const Select: React.FC<SelectProps> = ({ name, elements, refAttribute, la
     );
   });
   return (
-    <>
+    <div className={styles.block}>
       <p className={styles.label}>{lable}</p>
       <div className={styles.select}>
         <select name={name} ref={refAttribute} className={styles.select__box}>
           {pet}
         </select>
       </div>
-    </>
+    </div>
   );
 };

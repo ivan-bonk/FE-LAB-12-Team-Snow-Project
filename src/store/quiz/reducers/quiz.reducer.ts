@@ -8,7 +8,6 @@ type State = Data;
 
 const initialState: Data = {
   breed: '',
-  birth: '',
   weight: 0,
   walkNumber: 0,
   mealNumber: 0,
