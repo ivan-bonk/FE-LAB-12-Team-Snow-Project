@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Logo } from '../../shared/logo/logo.component';
+import { Logo } from 'shared/logo/logo.component';
 import { DogSearch } from './components/dog-search/dog-search.component';
 import { FilterButton } from './components/filter-button/filter-button.component';
 import { Dog } from './components/dog/dog.component';
-import { fetchPetsAsync } from '../../store/result/actions/result.actions';
-import { RootState } from './result.interfaces';
-import { PetProfile } from '../../shared/interfaces';
+import { fetchPetsAsync } from 'store/result/actions/result.actions';
+import { RootState, ResultProps } from './result.interfaces';
+import { PetProfile } from 'shared/interfaces';
 import { getFiltredPets } from './utils/filter.util';
-
-import { AddPetToCompare } from '../../shared/components/add-pet-to-compare/add-pet-to-compare.component';
+import { getUrlFilterValues } from './utils/getUrlValues.util';
+import { getNumberOfFilters } from './utils/numberOfFilters.util';
+import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
+import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 
 import styles from './result.module.scss';
 
-export const Result: React.FC = () => {
+export const Result: React.FC<ResultProps> = props => {
   const [searchedPetsArray, setSearchedPetsArray] = useState<JSX.Element[]>([]);
   const [searchedPetsValue, setSearchedPetsValue] = useState<string>('');
+  const storeFilterValues = useSelector((state: RootState) => state.filter);
 
   const dispatch = useDispatch();
 
@@ -25,15 +28,17 @@ export const Result: React.FC = () => {
   }, []);
 
   const pets = useSelector((state: RootState) => state.result.resultStore);
-  const filterValues = useSelector((state: RootState) => state.filter);
+  const filterValues = props.location.search ? getUrlFilterValues(props.location.search) : storeFilterValues;
 
   const mapArrayOfPets = (petsArray: PetProfile[]): JSX.Element[] => {
     return petsArray.map(pet => {
       return (
-        <>
-          <Dog key={pet._id} name={pet.breed} observations={pet.observations} />
-          <AddPetToCompare id={pet._id} />
-        </>
+        <div key={pet._id}>
+          <Dog name={pet.breed} observations={pet.observations} images={pet.imgUrl} id={pet._id} />
+          <div className={styles.addPetBtn}>
+            <AddPetToCompare id={pet._id} />
+          </div>
+        </div>
       );
     });
   };
@@ -41,7 +46,7 @@ export const Result: React.FC = () => {
   const handleSearchValue = (searchText: string): void => {
     if (searchText) {
       const filtredPets = getFiltredPets(pets, filterValues).filter(pet =>
-        pet.breed.toLowerCase().startsWith(searchText),
+        pet.breed.toLowerCase().includes(searchText),
       );
 
       setSearchedPetsValue(searchText);
@@ -56,9 +61,9 @@ export const Result: React.FC = () => {
 
     if (pets.length === 0) {
       return [
-        <h4 key={key} className={styles.searchPetsFail}>
-          Загрузка собачок
-        </h4>,
+        <div key={key}>
+          <LoadingSpinner />
+        </div>,
       ];
     }
 
@@ -87,7 +92,7 @@ export const Result: React.FC = () => {
     <div className={styles.wrapper}>
       <Logo />
       <DogSearch renderPets={handleSearchValue} pets={pets} />
-      <FilterButton />
+      <FilterButton numberOfFilters={getNumberOfFilters(filterValues)} />
       {renderPets()}
     </div>
   );

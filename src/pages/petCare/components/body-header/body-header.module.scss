@@ -13,3 +13,11 @@
     margin-top: 20px;
   }
 }
+@media (min-width: 560px) {
+  .bodyHeader {
+    &__img {
+      width: 100%;
+      height: 300px;
+    }
+  }
+}

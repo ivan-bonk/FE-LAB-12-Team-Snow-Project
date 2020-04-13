@@ -11,12 +11,12 @@
 .slider {
   position: absolute;
   cursor: pointer;
-  background-color: #f7f7f6;
+  background-color: #ffffff;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   width: 50px;
   height: 22px;
-  border: 1px solid #902111;
+  border: 1px solid #e6e5e5;
   border-radius: 8px;
 }
 
@@ -30,19 +30,20 @@
   border-radius: 10px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  background-color: #902111;
+  background-color: #e6e5e5;
 }
 input:checked + .slider {
-  background-color: #b5a79f;
+  border: 1px solid #d42323;
+  background-color: #fff4f4;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #b5a79f;
+  box-shadow: 0 0 1px #ffe5d6;
 }
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
-  background-color: #1f1712;
+  background-color: #ff453a;
 }

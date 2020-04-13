@@ -1,7 +1,7 @@
 import React from 'react';
 import { AddPetBtn } from '../add-pet-button/add-pet-button.component';
 
-import style from'./empty.module.scss';
+import style from './empty.module.scss';
 
 export const Empty = () => {
   return (

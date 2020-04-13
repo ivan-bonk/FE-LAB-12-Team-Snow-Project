@@ -1,0 +1,39 @@
+.quiz{
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+    &__title{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 33px;
+        margin-right: 10%;
+    }
+    &__img{
+        display: block;
+        margin: 0 auto;
+    }
+
+    &__submit{
+        margin: 10px 0;
+        padding: 8px 13px;
+        display: inline-block;
+        background-color: #902111;
+        color: #FFFFFF;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+}
+
+.date{
+    background-color: #F7F7F6;
+    border: none;
+    width: 100%;
+    padding: 5px 5px;
+    border-radius: 8px;
+    &:focus{
+        outline: 0;
+        border: none;
+    }
+}

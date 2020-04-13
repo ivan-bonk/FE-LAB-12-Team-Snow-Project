@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPets } from '../../../../store/care/actions/care.actions';
+import { getPets } from 'store/care/actions/care.actions';
 import { ResultStore } from './careBody.interface';
 import { CareBodyPet } from './careBody.interface';
 
@@ -8,9 +8,12 @@ import styles from './care-body.module.scss';
 import { BodyHeader } from '../body-header/body-header.component';
 import { AnalysisSection } from '../analysis-section/analysis-section.component';
 import { AdditionalSection } from '../additonal-section/additional-section.component';
+import { QuizData } from '../analysis-item/analysis-item.interface';
 
 export const PetCareBody: React.FC = () => {
-  const petBreed = 'Акіта';
+  const quizData = useSelector((state: QuizData) => state.quiz);
+
+  const petBreed = quizData.breed;
   const dispatch = useDispatch();
 
   useEffect(() => {

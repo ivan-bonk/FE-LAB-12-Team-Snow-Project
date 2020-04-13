@@ -2,16 +2,12 @@ export interface CareBodyPet {
   breed?: string;
   weight?: string;
   additonal?: string;
-  imgUrl?: [] | undefined;
+  imgUrl?: string[];
   observations?: Observations;
   adviseTitle?: string;
   title?: string;
   userNumber?: string;
   data?: string[];
-  walkNumber?: number;
-  mealNumber?: number;
-  mealWeight?: number;
-  MedCheckUp?: number;
   additionalInfo?: AdditionalInfo;
 }
 
@@ -60,6 +56,10 @@ export interface Observations {
   lifetime: string;
   height: string;
   weight: string;
+  walkNumber?: string;
+  mealNumber?: string;
+  mealWeight?: string;
+  medCheckUp?: string;
   price: string;
   carePrice: string;
   careTime: number;
