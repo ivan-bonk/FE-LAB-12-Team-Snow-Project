@@ -13,6 +13,9 @@ export interface CareBodyPet {
 
 export interface CareBodyProps {
   pet: CareBodyPet;
+  location?: {
+    search: string;
+  };
 }
 
 export interface Characteristics {

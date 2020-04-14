@@ -26,7 +26,13 @@ export const QuizPage: React.FC = () => {
 
   const onSubmit = (data: Data): void => {
     dispatch(quizAction(data));
-    history.push('/care');
+
+    const location = {
+      pathname: '/care',
+      search: `?filter:brd=${data.breed}&mN=${data.mealNumber}&mW=${data.mealWeight}&mCUp=${data.medChekUp}&wN=${data.walkNumber}&weigth=${data.weight}`,
+      state: { filter: data },
+    };
+    history.push(location);
   };
 
   useEffect(() => {

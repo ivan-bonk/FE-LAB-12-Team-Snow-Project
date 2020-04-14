@@ -4,6 +4,7 @@ import styles from './analysis-item.module.scss';
 import { AnalysisResult } from '../analysis-result/analysis-result.component';
 import { CareBodyProps } from '../care-body/careBody.interface';
 import { QuizData } from './analysis-item.interface';
+import { useHistory } from 'react-router-dom';
 
 const title = [
   'Вага',
@@ -14,8 +15,18 @@ const title = [
 ];
 
 const weightStrLength = 5;
-
+const getFilterValue = (value: string) => {
+  return value.match(/(?<==).*/g)?.[0];
+};
 export const AnalysisItem: React.FC<CareBodyProps> = props => {
+  const history = useHistory();
+  console.log(history.location.search);
+  const valuesArray = history.location.search
+    ?.slice(8)
+    .split('&')
+    .map(value => getFilterValue(value));
+  console.log(valuesArray);
+
   const quizData = useSelector((state: QuizData) => state.quiz);
 
   const userWalkNumber = quizData.walkNumber;
