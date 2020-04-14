@@ -24,7 +24,7 @@ export const Pet: React.FC<PetProps> = props => {
 
   useEffect(() => {
     dispatch(fetchPetProfile.request(petId));
-  }, [petId]);
+  }, [])
 
   if (error) {
     return (
