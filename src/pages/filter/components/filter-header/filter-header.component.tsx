@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './filter-header.module.scss';
-import { Logo } from 'shared/logo/logo.component';
+import { Logo } from 'shared/components/logo/logo.component';
 
 export const FilterHeader: React.FC = () => {
   return (

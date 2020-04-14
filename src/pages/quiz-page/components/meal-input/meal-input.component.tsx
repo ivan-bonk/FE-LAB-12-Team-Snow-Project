@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { MealProps } from './meal-input.intarface';
 import styles from './meal-input.module.scss';

@@ -6,7 +6,7 @@ import { ObservationsComponent } from './components/observations/observations.co
 import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { PetProfile } from 'shared/models';
-import { Logo } from 'shared/logo/logo.component';
+import { Logo } from 'shared/components/logo/logo.component';
 import { BackBtn } from './components/back-btn/back-btn.component';
 import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import style from './pet.module.scss';
@@ -47,8 +47,8 @@ export const Pet: React.FC<PetProps> = props => {
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>
           <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
-          <AddPetToCompare id={_id} />
           <div className={style.container}>
+            <AddPetToCompare id={_id} />
             <section>
               <h2 className={style.sectionHeader}>Характеристики</h2>
               <CharacteristicsComponent data={characteristics} />
@@ -63,8 +63,7 @@ export const Pet: React.FC<PetProps> = props => {
             </section>
             <Link to={ROUTES.starterPack.route(_id)} className={style.starterBtn}>
               <span className="material-icons">flag</span>
-              {/* //TODO: Remove this silly joke and come up with the better idea for this text @O.Khabrovska */}
-              <span className={style.starterBtnText}>Потрібен стартовий пакет ?</span>
+              <span className={style.starterBtnText}> Що необхідно для того, щоб завести собаку ?</span>
             </Link>
           </div>
           <BackBtn />

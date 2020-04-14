@@ -3,14 +3,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { ROUTES } from '../../shared/constants/routes.constants';
-import { Logo } from '../../shared/logo/logo.component';
+import { ROUTES } from 'shared/constants/routes.constants';
+import { Logo } from 'shared/components/logo/logo.component';
 import { Select } from './components/select-component/select.component';
 import { MealInput } from './components/meal-input/meal-input.component';
 import { Radio } from './components/radio-component/radio.component';
 import { RootState, Data } from './quiz-page.intarface';
-import { quizAction } from '../../store/quiz/actions/quiz.action';
-import { fetchPetsAsync } from '../../store/result/actions/result.actions';
+import { quizAction } from 'store/quiz/actions/quiz.action';
+import { fetchPetsAsync } from 'store/result/actions/result.actions';
 import styles from './quiz-page.module.scss';
 import { useHistory } from 'react-router-dom';
 
@@ -27,7 +27,6 @@ export const QuizPage: React.FC = () => {
   const onSubmit = (data: Data): void => {
     dispatch(quizAction(data));
     history.push('/care');
-    console.log(data);
   };
 
   useEffect(() => {
@@ -49,7 +48,7 @@ export const QuizPage: React.FC = () => {
   return (
     <div className={styles.quiz}>
       <Logo />
-      <h2 className={styles.quiz__title}>На скільки добре ви піклуєтесь про свого собаку?</h2>
+      <h2 className={styles.quiz__title}>Наскільки добре ви піклуєтесь про свого собаку?</h2>
       <img src={dog} alt="Dog" className={styles.quiz__img} />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Select name="breed" refAttribute={register} elements={dogs} lable="Порода" />

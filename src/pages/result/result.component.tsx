@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Logo } from 'shared/logo/logo.component';
+import { Logo } from 'shared/components/logo/logo.component';
 import { DogSearch } from './components/dog-search/dog-search.component';
 import { FilterButton } from './components/filter-button/filter-button.component';
 import { Dog } from './components/dog/dog.component';

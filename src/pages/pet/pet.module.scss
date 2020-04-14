@@ -1,19 +1,20 @@
 .container {
-  padding: 16px;
+  padding: 20px;
   padding-top: 0;
 }
 
-.logoContainer{
-  padding: 16px;
+.logoContainer {
+  padding: 20px;
+  padding-bottom: 0;
 }
 .pageHeader {
   font-size: 28px;
   font-weight: 600;
-  padding: 16px;
+  padding: 20px;
   margin: 0;
 }
 
-.sectionHeader{
+.sectionHeader {
   font-size: 24px;
   font-weight: 600;
   padding: 16px 0px;
@@ -23,15 +24,15 @@
   font-size: 16px;
 }
 
-.dogPic{
+.dogPic {
   width: 100vw;
   height: 220px;
   object-fit: cover;
   object-position: 50% 50%;
-  padding: 16px 0;
+  padding-bottom: 20px;
 }
 
-.starterBtn{
+.starterBtn {
   color: #FF9F0A;
   padding: 16px 0;
   text-decoration: none;
@@ -43,6 +44,6 @@
     padding-left: 10px;
   }
 }
-.addPetBtn{
+.addPetBtn {
   margin-left: 20px;
 }
