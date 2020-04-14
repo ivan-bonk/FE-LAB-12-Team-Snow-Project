@@ -15,4 +15,9 @@ export interface Data {
   family: boolean;
   apartment: boolean;
   allergy: boolean;
+  defaultValue: string;
+}
+
+export interface RootState {
+  filter: Data;
 }

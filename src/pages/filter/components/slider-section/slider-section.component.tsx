@@ -11,10 +11,13 @@ export const SliderSection: React.FC<Partial<InputRadioProps>> = props => {
         name={props.name}
         refAttribute={props.refAttribute}
         delta={props.delta}
+        deltaMin={props.deltaMin}
         min={props.min}
         max={props.max}
         step={props.step}
         units={props.units}
+        value={props.value}
+        defaultValue={props.defaultValue}
       />
     </section>
   );

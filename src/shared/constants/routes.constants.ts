@@ -6,8 +6,13 @@ export const ROUTES = {
     path: '/pet/:id',
     route: (id: string) => `/pet/${id}`,
   },
+  starterPack: {
+    path: '/starterPack/:id',
+    route: (id: string) => `/starterPack/${id}`,
+  },
   comparison: '/comparison/*',
   search: '/search',
   filter: '/filter',
-  petCare: '/petCare',
+  quiz: '/quiz-page',
+  care: '/care',
 };

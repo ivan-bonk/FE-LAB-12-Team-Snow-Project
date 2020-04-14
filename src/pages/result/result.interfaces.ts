@@ -33,6 +33,12 @@ export interface PetValues {
   allergy: boolean;
 }
 
+export interface ResultProps {
+  location: {
+    search: string;
+  };
+}
+
 // I know that it isn't Okay.
 // I don't know how to change it yet.(about pipes --> '|')
 export type PetCharacteristicType = string | boolean | number;

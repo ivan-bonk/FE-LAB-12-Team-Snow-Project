@@ -7,6 +7,7 @@ export const AnalysisResult: React.FC<Partial<CareBodyPet>> = props => {
   let classAtr = '';
   let normal = '';
   let userNumber = '';
+
   if (props.data) {
     advice = props.data[0];
     classAtr = props.data[1];
@@ -23,7 +24,7 @@ export const AnalysisResult: React.FC<Partial<CareBodyPet>> = props => {
         <>
           <h4>Порада:</h4>
           <span>{advice}</span>
-          <span> {props.title}</span>
+          <span>{props.title === 'Вага' ? 'кількість їжі, та перевірити фізичну активність собаки' : props.title}</span>
         </>
       )}
     </div>
