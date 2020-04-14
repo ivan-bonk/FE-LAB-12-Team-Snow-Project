@@ -1,6 +1,6 @@
 import { createReducer, ActionType } from 'typesafe-actions';
 import * as Actions from '../actions/quiz.action';
-import { Data } from '../../../pages/quiz-page/quiz-page.intarface';
+import { Data } from 'pages/quiz-page/quiz-page.intarface';
 
 export type ProfileAction = ActionType<typeof Actions>;
 

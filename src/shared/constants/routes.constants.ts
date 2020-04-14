@@ -1,17 +1,15 @@
 export const ROUTES = {
   home: '/',
-  addpet: '/addpet',
   result: '/result',
   pet: {
     path: '/pet/:id',
     route: (id: string) => `/pet/${id}`,
   },
   starterPack: {
-    path: '/starterPack/:id',
-    route: (id: string) => `/starterPack/${id}`,
+    path: '/starter-pack/:id',
+    route: (id: string) => `/starter-pack/${id}`,
   },
   comparison: '/comparison/*',
-  search: '/search',
   filter: '/filter',
   quiz: '/quiz-page',
   care: '/care',

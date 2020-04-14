@@ -19,6 +19,7 @@ module.exports = {
     "@typescript-eslint/no-var-requires": 0,
     'react/prop-types': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
+    "react-hooks/exhaustive-deps": 0
   },
   settings: {
     react: {

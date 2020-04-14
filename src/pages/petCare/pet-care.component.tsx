@@ -1,12 +1,14 @@
 import React from 'react';
-import { PetCareHeader } from './components/header.component/petCare-header.component';
 import { PetCareBody } from './components/care-body/care-body.component';
+import {Logo} from 'shared/components/logo/logo.component';
 import styles from './pet-care.module.scss';
 
 export const PetCare: React.FC = () => {
   return (
     <div className={styles.container}>
-      <PetCareHeader />
+      <div className={styles.logoContainer}>
+        <Logo/>
+      </div>
       <PetCareBody />
     </div>
   );

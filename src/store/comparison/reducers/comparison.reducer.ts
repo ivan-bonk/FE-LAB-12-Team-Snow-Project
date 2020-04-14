@@ -1,4 +1,4 @@
-import { createReducer, action } from 'typesafe-actions';
+import { createReducer } from 'typesafe-actions';
 import { actionType } from '../actions/comparison.action';
 import { ComparisonState } from 'pages/comparison/comparison.interface';
 

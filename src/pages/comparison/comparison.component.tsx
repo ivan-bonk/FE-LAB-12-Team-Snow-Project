@@ -8,7 +8,7 @@ import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinne
 
 import style from './comparison.module.scss';
 
-import { Logo } from 'shared/logo/logo.component';
+import { Logo } from 'shared/components/logo/logo.component';
 
 import { ComparisonProps, PetsToCompareList, RootState } from './comparison.interface';
 import { ComparisonState } from 'shared/components/add-pet-to-compare/add-pet-to-compare.interface';

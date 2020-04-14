@@ -1,20 +1,22 @@
-.artcleContainer{
+.artcleContainer {
   margin-bottom: 12px;
 }
-.addTitle{
+.addTitle {
   display: flex;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .arrow {
   padding-right: 10px;
 }
 
-.plainText{
-  font-size: 16px;
+.plainText {
+  font-size: 14px;
   margin: 8px 0;
 }
 
-.textItem{
+.textItem {
   list-style-type: none;
   padding-bottom: 8px;
   text-indent: 16px;
