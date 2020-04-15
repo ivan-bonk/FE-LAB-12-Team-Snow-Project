@@ -6,7 +6,6 @@ import { ComparisonDisplay } from './components/comparison-display/comparison-di
 import { Empty } from './components/empty/empty.component';
 import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
-
 import style from './comparison.module.scss';
 
 

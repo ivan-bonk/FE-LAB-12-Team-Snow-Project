@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { fetchPetProfile, clearPetProfile } from 'store/pet/actions/pet.actions';
 import { StarterProps, RootState } from './starter-pack.interfaces';
 import { PetProfile } from 'shared/models';
