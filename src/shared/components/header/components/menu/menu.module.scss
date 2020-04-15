@@ -1,0 +1,30 @@
+.menuContainer {
+  height: 100vh;
+  width: 80%;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+
+  &__menu {
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 94px 0 0 30px;
+
+    &__menuItem {
+      margin-bottom: 36px;
+    }
+  }
+}
+
+.menuLink {
+  display: inline-block;
+  margin-left: 16px;
+  color: #000;
+  text-decoration: none;
+}
