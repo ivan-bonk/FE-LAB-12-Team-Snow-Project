@@ -8,7 +8,7 @@ import { Result } from 'pages/result/result.component';
 import { Pet } from 'pages/pet/pet.component';
 import { Comparison } from 'pages/comparison/comparison.component';
 import { Filter } from 'pages/filter/filter.component';
-import { PetCare } from 'pages/petCare/pet-care.component';
+import { PetCare } from 'pages/pet-care/pet-care.component';
 import { StarterPack } from 'pages/starter-pack/starter-pack.component';
 import { QuizPage } from './pages/quiz-page/quiz-page.component';
 
