@@ -20,7 +20,7 @@ export const Pet: React.FC<PetProps> = props => {
   const dispatch = useDispatch();
   const petProfile: PetProfile = useSelector((state: RootState) => state.pet.currentPet);
   const loading: boolean = useSelector((state: RootState) => state.pet.loading);
-  const error: string | undefined = useSelector((state: RootState) => state.pet.errors);
+  const error: string = useSelector((state: RootState) => state.pet.errors);
   const { imgUrl, breed, characteristics, observations, additionalInfo, _id } = petProfile;
   const dataReady = !!petProfile.breed;
 

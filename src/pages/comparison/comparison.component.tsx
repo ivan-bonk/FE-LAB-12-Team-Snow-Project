@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetPetsById, clearListToCompare } from 'store/comparison/actions/comparison.action';
 import { addComparisonPet } from 'store/comparison/actions/comparison-handler.action';
@@ -40,7 +40,6 @@ export const Comparison: React.FC<ComparisonProps> = props => {
 
   // Todo: Add cool animated loader component @ Bonk I.
   const loading = isLoading ? <LoadingSpinner /> : null;
-  const error = isError ? <ErrorHandling/> : null;
 
   const isEmpty = ids ? loading : <Empty />;
 
