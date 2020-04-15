@@ -6,7 +6,7 @@ export const AdditionalInfo: React.FC = () => {
   const [food, setFood] = useState(false);
   const [walk, setWalk] = useState(false);
 
-  const toggle = (callback: any, block: boolean) => {
+  const toggle = (callback: React.Dispatch<React.SetStateAction<boolean>>, block: boolean) => {
     callback(!block);
   };
 

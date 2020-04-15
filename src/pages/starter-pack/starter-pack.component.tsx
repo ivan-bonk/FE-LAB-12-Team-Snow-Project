@@ -16,10 +16,10 @@ import style from './starter-pack.module.scss';
 export const StarterPack: React.FC<StarterProps> = props => {
   const petId: string = props.match.params.id;
   const dispatch = useDispatch();
-  const petProfile: PetProfile = useSelector((state: any) => state.pet.currentPet);
+  const petProfile: PetProfile = useSelector((state: RootState) => state.pet.currentPet);
   const loading: boolean = useSelector((state: RootState) => state.pet.loading);
   const error: boolean = !!useSelector((state: RootState) => state.pet.errors);
-  const { imgUrl, breed, observations, _id } = petProfile;
+  const { imgUrl, breed, observations } = petProfile;
   const dataReady = !!petProfile._id;
 
   useEffect(() => {
