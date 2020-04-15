@@ -9,6 +9,7 @@
         font-size: 28px;
         line-height: 33px;
         margin-right: 10%;
+        margin: 20px 0;
     }
     &__img{
         display: block;
@@ -26,14 +27,3 @@
     }
 }
 
-.date{
-    background-color: #F7F7F6;
-    border: none;
-    width: 100%;
-    padding: 5px 5px;
-    border-radius: 8px;
-    &:focus{
-        outline: 0;
-        border: none;
-    }
-}

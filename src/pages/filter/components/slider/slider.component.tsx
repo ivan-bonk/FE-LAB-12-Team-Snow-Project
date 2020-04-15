@@ -21,7 +21,7 @@ export const Slider: React.FC<Partial<InputRadioProps>> = props => {
     if (props.delta && props.defaultValue && props.deltaMin) {
       setPositionValue(props.delta * (parseInt(props.defaultValue) - props.deltaMin) * windowsWidth);
     }
-  }, []);
+  }, [props, windowsWidth]);
 
   return (
     <>

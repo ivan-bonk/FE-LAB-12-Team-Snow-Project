@@ -4,6 +4,8 @@ import styles from './analysis-item.module.scss';
 import { AnalysisResult } from '../analysis-result/analysis-result.component';
 import { CareBodyProps } from '../care-body/careBody.interface';
 import { QuizData } from './analysis-item.interface';
+import { Data } from './analysis-item.interface';
+import { useLocation } from 'react-router-dom';
 
 const title = [
   'Вага',
@@ -16,19 +18,25 @@ const title = [
 const weightStrLength = 5;
 
 export const AnalysisItem: React.FC<CareBodyProps> = props => {
+  const location = useLocation();
   const quizData = useSelector((state: QuizData) => state.quiz);
+  const stateValue: Data | null = location.state ? location.state : null;
 
-  const userWalkNumber = quizData.walkNumber;
-  const userMealNumber = quizData.mealNumber;
-  const userMealWeight = quizData.mealWeight;
-  const userMedChekUp = quizData.medChekUp;
-  const userWeight = quizData.weight;
+  const userMealNumber = stateValue ? stateValue?.mealNumber : quizData.mealNumber;
+  const userMealWeight = stateValue ? stateValue?.mealWeight : quizData.mealWeight;
+  const userMedCheckUp = stateValue ? stateValue?.medChekUp : quizData.medChekUp;
+  const userWalkNumber = stateValue ? stateValue?.walkNumber : quizData.walkNumber;
+  const userWeight = stateValue ? stateValue?.weight : quizData.weight;
+
+  const userData = [userWeight, userWalkNumber, userMealNumber, userMealWeight, userMedCheckUp];
 
   const walkNumber = props.pet.observations?.walkNumber as string;
   const mealNumber = props.pet.observations?.mealNumber as string;
   const mealWeight = props.pet.observations?.mealWeight as string;
   const medCheckUp = props.pet.observations?.medCheckUp as string;
   const weight = props.pet.observations?.weight as string;
+
+  const rocommendData = [weight, walkNumber, mealNumber, mealWeight, medCheckUp];
 
   const transformData = (str: string) => {
     if (str !== undefined && str.length > weightStrLength) {
@@ -68,16 +76,14 @@ export const AnalysisItem: React.FC<CareBodyProps> = props => {
 
   return (
     <div className={styles.analysisItem}>
-      <h1 className={styles.analysisItem__title}>{title[0]} кг</h1>
-      <AnalysisResult title={title[0]} data={compare(userWeight, weight)} />
-      <h1 className={styles.analysisItem__title}>{title[1]}</h1>
-      <AnalysisResult title={title[1]} data={compare(userWalkNumber, walkNumber)} />
-      <h1 className={styles.analysisItem__title}>{title[2]}</h1>
-      <AnalysisResult title={title[2]} data={compare(userMealNumber, mealNumber)} />
-      <h1 className={styles.analysisItem__title}>{title[3]}</h1>
-      <AnalysisResult title={title[3]} data={compare(userMealWeight, mealWeight)} />
-      <h1 className={styles.analysisItem__title}>{title[4]}</h1>
-      <AnalysisResult title={title[4]} data={compare(userMedChekUp, medCheckUp)} />
+      {title.map((title, index) => {
+        return (
+          <div key={index}>
+            <h1 className={styles.analysisItem__title}>{title} кг</h1>
+            <AnalysisResult title={title} data={compare(userData[index], rocommendData[index])} />
+          </div>
+        );
+      })}
     </div>
   );
 };

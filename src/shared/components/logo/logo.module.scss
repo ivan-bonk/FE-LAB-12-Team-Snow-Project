@@ -1,0 +1,10 @@
+.logoContainer {
+  display: inline-flex;
+  height: 60px;
+  flex-direction: row;
+
+  &__logo2 {
+    align-self: flex-end;
+    margin-left: -7px;
+  }
+}

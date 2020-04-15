@@ -5,7 +5,7 @@ import { PetProfile } from 'shared/models';
 
 const initialState: PetState = {
   currentPet: {},
-  errors: undefined,
+  errors: '',
   loading: false,
 };
 
@@ -20,4 +20,5 @@ export const petReducer = createReducer(initialState)
     ...state,
     loading: false,
     errors: action.payload,
-  }));
+  }))
+  .handleAction('@pet/CLEAR_PET', (state: PetState) => ({ ...state, currentPet: {} }))

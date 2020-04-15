@@ -1,5 +1,5 @@
 import { createReducer } from 'typesafe-actions';
-import { ComparisonHandlerState } from '../../../shared/components/add-pet-to-compare/add-pet-to-compare.interface';
+import { ComparisonHandlerState } from 'shared/components/add-pet-to-compare/add-pet-to-compare.interface';
 import { removePet } from '../services/remove-pet-to-compare';
 const initialState: ComparisonHandlerState = {
   idsToCompare: [],

@@ -1,28 +1,27 @@
 .container {
-    padding: 16px;
-    padding-top: 0;
-  }
+  padding: 0 20px;
+}
+
+.pageHeader {
+  font-size: 28px;
+  font-weight: 600;
+  padding: 20px;
+  margin: 0;
+}
   
-  .pageHeader {
-    font-size: 28px;
-    font-weight: 600;
-    padding: 20px;
-    margin: 0;
-  }
+.sectionHeader {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 16px 0px;
+}
   
-  .sectionHeader{
-    font-size: 24px;
-    font-weight: 600;
-    padding: 16px 0px;
-  }
+.plainText {
+  font-size: 16px;
+}
   
-  .plainText {
-    font-size: 16px;
-  }
-  
-  .dogPic{
-    width: 100vw;
-    height: 220px;
-    object-fit: cover;
-    object-position: 50% 50%;
-  }
+.dogPic {
+  width: 100vw;
+  height: 220px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}

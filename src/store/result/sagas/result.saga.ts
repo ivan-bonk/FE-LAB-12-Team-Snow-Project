@@ -1,8 +1,14 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
 import { fetchPetsAsync } from '../actions/result.actions';
+import { api } from 'shared/constants/api';
 
-function fetchPets() {
-  return fetch('https://fathomless-ridge-53873.herokuapp.com/pets').then(response => response.json());
+async function fetchPets() {
+  const dogProfiles = await fetch(`${api}/pets`);
+  if (dogProfiles.ok) {
+    return await dogProfiles.json();
+  } else {
+    return Promise.reject();
+  }
 }
 
 function* workerFetchPets() {

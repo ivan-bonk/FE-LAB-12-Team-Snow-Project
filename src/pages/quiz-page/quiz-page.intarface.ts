@@ -1,7 +1,8 @@
-import { PetProfile } from '../../shared/interfaces';
+import { PetProfile } from 'shared/interfaces';
 
 interface ResultStore {
   resultStore: PetProfile[];
+  errors: string
 }
 
 export interface RootState {
@@ -10,7 +11,6 @@ export interface RootState {
 
 export interface Data {
   breed: string;
-  birth: string;
   weight: number;
   walkNumber: number;
   mealNumber: number;
