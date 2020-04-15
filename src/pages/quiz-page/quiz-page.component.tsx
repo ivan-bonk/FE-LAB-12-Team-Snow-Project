@@ -29,7 +29,7 @@ export const QuizPage: React.FC = () => {
 
     const location = {
       pathname: '/care',
-      search: `?filter:mN=${data.mealNumber}&mW=${data.mealWeight}&mCUp=${data.medChekUp}&wN=${data.walkNumber}&weigth=${data.weight}`,
+      search: `?filter:brd=${data.breed}&mN=${data.mealNumber}&mW=${data.mealWeight}&mCUp=${data.medChekUp}&wN=${data.walkNumber}&weigth=${data.weight}`,
       state: data,
     };
     history.push(location);
