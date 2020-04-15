@@ -2,6 +2,7 @@ import { PetProfile } from 'shared/interfaces';
 
 interface ResultStore {
   resultStore: PetProfile[];
+  errors: string
 }
 
 export interface RootState {
