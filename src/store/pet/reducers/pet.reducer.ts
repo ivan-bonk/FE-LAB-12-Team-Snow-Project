@@ -20,4 +20,5 @@ export const petReducer = createReducer(initialState)
     ...state,
     loading: false,
     errors: action.payload,
-  }));
+  }))
+  .handleAction('@pet/CLEAR_PET', (state: PetState) => ({ ...state, currentPet: {} }))

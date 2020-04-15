@@ -1,19 +1,18 @@
 import React, { useEffect, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPetProfile } from 'store/pet/actions/pet.actions';
+import { fetchPetProfile, clearPetProfile } from 'store/pet/actions/pet.actions';
 import { PetProps, RootState } from './props.models';
 import { ObservationsComponent } from './components/observations/observations.component';
 import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { PetProfile } from 'shared/models';
-import { Logo } from 'shared/components/logo/logo.component';
 import { BackBtn } from './components/back-btn/back-btn.component';
 import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import style from './pet.module.scss';
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 import { Link } from 'react-router-dom';
 import { ROUTES } from 'shared/constants/routes.constants';
-import {ErrorHandling} from 'shared/components/error-handling/error-handling.component';
+import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
 
 export const Pet: React.FC<PetProps> = props => {
   const petId: string = props.match.params.id;
@@ -26,16 +25,16 @@ export const Pet: React.FC<PetProps> = props => {
 
   useEffect(() => {
     dispatch(fetchPetProfile.request(petId));
-  }, [])
+    return () => {
+      dispatch(clearPetProfile);
+    };
+  }, []);
 
   if (error) {
     return (
       <Fragment>
-         <div className={style.logoContainer}>
-          <Logo />
-        </div>
         <div className={style.container}>
-        <ErrorHandling/>
+          <ErrorHandling />
         </div>
       </Fragment>
     );
@@ -43,10 +42,7 @@ export const Pet: React.FC<PetProps> = props => {
   //TODO: Skeleton or placeholder. Add during loading the page @O.Khabrovska
   return (
     <Fragment>
-      <div className={style.logoContainer}>
-        <Logo />
-      </div>
-      {loading && <LoadingSpinner/>}
+      {loading && <LoadingSpinner />}
       {dataReady && (
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>
