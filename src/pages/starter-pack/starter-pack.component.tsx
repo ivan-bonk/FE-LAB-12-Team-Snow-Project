@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPetProfile } from 'store/pet/actions/pet.actions';
+import { fetchPetProfile, clearPetProfile } from 'store/pet/actions/pet.actions';
 import { StarterProps, RootState } from './starter-pack.interfaces';
 import { PetProfile } from 'shared/models';
 import { Logo } from 'shared/components/logo/logo.component';
@@ -23,10 +23,9 @@ export const StarterPack: React.FC<StarterProps> = props => {
   const dataReady = !!petProfile._id;
 
   useEffect(() => {
-    if (petId !== _id) {
-      dispatch(fetchPetProfile.request(petId));
-    }
-  }, [petId]);
+    dispatch(fetchPetProfile.request(petId));
+    return () => {dispatch(clearPetProfile);}
+  }, []);
 
   return (
     <>
