@@ -71,7 +71,6 @@ export const Pet: React.FC<PetProps> = props => {
             </Link>
           </div>
           <BackBtn />
-          <Footer />
         </div>
       )}
     </Fragment>
