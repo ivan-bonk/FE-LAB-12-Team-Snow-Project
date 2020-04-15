@@ -9,11 +9,18 @@ import { ErrorHandling } from 'shared/components/error-handling/error-handling.c
 
 import style from './comparison.module.scss';
 
-import { ComparisonProps, PetsToCompareList, RootState } from './comparison.interface';
+
+import { Logo } from 'shared/components/logo/logo.component';
+import { Footer } from 'shared/components/footer/footer.component';
+
+import { PetsToCompareList, RootState } from './comparison.interface';
 import { ComparisonState } from 'shared/components/add-pet-to-compare/add-pet-to-compare.interface';
 
-export const Comparison: React.FC<ComparisonProps> = props => {
-  const ids = props.match.params[0];
+export const Comparison: React.FC = () => {
+  // Route to comparison page don't use any params
+  // I don't know how i can open 'Empty' page while path is /comparison/ using router params
+  // and if path is /comparison/id1-id20-id3    -  open another page
+  const ids = window.location.pathname.split('/')[2];
 
   const dispatch = useDispatch();
 
@@ -22,11 +29,13 @@ export const Comparison: React.FC<ComparisonProps> = props => {
   const isError = !!useSelector((state: RootState) => state.comparison.error);
   const idsToCompare: string[] = useSelector((state: ComparisonState) => state.comparisonHandler.idsToCompare);
 
-  ids.split('-').forEach((el, index) => {
-    if (el !== idsToCompare[index]) {
-      dispatch(addComparisonPet(el));
-    }
-  });
+  if (ids) {
+    ids.split('-').forEach((el, index) => {
+      if (el !== idsToCompare[index]) {
+        dispatch(addComparisonPet(el));
+      }
+    });
+  }
 
   useEffect(() => {
     if (ids) {
@@ -36,22 +45,23 @@ export const Comparison: React.FC<ComparisonProps> = props => {
     }
   }, [ids]);
 
-  // Todo: Add cool animated loader component @ Bonk I.
   const loading = isLoading ? <LoadingSpinner /> : null;
 
   const isEmpty = ids ? loading : <Empty />;
 
   return (
     <div className={style.comparisonPage}>
+      <Logo />
       {isError ? (
         <ErrorHandling />
       ) : (
-        <>
+        <div className={style.comparisonPage__content}>
           <h1 className={style.comparisonPage__header}>Порівняння</h1>
           {isEmpty}
           {pets.length > 0 && <ComparisonDisplay ids={ids} pets={pets} />}
-        </>
+        </div>
       )}
+      <Footer />
     </div>
   );
 };

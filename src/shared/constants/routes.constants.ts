@@ -9,7 +9,7 @@ export const ROUTES = {
     path: '/starter-pack/:id',
     route: (id: string) => `/starter-pack/${id}`,
   },
-  comparison: '/comparison/*',
+  comparison: '/comparison/',
   filter: '/filter',
   quiz: '/quiz-page',
   care: '/care',
