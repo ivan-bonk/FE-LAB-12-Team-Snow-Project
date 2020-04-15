@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from 'shared/constants/routes.constants';
+import { useSelector } from 'react-redux';
 
 import home from 'shared/components/header/icons/home-icon.svg';
 import paw from 'shared/components/header/icons/paw-icon.svg';
@@ -14,7 +15,17 @@ interface MenuProps {
   onLinkClick(): void;
 }
 
+interface PetsIds {
+  idsToCompare: string[];
+}
+
+interface RootState {
+  comparisonHandler: PetsIds;
+}
+
 export const Menu: React.FC<MenuProps> = props => {
+  const idsToCompare = useSelector((state: RootState) => state.comparisonHandler.idsToCompare);
+
   return (
     <div className={styles.menuContainer}>
       <ul className={styles.menuContainer__menu} onClick={props.onLinkClick}>
@@ -38,7 +49,7 @@ export const Menu: React.FC<MenuProps> = props => {
         </li>
         <li className={styles.menuContainer__menu__menuItem}>
           <img src={like} alt="home-icon" />
-          <Link to="/comparison/" className={styles.menuLink}>
+          <Link to={`/comparison/${idsToCompare.join('-')}`} className={styles.menuLink}>
             Порівняти
           </Link>
         </li>

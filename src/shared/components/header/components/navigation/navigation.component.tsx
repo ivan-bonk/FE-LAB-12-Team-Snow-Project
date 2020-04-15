@@ -8,7 +8,6 @@ import styles from './navigation.module.scss';
 
 export const Navigation: React.FC = () => {
   const [navigationMenu, setNavigationMenu] = useState<boolean>(false);
-  // let overflow = '';
 
   const onBurgerClick = () => {
     setNavigationMenu(!navigationMenu);

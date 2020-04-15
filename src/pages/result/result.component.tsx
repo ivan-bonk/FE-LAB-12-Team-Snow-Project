@@ -90,6 +90,7 @@ export const Result: React.FC<ResultProps> = props => {
 
   return (
     <div className={styles.wrapper}>
+      <Logo />
       <DogSearch renderPets={handleSearchValue} pets={pets} />
       <FilterButton numberOfFilters={getNumberOfFilters(filterValues)} />
       {renderPets()}
