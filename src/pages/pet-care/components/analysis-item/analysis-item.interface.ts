@@ -4,9 +4,9 @@ export interface QuizData {
 export interface Data {
   breed?: string;
   birth?: string;
-  weight: number;
-  walkNumber: number;
-  mealNumber: number;
-  mealWeight: number;
-  medChekUp: number;
+  weight?: number;
+  walkNumber?: number;
+  mealNumber?: number;
+  mealWeight?: number;
+  medChekUp?: number;
 }

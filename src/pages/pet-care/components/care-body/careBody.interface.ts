@@ -11,6 +11,15 @@ export interface CareBodyPet {
   additionalInfo?: AdditionalInfo;
 }
 
+export interface Data {
+  breed?: string;
+  weight: number;
+  walkNumber: number;
+  mealNumber: number;
+  mealWeight: number;
+  medChekUp: number;
+}
+
 export interface CareBodyProps {
   pet: CareBodyPet;
   location?: {
