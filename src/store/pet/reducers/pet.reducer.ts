@@ -5,7 +5,7 @@ import { PetProfile } from 'shared/models';
 
 const initialState: PetState = {
   currentPet: {},
-  errors: undefined,
+  errors: '',
   loading: false,
 };
 

@@ -6,6 +6,6 @@ export interface RootState {
 
 export interface PetState {
   currentPet: PetProfile | object;
-  errors: string | undefined;
+  errors: string;
   loading: boolean;
 }

@@ -15,6 +15,7 @@ import styles from './quiz-page.module.scss';
 import { useHistory } from 'react-router-dom';
 
 import { SliderSection } from '../filter/components/slider-section/slider-section.component';
+import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
 
 import dog from '../../images/dog-quiz.svg';
 
@@ -34,6 +35,8 @@ export const QuizPage: React.FC = () => {
   }, []);
 
   const pets = useSelector((state: RootState) => state.result.resultStore);
+  const error = !!useSelector((state: RootState) => state.result.errors);
+
   const dogs: any = [];
   pets.forEach(dog => {
     dogs.push(dog.breed);
@@ -48,30 +51,34 @@ export const QuizPage: React.FC = () => {
   return (
     <div className={styles.quiz}>
       <Logo />
-      <h2 className={styles.quiz__title}>Наскільки добре ви піклуєтесь про свого собаку?</h2>
-      <img src={dog} alt="Dog" className={styles.quiz__img} />
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Select name="breed" refAttribute={register} elements={dogs} lable="Порода" />
-        <SliderSection
-          name="weight"
-          refAttribute={register}
-          delta={deltaPositionWeight}
-          deltaMin={1}
-          defaultValue={'0'}
-          min="0"
-          max="100"
-          step="5"
-          units="кг"
-          lable="Вага"
-        />
-        <Radio refAttribute={register} name="walkNumber" lable="Кількість вигулювань за день" value={walkNumberValue} />
-        <Radio refAttribute={register} name="mealNumber" lable="Кількість прийомів їжі" value={mealNumberValue} />
-        <MealInput name={'mealWeight'} refAttribute={register} />
-        <Radio refAttribute={register} name="medChekUp" lable="Кількість мед. чекапів за рік" value={medChekUpValue} />
-        <Link to={ROUTES.home} className={styles.quiz__submit} onClick={handleSubmit(onSubmit)}>
-          Дізнатися результат
-        </Link>
-      </form>
+      {error ? <ErrorHandling/> : 
+      <>
+        <h2 className={styles.quiz__title}>Наскільки добре ви піклуєтесь про свого собаку?</h2>
+        <img src={dog} alt="Dog" className={styles.quiz__img} />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Select name="breed" refAttribute={register} elements={dogs} lable="Порода" />
+          <SliderSection
+            name="weight"
+            refAttribute={register}
+            delta={deltaPositionWeight}
+            deltaMin={1}
+            defaultValue={'0'}
+            min="0"
+            max="100"
+            step="5"
+            units="кг"
+            lable="Вага"
+          />
+          <Radio refAttribute={register} name="walkNumber" lable="Кількість вигулювань за день" value={walkNumberValue} />
+          <Radio refAttribute={register} name="mealNumber" lable="Кількість прийомів їжі" value={mealNumberValue} />
+          <MealInput name={'mealWeight'} refAttribute={register} />
+          <Radio refAttribute={register} name="medChekUp" lable="Кількість мед. чекапів за рік" value={medChekUpValue} />
+          <Link to={ROUTES.home} className={styles.quiz__submit} onClick={handleSubmit(onSubmit)}>
+            Дізнатися результат
+          </Link>
+        </form>
+      </>
+      }
     </div>
   );
 };
