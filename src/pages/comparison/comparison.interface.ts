@@ -12,15 +12,6 @@ export interface PetToCompare {
   type: boolean;
 }
 
-export type ComparisonProps = {
-  name: string;
-  match: {
-    params: {
-      0: string;
-    };
-  };
-};
-
 export interface RootState {
   comparison: ComparisonState;
 }

@@ -13,6 +13,7 @@ import style from './pet.module.scss';
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 import { Link } from 'react-router-dom';
 import { ROUTES } from 'shared/constants/routes.constants';
+import { Footer } from 'shared/components/footer/footer.component';
 
 export const Pet: React.FC<PetProps> = props => {
   const petId: string = props.match.params.id;
@@ -67,6 +68,7 @@ export const Pet: React.FC<PetProps> = props => {
             </Link>
           </div>
           <BackBtn />
+          <Footer />
         </div>
       )}
     </Fragment>

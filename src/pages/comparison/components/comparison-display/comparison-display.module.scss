@@ -14,3 +14,19 @@
     font-size: 16px;
   }
 }
+
+@media (min-width: 800px) {
+  .comparisonDisplay {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .characteristics {
+    width: 420px;
+    margin-right: 15px;
+  }
+  .specificityCare {
+    width: 420px;
+    margin-left: 15px;
+  }
+}
