@@ -13,6 +13,7 @@ import { getUrlFilterValues } from './utils/getUrlValues.util';
 import { getNumberOfFilters } from './utils/numberOfFilters.util';
 import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
+import {ErrorHandling} from 'shared/components/error-handling/error-handling.component';
 
 import styles from './result.module.scss';
 
@@ -28,6 +29,7 @@ export const Result: React.FC<ResultProps> = props => {
   }, []);
 
   const pets = useSelector((state: RootState) => state.result.resultStore);
+  const errors = !!useSelector((state: RootState) => state.result.errors);
   const filterValues = props.location.search ? getUrlFilterValues(props.location.search) : storeFilterValues;
 
   const mapArrayOfPets = (petsArray: PetProfile[]): JSX.Element[] => {
@@ -64,6 +66,12 @@ export const Result: React.FC<ResultProps> = props => {
         <div key={key}>
           <LoadingSpinner />
         </div>,
+      ];
+    }
+    
+    if (errors) {
+      return [
+        <ErrorHandling/>
       ];
     }
 
