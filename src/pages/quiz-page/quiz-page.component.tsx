@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { ROUTES } from '../../shared/constants/routes.constants';
-import { Logo } from '../../shared/logo/logo.component';
 import { Select } from './components/select-component/select.component';
 import { Radio } from './components/radio-component/radio.component';
 import { RootState, Data } from './quiz-page.intarface';
@@ -42,7 +41,6 @@ export const QuizPage: React.FC = () => {
 
   return (
     <div className={styles.quiz}>
-      <Logo />
       <h2 className={styles.quiz__title}>На скільки добре ви піклуєтесь про свого собаку?</h2>
       <img src={dog} alt="Dog" className={styles.quiz__img} />
       <form onSubmit={handleSubmit(onSubmit)}>

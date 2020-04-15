@@ -1,5 +1,5 @@
 import React from 'react';
-import 'App.css';
+import styles from './App.module.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { ROUTES } from 'shared/constants/routes.constants';
@@ -20,18 +20,20 @@ function App() {
   return (
     <Router>
       <Header />
-      <Switch>
-        <Route exact path={ROUTES.home} component={LandinPage}></Route>
-        <Route path={ROUTES.search} component={Search}></Route>
-        <Route path={ROUTES.result} component={Result}></Route>
-        <Route path={ROUTES.pet.path} component={Pet}></Route>
-        <Route path={ROUTES.starterPack.path} component={StarterPack}></Route>
-        <Route path={ROUTES.addpet} component={AddPet}></Route>
-        <Route path={ROUTES.comparison} component={Comparison}></Route>
-        <Route path={ROUTES.filter} component={Filter}></Route>
-        <Route path={ROUTES.quiz} component={QuizPage} />
-        <Route path={ROUTES.care} component={PetCare}></Route>
-      </Switch>
+      <div className={styles.appWrapper}>
+        <Switch>
+          <Route exact path={ROUTES.home} component={LandinPage}></Route>
+          <Route path={ROUTES.search} component={Search}></Route>
+          <Route path={ROUTES.result} component={Result}></Route>
+          <Route path={ROUTES.pet.path} component={Pet}></Route>
+          <Route path={ROUTES.starterPack.path} component={StarterPack}></Route>
+          <Route path={ROUTES.addpet} component={AddPet}></Route>
+          <Route path={ROUTES.comparison} component={Comparison}></Route>
+          <Route path={ROUTES.filter} component={Filter}></Route>
+          <Route path={ROUTES.quiz} component={QuizPage} />
+          <Route path={ROUTES.care} component={PetCare}></Route>
+        </Switch>
+      </div>
     </Router>
   );
 }

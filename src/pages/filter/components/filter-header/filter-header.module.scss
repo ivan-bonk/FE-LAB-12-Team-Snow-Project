@@ -1,21 +1,9 @@
 .header {
   display: flex;
 
-  .filter_logo__container {
-    width: 63px;
-    text-align: center;
-
-    span {
-      font-weight: bold;
-      font-size: 14px;
-      color: #5c4937;
-      margin: 0 auto;
-    }
-  }
-
   .filter__header {
     font-family: Roboto;
     font-size: 1.5em;
-    margin: 25px auto;
+    margin: 0 auto;
   }
 }

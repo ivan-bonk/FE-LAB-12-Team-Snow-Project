@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchPetProfile } from 'store/pet/actions/pet.actions';
 import { StarterProps } from './starter-pack.interfaces';
 import { PetProfile } from 'shared/models';
-import { Logo } from 'shared/logo/logo.component';
 import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import { ToBuy } from './components/to-buy/to-buy.component';
 import { FromBreeder } from './components/from-breeder/from-breeder.component';
@@ -27,9 +26,6 @@ export const StarterPack: React.FC<StarterProps> = props => {
 
   return (
     <>
-      <div className={style.logoContainer}>
-        <Logo />
-      </div>
       {!dataReady && <LoadingSpinner />}
       {dataReady && (
         <div>

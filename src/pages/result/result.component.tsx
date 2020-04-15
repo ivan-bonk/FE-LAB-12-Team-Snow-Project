@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Logo } from 'shared/logo/logo.component';
 import { DogSearch } from './components/dog-search/dog-search.component';
 import { FilterButton } from './components/filter-button/filter-button.component';
 import { Dog } from './components/dog/dog.component';
@@ -90,7 +89,6 @@ export const Result: React.FC<ResultProps> = props => {
 
   return (
     <div className={styles.wrapper}>
-      <Logo />
       <DogSearch renderPets={handleSearchValue} pets={pets} />
       <FilterButton numberOfFilters={getNumberOfFilters(filterValues)} />
       {renderPets()}

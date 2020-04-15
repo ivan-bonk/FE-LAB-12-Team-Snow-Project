@@ -8,8 +8,6 @@ import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinne
 
 import style from './comparison.module.scss';
 
-import { Logo } from 'shared/logo/logo.component';
-
 import { ComparisonProps, PetsToCompareList, RootState } from './comparison.interface';
 import { ComparisonState } from 'shared/components/add-pet-to-compare/add-pet-to-compare.interface';
 
@@ -42,7 +40,6 @@ export const Comparison: React.FC<ComparisonProps> = props => {
 
   return (
     <div className={style.comparisonPage}>
-      <Logo />
       <h1 className={style.comparisonPage__header}>Порівняння</h1>
       {isEmpty}
       {pets.length > 0 && <ComparisonDisplay ids={ids} pets={pets} />}

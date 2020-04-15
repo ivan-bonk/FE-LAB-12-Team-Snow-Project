@@ -6,7 +6,6 @@ import { ObservationsComponent } from './components/observations/observations.co
 import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { PetProfile } from 'shared/models';
-import { Logo } from 'shared/logo/logo.component';
 import { BackBtn } from './components/back-btn/back-btn.component';
 import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import style from './pet.module.scss';
@@ -29,7 +28,6 @@ export const Pet: React.FC<PetProps> = props => {
   if (error) {
     return (
       <Fragment>
-        <Logo />
         <div className={style.container}>
           <h2 className={style.sectionHeader}>Упс, щось пішло не так</h2>
         </div>
@@ -39,9 +37,6 @@ export const Pet: React.FC<PetProps> = props => {
   //TODO: Skeleton or placeholder. Add during loading the page @O.Khabrovska
   return (
     <Fragment>
-      <div className={style.logoContainer}>
-        <Logo />
-      </div>
       {!dataReady && <LoadingSpinner />}
       {dataReady && (
         <div>
