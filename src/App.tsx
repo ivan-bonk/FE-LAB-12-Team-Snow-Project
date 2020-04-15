@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <div className={styles.appWrapper}>
+      <div className={styles.appWrapper} id="app-wrapper">
         <Switch>
           <Route exact path={ROUTES.home} component={LandinPage}></Route>
           <Route path={ROUTES.search} component={Search}></Route>

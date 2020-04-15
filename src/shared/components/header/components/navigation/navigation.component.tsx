@@ -6,20 +6,32 @@ import { Menu } from '../menu/menu.component';
 
 import styles from './navigation.module.scss';
 
+const setAppStyles = (overflow: string) => {
+  // I don't know how to override 'as' syntax yet
+  const appWrapper = document.querySelector('#app-wrapper') as HTMLElement;
+
+  if (overflow === 'hidden') {
+    document.body.style.overflow = '';
+    appWrapper.style.filter = '';
+  } else {
+    document.body.style.overflow = 'hidden';
+    appWrapper.style.filter = 'blur(4px)';
+  }
+};
+
 export const Navigation: React.FC = () => {
   const [navigationMenu, setNavigationMenu] = useState<boolean>(false);
 
   const onBurgerClick = () => {
     setNavigationMenu(!navigationMenu);
 
-    const bodyOverflow = document.body.style.overflow;
-
-    document.body.style.overflow = bodyOverflow === 'hidden' ? '' : 'hidden';
+    setAppStyles(document.body.style.overflow);
   };
 
   const onLinkClick = () => {
     setNavigationMenu(!navigationMenu);
-    document.body.style.overflow = '';
+
+    setAppStyles('hidden');
   };
 
   const renderContent = () => {
