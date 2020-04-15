@@ -71,7 +71,7 @@ export const Result: React.FC<ResultProps> = props => {
     
     if (errors) {
       return [
-        <ErrorHandling/>
+        <ErrorHandling key={key}/>
       ];
     }
 
