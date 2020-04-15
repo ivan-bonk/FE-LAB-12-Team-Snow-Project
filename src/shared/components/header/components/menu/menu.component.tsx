@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from 'shared/constants/routes.constants';
 import { useSelector } from 'react-redux';
+import { MenuProps, RootState } from './menu.interfaces';
 
 import home from 'shared/components/header/icons/home-icon.svg';
 import paw from 'shared/components/header/icons/paw-icon.svg';
@@ -10,18 +11,6 @@ import question from 'shared/components/header/icons/question-icon.svg';
 import search from 'shared/components/header/icons/search-icon.svg';
 
 import styles from './menu.module.scss';
-
-interface MenuProps {
-  onLinkClick(): void;
-}
-
-interface PetsIds {
-  idsToCompare: string[];
-}
-
-interface RootState {
-  comparisonHandler: PetsIds;
-}
 
 export const Menu: React.FC<MenuProps> = props => {
   const idsToCompare = useSelector((state: RootState) => state.comparisonHandler.idsToCompare);
