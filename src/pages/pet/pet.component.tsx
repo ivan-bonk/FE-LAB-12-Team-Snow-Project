@@ -13,15 +13,16 @@ import style from './pet.module.scss';
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 import { Link } from 'react-router-dom';
 import { ROUTES } from 'shared/constants/routes.constants';
-import { Footer } from 'shared/components/footer/footer.component';
+import {ErrorHandling} from 'shared/components/error-handling/error-handling.component';
 
 export const Pet: React.FC<PetProps> = props => {
   const petId: string = props.match.params.id;
   const dispatch = useDispatch();
   const petProfile: PetProfile = useSelector((state: RootState) => state.pet.currentPet);
-  const error: string | undefined = useSelector((state: RootState) => state.pet.errors);
+  const loading: boolean = useSelector((state: RootState) => state.pet.loading);
+  const error: string = useSelector((state: RootState) => state.pet.errors);
   const { imgUrl, breed, characteristics, observations, additionalInfo, _id } = petProfile;
-  const dataReady = !!Object.keys(petProfile).length;
+  const dataReady = !!petProfile.breed;
 
   useEffect(() => {
     dispatch(fetchPetProfile.request(petId));
@@ -30,9 +31,11 @@ export const Pet: React.FC<PetProps> = props => {
   if (error) {
     return (
       <Fragment>
-        <Logo />
+         <div className={style.logoContainer}>
+          <Logo />
+        </div>
         <div className={style.container}>
-          <h2 className={style.sectionHeader}>Упс, щось пішло не так</h2>
+        <ErrorHandling/>
         </div>
       </Fragment>
     );
@@ -43,7 +46,7 @@ export const Pet: React.FC<PetProps> = props => {
       <div className={style.logoContainer}>
         <Logo />
       </div>
-      {!dataReady && <LoadingSpinner />}
+      {loading && <LoadingSpinner/>}
       {dataReady && (
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { getPets } from 'store/care/actions/care.actions';
 import { ResultStore } from './careBody.interface';
 import { CareBodyPet } from './careBody.interface';
@@ -9,11 +10,15 @@ import { BodyHeader } from '../body-header/body-header.component';
 import { AnalysisSection } from '../analysis-section/analysis-section.component';
 import { AdditionalSection } from '../additonal-section/additional-section.component';
 import { QuizData } from '../analysis-item/analysis-item.interface';
+import { Data } from '../analysis-item/analysis-item.interface';
 
 export const PetCareBody: React.FC = () => {
+  const location = useLocation();
+  const locState: Data = location.state!;
+
   const quizData = useSelector((state: QuizData) => state.quiz);
 
-  const petBreed = quizData.breed;
+  const petBreed = locState.breed ? locState.breed : quizData.breed;
   const dispatch = useDispatch();
 
   useEffect(() => {

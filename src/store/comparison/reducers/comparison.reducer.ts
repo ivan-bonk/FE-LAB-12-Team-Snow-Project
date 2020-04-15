@@ -4,7 +4,7 @@ import { ComparisonState } from 'pages/comparison/comparison.interface';
 
 const initialState: ComparisonState = {
   petsToCompare: [],
-  error: undefined,
+  error: '',
   loading: false,
 };
 
