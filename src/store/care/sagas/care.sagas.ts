@@ -2,8 +2,13 @@ import { takeEvery, put, call } from 'redux-saga/effects';
 import { getPets } from '../actions/care.actions';
 import { api } from 'shared/constants/api';
 
-function fetchPets() {
-  return fetch(`${api}/pets`).then(response => response.json());
+async function fetchPets() {
+  const dogProfiles = await fetch(`${api}/pets`);
+  if (dogProfiles.ok) {
+    return await dogProfiles.json();
+  } else {
+    return Promise.reject();
+  }
 }
 
 function* petsWatcher() {

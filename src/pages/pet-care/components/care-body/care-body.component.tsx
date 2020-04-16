@@ -12,6 +12,8 @@ import { AdditionalSection } from '../additonal-section/additional-section.compo
 import { QuizData } from '../analysis-item/analysis-item.interface';
 import { Data } from '../analysis-item/analysis-item.interface';
 
+import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
+
 export const PetCareBody: React.FC = () => {
   const location = useLocation();
   const locState: Data = location.state!;
@@ -28,14 +30,22 @@ export const PetCareBody: React.FC = () => {
   let pet: CareBodyPet = {};
 
   const pets = useSelector((state: ResultStore) => state.care);
-  Object.entries(pets).forEach(el => {
-    if (el[1].breed === petBreed) {
-      pet = Object.assign({}, el[1]);
+
+  const checkBreeds = () => {
+    if (pets) {
+      Object.entries(pets).forEach(el => {
+        if (el[1].breed === petBreed) {
+          pet = Object.assign({}, el[1]);
+        }
+      });
     }
-  });
+  };
+  checkBreeds();
 
   const renderBody = () => {
-    if (pet.imgUrl) {
+    if (!pets) {
+      return <ErrorHandling />;
+    } else if (pet.imgUrl) {
       return (
         <div className={styles.careBody}>
           <BodyHeader pet={pet} />
