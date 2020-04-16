@@ -24,3 +24,11 @@
     font-weight: 600;
   }
 }
+
+@media (min-width: 800px) {
+  .block {
+    width: 400px;
+    margin-left: 15px;
+    margin-top: 20px;
+  }
+}

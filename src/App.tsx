@@ -13,6 +13,7 @@ import { StarterPack } from 'pages/starter-pack/starter-pack.component';
 import { QuizPage } from './pages/quiz-page/quiz-page.component';
 
 import { Header } from './shared/components/header/header.component';
+import { Footer } from 'shared/components/footer/footer.component';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path={ROUTES.care} component={PetCare}></Route>
         </Switch>
       </div>
+      <Footer />
     </Router>
   );
 }

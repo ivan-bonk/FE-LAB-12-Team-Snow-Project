@@ -8,10 +8,6 @@ import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinne
 import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
 import style from './comparison.module.scss';
 
-
-import { Logo } from 'shared/components/logo/logo.component';
-import { Footer } from 'shared/components/footer/footer.component';
-
 import { PetsToCompareList, RootState } from './comparison.interface';
 import { ComparisonState } from 'shared/components/add-pet-to-compare/add-pet-to-compare.interface';
 
@@ -50,7 +46,6 @@ export const Comparison: React.FC = () => {
 
   return (
     <div className={style.comparisonPage}>
-      <Logo />
       {isError ? (
         <ErrorHandling />
       ) : (
@@ -60,7 +55,6 @@ export const Comparison: React.FC = () => {
           {pets.length > 0 && <ComparisonDisplay ids={ids} pets={pets} />}
         </div>
       )}
-      <Footer />
     </div>
   );
 };

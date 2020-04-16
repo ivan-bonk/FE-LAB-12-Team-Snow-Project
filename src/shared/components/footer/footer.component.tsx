@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
     <footer className={style.footer}>
       <div className={style.footer__copyright}>
         <span className={`${style.footer__copyright__icon} material-icons`}>copyright</span>
-        <span className={style.footer__copyright__text}>All rights reserved</span>
+        <span className={style.footer__copyright__text}>2020 All rights reserved</span>
       </div>
       <div className={style.footer__logo}>
         <Logo />

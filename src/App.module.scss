@@ -8,8 +8,9 @@
 .appWrapper {
   margin-top: 70px;
   padding-top: 30px;
+  flex: 1 0 auto;
 }
 
-html, body, #root {
+html, body{
   height: 100%;
 }
