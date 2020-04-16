@@ -67,11 +67,9 @@ export const Result: React.FC<ResultProps> = props => {
         </div>,
       ];
     }
-    
+
     if (errors) {
-      return [
-        <ErrorHandling key={key}/>
-      ];
+      return [<ErrorHandling key={key} />];
     }
 
     if (errors) {
