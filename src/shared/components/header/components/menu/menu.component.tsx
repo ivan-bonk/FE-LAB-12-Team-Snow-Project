@@ -39,7 +39,7 @@ export const Menu: React.FC<MenuProps> = props => {
         <li className={styles.menuContainer__menu__menuItem}>
           <img src={like} alt="home-icon" />
           <Link to={`/comparison/${idsToCompare.join('-')}`} className={styles.menuLink}>
-            Порівняти
+            Порівняти ({idsToCompare.length})
           </Link>
         </li>
         <li className={styles.menuContainer__menu__menuItem}>
