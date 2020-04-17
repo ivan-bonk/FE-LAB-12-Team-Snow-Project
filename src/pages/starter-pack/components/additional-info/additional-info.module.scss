@@ -28,6 +28,10 @@
     &__title {
       margin-left: 20px;
     }
+    
+    &__title:hover {
+      cursor: pointer;
+    }
 
     &__info {
       font-size: 14px;

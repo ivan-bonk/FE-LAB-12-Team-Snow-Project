@@ -26,10 +26,6 @@
   object-position: 50% 20%;
 }
 
-.generatorContainer{
-  padding: 0 20px;
-}
-
 .responsiveContainer {
   display: flex;
   flex-direction: column;
@@ -41,6 +37,10 @@
   flex-direction: column;
 }
 
+.generatorContainer{
+  padding: 0 20px;
+}
+
 @media (min-width: 476px) {
   .dogPic {
     height: 400px;
@@ -50,6 +50,7 @@
 @media (min-width: 768px) {
   .responsiveContainer {
     flex-direction: row;
+    flex-wrap: wrap;
   }
   .dogPic {
     width: 60vw;
@@ -66,8 +67,8 @@
       padding-top: 0;
     }
   }
-  .generatorContainer{
-    margin-top: 45px;
-    order: 2;
+  .generatorContainer {
+    order: 3;
+    width: 60vw;
   }
 }
