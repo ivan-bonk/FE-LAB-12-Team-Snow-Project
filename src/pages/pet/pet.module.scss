@@ -24,17 +24,18 @@
   width: 100vw;
   height: 240px;
   object-fit: cover;
-  object-position: 50% 50%;
+  object-position: 50% 20%;
   padding-bottom: 20px;
 }
 
 .starterBtn {
-  color: #FF9F0A;
+  color: #0A84FF;
   padding: 16px 0;
   text-decoration: none;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
+  align-items: center;
 
   &Text {
     padding-left: 10px;
@@ -42,4 +43,45 @@
 }
 .addPetBtn {
   margin-left: 20px;
+}
+
+.responsiveContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.responsiveItem {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 476px) {
+  .dogPic {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsiveContainer {
+    flex-direction: row;
+  }
+  .dogPic {
+    width: 60vw;
+    height: 450px;
+    padding-left: 20px;
+  }
+  .responsiveItem {
+    order: 2;
+    margin-left: 40px;
+    margin-right: 20px;
+    flex: 1;
+    .sectionHeader {
+      padding-top: 0;
+    }
+  }
+  .addContainer{
+    margin-top: 45px;
+    order: 2;
+  }
 }

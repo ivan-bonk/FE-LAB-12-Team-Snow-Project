@@ -10,7 +10,7 @@ export const ObservationsComponent: React.FC<ObservationProps> = props => {
     Висота: height,
     Вага: weight,
     Вартість: price,
-    'Ціна утримання': carePrice,
+    'Ціна утримання': `${carePrice} грн`,
     'Час догляду': `${careTime} год на день`,
   };
   const blocksArray = Object.entries(blocks);
