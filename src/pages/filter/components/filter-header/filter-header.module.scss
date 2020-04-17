@@ -2,8 +2,16 @@
   display: flex;
 
   .filter__header {
-    font-family: Roboto;
-    font-size: 1.5em;
+    font-family: Roboto, sans-serif;
+    font-size: 1.8em;
     margin: 0 auto;
+  }
+}
+@media (min-width: 560px) {
+  .header {
+    .filter__header {
+      font-size: 2.5em;
+      margin: 20px auto;
+    }
   }
 }
