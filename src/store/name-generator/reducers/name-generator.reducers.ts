@@ -3,7 +3,10 @@ import { NameGeneratorState, PetNames } from '../name-generator.models';
 import { fetchPetNames } from '../actions/name-generator.actions';
 
 const initialState: NameGeneratorState = {
-  petNames: {},
+  petNames: {
+    boys: [],
+    girls: []
+  },
   girlId: 0,
   boyId: 0,
   errors: '',
@@ -22,5 +25,15 @@ export const nameGeneratorReducer = createReducer(initialState)
     loading: false,
     errors: action.payload,
   }))
-  .handleAction('@name-generator/SET_BOY', (state: NameGeneratorState) => ({ ...state, boyId: state.boyId + 1 }))
-  .handleAction('@name-generator/SET_GIRL', (state: NameGeneratorState) => ({ ...state, girlId: state.girlId + 1 }));
+  .handleAction('@name-generator/SET_BOY', (state: NameGeneratorState) => {
+    let currentIndex: number = state.boyId;
+    let lastIndex: number = state.petNames.boys.length-1;
+    let nextIndex: number = currentIndex === lastIndex ? 0 : currentIndex + 1; 
+    return { ...state, boyId: nextIndex }
+  })
+  .handleAction('@name-generator/SET_GIRL', (state: NameGeneratorState) => {
+    let currentIndex: number = state.girlId;
+    let lastIndex: number = state.petNames.girls.length-1;
+    let nextIndex: number = currentIndex === lastIndex ? 0 : currentIndex + 1; 
+    return { ...state, girlId: nextIndex }
+  });
