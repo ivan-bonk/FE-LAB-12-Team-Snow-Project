@@ -24,16 +24,13 @@ export const Comparison: React.FC = () => {
   const isError = !!useSelector((state: RootState) => state.comparison.error);
   const idsToCompare: string[] = useSelector((state: ComparisonState) => state.comparisonHandler.idsToCompare);
 
-  if (ids) {
-    ids.split('-').forEach((el, index) => {
-      if (el !== idsToCompare[index]) {
-        dispatch(addComparisonPet(el));
-      }
-    });
-  }
-
   useEffect(() => {
     if (ids) {
+      ids.split('-').forEach((el, index) => {
+        if (el !== idsToCompare[index]) {
+          dispatch(addComparisonPet(el));
+        }
+      });
       dispatch(GetPetsById.request(ids.split('-')));
     } else {
       dispatch(clearListToCompare());

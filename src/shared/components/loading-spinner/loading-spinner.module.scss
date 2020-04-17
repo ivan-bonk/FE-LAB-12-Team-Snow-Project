@@ -1,13 +1,13 @@
 @keyframes loading {
-    0% { transform: translate(14px,82px) scale(0); }
-   25% { transform: translate(14px,82px) scale(0); }
-   50% { transform: translate(14px,82px) scale(1); }
-   75% { transform: translate(82px,82px) scale(1); }
-  100% { transform: translate(150px,82px) scale(1); }
+    0% { transform: translate(9px,60px) scale(0); }
+   25% { transform: translate(9px,60px) scale(0); }
+   50% { transform: translate(9px,60px) scale(1); }
+   75% { transform: translate(60px,60px) scale(1); }
+  100% { transform: translate(111px,60px) scale(1); }
  }
  @keyframes loading-r {
-    0% { transform: translate(150px,82px) scale(1); }
-  100% { transform: translate(150px,82px) scale(0); }
+    0% { transform: translate(111px,60px) scale(1); }
+  100% { transform: translate(111px,60px) scale(0); }
  }
  @keyframes loading-c {
     0% { background: #6f6f6f }
@@ -18,16 +18,16 @@
  }
  .loading div {
    position: absolute;
-   width: 36px;
-   height: 36px;
+   width: 30px;
+   height: 30px;
    border-radius: 50%;
-   transform: translate(82px,82px) scale(1);
+   transform: translate(60px,60px) scale(1);
    background: #6f6f6f;
    animation: loading 1.333333333333333s infinite cubic-bezier(0,0.5,0.5,1);
  }
  .loading div:nth-child(1) {
    background: #5c4937;
-   transform: translate(150px,82px) scale(1);
+   transform: translate(111px,60px) scale(1);
    animation: loading-r 0.33333333333333326s infinite cubic-bezier(0,0.5,0.5,1), loading-c 1.333333333333333s infinite step-start;
  }.loading div:nth-child(2) {
    animation-delay: -0.33333333333333326s;
@@ -44,7 +44,7 @@
  }
  .loadingBlock {
    width: 100%;
-   height: 200px;
+   height: 150px;
    display: flex;
    justify-content: center;
    align-items: flex-start;
@@ -52,7 +52,7 @@
    background: #ffffff;
  }
  .loading {
-   width: 200px;
+   width: 150px;
    height: 100px;
    position: relative;
    transform: translateZ(0) scale(1);
