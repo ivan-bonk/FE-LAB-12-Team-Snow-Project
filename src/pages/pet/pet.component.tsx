@@ -62,7 +62,7 @@ export const Pet: React.FC<PetProps> = props => {
               <AdditionalInfoComponent data={additionalInfo} />
             </section>
             <Link to={ROUTES.starterPack.route(_id)} className={style.starterBtn}>
-              <span className="material-icons">flag</span>
+              <span className="material-icons">info</span>
               <span className={style.starterBtnText}> Що необхідно для того, щоб завести собаку ?</span>
             </Link>
           </div>
