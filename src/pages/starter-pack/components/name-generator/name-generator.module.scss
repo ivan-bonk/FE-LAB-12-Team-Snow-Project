@@ -1,4 +1,4 @@
-%button{
+%button {
     padding: 6px 21px;
     margin: 8px;
     border: none;
@@ -7,9 +7,14 @@
     font-weight: 500;
     outline: none;
 }
-%button:hover{
+%button:hover {
     cursor: pointer;
 }
+%button:active {
+    box-shadow: 5px 5px 5px rgb(238, 229, 229);
+    transform: translateY(3px);
+    outline: none;
+  }
 .generator {
     &__name{
         font-size: 24px;
