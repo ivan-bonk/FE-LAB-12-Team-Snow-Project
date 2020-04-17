@@ -46,13 +46,19 @@ export const Pet: React.FC<PetProps> = props => {
       {dataReady && (
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>
-          <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
+          <div className={style.responsiveContainer}>
+            <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
+            <div className={style.responsiveItem}>
+              <div className={style.addContainer}>
+                <AddPetToCompare id={_id}/>
+              </div>
+              <section className={style.characteristicContainer}>
+                <h2 className={style.sectionHeader}>Характеристики</h2>
+                <CharacteristicsComponent data={characteristics} />
+              </section>
+            </div>
+          </div>
           <div className={style.container}>
-            <AddPetToCompare id={_id} />
-            <section>
-              <h2 className={style.sectionHeader}>Характеристики</h2>
-              <CharacteristicsComponent data={characteristics} />
-            </section>
             <section>
               <h2 className={style.sectionHeader}>Спостереження</h2>
               <ObservationsComponent data={observations} />
@@ -63,7 +69,7 @@ export const Pet: React.FC<PetProps> = props => {
             </section>
             <Link to={ROUTES.starterPack.route(_id)} className={style.starterBtn}>
               <span className="material-icons">info</span>
-              <span className={style.starterBtnText}> Що необхідно для того, щоб завести собаку ?</span>
+              <span className={style.starterBtnText}> Що необхідно для того, щоб завести собаку?</span>
             </Link>
           </div>
           <BackBtn />
