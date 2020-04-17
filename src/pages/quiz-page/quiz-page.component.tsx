@@ -9,7 +9,7 @@ import { MealInput } from './components/meal-input/meal-input.component';
 import { Radio } from './components/radio-component/radio.component';
 import { RootState, Data } from './quiz-page.intarface';
 import { quizAction } from 'store/quiz/actions/quiz.action';
-import { fetchPetsAsync } from 'store/result/actions/result.actions';
+import { fetchPetBreeds } from 'store/quiz/actions/quiz.action';
 import styles from './quiz-page.module.scss';
 import { useHistory } from 'react-router-dom';
 
@@ -36,16 +36,11 @@ export const QuizPage: React.FC = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchPetsAsync.request());
-  }, []);
+    dispatch(fetchPetBreeds.request());
+  }, [dispatch]);
 
-  const pets = useSelector((state: RootState) => state.result.resultStore);
+  const breedsList = useSelector((state: RootState) => state.breeds.breeds);
   const error = !!useSelector((state: RootState) => state.result.errors);
-
-  const dogs: any = [];
-  pets.forEach(dog => {
-    dogs.push(dog.breed);
-  });
 
   const walkNumberValue = ['1 раз', '2 - 3 рази', 'Більше 3-х'];
   const mealNumberValue = ['1 раз', '2 рази', '3 рази', 'Більше 3-х разів'];
@@ -62,7 +57,8 @@ export const QuizPage: React.FC = () => {
           <h2 className={styles.quiz__title}>Наскільки добре ви піклуєтесь про свого собаку?</h2>
           <img src={dog} alt="Dog" className={styles.quiz__img} />
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Select name="breed" refAttribute={register} elements={dogs} lable="Порода" />
+            <Select name="breed" refAttribute={register} elements={breedsList} lable="Порода" />
+
             <SliderSection
               name="weight"
               refAttribute={register}
