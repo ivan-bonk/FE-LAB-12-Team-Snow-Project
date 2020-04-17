@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
-  padding: 12px;
+  padding: 0 20px;
 
   &__copyright {
     display: flex;
@@ -19,14 +19,19 @@
       font-size: 14px;
     }
   }
+
+  &__logo {
+    margin-bottom: 10px;
+  }
+
   &__nav {
-    width: 210px;
+    width: 253px;
     &__link {
       color: black;
-      margin-left: 10px;
+      margin-left: 20px;
       text-decoration: none;
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 600;
 
       &:hover {
         text-decoration: underline;
@@ -38,6 +43,7 @@
 @media (max-width: 800px) {
   .footer {
     flex-direction: column-reverse;
+    padding: 15px;
 
     &__copyright {
       width: auto;

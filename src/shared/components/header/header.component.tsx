@@ -7,7 +7,9 @@ import styles from './header.module.scss';
 export const Header: React.FC = () => {
   return (
     <div className={styles.headerContainer}>
-      <Logo />
+      <div className={styles.headerContainer__logo}>
+        <Logo />
+      </div>
       <Navigation />
     </div>
   );

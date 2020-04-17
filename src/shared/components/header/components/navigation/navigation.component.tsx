@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import burger from 'shared/components/header/icons/burger-icon.svg';
-import cross from 'shared/components/header/icons/cross-icon.svg';
-
 import { Menu } from '../menu/menu.component';
 
 import styles from './navigation.module.scss';
@@ -39,12 +36,12 @@ export const Navigation: React.FC = () => {
       return (
         <>
           <Menu onLinkClick={onLinkClick} />
-          <img src={cross} className={styles.icon} alt="burger-menu-icon" onClick={onBurgerClick} />
+          <span className={`${styles.icon} material-icons`} onClick={onBurgerClick}>close</span>
         </>
       );
     }
 
-    return <img src={burger} className={styles.icon} alt="burger-menu-icon" onClick={onBurgerClick} />;
+    return <span className={`${styles.icon} material-icons`} onClick={onBurgerClick}>menu</span>;
   };
 
   return <>{renderContent()}</>;

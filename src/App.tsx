@@ -12,12 +12,14 @@ import { PetCare } from 'pages/pet-care/pet-care.component';
 import { StarterPack } from 'pages/starter-pack/starter-pack.component';
 import { QuizPage } from './pages/quiz-page/quiz-page.component';
 
+import { ScrollToTop } from 'shared/components/scroll-to-top/scroll-to-top.component';
 import { Header } from './shared/components/header/header.component';
 import { Footer } from 'shared/components/footer/footer.component';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <div className={styles.appWrapper} id="app-wrapper">
         <Switch>
