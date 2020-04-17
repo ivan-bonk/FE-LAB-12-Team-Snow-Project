@@ -23,5 +23,52 @@
   width: 100vw;
   height: 220px;
   object-fit: cover;
-  object-position: 50% 50%;
+  object-position: 50% 20%;
+}
+
+.responsiveContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.responsiveItem {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.generatorContainer{
+  padding: 0 20px;
+}
+
+@media (min-width: 476px) {
+  .dogPic {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsiveContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .dogPic {
+    width: 60vw;
+    height: 450px;
+    padding-left: 20px;
+  }
+  .responsiveItem {
+    order: 2;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-top: -20px;
+    flex: 1;
+    .sectionHeader {
+      padding-top: 0;
+    }
+  }
+  .generatorContainer {
+    order: 3;
+    width: 60vw;
+  }
 }

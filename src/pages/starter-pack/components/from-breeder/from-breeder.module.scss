@@ -1,6 +1,5 @@
 .fromBreeder {
   font-family: Roboto, sans-serif;
-  padding: 0 20px;
   &__header {
     display: flex;
     align-items: center;
@@ -18,14 +17,16 @@
 
   &__infoBlock {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   &__info {
     display: flex;
     flex-direction: column;
-    margin: 15px 0;
-    width: 150px;
+    margin-top: 15px;
+    margin-right: 24px;
+    max-width: 130px;
     &__title {
       color: #8e8e93;
       font-size: 14px;
@@ -39,14 +40,9 @@
       margin: 3px 0;
     }
   }
-
-  &__another {
-    display: flex;
-    flex-direction: column;
-    margin: 15px 0;
-
-    span {
-      margin: 3px 0;
-    }
+}
+@media (min-width: 768px) {
+  .fromBreeder{
+    padding-top: 20px;
   }
 }
