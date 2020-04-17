@@ -29,11 +29,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
   };
 
   const checkTouch = (data: string, delta: number) => {
-    if (parseInt(data) === delta) {
-      return '0';
-    } else {
-      return data;
-    }
+    return parseInt(data) === delta ? '0' : data;
   };
 
   const setDefaultValue = (value: string, delta: number) => {
