@@ -1,28 +1,35 @@
 %button{
     padding: 6px 21px;
-    margin: 0 16px;
+    margin: 8px;
     border: none;
     border-radius: 12px;
     font-size: 14px;
+    font-weight: 500;
     outline: none;
+}
+%button:hover{
+    cursor: pointer;
 }
 .generator {
     &__name{
         font-size: 24px;
         font-weight: 600;
         text-align: center;
-        padding-top: 16px;
+        padding-top: 8px;
     }
     &__switch{
         display: flex;
-        align-items: baseline;
-        padding-top: 16px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-top: 8px;
     }
     &__header {
         font-size: 20px;
         font-weight: 500;
-        padding-right: 16px;
-        flex: 1;
+        white-space:nowrap;
+        text-align: center;
+        margin-right: 16px;
     }
     &__button {
         &_blue {
