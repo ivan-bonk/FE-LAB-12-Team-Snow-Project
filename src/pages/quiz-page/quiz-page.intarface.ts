@@ -2,11 +2,15 @@ import { PetProfile } from 'shared/interfaces';
 
 interface ResultStore {
   resultStore: PetProfile[];
-  errors: string
+  errors: string;
 }
 
+export interface Breeds {
+  breeds: string[];
+}
 export interface RootState {
   result: ResultStore;
+  breeds: Breeds;
 }
 
 export interface Data {
