@@ -16,11 +16,37 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
   const history = useHistory();
   const filterData = useSelector((state: RootState) => state.filter);
 
+  const deltaPositionTime = 0.00415;
+  const deltaMinTime = 55;
+  const deltaPositionMoney = 0.000345;
+  const deltaMinMoney = 340;
+  const deltaPositionSecurity = 0.00955;
+  const deltaMinSecurity = 19;
+
   const goBack = (): void => {
     dispatch(filterAction(null));
     history.push('/result');
   };
+
+  const checkTouch = (data: string, delta: number) => {
+    if (parseInt(data) === delta) {
+      return '0';
+    } else {
+      return data;
+    }
+  };
+
+  const setDefaultValue = (value: string, delta: number) => {
+    if (filterData) {
+      return value === '0' ? delta.toString() : value;
+    }
+  };
+
   const onSubmit = (data: Data): void => {
+    data.timeWolk = checkTouch(data.timeWolk, deltaMinTime);
+    data.moneyPerMonth = checkTouch(data.moneyPerMonth, deltaMinMoney);
+    data.securityLevel = checkTouch(data.securityLevel, deltaMinSecurity);
+
     dispatch(filterAction(data));
 
     const location = {
@@ -31,13 +57,6 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
     history.push(location);
   };
 
-  const deltaPositionTime = 0.0038;
-  const deltaMinTime = 40;
-  const deltaPositionMoney = 0.000345;
-  const deltaMinMoney = 360;
-  const deltaPositionSecurity = 0.0096;
-  const deltaMinSecurity = 20;
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <SliderSection
@@ -45,10 +64,10 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         refAttribute={register}
         delta={deltaPositionTime}
         deltaMin={deltaMinTime}
-        defaultValue={filterData ? filterData.timeWolk : deltaMinTime.toString()}
-        min="40"
+        defaultValue={filterData ? setDefaultValue(filterData.timeWolk, deltaMinTime) : deltaMinTime.toString()}
+        min="55"
         max="240"
-        step="10"
+        step="5"
         units="хв"
         lable="Щодня зможу проводити з ним"
       />
@@ -58,8 +77,8 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         refAttribute={register}
         delta={deltaPositionMoney}
         deltaMin={deltaMinMoney}
-        defaultValue={filterData ? filterData.moneyPerMonth : deltaMinMoney.toString()}
-        min="360"
+        defaultValue={filterData ? setDefaultValue(filterData.moneyPerMonth, deltaMinMoney) : deltaMinMoney.toString()}
+        min="340"
         max="2500"
         step="20"
         units="грн"
@@ -73,8 +92,10 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
         refAttribute={register}
         delta={deltaPositionSecurity}
         deltaMin={deltaMinSecurity}
-        defaultValue={filterData ? filterData.securityLevel : deltaMinSecurity.toString()}
-        min="20"
+        defaultValue={
+          filterData ? setDefaultValue(filterData.securityLevel, deltaMinSecurity) : deltaMinSecurity.toString()
+        }
+        min="19"
         max="100"
         step="1"
         units="%"
