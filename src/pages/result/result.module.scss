@@ -36,7 +36,16 @@
 }
 
 @media (min-width: 1024px) {
+  .dogsListContainer {
+    justify-content: initial;
+  }
+
   .dogContainer {
     width: 32%;
+
+    &:nth-of-type(3n+2) {
+      margin-right: 2%;
+      margin-left: 2%;
+    }
   }
 }
