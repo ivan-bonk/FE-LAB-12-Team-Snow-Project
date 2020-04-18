@@ -11,34 +11,34 @@ export const Menu: React.FC<MenuProps> = props => {
 
   return (
     <div className={styles.menuContainer}>
-      <ul className={styles.menuContainer__menu} onClick={props.onLinkClick}>
+      <ul className={styles.menuContainer__menu}>
         <li className={styles.menuContainer__menu__menuItem}>
-          <span className="material-icons">home</span>
-          <Link to={ROUTES.home} className={styles.menuLink}>
+          <span className={`${styles.linkIcon} material-icons`}>home</span>
+          <Link to={ROUTES.home} className={styles.menuLink} onClick={props.onLinkClick}>
             Головна
           </Link>
         </li>
         <li className={styles.menuContainer__menu__menuItem}>
-          <span className="material-icons">pets</span>
-          <Link to={ROUTES.result} className={styles.menuLink}>
+          <span className={`${styles.linkIcon} material-icons`}>pets</span>
+          <Link to={ROUTES.result} className={styles.menuLink} onClick={props.onLinkClick}>
             Породи
           </Link>
         </li>
         <li className={styles.menuContainer__menu__menuItem}>
-          <span className="material-icons">search</span>
-          <Link to={ROUTES.filter} className={styles.menuLink}>
+          <span className={`${styles.linkIcon} material-icons`}>search</span>
+          <Link to={ROUTES.filter} className={styles.menuLink} onClick={props.onLinkClick}>
             Підібрати
           </Link>
         </li>
         <li className={styles.menuContainer__menu__menuItem}>
-          <span className="material-icons">thumbs_up_down</span>
-          <Link to={`/comparison/${idsToCompare.join('-')}`} className={styles.menuLink}>
+          <span className={`${styles.linkIcon} material-icons`}>thumbs_up_down</span>
+          <Link to={`/comparison/${idsToCompare.join('-')}`} className={styles.menuLink} onClick={props.onLinkClick}>
             Порівняти ({idsToCompare.length})
           </Link>
         </li>
         <li className={styles.menuContainer__menu__menuItem}>
-          <span className="material-icons">help</span>
-          <Link to={ROUTES.quiz} className={styles.menuLink}>
+          <span className={`${styles.linkIcon} material-icons`}>help</span>
+          <Link to={ROUTES.quiz} className={styles.menuLink} onClick={props.onLinkClick}>
             Чи хороший я власник
           </Link>
         </li>
