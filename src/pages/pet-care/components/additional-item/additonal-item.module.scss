@@ -18,3 +18,17 @@
     text-indent: 16px;
   }
 }
+
+@media (min-width: 900px) {
+  .additional {
+    &__title {
+      font-size: 24px;
+      .arrow {
+        font-size: 34px;
+      }
+    }
+    .plainText {
+      font-size: 18px;
+    }
+  }
+}

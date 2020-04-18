@@ -50,4 +50,24 @@
       }
     }
   }
+  @media (min-width: 900px) {
+    .result,
+    .result_red {
+      padding: 15px 0;
+
+      h4 {
+        &:nth-child(1) {
+          font-size: 32px;
+        }
+        &:nth-child(3) {
+          font-weight: 600;
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      }
+      span {
+        font-size: 18px;
+      }
+    }
+  }
 }
