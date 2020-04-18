@@ -26,14 +26,14 @@ export const nameGeneratorReducer = createReducer(initialState)
     errors: action.payload,
   }))
   .handleAction('@name-generator/SET_BOY', (state: NameGeneratorState) => {
-    let currentIndex: number = state.boyId;
-    let lastIndex: number = state.petNames.boys.length-1;
-    let nextIndex: number = currentIndex === lastIndex ? 0 : currentIndex + 1; 
+    const currentIndex: number = state.boyId;
+    const lastIndex: number = state.petNames.boys.length-1;
+    const nextIndex: number = currentIndex === lastIndex ? 0 : currentIndex + 1; 
     return { ...state, boyId: nextIndex }
   })
   .handleAction('@name-generator/SET_GIRL', (state: NameGeneratorState) => {
-    let currentIndex: number = state.girlId;
-    let lastIndex: number = state.petNames.girls.length-1;
-    let nextIndex: number = currentIndex === lastIndex ? 0 : currentIndex + 1; 
+    const currentIndex: number = state.girlId;
+    const lastIndex: number = state.petNames.girls.length-1;
+    const nextIndex: number = currentIndex === lastIndex ? 0 : currentIndex + 1; 
     return { ...state, girlId: nextIndex }
   });
