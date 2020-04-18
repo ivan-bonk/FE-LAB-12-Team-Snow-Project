@@ -3,7 +3,7 @@ export interface PetNames {
   girls: string[];
 }
 export interface NameGeneratorState {
-  petNames: PetNames | {};
+  petNames: PetNames;
   boyId: number;
   girlId: number;
   errors: string;
