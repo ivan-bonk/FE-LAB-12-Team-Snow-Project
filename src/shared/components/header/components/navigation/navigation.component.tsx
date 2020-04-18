@@ -26,9 +26,8 @@ export const Navigation: React.FC = () => {
     setAppStyles(document.body.style.overflow);
   };
 
-    //Added ability to close menu on click outside of menu - my dog is crying over it
-    const appWrapper = document.querySelector('#app-wrapper') as HTMLElement;
     if (document.documentElement.clientWidth < 800){
+      const appWrapper = document.querySelector('#app-wrapper') as HTMLElement;
       if(appWrapper){
         appWrapper.addEventListener("click", () => onBurgerClick());
       }
