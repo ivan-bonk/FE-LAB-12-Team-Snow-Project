@@ -34,7 +34,7 @@ export const Result: React.FC<ResultProps> = props => {
   const mapArrayOfPets = (petsArray: PetProfile[]): JSX.Element[] => {
     return petsArray.map(pet => {
       return (
-        <div key={pet._id}>
+        <div key={pet._id} className={styles.dogContainer}>
           <Dog name={pet.breed} observations={pet.observations} images={pet.imgUrl} id={pet._id} />
           <div className={styles.addPetBtn}>
             <AddPetToCompare id={pet._id} />
@@ -101,7 +101,7 @@ export const Result: React.FC<ResultProps> = props => {
     <div className={styles.wrapper}>
       <DogSearch renderPets={handleSearchValue} pets={pets} />
       <FilterButton numberOfFilters={getNumberOfFilters(filterValues)} />
-      {renderPets()}
+      <div className={styles.dogsListContainer}>{renderPets()}</div>
     </div>
   );
 };

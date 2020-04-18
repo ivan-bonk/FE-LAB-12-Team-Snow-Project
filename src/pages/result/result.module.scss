@@ -10,5 +10,33 @@
 }
 
 .addPetBtn {
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.dogContainer {
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 8px; 
+  padding-bottom: 10px;
+}
+
+@media (min-width: 800px) {
+  .dogsListContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .dogContainer {
+    margin-top: 35px;
+    width: 48%;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 8px; 
+    padding-bottom: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dogContainer {
+    width: 32%;
+  }
 }

@@ -1,5 +1,6 @@
 .dogContainer {
   margin-top: 30px;
+  padding: 13px 12px 0;
 
   &__dogBreed {
     margin-bottom: 15px;
@@ -15,5 +16,20 @@
     display: flex;
     justify-content: space-between;
     width: 77%;
+  }
+}
+
+@media (min-width: 800px) {
+  .dogContainer {
+    margin: 0;
+    padding: 13px 12px 0;
+
+    &__dogBreed {
+  
+      &__dogBreedText {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
   }
 }
