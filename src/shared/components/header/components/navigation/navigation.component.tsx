@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Menu } from '../menu/menu.component';
 
 import styles from './navigation.module.scss';
@@ -18,6 +18,7 @@ const setAppStyles = (overflow: string) => {
 
 export const Navigation: React.FC = () => {
   const [navigationMenu, setNavigationMenu] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const onBurgerClick = () => {
     setNavigationMenu(!navigationMenu);
@@ -26,23 +27,45 @@ export const Navigation: React.FC = () => {
   };
 
   const onLinkClick = () => {
-    setNavigationMenu(!navigationMenu);
+    if (document.documentElement.clientWidth < 800) {
+      setNavigationMenu(!navigationMenu);
 
-    setAppStyles('hidden');
+      setAppStyles('hidden');
+    }
   };
 
   const renderContent = () => {
     if (navigationMenu) {
+      if (menuRef.current) {
+        menuRef.current!.style.display = 'initial';
+      }
+
       return (
         <>
-          <Menu onLinkClick={onLinkClick} />
-          <span className={`${styles.icon} material-icons`} onClick={onBurgerClick}>close</span>
+          <span className={`${styles.icon} material-icons`} onClick={onBurgerClick}>
+            close
+          </span>
         </>
       );
     }
 
-    return <span className={`${styles.icon} material-icons`} onClick={onBurgerClick}>menu</span>;
+    if (menuRef.current && document.documentElement.clientWidth < 800) {
+      menuRef.current!.style.display = 'none';
+    }
+
+    return (
+      <span className={`${styles.icon} material-icons`} onClick={onBurgerClick}>
+        menu
+      </span>
+    );
   };
 
-  return <>{renderContent()}</>;
+  return (
+    <>
+      <div className={styles.menu} ref={menuRef}>
+        <Menu onLinkClick={onLinkClick} />
+      </div>
+      {renderContent()}
+    </>
+  );
 };
