@@ -1,3 +1,9 @@
+%item-mobile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
 .menuContainer {
   height: 100vh;
   width: 320px;
@@ -17,9 +23,11 @@
     margin: 94px 0 0 30px;
 
     &__menuItem {
-      display: flex;
-      align-items: center;
-      margin-bottom: 36px;
+      @extend %item-mobile;
+      &_active {    
+        color: #ff9f0a;
+        @extend %item-mobile;
+      }
     }
   }
 }
@@ -27,7 +35,7 @@
 .menuLink {
   display: inline-block;
   margin-left: 16px;
-  color: #000;
+  color: inherit;
   text-decoration: none;
   cursor: pointer;
 }
@@ -37,6 +45,11 @@
 }
 
 @media (min-width: 800px) {
+  %item-desktop {
+    margin: 0;
+    margin-left: 25px;
+  }
+
   .menuContainer {
     margin-right: 15px;
     display: flex;
@@ -57,8 +70,14 @@
       line-height: 18px;
 
       &__menuItem {
-        margin: 0;
-        margin-left: 25px;
+        @extend %item-desktop;
+        &_active {
+          @extend %item-desktop;
+          color: #ff9f0a;
+        }
+        &:hover {
+          color: #5C4937;
+        }
       }
     }
 

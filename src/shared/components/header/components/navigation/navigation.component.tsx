@@ -26,6 +26,13 @@ export const Navigation: React.FC = () => {
     setAppStyles(document.body.style.overflow);
   };
 
+  if (document.documentElement.clientWidth < 800){
+    const appWrapper = document.querySelector('#app-wrapper') as HTMLElement;
+    if(appWrapper){
+      appWrapper.addEventListener("click", () => onBurgerClick());
+    }
+  }
+
   const onLinkClick = () => {
     if (document.documentElement.clientWidth < 800) {
       setNavigationMenu(!navigationMenu);
