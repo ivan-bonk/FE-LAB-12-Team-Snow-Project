@@ -10,6 +10,7 @@ export const Menu: React.FC<MenuProps> = props => {
   const idsToCompare = useSelector((state: RootState) => state.comparisonHandler.idsToCompare);
   const location = useLocation();
   const currentPage = location.pathname.replace(/\//g,'');
+  console.log(currentPage);
 
   const activeStyle = styles.menuContainer__menu__menuItem_active;
   const passiveStyle = styles.menuContainer__menu__menuItem;
@@ -35,13 +36,13 @@ export const Menu: React.FC<MenuProps> = props => {
             Підібрати
           </Link>
         </li>
-        <li className={currentPage==='comparison' ? activeStyle : passiveStyle}>
+        <li className={currentPage.includes('comparison') ? activeStyle : passiveStyle}>
           <span className={`${styles.linkIcon} material-icons`}>thumbs_up_down</span>
           <Link to={`/comparison/${idsToCompare.join('-')}`} className={styles.menuLink} onClick={props.onLinkClick}>
             Порівняти ({idsToCompare.length})
           </Link>
         </li>
-        <li className={currentPage==='quiz-page' ? activeStyle : passiveStyle}>
+        <li className={currentPage==='quiz-page' || currentPage.includes('care') ? activeStyle : passiveStyle}>
           <span className={`${styles.linkIcon} material-icons`}>help</span>
           <Link to={ROUTES.quiz} className={styles.menuLink} onClick={props.onLinkClick}>
             Чи хороший я власник
