@@ -37,7 +37,7 @@ export const Navigation: React.FC = () => {
   const renderContent = () => {
     if (navigationMenu) {
       if (menuRef.current) {
-        menuRef.current!.style.display = 'initial';
+        menuRef.current.style.display = 'initial';
       }
 
       return (
@@ -50,7 +50,7 @@ export const Navigation: React.FC = () => {
     }
 
     if (menuRef.current && document.documentElement.clientWidth < 800) {
-      menuRef.current!.style.display = 'none';
+      menuRef.current.style.display = 'none';
     }
 
     return (

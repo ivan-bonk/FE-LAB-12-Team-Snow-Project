@@ -15,3 +15,18 @@
     margin-top: 5px;
   }
 }
+
+@media (min-width: 800px) {
+  .characteristicContainer {
+
+    &__characteristicTitle {
+      font-size: 13px;
+      line-height: 15px;
+    }
+
+    &__characteristicValue {
+      font-size: 15px;
+      line-height: 17px;
+    }
+  }
+}

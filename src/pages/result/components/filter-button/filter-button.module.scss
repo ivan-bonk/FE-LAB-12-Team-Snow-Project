@@ -26,6 +26,17 @@
   }
 
   &__clearFilterButton {
-    background-color: #999999;
+    background-color: #C6C6C6;
+  }
+}
+
+@media (min-width: 800px) {
+  .filterButtonsContainer {
+    margin-top: 27px;
+    justify-content: flex-start;
+  
+    &__clearFilterButton {
+      margin-left: 29px;
+    }
   }
 }
