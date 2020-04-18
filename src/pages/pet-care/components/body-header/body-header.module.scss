@@ -42,3 +42,25 @@
     }
   }
 }
+@media (min-width: 900px) {
+  .bodyHeader {
+    max-width: 55%;
+    float: left;
+
+    &__title {
+      font-size: 32px;
+      width: 60%;
+      margin: 20px 0;
+    }
+    &__img {
+      height: 400px;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .bodyHeader {
+    &__img {
+      height: 500px;
+    }
+  }
+}

@@ -2,3 +2,17 @@
   max-width: 560px;
   margin: 0 auto;
 }
+@media (min-width: 900px) {
+  .container {
+    display: block;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    display: block;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
