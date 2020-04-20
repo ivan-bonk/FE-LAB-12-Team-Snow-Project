@@ -58,7 +58,13 @@ export const QuizPage: React.FC = () => {
           <h2 className={styles.quiz__title}>Наскільки добре ви піклуєтесь про свого собаку?</h2>
           <img src={dog} alt="Dog" className={styles.quiz__img} />
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Select name="breed" refAttribute={register} elements={breedsList} lable="Порода" />
+            <Select
+              name="breed"
+              refAttribute={register({ validate: value => value !== '' })}
+              elements={breedsList}
+              lable="Порода"
+            />
+            {errors.breed && <p className={styles.error}>Будь-ласка виберіть породу собаки</p>}
 
             <SliderSection
               name="weight"
@@ -90,11 +96,11 @@ export const QuizPage: React.FC = () => {
             />
             {errors.mealNumber && <p className={styles.error}>Будь-ласка вкажіть кількість прийомів їжі на день</p>}
 
-            <MealInput
-              name="mealWeight"
-              refAttribute={register({ required: true, validate: value => value > 0 && !isNaN(value) })}
-            />
-            {errors.mealWeight && <p className={styles.error}>Будь-ласка вкажіть вагу порції в грамах</p>}
+            <MealInput name="mealWeight" refAttribute={register({ required: true, validate: value => value > 0 })} />
+            {errors.mealWeight?.type === 'required' && <p className={styles.error}>Будь-ласка вкажіть вагу порції </p>}
+            {errors.mealWeight?.type === 'validate' && (
+              <p className={styles.error}>Вага порції не може бути менша або рівна нулю !</p>
+            )}
 
             <Radio
               refAttribute={register({ required: true })}

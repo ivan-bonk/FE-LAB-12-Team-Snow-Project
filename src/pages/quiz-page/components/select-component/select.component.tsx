@@ -16,6 +16,8 @@ export const Select: React.FC<SelectProps> = ({ name, elements, refAttribute, la
       <p className={styles.label}>{lable}</p>
       <div className={styles.select}>
         <select name={name} ref={refAttribute} className={styles.select__box}>
+          <option value="">Виберіть породу</option>
+
           {pet}
         </select>
       </div>
