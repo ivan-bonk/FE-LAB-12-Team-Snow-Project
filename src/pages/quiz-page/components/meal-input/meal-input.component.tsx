@@ -11,8 +11,9 @@ export const MealInput: React.FC<MealProps> = ({ name, refAttribute }) => {
       setMealValue(event.target.value);
     } else {
       const numb = parseInt(event.target.value);
+
       if (isNaN(numb)) {
-        setMealValue(mealValue);
+        setMealValue(mealValue.trim());
       } else {
         setMealValue(numb);
       }
@@ -25,10 +26,11 @@ export const MealInput: React.FC<MealProps> = ({ name, refAttribute }) => {
       <input
         type="text"
         name={name}
+        onChange={inputValidation}
         ref={refAttribute}
         className={styles.container__inout}
         value={mealValue}
-        onChange={inputValidation}
+        placeholder="введіть вагу порції"
       />
     </div>
   );

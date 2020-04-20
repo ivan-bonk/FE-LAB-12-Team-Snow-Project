@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -19,7 +20,7 @@ import { ErrorHandling } from 'shared/components/error-handling/error-handling.c
 import dog from '../../images/dog-quiz.svg';
 
 export const QuizPage: React.FC = () => {
-  const { register, handleSubmit } = useForm<Data>();
+  const { register, handleSubmit, errors } = useForm<Data>();
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -61,7 +62,7 @@ export const QuizPage: React.FC = () => {
 
             <SliderSection
               name="weight"
-              refAttribute={register}
+              refAttribute={register({ validate: value => value > 0 })}
               delta={deltaPositionWeight}
               deltaMin={1}
               defaultValue={'0'}
@@ -71,20 +72,35 @@ export const QuizPage: React.FC = () => {
               units="кг"
               lable="Вага"
             />
+            {errors.weight && <p className={styles.error}>Будь-ласка виберіть вагу собаки</p>}
+
             <Radio
-              refAttribute={register}
+              refAttribute={register({ required: true })}
               name="walkNumber"
               lable="Кількість вигулювань за день"
               value={walkNumberValue}
             />
-            <Radio refAttribute={register} name="mealNumber" lable="Кількість прийомів їжі" value={mealNumberValue} />
-            <MealInput name={'mealWeight'} refAttribute={register} />
+            {errors.walkNumber && <p className={styles.error}>Будь-ласка вкажіть кількість вигулювань за день</p>}
+
             <Radio
-              refAttribute={register}
+              refAttribute={register({ required: true })}
+              name="mealNumber"
+              lable="Кількість прийомів їжі"
+              value={mealNumberValue}
+            />
+            {errors.mealNumber && <p className={styles.error}>Будь-ласка вкажіть кількість прийомів їжі на день</p>}
+
+            <MealInput name={'mealWeight'} refAttribute={register({ validate: value => parseInt(value) > 0 })} />
+            {errors.mealWeight && <p className={styles.error}>Будь-ласка вкажіть вагу порції в грамах</p>}
+
+            <Radio
+              refAttribute={register({ required: true })}
               name="medChekUp"
               lable="Кількість мед. чекапів за рік"
               value={medChekUpValue}
             />
+            {errors.medChekUp && <p className={styles.error}>Будь-ласка кількість мед. чекапів за рік</p>}
+
             <Link to={ROUTES.home} className={styles.quiz__submit} onClick={handleSubmit(onSubmit)}>
               Дізнатися результат
             </Link>
