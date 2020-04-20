@@ -4,3 +4,11 @@ form {
     font-size: 14px;
   }
 }
+@media (min-width: 560px) {
+  form {
+    h2,
+    label {
+      font-size: 20px;
+    }
+  }
+}
