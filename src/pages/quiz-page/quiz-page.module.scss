@@ -1,28 +1,54 @@
-.quiz{
-    max-width: 600px;
-    padding: 20px;
+.quiz {
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  &__title {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+    margin-right: 10%;
+    margin: 20px 0;
+  }
+  &__img {
+    display: block;
     margin: 0 auto;
-    &__title{
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 28px;
-        line-height: 33px;
-        margin-right: 10%;
-    }
-    &__img{
-        display: block;
-        margin: 0 auto;
-    }
+  }
 
-    &__submit{
-        margin: 10px 0;
-        padding: 8px 13px;
-        display: inline-block;
-        background-color: #902111;
-        color: #FFFFFF;
-        text-decoration: none;
-        border-radius: 5px;
-    }
+  &__submit {
+    margin: 10px 0;
+    padding: 8px 13px;
+    display: inline-block;
+    background-color: #ff453a;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .error {
+    color: rgb(255, 1, 1);
+    margin-top: 8px;
+    font-size: 14px;
+  }
 }
+@media (min-width: 560px) {
+  .quiz {
+    &__title {
+      font-size: 32px;
+      text-align: center;
+    }
+    &__img {
+      margin: 40px auto;
+      width: 280px;
+    }
 
+    &__submit {
+      margin: 20px 0;
+      padding: 8px 13px;
+      font-size: 18px;
+    }
+    .error {
+      font-size: 16px;
+    }
+  }
+}

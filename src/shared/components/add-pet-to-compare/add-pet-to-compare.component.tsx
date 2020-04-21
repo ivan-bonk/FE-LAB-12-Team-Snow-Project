@@ -6,6 +6,7 @@ import { addComparisonPet, removeComparisonPet } from 'store/comparison/actions/
 
 import { AddPetToCompareProps } from './add-pet-to-compare.interface';
 import { ComparisonState } from './add-pet-to-compare.interface';
+import { ROUTES } from 'shared/constants/routes.constants'; 
 
 export const AddPetToCompare: React.FC<AddPetToCompareProps> = props => {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ export const AddPetToCompare: React.FC<AddPetToCompareProps> = props => {
           </div>
           <div className={style.addBlock__element}>
             <span className={`material-icons ${style.addBlock__element__thumbs}`}>thumbs_up_down</span>
-            <Link to={`/comparison/${idsToCompare.join('-')}`} className={style.addBlock__element__toCompareLink}>
+            <Link to={`${ROUTES.comparison}${idsToCompare.join('-')}`} className={style.addBlock__element__toCompareLink}>
               Перейти
             </Link>
           </div>

@@ -1,6 +1,8 @@
 .comparisonPage {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
-  padding: 18px;
+  padding: 20px;
   font-family: Roboto, sans-serif;
   line-height: 28px;
 
@@ -8,5 +10,12 @@
     font-size: 28px;
     margin-top: 25px;
     margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 800px) {
+  .comparisonPage {
+    max-width: 1024px;
+    margin: 0 auto;
   }
 }

@@ -1,22 +1,35 @@
-.container{
-    margin-top: 30px;
-    &__label{
-        font-size: 14px;
-        font-weight: 500;
-        padding-bottom: 20px;
+.container {
+  margin-top: 30px;
+  &__label {
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 20px;
+  }
+  &__inout {
+    background-color: #f7f7f6;
+    border: none;
+    width: 100%;
+    padding: 5px 5px;
+    border-radius: 8px;
+    &:focus {
+      outline: 0;
+      border: none;
     }
-    &__inout{
-        background-color: #F7F7F6;
-        border: none;
-        width: 100%;
-        padding: 5px 5px;
-        border-radius: 8px;
-        &:focus{
-            outline: 0;
-            border: none;
-        }
-    }  
+  }
 }
 
+@media (min-width: 560px) {
+  .container {
+    &__label {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    &__inout {
+      width: 100%;
 
-
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 20px;
+    }
+  }
+}

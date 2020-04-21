@@ -1,8 +1,9 @@
 import { put, call, takeEvery, fork, all } from 'redux-saga/effects';
 import { fetchPetProfile } from '../actions/pet.actions';
+import { api } from 'shared/constants/api';
 
 async function fetchPet(id: string) {
-  const dogProfile = await fetch(`https://fathomless-ridge-53873.herokuapp.com/pets/${id.toString()}`);
+  const dogProfile = await fetch(`${api}/pets/${id}`);
   if (dogProfile.ok) {
     return await dogProfile.json();
   } else {

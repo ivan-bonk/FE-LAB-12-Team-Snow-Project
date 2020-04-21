@@ -7,6 +7,7 @@ import { quizReducer } from './quiz/reducers/quiz.reducer';
 import { comparisonHandlerReducer } from './comparison/reducers/comparison-handler.reducer';
 import { careReducer } from './care/reducers/care.reducers';
 import { nameGeneratorReducer } from './name-generator/reducers/name-generator.reducers';
+import { BreedReducer } from './quiz/reducers/quiz.reducer';
 
 export const rootReducer = combineReducers({
   filter: filterReducer,
@@ -17,4 +18,5 @@ export const rootReducer = combineReducers({
   comparisonHandler: comparisonHandlerReducer,
   care: careReducer,
   nameGenerator: nameGeneratorReducer,
+  breeds: BreedReducer,
 });

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Logo } from 'shared/logo/logo.component';
 import { DogSearch } from './components/dog-search/dog-search.component';
 import { FilterButton } from './components/filter-button/filter-button.component';
 import { Dog } from './components/dog/dog.component';
@@ -13,6 +12,7 @@ import { getUrlFilterValues } from './utils/getUrlValues.util';
 import { getNumberOfFilters } from './utils/numberOfFilters.util';
 import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
+import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
 
 import styles from './result.module.scss';
 
@@ -28,12 +28,13 @@ export const Result: React.FC<ResultProps> = props => {
   }, []);
 
   const pets = useSelector((state: RootState) => state.result.resultStore);
+  const errors = !!useSelector((state: RootState) => state.result.errors);
   const filterValues = props.location.search ? getUrlFilterValues(props.location.search) : storeFilterValues;
 
   const mapArrayOfPets = (petsArray: PetProfile[]): JSX.Element[] => {
     return petsArray.map(pet => {
       return (
-        <div key={pet._id}>
+        <div key={pet._id} className={styles.dogContainer}>
           <Dog name={pet.breed} observations={pet.observations} images={pet.imgUrl} id={pet._id} />
           <div className={styles.addPetBtn}>
             <AddPetToCompare id={pet._id} />
@@ -67,6 +68,14 @@ export const Result: React.FC<ResultProps> = props => {
       ];
     }
 
+    if (errors) {
+      return [<ErrorHandling key={key} />];
+    }
+
+    if (errors) {
+      return [<ErrorHandling key={key} />];
+    }
+
     if (searchedPetsValue) {
       const searchPetsFail = [
         <h4 key={key} className={styles.searchPetsFail}>
@@ -90,10 +99,9 @@ export const Result: React.FC<ResultProps> = props => {
 
   return (
     <div className={styles.wrapper}>
-      <Logo />
       <DogSearch renderPets={handleSearchValue} pets={pets} />
       <FilterButton numberOfFilters={getNumberOfFilters(filterValues)} />
-      {renderPets()}
+      <div className={styles.dogsListContainer}>{renderPets()}</div>
     </div>
   );
 };

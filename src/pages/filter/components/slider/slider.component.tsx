@@ -17,17 +17,20 @@ export const Slider: React.FC<Partial<InputRadioProps>> = props => {
     }
   };
 
+  const outputValue = () => {
+    return inpValue === props.min ? `не обрано` : `${inpValue} ${props.units}`;
+  };
+
   useEffect(() => {
     if (props.delta && props.defaultValue && props.deltaMin) {
       setPositionValue(props.delta * (parseInt(props.defaultValue) - props.deltaMin) * windowsWidth);
     }
-  }, []);
+  }, [props, windowsWidth]);
 
   return (
     <>
       <output htmlFor="timeWolk" style={{ left: `${positionValue}px` }}>
-        {inpValue}
-        {props.units}
+        {outputValue()}
       </output>
       <input
         type="range"

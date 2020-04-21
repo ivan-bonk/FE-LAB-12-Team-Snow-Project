@@ -1,6 +1,6 @@
 .toBuy {
   font-family: Roboto, sans-serif;
-  padding: 25px;
+  padding: 20px 0;
   &__header {
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@
 
     &__title {
       margin-left: 15px;
-      font-size: 23px;
+      font-size: 24px;
       font-weight: 600;
     }
   }

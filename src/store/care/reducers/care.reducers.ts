@@ -5,7 +5,7 @@ import * as Actions from '../actions/care.actions';
 
 export type ProfileAction = ActionType<typeof Actions>;
 
-type State = Pet;
+type State = Pet | null;
 
 const initialState: Pet = {
   _id: 0,
@@ -18,7 +18,6 @@ const initialState: Pet = {
   },
 };
 
-export const careReducer = createReducer<State, ProfileAction>(initialState).handleType(
-  'GET_PETS_SUCCESS',
-  (state, action) => (state = action.payload),
-);
+export const careReducer = createReducer<State, ProfileAction>(initialState)
+  .handleType('GET_PETS_SUCCESS', (state, action) => (state = action.payload))
+  .handleType('GET_PETS_FAILTURE', (state, action) => (state = null));

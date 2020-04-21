@@ -1,22 +1,42 @@
-.filterButtonContainer {
+.button {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.buttonText {
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.filterButtonsContainer {
   margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
 
   &__filterButton {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 151px;
-    height: 32px;
     background-color: #902111;
-    border-radius: 15px;
-    cursor: pointer;
     text-decoration: none;
+  }
 
-    &__filterButtonText {
-      font-size: 14px;
-      line-height: 16px;
-      color: #ffffff;
+  &__clearFilterButton {
+    background-color: #C6C6C6;
+  }
+}
+
+@media (min-width: 800px) {
+  .filterButtonsContainer {
+    margin-top: 27px;
+    justify-content: flex-start;
+  
+    &__clearFilterButton {
+      margin-left: 29px;
     }
   }
 }

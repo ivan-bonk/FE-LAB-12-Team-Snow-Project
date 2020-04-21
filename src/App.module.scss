@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+.appWrapper {
+  margin-top: 70px;
+  padding-top: 30px;
+  flex: 1 0 auto;
+}
+
+html, body{
+  height: 100%;
+}

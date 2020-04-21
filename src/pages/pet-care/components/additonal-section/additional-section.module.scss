@@ -1,0 +1,23 @@
+.petCareFooter {
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 20px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+@media (min-width: 900px) {
+  .petCareFooter {
+    max-width: 45%;
+    float: left;
+    margin-top: 30px;
+    font-size: 30px;
+
+    &__title {
+      font-size: 30px;
+      font-weight: 600;
+    }
+  }
+}

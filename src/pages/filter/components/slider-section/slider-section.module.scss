@@ -7,3 +7,12 @@
     font-weight: 500;
   }
 }
+
+@media (min-width: 560px) {
+  .range__slider {
+    label {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}
