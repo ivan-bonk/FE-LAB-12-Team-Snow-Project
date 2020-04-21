@@ -1,29 +1,33 @@
-.quiz{
-    max-width: 600px;
-    padding: 20px;
+.quiz {
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  &__title {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+    margin-right: 10%;
+    margin: 20px 0;
+  }
+  &__img {
+    display: block;
     margin: 0 auto;
-    &__title{
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 28px;
-        line-height: 33px;
-        margin-right: 10%;
-        margin: 20px 0;
-    }
-    &__img{
-        display: block;
-        margin: 0 auto;
-    }
+  }
 
-    &__submit{
-        margin: 10px 0;
-        padding: 8px 13px;
-        display: inline-block;
-        background-color: #902111;
-        color: #FFFFFF;
-        text-decoration: none;
-        border-radius: 5px;
-    }
+  &__submit {
+    margin: 10px 0;
+    padding: 8px 13px;
+    display: inline-block;
+    background-color: #902111;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .error {
+    color: rgb(255, 1, 1);
+    margin-top: 10px;
+    font-size: 14px;
+  }
 }
-
