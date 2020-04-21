@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ROUTES } from 'shared/constants/routes.constants';
 import { useSelector } from 'react-redux';
@@ -9,8 +9,7 @@ import styles from './menu.module.scss';
 export const Menu: React.FC<MenuProps> = props => {
   const idsToCompare = useSelector((state: RootState) => state.comparisonHandler.idsToCompare);
   const location = useLocation();
-  const currentPage = location.pathname.replace(/\//g,'');
-  console.log(currentPage);
+  const currentPage = location.pathname.replace(/\//g, '');
 
   const activeStyle = styles.menuContainer__menu__menuItem_active;
   const passiveStyle = styles.menuContainer__menu__menuItem;
@@ -18,19 +17,19 @@ export const Menu: React.FC<MenuProps> = props => {
   return (
     <div className={styles.menuContainer}>
       <ul className={styles.menuContainer__menu}>
-        <li className={currentPage==='' ? activeStyle : passiveStyle}>
+        <li className={currentPage === '' ? activeStyle : passiveStyle}>
           <span className={`${styles.linkIcon} material-icons`}>home</span>
           <Link to={ROUTES.home} className={styles.menuLink} onClick={props.onLinkClick}>
             Головна
           </Link>
         </li>
-        <li className={currentPage==='result' ? activeStyle : passiveStyle}>
+        <li className={currentPage === 'result' ? activeStyle : passiveStyle}>
           <span className={`${styles.linkIcon} material-icons`}>pets</span>
           <Link to={ROUTES.result} className={styles.menuLink} onClick={props.onLinkClick}>
             Породи
           </Link>
         </li>
-        <li className={currentPage==='filter' ? activeStyle : passiveStyle}>
+        <li className={currentPage === 'filter' ? activeStyle : passiveStyle}>
           <span className={`${styles.linkIcon} material-icons`}>search</span>
           <Link to={ROUTES.filter} className={styles.menuLink} onClick={props.onLinkClick}>
             Підібрати
@@ -42,7 +41,7 @@ export const Menu: React.FC<MenuProps> = props => {
             Порівняти ({idsToCompare.length})
           </Link>
         </li>
-        <li className={currentPage==='quiz-page' || currentPage.includes('care') ? activeStyle : passiveStyle}>
+        <li className={currentPage === 'quiz-page' || currentPage.includes('care') ? activeStyle : passiveStyle}>
           <span className={`${styles.linkIcon} material-icons`}>help</span>
           <Link to={ROUTES.quiz} className={styles.menuLink} onClick={props.onLinkClick}>
             Чи хороший я власник
