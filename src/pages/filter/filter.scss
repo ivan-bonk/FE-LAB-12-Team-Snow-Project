@@ -9,3 +9,12 @@
     margin: 35px 0 20px;
   }
 }
+
+@media (min-width: 560px) {
+  .filter {
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}

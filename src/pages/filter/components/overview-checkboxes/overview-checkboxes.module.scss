@@ -11,4 +11,9 @@
     font-family: Roboto, sans-serif;
     margin-top: 10px;
   }
+  @media (min-width: 560px) {
+    .general label {
+      font-size: 20px;
+    }
+  }
 }
