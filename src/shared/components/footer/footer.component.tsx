@@ -15,9 +15,15 @@ export const Footer: React.FC = () => {
         <Logo />
       </div>
       <div className={style.footer__nav}>
-          <Link className={style.footer__nav__link} to={ROUTES.home}>Головна</Link>
-          <Link className={style.footer__nav__link} to={ROUTES.result}>Породи</Link>
-          <Link className={style.footer__nav__link} to={ROUTES.filter}>Підібрати</Link>
+        <Link className={style.footer__nav__link} to={ROUTES.home}>
+          Головна
+        </Link>
+        <Link className={style.footer__nav__link} to={ROUTES.result}>
+          Породи
+        </Link>
+        <Link className={style.footer__nav__link} to={ROUTES.filter}>
+          Підібрати
+        </Link>
       </div>
     </footer>
   );

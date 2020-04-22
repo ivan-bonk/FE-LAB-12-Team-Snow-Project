@@ -40,8 +40,8 @@ export const StarterPack: React.FC<StarterProps> = props => {
           <div className={style.responsiveContainer}>
             <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
             <div className={style.generatorContainer}>
-                <NamesGenerator />
-              </div>
+              <NamesGenerator />
+            </div>
             <div className={style.responsiveItem}>
               <ToBuy observations={observations} />
               <FromBreeder />
