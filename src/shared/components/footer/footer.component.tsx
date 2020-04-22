@@ -6,7 +6,8 @@ import style from './footer.module.scss';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className={style.footer}>
+    <div className={style.footerContainer}>
+      <footer className={style.footer}>
       <div className={style.footer__copyright}>
         <span className={`${style.footer__copyright__icon} material-icons`}>copyright</span>
         <span className={style.footer__copyright__text}>2020 All rights reserved</span>
@@ -26,5 +27,6 @@ export const Footer: React.FC = () => {
         </Link>
       </div>
     </footer>
+    </div>
   );
 };

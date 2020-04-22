@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './App.module.scss';
+import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { ROUTES } from 'shared/constants/routes.constants';
@@ -11,6 +11,7 @@ import { Filter } from 'pages/filter/filter.component';
 import { PetCare } from 'pages/pet-care/pet-care.component';
 import { StarterPack } from 'pages/starter-pack/starter-pack.component';
 import { QuizPage } from './pages/quiz-page/quiz-page.component';
+import {ContentWrapper} from 'shared/components/content-wrapper/content-wrapper';
 
 import { ScrollToTop } from 'shared/components/scroll-to-top/scroll-to-top.component';
 import { Header } from './shared/components/header/header.component';
@@ -21,7 +22,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <Header />
-      <div className={styles.appWrapper} id="app-wrapper">
+      <ContentWrapper/>
         <Switch>
           <Route exact path={ROUTES.home} component={LandinPage}></Route>
           <Route path={ROUTES.result} component={Result}></Route>
@@ -32,7 +33,6 @@ function App() {
           <Route path={ROUTES.quiz} component={QuizPage} />
           <Route path={ROUTES.care} component={PetCare}></Route>
         </Switch>
-      </div>
       <Footer />
     </Router>
   );
