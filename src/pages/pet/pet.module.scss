@@ -20,14 +20,6 @@
   font-size: 16px;
 }
 
-.dogPic {
-  width: 100vw;
-  height: 240px;
-  object-fit: cover;
-  object-position: 50% 20%;
-  padding-bottom: 20px;
-}
-
 .starterBtn {
   color: #0A84FF;
   padding: 16px 0;
@@ -56,20 +48,9 @@
   flex-direction: column;
 }
 
-@media (min-width: 476px) {
-  .dogPic {
-    height: 400px;
-  }
-}
-
 @media (min-width: 768px) {
   .responsiveContainer {
     flex-direction: row;
-  }
-  .dogPic {
-    width: 55vw;
-    height: 35vw;
-    padding-left: 20px;
   }
   .responsiveItem {
     order: 2;
