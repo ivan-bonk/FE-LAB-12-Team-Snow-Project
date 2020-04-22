@@ -6,6 +6,8 @@ import img1 from 'images/Landing 3.png';
 import dog from './bigl.svg';
 import styles from './find-out.module.scss';
 
+import { Tooltip, Zoom } from '@material-ui/core';
+
 export const FindOut: React.FC = () => {
   return (
     <div className={styles.block}>
@@ -69,12 +71,17 @@ export const FindOut: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <div className={styles.block__linkContainer}>
-        <Link to={ROUTES.quiz} className={styles.block__linkContainer__link}>
-          Дізнатися →
-        </Link>
-      </div>
+      <Tooltip
+        TransitionComponent={Zoom}
+        title={<h1 style={{ fontSize: '12px' }}>Дізнатись чи правильно я доглядаю за своїм улюбленцем</h1>}
+        arrow
+      >
+        <div className={styles.block__linkContainer}>
+          <Link to={ROUTES.quiz} className={styles.block__linkContainer__link}>
+            Дізнатися →
+          </Link>
+        </div>
+      </Tooltip>
     </div>
   );
 };

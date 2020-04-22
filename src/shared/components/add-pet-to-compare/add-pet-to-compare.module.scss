@@ -22,14 +22,14 @@
       color: #0a84ff;
       padding: 5px;
     }
- 
+
     &__clear {
-      color: #FF453A;
+      color: #ff453a;
       padding: 5px;
     }
 
     &__removePetBtn {
-      color: #FF453A;
+      color: #ff453a;
       padding: 5px;
       &:hover {
         cursor: pointer;
@@ -47,13 +47,21 @@
       }
     }
   }
+}
+
+.addPet {
+  display: flex;
 
   &__addBtn {
-    color: #0a84ff;
-    
+    color: #fff;
+    padding: 10px;
+    background-color: #ff9f0a;
+    border-radius: 30px;
+    margin-left: 12px;
+
     &:hover {
       cursor: pointer;
-      text-decoration: underline;
+      background-color: #ffc56f;
     }
   }
 }
