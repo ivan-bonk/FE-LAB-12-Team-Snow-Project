@@ -14,8 +14,7 @@
     display: none;
   }
 
-  // I don't know how to override 'important' rule yet..
   .menu {
-    display: initial !important; 
+    display: initial;
   }
 }
