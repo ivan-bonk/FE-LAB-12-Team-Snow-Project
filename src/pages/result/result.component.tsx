@@ -61,11 +61,7 @@ export const Result: React.FC<ResultProps> = props => {
     const key = 1;
 
     if (pets.length === 0) {
-      return [
-        <div key={key}>
-          <LoadingSpinner />
-        </div>,
-      ];
+      return [<LoadingSpinner key={key} />];
     }
 
     if (errors) {
