@@ -14,7 +14,7 @@ export const Navigation: React.FC = () => {
   const onBurgerClick = () => {
     dispatch(toggleMenu);
   };
-
+  
   const onLinkClick = () => {
     if (document.documentElement.clientWidth < 800) {
       dispatch(toggleMenu);

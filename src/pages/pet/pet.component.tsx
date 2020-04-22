@@ -50,7 +50,7 @@ export const Pet: React.FC<PetProps> = props => {
             <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
             <div className={style.responsiveItem}>
               <div className={style.addContainer}>
-                <AddPetToCompare id={_id}/>
+                <AddPetToCompare id={_id} />
               </div>
               <section className={style.characteristicContainer}>
                 <h2 className={style.sectionHeader}>Характеристики</h2>
