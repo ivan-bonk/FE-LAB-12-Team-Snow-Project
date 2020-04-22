@@ -71,8 +71,8 @@ export const Pet: React.FC<PetProps> = props => {
               <span className="material-icons">info</span>
               <span className={style.starterBtnText}> Що необхідно для того, щоб завести собаку?</span>
             </Link>
+            <BackBtn />
           </div>
-          <BackBtn />
         </div>
       )}
     </Fragment>
