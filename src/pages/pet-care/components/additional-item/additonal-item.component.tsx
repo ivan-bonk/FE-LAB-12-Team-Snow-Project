@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { AdditionalProps } from './additional.interface';
 import styles from './additonal-item.module.scss';
 
@@ -7,11 +7,15 @@ export const AdditionalItemCare: React.FC<Partial<AdditionalProps>> = props => {
   const toggleText = () => (window.innerWidth < 576 ? setOpen(!open) : null);
   const arrowType = open ? 'expand_less' : 'expand_more';
 
-  useEffect(() => {
-    window.innerWidth > 576 ? setOpen(true) : setOpen(false);
-    window.addEventListener('resize', () => {
+  useLayoutEffect(() => {
+    const openAdditional = () => {
       window.innerWidth > 576 ? setOpen(true) : setOpen(false);
-    });
+    };
+
+    window.innerWidth > 576 ? setOpen(true) : setOpen(false);
+    window.addEventListener('resize', openAdditional);
+
+    return () => window.removeEventListener('resize', openAdditional);
   }, []);
 
   return (
