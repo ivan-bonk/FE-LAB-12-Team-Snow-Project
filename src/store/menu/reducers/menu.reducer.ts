@@ -1,13 +1,13 @@
 import { createReducer } from 'typesafe-actions';
 
-interface menuState {
+interface MenuState {
     menuOn: boolean
 }
 
-const initialState:menuState = {
+const initialState:MenuState = {
  menuOn: false
 };
 
 export const menuReducer = createReducer(initialState)
-  .handleAction('@menu/toggle', (state: menuState) => ({ ...state, menuOn: !state.menuOn }))
-  .handleAction('@menu/off', (state: menuState) => ({ ...state, menuOn: false }))
+  .handleAction('@menu/toggle', (state: MenuState) => ({ ...state, menuOn: !state.menuOn }))
+  .handleAction('@menu/off', (state: MenuState) => ({ ...state, menuOn: false }))

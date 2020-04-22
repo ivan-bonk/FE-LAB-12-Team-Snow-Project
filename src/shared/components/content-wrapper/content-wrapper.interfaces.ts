@@ -1,7 +1,7 @@
-interface menuState {
+interface MenuState {
     menuOn: boolean
 }
   
 export  interface RootState {
-    menu: menuState
+    menu: MenuState
 }
