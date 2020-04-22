@@ -40,7 +40,7 @@ export const StarterPack: React.FC<StarterProps> = props => {
         <div>
           <h1 className={style.pageHeader}>Початковий набір для породи {breed}</h1>
           <div className={style.responsiveContainer}>
-            <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
+            <DogPicture images={imgUrl}/>
             <div className={style.generatorContainer}>
                 <NamesGenerator />
               </div>
