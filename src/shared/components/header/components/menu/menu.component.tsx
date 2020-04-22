@@ -23,7 +23,7 @@ export const Menu: React.FC<MenuProps> = props => {
             Головна
           </Link>
         </li>
-        <li className={currentPage === 'result' ? activeStyle : passiveStyle}>
+        <li className={currentPage.includes('breeds') ? activeStyle : passiveStyle}>
           <span className={`${styles.linkIcon} material-icons`}>pets</span>
           <Link to={ROUTES.result} className={styles.menuLink} onClick={props.onLinkClick}>
             Породи

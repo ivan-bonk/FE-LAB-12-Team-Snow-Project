@@ -13,7 +13,7 @@ export const DogSearch: React.FC<DogSearchProps> = props => {
 
   return (
     <div className={styles.searchContainer}>
-      <h2 className={styles.searchContainer__searchHeader}>Знайти</h2>
+      <h2 className={styles.searchContainer__searchHeader}>Породи собак</h2>
       <input
         type="text"
         className={styles.searchContainer__searchInput}
