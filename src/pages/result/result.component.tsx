@@ -79,7 +79,7 @@ export const Result: React.FC<ResultProps> = props => {
     if (searchedPetsValue) {
       const searchPetsFail = [
         <h4 key={key} className={styles.searchPetsFail}>
-          За вашим запитом нічого не знайдено...
+          За вашим запитом нічого не знайдено. Спробуйте змінити запит.
         </h4>,
       ];
 
@@ -91,7 +91,7 @@ export const Result: React.FC<ResultProps> = props => {
     return petsArray.length === 0
       ? [
           <h4 key={key} className={styles.searchPetsFail}>
-            За вказаним фільтром немає результатів.
+            За вказаним фільтром немає результатів, спробуйте змінити значення фільтру.
           </h4>,
         ]
       : petsArray;
