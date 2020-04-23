@@ -1,8 +1,8 @@
 import { put, call, takeEvery, fork, all } from 'redux-saga/effects';
 import { fetchPetNames } from '../actions/name-generator.actions';
-import { api } from 'shared/constants/api';
+import { api } from '../../../shared/constants/api';
 
-async function fetchNames() {
+export async function fetchNames() {
   const petNames = await fetch(`${api}/alias`);
   if (petNames.ok) {
     return await petNames.json();
@@ -11,7 +11,7 @@ async function fetchNames() {
   }
 }
 
-function* handleFetch() {
+export function* handleFetch() {
   try {
     const res = yield call(fetchNames);
     if (res.error) {
