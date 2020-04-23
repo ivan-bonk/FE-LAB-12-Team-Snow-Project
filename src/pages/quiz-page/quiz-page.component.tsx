@@ -47,7 +47,7 @@ export const QuizPage: React.FC = () => {
   const mealNumberValue = ['1 раз', '2 рази', '3 рази', 'Більше 3-х разів'];
   const medChekUpValue = ['1 раз', '1 - 2 рази', 'Більше 2-х'];
 
-  const deltaPositionWeight = 0.0084;
+  const deltaPositionWeight = 0.00845;
 
   return (
     <div className={styles.quiz}>
