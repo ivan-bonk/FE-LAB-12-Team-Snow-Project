@@ -2,7 +2,7 @@ import { takeEvery } from 'redux-saga/effects';
 import { runSaga } from 'redux-saga';
 import { handleFetch, watchLoadNames, fetchNames } from 'store/name-generator/sagas/name-generator.sagas';
 import { fetchPetNames } from 'store/name-generator/actions/name-generator.actions';
-import { response } from './hardcoded-data';
+import { response } from '../hardcoded-data';
 
 describe('test fetchPetNames function', () => {
   const genObject = watchLoadNames();

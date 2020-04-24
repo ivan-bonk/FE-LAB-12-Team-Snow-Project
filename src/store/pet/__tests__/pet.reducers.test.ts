@@ -1,5 +1,5 @@
 import { petReducer } from 'store/pet/reducers/pet.reducer';
-import { petProfile, initialState } from './hardcoded-data';
+import { petProfile, initialState } from '../hardcoded-data';
 
 describe('test pet reducer', () => {
   it('should test @pet/FETCH_REQUEST', () => {

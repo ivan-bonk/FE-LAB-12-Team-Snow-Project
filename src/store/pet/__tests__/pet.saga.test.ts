@@ -2,7 +2,7 @@ import { takeEvery } from 'redux-saga/effects';
 import { runSaga } from 'redux-saga';
 import { handleFetch, watchLoadPet, fetchPet } from 'store/pet/sagas/pet.saga';
 import { fetchPetProfile } from 'store/pet/actions/pet.actions';
-import { petProfile, fullPetProfile } from './hardcoded-data';
+import { fullPetProfile } from '../hardcoded-data';
 
 describe('test fetchPetProfile function', () => {
   const genObject = watchLoadPet();
