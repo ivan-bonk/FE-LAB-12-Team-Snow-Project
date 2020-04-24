@@ -4,7 +4,7 @@ interface MenuState {
   menuOn: boolean;
 }
 
-const initialState: MenuState = {
+export const initialState: MenuState = {
   menuOn: false,
 };
 

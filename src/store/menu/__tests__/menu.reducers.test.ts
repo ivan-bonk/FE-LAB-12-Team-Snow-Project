@@ -1,5 +1,5 @@
 import { menuReducer } from 'store/menu/reducers/menu.reducer';
-import { initialState } from '../hardcoded-data';
+import { initialState } from '../reducers/menu.reducer';
 import {toggleMenu, menuOff} from '../actions/menu.action';
 
 describe('test menu reducer', () => {

@@ -98,9 +98,3 @@ export const petProfile: PetProfile = {
   _id: '5e8c4ffb4ed5f230f4c261fb',
   breed: 'Англійський сетер',
 };
-
-export const initialState = {
-  currentPet: {},
-  errors: '',
-  loading: false,
-};

@@ -1,5 +1,6 @@
 import { petReducer } from 'store/pet/reducers/pet.reducer';
-import { petProfile, initialState } from '../mocks';
+import { petProfile } from '../mocks';
+import {initialState} from '../reducers/pet.reducer';
 import {fetchPetProfile, clearPetProfile} from '../actions/pet.actions';
 
 describe('test pet reducer', () => {

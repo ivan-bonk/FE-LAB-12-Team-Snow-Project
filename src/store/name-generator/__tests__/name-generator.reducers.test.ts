@@ -1,5 +1,6 @@
 import { nameGeneratorReducer } from 'store/name-generator/reducers/name-generator.reducers';
-import { initialState, res } from '../mocks';
+import { res, response } from '../mocks';
+import {initialState} from '../reducers/name-generator.reducers';
 import {fetchPetNames, setBoyName, setGirlName} from '../actions/name-generator.actions';
 
 describe('test nameGenerator reducer', () => {
