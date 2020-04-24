@@ -14,18 +14,17 @@
 .container {
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 .responsiveConianer {
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 .pageHeader {
     @extend %shared;
     height: 62px;
     width: 90%;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 30px;  
 }
 
 .dogPic {
@@ -33,6 +32,8 @@
     margin-left: -20px;
     width: 100vw;
     height: 240px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 @media (min-width: 476px) {
@@ -61,7 +62,24 @@
     }
     .characteristics {
         order: 1;
-        height: 500px;
+        min-height: 290px;
+        margin-top: 0;
+    }
+
+    .observations {
+        min-height: 120px;
+    }
+
+    .additionaInfo{
+        min-height: 170px;
+    }
+    .pageHeader {
+        width: 600px;
+        height: 35px;
+        margin-bottom: 20px;
+    }
+    .starterLink {
+        width: 400px;
     }
 }
 
@@ -69,10 +87,14 @@
     height: 48px;
     width: 185px;
     @extend %shared;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .characteristics {
     height: 250px;
+    margin-top: 0;
     @extend %shared;
 }
 
