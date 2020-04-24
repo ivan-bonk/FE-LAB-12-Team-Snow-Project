@@ -6,7 +6,7 @@ export type ProfileAction = ActionType<typeof Actions>;
 
 type State = Data | null;
 
-const initialState: Data | null = null;
+export const initialState: Data | null = null;
 
 const filterReducer = createReducer<State, ProfileAction>(initialState).handleType(
   'FILTER',
