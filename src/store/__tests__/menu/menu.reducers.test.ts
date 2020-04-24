@@ -1,23 +1,20 @@
-import {menuReducer} from 'store/menu/reducers/menu.reducer';
+import { menuReducer } from 'store/menu/reducers/menu.reducer';
+import { initialState } from './hardcoded-data';
 
-const initialState = {
-  menuOn: false
- };
-
-describe('menu reducer', () => {
-  it('should handle menu off', () => {
+describe('test menu reducer', () => {
+  it('should handle @menu/off', () => {
     expect(
-        menuReducer(initialState, {
+      menuReducer(initialState, {
         type: '@menu/off',
-      })
-    ).toEqual({ menuOn: false})
-  })
+      }),
+    ).toEqual({ menuOn: false });
+  });
 
-  it('should handle menu toggle', () => {
+  it('should handle menu @menu/toggle', () => {
     expect(
-        menuReducer(initialState, {
+      menuReducer(initialState, {
         type: '@menu/toggle',
-      })
-    ).toEqual({ menuOn: true})
-  })
-})
+      }),
+    ).toEqual({ menuOn: true });
+  });
+});

@@ -15,20 +15,20 @@ export interface Observations {
   height: string;
   weight: string;
   price: string;
-  carePrice: string;
+  carePrice: number;
   careTime: number;
   careComplications: string;
   walkNumber: number;
   mealNumber: number;
   mealWeight: number;
-  medCheckUp: number
+  medCheckUp: number;
 }
 
 export interface OwnerInfo {
-  easyTrain: boolean,  
-  familyFit: boolean,
-  apartmentFit: boolean,
-  hypoallergenicity: boolean
+  easyTrain: boolean;
+  familyFit: boolean;
+  apartmentFit: boolean;
+  hypoallergenicity: boolean;
 }
 
 export interface AdditionalInfo {
@@ -45,5 +45,5 @@ export interface PetProfile {
   observations: Observations;
   additionalInfo: AdditionalInfo;
   ownerInfo: OwnerInfo;
-  __v: number
+  __v?: number;
 }
