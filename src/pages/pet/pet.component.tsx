@@ -16,6 +16,7 @@ import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinne
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
 import { DogPicture } from 'shared/components/dog-picture/dog-picture.component';
+import {Skeleton} from './components/skeleton/skeleton.component';
 
 export const Pet: React.FC<PetProps> = props => {
   const petId: string = props.match.params.id;
@@ -44,42 +45,46 @@ export const Pet: React.FC<PetProps> = props => {
       </Fragment>
     );
   }
-  //TODO: Skeleton or placeholder. Add during loading the page @O.Khabrovska
-  return (
-    <Fragment>
-      {loading && <LoadingSpinner />}
-      {dataReady && (
-        <div>
-          <h1 className={style.pageHeader}>{breed}</h1>
-          <div className={style.responsiveContainer}>
-            <DogPicture images={imgUrl} />
-            <div className={style.responsiveItem}>
-              <div className={style.addContainer}>
-                <AddPetToCompare id={_id} />
-              </div>
-              <section className={style.characteristicContainer}>
-                <h2 className={style.sectionHeader}>Характеристики</h2>
-                <CharacteristicsComponent data={characteristics} />
-              </section>
-            </div>
-          </div>
-          <div className={style.container}>
-            <section>
-              <h2 className={style.sectionHeader}>Спостереження</h2>
-              <ObservationsComponent data={observations} />
-            </section>
-            <section>
-              <h2 className={style.sectionHeader}>Додаткова інформація</h2>
-              <AdditionalInfoComponent data={additionalInfo} />
-            </section>
-            <Link to={ROUTES.starterPack.route(_id)} className={style.starterBtn}>
-              <span className="material-icons">info</span>
-              <span className={style.starterBtnText}> Що необхідно для того, щоб завести собаку?</span>
-            </Link>
-            <BackBtn />
-          </div>
-        </div>
-      )}
-    </Fragment>
-  );
+  if(loading) {
+    return <div className={style.container}><Skeleton/></div>
+  }
+
+  return <div className={style.container}><Skeleton/></div>
+
+  // return (
+  //   <Fragment>
+  //     {dataReady && (
+  //       <div>
+  //         <h1 className={style.pageHeader}>{breed}</h1>
+  //         <div className={style.responsiveContainer}>
+  //           <DogPicture images={imgUrl} />
+  //           <div className={style.responsiveItem}>
+  //             <div className={style.addContainer}>
+  //               <AddPetToCompare id={_id} />
+  //             </div>
+  //             <section className={style.characteristicContainer}>
+  //               <h2 className={style.sectionHeader}>Характеристики</h2>
+  //               <CharacteristicsComponent data={characteristics} />
+  //             </section>
+  //           </div>
+  //         </div>
+  //         <div className={style.container}>
+  //           <section>
+  //             <h2 className={style.sectionHeader}>Спостереження</h2>
+  //             <ObservationsComponent data={observations} />
+  //           </section>
+  //           <section>
+  //             <h2 className={style.sectionHeader}>Додаткова інформація</h2>
+  //             <AdditionalInfoComponent data={additionalInfo} />
+  //           </section>
+  //           <Link to={ROUTES.starterPack.route(_id)} className={style.starterBtn}>
+  //             <span className="material-icons">info</span>
+  //             <span className={style.starterBtnText}> Що необхідно для того, щоб завести собаку?</span>
+  //           </Link>
+  //           <BackBtn />
+  //         </div>
+  //       </div>
+  //     )}
+  //   </Fragment>
+  // );
 };
