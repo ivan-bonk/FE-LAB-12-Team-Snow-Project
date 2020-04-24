@@ -1,5 +1,6 @@
 import { petReducer } from 'store/pet/reducers/pet.reducer';
 import { petProfile, initialState } from '../mocks';
+import {fetchPetProfile, clearPetProfile} from '../actions/pet.actions';
 
 describe('test pet reducer', () => {
   it('should test @pet/FETCH_REQUEST', () => {
@@ -9,7 +10,7 @@ describe('test pet reducer', () => {
       loading: true,
     };
     const action = {
-      type: '@pet/FETCH_REQUEST',
+      type: fetchPetProfile.request,
     };
     const updatedState = petReducer(initialState, action);
     expect(updatedState).toEqual(expectedState);
@@ -21,7 +22,7 @@ describe('test pet reducer', () => {
       loading: false,
     };
     const action = {
-      type: '@pet/FETCH_SUCCESS',
+      type: fetchPetProfile.success,
       payload: petProfile,
     };
     const updatedState = petReducer(initialState, action);
@@ -34,7 +35,7 @@ describe('test pet reducer', () => {
       loading: false,
     };
     const action = {
-      type: '@pet/FETCH_ERROR',
+      type: fetchPetProfile.failure,
       payload: 'Some error',
     };
     const updatedState = petReducer(initialState, action);
@@ -47,7 +48,7 @@ describe('test pet reducer', () => {
       loading: false,
     };
     const action = {
-      type: '@pet/CLEAR_PET',
+      type: clearPetProfile.type,
     };
     const updatedState = petReducer(initialState, action);
     expect(updatedState).toEqual(expectedState);

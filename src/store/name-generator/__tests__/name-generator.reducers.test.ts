@@ -1,5 +1,6 @@
 import { nameGeneratorReducer } from 'store/name-generator/reducers/name-generator.reducers';
 import { initialState, res } from '../mocks';
+import {fetchPetNames, setBoyName, setGirlName} from '../actions/name-generator.actions';
 
 describe('test nameGenerator reducer', () => {
   it('should handle @name-generator/SET_BOY', () => {
@@ -14,7 +15,7 @@ describe('test nameGenerator reducer', () => {
       loading: false,
     };
     const action = {
-      type: '@name-generator/SET_BOY',
+      type: setBoyName.type,
     };
     const updatedState = nameGeneratorReducer(initialState, action);
     expect(updatedState).toEqual(expectedState);
@@ -32,7 +33,7 @@ describe('test nameGenerator reducer', () => {
       loading: false,
     };
     const action = {
-      type: '@name-generator/SET_GIRL',
+      type: setGirlName.type,
     };
     const updatedState = nameGeneratorReducer(initialState, action);
     expect(updatedState).toEqual(expectedState);
@@ -50,7 +51,7 @@ describe('test nameGenerator reducer', () => {
       loading: true,
     };
     const action = {
-      type: '@name-generator/FETCH_REQUEST',
+      type: fetchPetNames.request,
     };
     const updatedState = nameGeneratorReducer(initialState, action);
     expect(updatedState).toEqual(expectedState);
@@ -65,7 +66,7 @@ describe('test nameGenerator reducer', () => {
       loading: false,
     };
     const action = {
-      type: '@name-generator/FETCH_SUCCESS',
+      type: fetchPetNames.success,
       payload: res,
     };
     const updatedState = nameGeneratorReducer(initialState, action);
@@ -84,7 +85,7 @@ describe('test nameGenerator reducer', () => {
       loading: false,
     };
     const action = {
-      type: '@name-generator/FETCH_ERROR',
+      type: fetchPetNames.failure,
       payload: 'Some error',
     };
     const updatedState = nameGeneratorReducer(initialState, action);
