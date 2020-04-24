@@ -1,5 +1,5 @@
 import { nameGeneratorReducer } from 'store/name-generator/reducers/name-generator.reducers';
-import { initialState, res } from '../hardcoded-data';
+import { initialState, res } from '../mocks';
 
 describe('test nameGenerator reducer', () => {
   it('should handle @name-generator/SET_BOY', () => {
