@@ -21,7 +21,7 @@ export interface Observations {
   walkNumber: number;
   mealNumber: number;
   mealWeight: number;
-  MedCheckUp: number;
+  medCheckUp: number;
 }
 
 export interface OwnerInfo {
