@@ -70,31 +70,28 @@
       }
     }
   }
-  @media (min-width: 900px) {
+  @media (min-width: 560px) {
     .result,
     .result_red {
       padding: 15px 0;
 
       h4 {
         &:nth-child(1) {
-          font-size: 32px;
+          font-size: 22px;
         }
         &:nth-child(4) {
-          font-size: 18px;
+          font-size: 16px;
           margin: 20px 0 6px 0;
         }
       }
       span {
-        font-size: 18px;
+        font-size: 16px;
         &:nth-child(3) {
-          font-size: 40px;
+          font-size: 30px;
           position: absolute;
           right: 10px;
           top: 15px;
         }
-      }
-      .material-icons {
-        font-size: 30px;
       }
     }
   }

@@ -27,7 +27,7 @@ export type BreedsAction = ActionType<typeof Actions>;
 
 type StateBreed = BreedsState;
 
-const initialStateBreeds: BreedsState = {
+export const initialStateBreeds: BreedsState = {
   breeds: [],
   errors: '',
   loading: false,
