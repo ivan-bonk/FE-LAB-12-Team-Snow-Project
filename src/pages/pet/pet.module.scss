@@ -21,6 +21,13 @@
   font-size: 16px;
 }
 
+.addContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -12px;
+}
+
 .starterBtn {
   color: #0A84FF;
   padding: 16px 0;
@@ -46,6 +53,7 @@
 
 .responsiveItem {
   margin: 0 20px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -57,6 +65,7 @@
   .responsiveItem {
     order: 2;
     margin-left: 40px;
+    margin-top: 0px;
     margin-right: 20px;
     flex: 1;
     .sectionHeader {

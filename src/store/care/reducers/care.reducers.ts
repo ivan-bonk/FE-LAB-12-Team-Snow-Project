@@ -7,7 +7,7 @@ export type ProfileAction = ActionType<typeof Actions>;
 
 type State = Pet | null;
 
-const initialState: Pet = {
+export const initialState: Pet = {
   _id: 0,
   photos: [],
   breed: '',

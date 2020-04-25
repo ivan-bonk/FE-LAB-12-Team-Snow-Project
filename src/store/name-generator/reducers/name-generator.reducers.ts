@@ -2,7 +2,7 @@ import { createReducer } from 'typesafe-actions';
 import { NameGeneratorState, PetNames } from '../name-generator.models';
 import { fetchPetNames } from '../actions/name-generator.actions';
 
-const initialState: NameGeneratorState = {
+export const initialState: NameGeneratorState = {
   petNames: {
     boys: [],
     girls: [],
