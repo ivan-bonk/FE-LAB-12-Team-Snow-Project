@@ -20,5 +20,5 @@ export const rootReducer = combineReducers({
   care: careReducer,
   nameGenerator: nameGeneratorReducer,
   breeds: BreedReducer,
-  menu: menuReducer
+  menu: menuReducer,
 });
