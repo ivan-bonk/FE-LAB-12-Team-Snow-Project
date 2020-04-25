@@ -33,14 +33,14 @@ export const initialStateBreeds: BreedsState = {
   loading: false,
 };
 
-export const BreedReducer = createReducer(initialStateBreeds)
-  .handleAction(fetchPetBreeds.success, (state: BreedsState, action: { payload: BreedsState }) => ({
+export const BreedReducer = createReducer<StateBreed, ProfileAction>(initialStateBreeds)
+  .handleAction(fetchPetBreeds.success, (state, action) => ({
     ...state,
     loading: false,
     breeds: action.payload,
   }))
-  .handleAction(fetchPetBreeds.request, (state: BreedsState) => ({ ...state, loading: true }))
-  .handleAction(fetchPetBreeds.failure, (state: BreedsState, action: { payload: BreedsState }) => ({
+  .handleAction(fetchPetBreeds.request, state => ({ ...state, loading: true }))
+  .handleAction(fetchPetBreeds.failure, (state, action) => ({
     ...state,
     loading: false,
     errors: action.payload,
