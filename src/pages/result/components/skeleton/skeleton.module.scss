@@ -1,0 +1,45 @@
+.skeleton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
+
+  &__dog {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 8px;
+    padding: 9px 12px;
+    margin-bottom: 20px;
+
+    &__item {
+      border-radius: 5px;
+    }
+  }
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.button {
+  border-radius: 20px;
+}
+
+@media (min-width: 800px) {
+  .skeleton {
+    &__dog {
+      width: 48%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .skeleton {
+    &__dog {
+      width: 32%;
+    }
+  }
+}
