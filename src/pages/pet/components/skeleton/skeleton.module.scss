@@ -1,0 +1,129 @@
+%shared {
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: linear-gradient(to right, #f0f0f0 8%, #dad9d9 38%, #f7f5f5 54%);
+    background-size: 1000px 640px;
+    overflow: hidden;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.responsiveConianer {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.pageHeader {
+    @extend %shared;
+    height: 62px;
+    width: 90%;
+}
+
+.dogPic {
+    @extend %shared;
+    margin-left: -20px;
+    width: 100vw;
+    height: 240px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 476px) {
+    .dogPic {
+      height: 400px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .responsiveConianer {
+        flex: 1;
+        margin-left: 40px;
+    }
+    .dogPic {
+      width: 55vw;
+      height: 35vw;
+      padding-left: 20px;
+      margin-left: 0px;
+    }
+    .addBtn {
+        order: 2;
+    }
+    .characteristics {
+        order: 1;
+        min-height: 290px;
+        margin-top: 0;
+    }
+
+    .observations {
+        min-height: 120px;
+    }
+
+    .additionaInfo{
+        min-height: 170px;
+    }
+    .pageHeader {
+        width: 600px;
+        height: 35px;
+        margin-bottom: 20px;
+    }
+    .starterLink {
+        width: 400px;
+    }
+}
+
+.addBtn {
+    height: 48px;
+    width: 185px;
+    @extend %shared;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.characteristics {
+    height: 250px;
+    margin-top: 0;
+    @extend %shared;
+}
+
+.observations {
+    height: 180px;
+    @extend %shared;
+}
+
+.additionaInfo {
+    height: 250px;
+    @extend %shared;
+}
+
+.starterLink {
+    height: 36px;
+    @extend %shared;
+}
+
+.backBtn {
+    height: 35px;
+    width: 135px;
+    @extend %shared;
+}
+
+@keyframes placeHolderShimmer {
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}

@@ -1,10 +1,11 @@
-import { Breeds } from '../quiz/quiz.interface';
+
+import {Breeds} from '../quiz/quiz.interface';
 import { Data } from 'pages/quiz-page/quiz-page.intarface';
 
-export const breed: Breeds = {
-  breeds: ['Йорк', 'Мопс', 'Лайка'],
-};
-export const data: Data = {
+export const breed:Breeds = {
+  breeds:['Йорк','Мопс','Лайка']
+}
+export const data:Data = {
   breed: 'York',
   weight: 100,
   walkNumber: 200,
@@ -12,6 +13,7 @@ export const data: Data = {
   mealWeight: 100,
   medChekUp: 300,
 };
+
 export const petBreeds = [
   'Австралійська вівчарка (Ауссі)',
   'Англійський сетер',
@@ -114,3 +116,4 @@ export const petBreeds = [
   'Японський хін',
   'Японський шпіц',
 ];
+

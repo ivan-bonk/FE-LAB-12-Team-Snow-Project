@@ -2,7 +2,7 @@ import React from 'react';
 import { Logo } from 'shared/components/logo/logo.component';
 import { Navigation } from './components/navigation/navigation.component';
 import { useSelector } from 'react-redux';
-import {RootState} from './components/navigation/navigation.interfaces';
+import { RootState } from './components/navigation/navigation.interfaces';
 
 import styles from './header.module.scss';
 

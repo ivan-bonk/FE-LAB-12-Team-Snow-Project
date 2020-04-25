@@ -3,12 +3,13 @@ import { fetchPetsAsync } from '../actions/result.actions';
 import { StoreData } from './reducers.interfaces';
 import { PetProfile } from 'shared/interfaces/pet-profile.interface';
 
-const initiatState = {
+export const initiatState = {
   resultStore: [],
   errors: '',
 };
 
 export const resultReducer = createReducer(initiatState)
+  .handleAction(fetchPetsAsync.request, (state: StoreData) => ({ ...state }))
   .handleAction(fetchPetsAsync.success, (state: StoreData, action: { payload: PetProfile[] }) => {
     return { ...state, resultStore: action.payload };
   })
