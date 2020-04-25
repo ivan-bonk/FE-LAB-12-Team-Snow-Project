@@ -1,0 +1,135 @@
+%shared {
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: linear-gradient(to right, #f0f0f0 8%, #dad9d9 38%, #f7f5f5 54%);
+    background-size: 1000px 640px;
+    overflow: hidden;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.responsiveConianer {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.pageHeader {
+    @extend %shared;
+    height: 100px;
+    width: 100%;
+}
+
+.dogPic {
+    @extend %shared;
+    margin-left: -20px;
+    width: 100vw;
+    height: 240px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 476px) {
+    .dogPic {
+      height: 380px;
+      margin-bottom: 20px;
+    }
+    .pageHeader {
+        height: 65px;
+    }
+}
+
+
+
+.nameGenerator {
+    margin-top: 8px;
+    margin-bottom: 30px;
+    height: 60px;
+    width: 250px;
+    @extend %shared;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toBuy {
+    height: 190px;
+    margin-top: 0;
+    @extend %shared;
+}
+
+.fromBreeder {
+    height: 110px;
+    @extend %shared;
+}
+
+.additionaInfo {
+    height: 150px;
+    @extend %shared;
+}
+
+.starterLink {
+    height: 36px;
+    @extend %shared;
+}
+
+.backBtn {
+    height: 35px;
+    width: 135px;
+    @extend %shared;
+}
+
+@keyframes placeHolderShimmer {
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .responsiveConianer {
+        flex: 1;
+        margin-left: 40px;
+    }
+    .dogPic {
+      width: 55vw;
+      height: 35vw;
+      padding-left: 20px;
+      margin-left: 0px;
+    }
+    .nameGenerator {
+        order: 2;
+        min-width: 100%;
+        min-height: 115px;
+        margin-top: 40px;
+    }
+    .toBuy {
+        order: 1;
+        min-height: 180px;
+        margin-top: 0;
+    }
+
+    .fromBreeder {
+        height: 50px;
+    }
+    .additionaInfo{
+        min-height: 170px;
+    }
+    .pageHeader {
+        width: 900px;
+        height: 35px;
+        margin-bottom: 20px;
+    }
+}
