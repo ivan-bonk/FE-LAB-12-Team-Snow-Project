@@ -21,12 +21,20 @@
   justify-content: space-between;
 
   &__filterButton {
-    background-color: #902111;
+    background-color: #ff9f0a;
     text-decoration: none;
+
+    &:hover {
+      background-color: #d17d00;
+    }
   }
 
   &__clearFilterButton {
     background-color: #C6C6C6;
+
+    &:hover {
+      background-color: rgb(160, 160, 160);
+    }
   }
 }
 
