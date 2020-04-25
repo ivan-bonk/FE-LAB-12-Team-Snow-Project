@@ -2,7 +2,7 @@ import { put, call, takeEvery, fork, all } from 'redux-saga/effects';
 import { fetchPetBreeds } from '../actions/quiz.action';
 import { api } from 'shared/constants/api';
 
-async function fetchBreeds() {
+export async function fetchBreeds() {
   const petBreeds = await fetch(`${api}/breeds`);
   if (petBreeds.ok) {
     return await petBreeds.json();
@@ -11,7 +11,7 @@ async function fetchBreeds() {
   }
 }
 
-function* handleFetch() {
+export function* handleFetch() {
   try {
     const res = yield call(fetchBreeds);
     if (res.error) {
