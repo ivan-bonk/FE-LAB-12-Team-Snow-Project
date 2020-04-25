@@ -15,7 +15,7 @@ export interface Observations {
   height: string;
   weight: string;
   price: string;
-  carePrice: string;
+  carePrice: number;
   careTime: number;
 }
 

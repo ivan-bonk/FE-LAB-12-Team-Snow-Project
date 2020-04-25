@@ -1,7 +1,7 @@
 interface MenuState {
-    menuOn: boolean
+  menuOn: boolean;
 }
-  
-export  interface RootState {
-    menu: MenuState
+
+export interface RootState {
+  menu: MenuState;
 }

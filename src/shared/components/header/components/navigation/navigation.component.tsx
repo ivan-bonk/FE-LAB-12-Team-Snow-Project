@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Menu } from '../menu/menu.component';
 import { useDispatch, useSelector } from 'react-redux';
-import {toggleMenu} from 'store/menu/actions/menu.action';
+import { toggleMenu } from 'store/menu/actions/menu.action';
 import styles from './navigation.module.scss';
-import {RootState} from './navigation.interfaces';
+import { RootState } from './navigation.interfaces';
 
 export const Navigation: React.FC = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export const Navigation: React.FC = () => {
   const onBurgerClick = () => {
     dispatch(toggleMenu);
   };
-  
+
   const onLinkClick = () => {
     if (document.documentElement.clientWidth < 800) {
       dispatch(toggleMenu);

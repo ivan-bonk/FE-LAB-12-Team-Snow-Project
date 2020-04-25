@@ -12,7 +12,7 @@ import { AdditionalInfo } from './components/additional-info/additional-info.com
 import { BackBtn } from './components/back-btn/back-btn.component';
 import { NamesGenerator } from './components/name-generator/name-generator.component';
 import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
-import {DogPicture} from 'shared/components/dog-picture/dog-picture.component';
+import { DogPicture } from 'shared/components/dog-picture/dog-picture.component';
 
 import style from './starter-pack.module.scss';
 
@@ -40,7 +40,7 @@ export const StarterPack: React.FC<StarterProps> = props => {
         <div>
           <h1 className={style.pageHeader}>Початковий набір для породи {breed}</h1>
           <div className={style.responsiveContainer}>
-            <DogPicture images={imgUrl}/>
+            <DogPicture images={imgUrl} />
             <div className={style.generatorContainer}>
               <NamesGenerator />
             </div>

@@ -15,7 +15,8 @@ import { BackBtn } from './components/back-btn/back-btn.component';
 import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
-import {DogPicture} from 'shared/components/dog-picture/dog-picture.component';
+import { DogPicture } from 'shared/components/dog-picture/dog-picture.component';
+import {Skeleton} from './components/skeleton/skeleton.component';
 
 export const Pet: React.FC<PetProps> = props => {
   const petId: string = props.match.params.id;
@@ -44,15 +45,17 @@ export const Pet: React.FC<PetProps> = props => {
       </Fragment>
     );
   }
-  //TODO: Skeleton or placeholder. Add during loading the page @O.Khabrovska
+  if(loading) {
+    return <div className={style.container}><Skeleton/></div>
+  }
+  
   return (
     <Fragment>
-      {loading && <LoadingSpinner />}
       {dataReady && (
         <div>
           <h1 className={style.pageHeader}>{breed}</h1>
           <div className={style.responsiveContainer}>
-            <DogPicture images={imgUrl}/>
+            <DogPicture images={imgUrl} />
             <div className={style.responsiveItem}>
               <div className={style.addContainer}>
                 <AddPetToCompare id={_id} />
