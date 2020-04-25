@@ -8,7 +8,7 @@ export interface PetToCompare {
   breed: string;
   imgUrl: string;
   value: number;
-  textValue?: string;
+  textValue?: number | string;
   type: boolean;
 }
 
