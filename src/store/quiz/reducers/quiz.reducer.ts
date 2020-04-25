@@ -9,7 +9,7 @@ export type ProfileAction = ActionType<typeof Actions>;
 
 type State = Data;
 
-const initialState: Data = {
+export const initialState: Data = {
   breed: '',
   weight: 0,
   walkNumber: 0,
