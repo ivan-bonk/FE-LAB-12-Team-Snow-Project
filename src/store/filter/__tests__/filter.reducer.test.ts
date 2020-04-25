@@ -5,7 +5,12 @@ import expect from 'expect';
 
 describe('filter reducer', () => {
   it('should return initial state ', () => {
-    const successAction = filterReducer(initialState, filterAction);
+    const action: any = {
+      type: filterAction,
+      payload: null,
+    };
+
+    const successAction = filterReducer(initialState, action);
     const expectedState = null;
     expect(successAction).toEqual(expectedState);
   });

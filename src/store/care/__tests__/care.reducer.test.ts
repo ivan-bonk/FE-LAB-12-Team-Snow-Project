@@ -3,7 +3,11 @@ import { getPets } from '../actions/care.actions';
 
 describe('care reducer', () => {
   it('should handle GET_PETS_SUCCESS', () => {
-    const successAction = careReducer(initialState, { type: getPets.success, payload: initialState });
+    const action: any = {
+      type: getPets.success,
+      payload: initialState,
+    };
+    const successAction = careReducer(initialState, action);
     const expectedState = {
       _id: 0,
       photos: [],
@@ -17,7 +21,11 @@ describe('care reducer', () => {
     expect(successAction).toEqual(expectedState);
   });
   it('should handle GET_PETS_FAILTURE', () => {
-    const successAction = careReducer(null, { type: getPets.failure });
+    const action: any = {
+      type: getPets.failure,
+    };
+
+    const successAction = careReducer(null, action);
     const expectedState = null;
     expect(successAction).toEqual(expectedState);
   });

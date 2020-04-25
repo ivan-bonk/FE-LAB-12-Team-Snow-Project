@@ -1,11 +1,16 @@
-import { createReducer } from 'typesafe-actions';
+import { createReducer, ActionType } from 'typesafe-actions';
+import * as Actions from '../actions/filter.action';
 import { Data } from 'pages/filter/components/filter-body/bodyFilter.intarface';
+
+export type ProfileAction = ActionType<typeof Actions>;
+
+type State = Data | null;
 
 export const initialState: Data | null = null;
 
-const filterReducer = createReducer(initialState).handleType(
+const filterReducer = createReducer<State, ProfileAction>(initialState).handleType(
   'FILTER',
-  (state: Data, action: { payload: Data }) => (state = action.payload),
+  (state, action) => (state = action.payload),
 );
 
 export default filterReducer;
