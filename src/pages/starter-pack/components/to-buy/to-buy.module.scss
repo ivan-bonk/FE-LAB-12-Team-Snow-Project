@@ -4,6 +4,7 @@
   &__header {
     display: flex;
     align-items: center;
+    margin-bottom: 16px;
     &__cart {
       font-size: 28px;
       color: #ff9f0a;
@@ -22,7 +23,7 @@
   &__element {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 8px 0;
 
     &__title {
       font-size: 16px;

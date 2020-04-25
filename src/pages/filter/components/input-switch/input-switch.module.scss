@@ -33,17 +33,17 @@
   background-color: #e6e5e5;
 }
 input:checked + .slider {
-  border: 1px solid #d42323;
-  background-color: #fff4f4;
+  border: 1px solid #ff9f0a;
+  background-color: #fffaf4;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #ffe5d6;
+  box-shadow: 0 0 1px #fffaf4;
 }
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
-  background-color: #ff453a;
+  background-color: #ff9f0a;
 }

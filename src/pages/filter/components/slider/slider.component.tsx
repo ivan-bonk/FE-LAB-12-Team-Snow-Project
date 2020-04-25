@@ -18,7 +18,7 @@ export const Slider: React.FC<Partial<InputRadioProps>> = props => {
   };
 
   const outputValue = () => {
-    return inpValue === props.min ? `не обрано` : `${inpValue} ${props.units}`;
+    return inpValue === props.min ? `Не обрано` : `${inpValue} ${props.units}`;
   };
 
   useEffect(() => {

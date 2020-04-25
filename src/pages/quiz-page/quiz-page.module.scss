@@ -11,6 +11,8 @@
     line-height: 33px;
     margin-right: 10%;
     margin: 20px 0;
+    margin-top: 0;
+    text-align: center;
   }
   &__img {
     display: block;
@@ -22,10 +24,10 @@
     font-size: 14px;
     padding: 8px 10px;
     display: inline-block;
-    background-color: #ff453a;
+    background-color: #902111;
+    border-radius: 15px;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
   }
   .error {
     color: rgb(255, 1, 1);

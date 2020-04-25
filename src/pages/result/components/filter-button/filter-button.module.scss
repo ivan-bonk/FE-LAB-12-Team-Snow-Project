@@ -3,14 +3,15 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 32px;
-  border-radius: 15px;
+  height: 42px;
+  border-radius: 35px;
   cursor: pointer;
+  text-align: center;
 }
 
 .buttonText {
   padding: 0 12px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 16px;
   color: #ffffff;
 }
