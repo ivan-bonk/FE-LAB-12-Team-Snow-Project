@@ -17,7 +17,7 @@ const title = [
 
 const weightStrLength = 5;
 
-export const AnalysisItem: React.FC<CareBodyProps> = props => {
+export const AnalysisItem: React.FC<CareBodyProps> = (props) => {
   const location = useLocation();
   const quizData = useSelector((state: QuizData) => state.quiz);
   const stateValue: Data | null = location.state ? location.state : null;
@@ -79,7 +79,7 @@ export const AnalysisItem: React.FC<CareBodyProps> = props => {
       {title.map((title, index) => {
         return (
           <div key={index}>
-            <h1 className={styles.analysisItem__title}>{title} кг</h1>
+            <h1 className={styles.analysisItem__title}>{title}</h1>
             <AnalysisResult title={title} data={compare(userData[index], rocommendData[index])} />
           </div>
         );
