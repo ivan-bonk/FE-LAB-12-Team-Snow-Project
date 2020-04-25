@@ -1,9 +1,6 @@
 import { Pet } from '../reducers/reducers.interfaces';
 
-import { createReducer, ActionType } from 'typesafe-actions';
-import * as Actions from '../actions/care.actions';
-
-export type ProfileAction = ActionType<typeof Actions>;
+import { createReducer } from 'typesafe-actions';
 
 type State = Pet | null;
 
@@ -18,6 +15,6 @@ export const initialState: Pet = {
   },
 };
 
-export const careReducer = createReducer<State, ProfileAction>(initialState)
-  .handleType('GET_PETS_SUCCESS', (state, action) => (state = action.payload))
-  .handleType('GET_PETS_FAILTURE', (state, action) => (state = null));
+export const careReducer = createReducer(initialState)
+  .handleType('GET_PETS_SUCCESS', (state: Pet, action: { payload: Pet }) => (state = action.payload))
+  .handleType('GET_PETS_FAILTURE', (state: null, action: { payload: Pet }) => (state = null));
