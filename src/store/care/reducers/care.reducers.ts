@@ -8,13 +8,13 @@ export type ProfileAction = ActionType<typeof Actions>;
 type State = Pet | null;
 
 export const initialState: Pet = {
-  _id: 0,
+  _id: '0',
   photos: [],
   breed: '',
   characteristics: {
     spandTime: '',
     outlay: '',
-    size: '',
+    size: 0,
   },
 };
 

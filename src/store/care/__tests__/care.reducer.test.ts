@@ -9,13 +9,13 @@ describe('care reducer', () => {
     };
     const successAction = careReducer(initialState, action);
     const expectedState = {
-      _id: 0,
+      _id: '0',
       photos: [],
       breed: '',
       characteristics: {
         spandTime: '',
         outlay: '',
-        size: '',
+        size: 0,
       },
     };
     expect(successAction).toEqual(expectedState);

@@ -1,11 +1,11 @@
 export interface Pet {
-  _id: number;
+  _id: string;
   photos?: [];
   breed: string;
   characteristics: {
     spandTime?: string;
     outlay?: string;
-    size: string;
+    size: number;
   };
 }
 
