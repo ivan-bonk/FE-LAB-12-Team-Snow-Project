@@ -6,7 +6,7 @@ export const GetPetsById = createAsyncAction(
   '@comparison/PETS_BYID_REQUEST',
   '@comparison/PETS_BYID_SUCCESS',
   '@comparison/PETS_BYID_FAILURE',
-)<string[], PetsToCompareList[], Error>();
+)<string[], PetsToCompareList[], string>();
 
 export const clearListToCompare = () => action('@comparison/REMOVE_COMPARISON_LIST');
 

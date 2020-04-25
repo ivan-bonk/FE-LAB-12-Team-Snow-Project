@@ -20,12 +20,11 @@
   font-size: 16px;
 }
 
-.dogPic {
-  width: 100vw;
-  height: 240px;
-  object-fit: cover;
-  object-position: 50% 20%;
-  padding-bottom: 20px;
+.addContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -12px;
 }
 
 .starterBtn {
@@ -36,6 +35,7 @@
   font-weight: 600;
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 
   &Text {
     padding-left: 10px;
@@ -52,28 +52,19 @@
 
 .responsiveItem {
   margin: 0 20px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-}
-
-@media (min-width: 476px) {
-  .dogPic {
-    height: 400px;
-  }
 }
 
 @media (min-width: 768px) {
   .responsiveContainer {
     flex-direction: row;
   }
-  .dogPic {
-    width: 60vw;
-    height: 450px;
-    padding-left: 20px;
-  }
   .responsiveItem {
     order: 2;
     margin-left: 40px;
+    margin-top: 0px;
     margin-right: 20px;
     flex: 1;
     .sectionHeader {

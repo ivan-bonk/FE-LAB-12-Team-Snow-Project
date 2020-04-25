@@ -12,6 +12,9 @@ import { AdditionalInfo } from './components/additional-info/additional-info.com
 import { BackBtn } from './components/back-btn/back-btn.component';
 import { NamesGenerator } from './components/name-generator/name-generator.component';
 import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
+import { DogPicture } from 'shared/components/dog-picture/dog-picture.component';
+import {Skeleton} from './components/skeleton/skeleton.component';
+
 import style from './starter-pack.module.scss';
 
 export const StarterPack: React.FC<StarterProps> = props => {
@@ -30,18 +33,23 @@ export const StarterPack: React.FC<StarterProps> = props => {
     };
   }, []);
 
+  if(loading) {
+    return (
+      <div className={style.container}><Skeleton/></div>
+    )
+  }
+
   return (
     <>
-      {loading && <LoadingSpinner />}
       {error && <ErrorHandling />}
       {dataReady && (
         <div>
           <h1 className={style.pageHeader}>Початковий набір для породи {breed}</h1>
           <div className={style.responsiveContainer}>
-            <img className={style.dogPic} src={imgUrl[0]} alt="Some dog" />
+            <DogPicture images={imgUrl} />
             <div className={style.generatorContainer}>
-                <NamesGenerator />
-              </div>
+              <NamesGenerator />
+            </div>
             <div className={style.responsiveItem}>
               <ToBuy observations={observations} />
               <FromBreeder />

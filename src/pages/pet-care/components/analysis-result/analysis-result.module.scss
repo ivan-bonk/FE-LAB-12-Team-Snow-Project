@@ -4,6 +4,8 @@
     background: linear-gradient(270deg, #e6ffe2 0%, rgba(255, 255, 255, 0) 90%);
     border-radius: 10px;
     padding: 10px 0;
+    position: relative;
+
     h4 {
       &:nth-child(1) {
         font-style: normal;
@@ -12,10 +14,18 @@
         color: #30d158;
       }
     }
+
     span {
       font-weight: normal;
       font-size: 14px;
       color: #c4c4c4;
+      &:nth-child(3) {
+        color: #30d158;
+        font-size: 28px;
+        position: absolute;
+        right: 10px;
+        top: 12px;
+      }
     }
   }
   .result_red {
@@ -23,50 +33,65 @@
     background: linear-gradient(270deg, #ffe9c7 0%, rgba(255, 255, 255, 0) 90%);
     border-radius: 10px;
     padding: 10px 0;
+    position: relative;
 
     h4 {
       &:nth-child(1) {
         font-style: normal;
         font-weight: 500;
         font-size: 24px;
-        color: #ff9f0a;
+        color: rgb(240, 16, 16);
       }
-      &:nth-child(3) {
-        font-weight: 600;
+      &:nth-child(4) {
         font-size: 14px;
-        margin-top: 15px;
+        font-weight: 600;
+        margin: 20px 0 4px 0;
       }
     }
+
     span {
       font-weight: normal;
       font-size: 14px;
       color: #c4c4c4;
-      &:nth-child(4) {
+      &:nth-child(3) {
+        color: rgb(240, 16, 16);
+        font-size: 28px;
+        position: absolute;
+        right: 10px;
+        top: 12px;
+      }
+
+      &:nth-child(5) {
         color: #000000;
       }
-      &:nth-child(5) {
+      &:nth-child(6) {
         color: #000000;
         text-transform: lowercase;
       }
     }
   }
-  @media (min-width: 900px) {
+  @media (min-width: 560px) {
     .result,
     .result_red {
       padding: 15px 0;
 
       h4 {
         &:nth-child(1) {
-          font-size: 32px;
+          font-size: 22px;
         }
-        &:nth-child(3) {
-          font-weight: 600;
-          font-size: 20px;
-          margin-bottom: 10px;
+        &:nth-child(4) {
+          font-size: 16px;
+          margin: 20px 0 6px 0;
         }
       }
       span {
-        font-size: 18px;
+        font-size: 16px;
+        &:nth-child(3) {
+          font-size: 30px;
+          position: absolute;
+          right: 10px;
+          top: 15px;
+        }
       }
     }
   }

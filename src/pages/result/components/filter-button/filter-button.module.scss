@@ -3,14 +3,15 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 32px;
-  border-radius: 15px;
+  height: 42px;
+  border-radius: 35px;
   cursor: pointer;
+  text-align: center;
 }
 
 .buttonText {
   padding: 0 12px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 16px;
   color: #ffffff;
 }
@@ -21,12 +22,20 @@
   justify-content: space-between;
 
   &__filterButton {
-    background-color: #902111;
+    background-color: #ff9f0a;
     text-decoration: none;
+
+    &:hover {
+      background-color: #d17d00;
+    }
   }
 
   &__clearFilterButton {
     background-color: #C6C6C6;
+
+    &:hover {
+      background-color: rgb(160, 160, 160);
+    }
   }
 }
 

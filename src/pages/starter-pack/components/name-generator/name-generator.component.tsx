@@ -39,9 +39,7 @@ export const NamesGenerator: React.FC = () => {
     <Fragment>
       {showPetName && <h3 className={style.generator__name}>{petName}</h3>}
       <div className={style.generator__switch}>
-        <span className={style.generator__header}>
-          Згенерувати {showPetName && <span>ще одну </span>}кличку для   
-        </span>
+        <span className={style.generator__header}>Згенерувати {showPetName && <span>ще одну </span>}кличку для</span>
         <div>
           <button onClick={handleBoys} className={boyBtnStyle}>
             Хлопчика

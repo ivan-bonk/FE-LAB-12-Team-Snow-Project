@@ -19,16 +19,19 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 560px) {
   .additional {
     &__title {
-      font-size: 24px;
+      font-size: 22px;
+      margin-top: 30px;
       .arrow {
+        display: none;
         font-size: 34px;
       }
     }
     .plainText {
-      font-size: 18px;
+      margin-top: 20px;
+      font-size: 16px;
     }
   }
 }

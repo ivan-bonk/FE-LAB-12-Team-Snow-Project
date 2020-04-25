@@ -9,10 +9,11 @@
     margin-right: 28px;
     margin-top: 25px;
     cursor: pointer;
+    border-radius: 15px;
   }
 
   .btn__apply {
-    background-color: #ff453a;
+    background-color: #902111;
     color: #ffffff;
   }
 
@@ -24,7 +25,7 @@
   @media (min-width: 560px) {
     .btn {
       height: 34px;
-      font-size: 18px;
+      font-size: 16px;
       width: 120px;
     }
   }

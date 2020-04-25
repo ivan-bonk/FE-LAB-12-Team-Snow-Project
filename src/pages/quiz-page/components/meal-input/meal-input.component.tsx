@@ -14,6 +14,7 @@ export const MealInput: React.FC<MealProps> = ({ name, refAttribute }) => {
         className={styles.container__inout}
         placeholder="введіть вагу порції"
         autoComplete="off"
+        min="0"
       />
     </div>
   );

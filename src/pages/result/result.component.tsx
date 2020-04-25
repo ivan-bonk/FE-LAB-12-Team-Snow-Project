@@ -10,9 +10,9 @@ import { PetProfile } from 'shared/interfaces';
 import { getFiltredPets } from './utils/filter.util';
 import { getUrlFilterValues } from './utils/getUrlValues.util';
 import { getNumberOfFilters } from './utils/numberOfFilters.util';
-import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
+import { ResultSkeleton } from './components/skeleton/skeleton.component';
 
 import styles from './result.module.scss';
 
@@ -61,11 +61,7 @@ export const Result: React.FC<ResultProps> = props => {
     const key = 1;
 
     if (pets.length === 0) {
-      return [
-        <div key={key}>
-          <LoadingSpinner />
-        </div>,
-      ];
+      return [<ResultSkeleton key={key} />];
     }
 
     if (errors) {
@@ -79,7 +75,7 @@ export const Result: React.FC<ResultProps> = props => {
     if (searchedPetsValue) {
       const searchPetsFail = [
         <h4 key={key} className={styles.searchPetsFail}>
-          За вашим запитом нічого не знайдено...
+          За вашим запитом нічого не знайдено. Спробуйте змінити запит.
         </h4>,
       ];
 
@@ -91,7 +87,7 @@ export const Result: React.FC<ResultProps> = props => {
     return petsArray.length === 0
       ? [
           <h4 key={key} className={styles.searchPetsFail}>
-            За вказаним фільтром немає результатів.
+            За вказаним фільтром немає результатів, спробуйте змінити значення фільтру.
           </h4>,
         ]
       : petsArray;

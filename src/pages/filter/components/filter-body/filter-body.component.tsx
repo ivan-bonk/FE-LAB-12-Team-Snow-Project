@@ -25,7 +25,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
 
   const goBack = (): void => {
     dispatch(filterAction(null));
-    history.push('/result');
+    history.push('/breeds');
   };
 
   const checkTouch = (data: string, delta: number) => {
@@ -46,7 +46,7 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
     dispatch(filterAction(data));
 
     const location = {
-      pathname: '/result',
+      pathname: '/breeds',
       search: `?filter:tW=${data.timeWolk}&mPM=${data.moneyPerMonth}&tPM=${data.timePerMonth}&sLv=${data.securityLevel}&pS=${data.petSize}&eTT=${data.easyToTrain}&fml=${data.family}&aprt=${data.apartment}&alrg=${data.allergy}`,
       state: { filter: data },
     };

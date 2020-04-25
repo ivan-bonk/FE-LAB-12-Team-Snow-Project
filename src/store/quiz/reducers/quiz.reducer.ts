@@ -9,7 +9,7 @@ export type ProfileAction = ActionType<typeof Actions>;
 
 type State = Data;
 
-const initialState: Data = {
+export const initialState: Data = {
   breed: '',
   weight: 0,
   walkNumber: 0,
@@ -27,7 +27,7 @@ export type BreedsAction = ActionType<typeof Actions>;
 
 type StateBreed = BreedsState;
 
-const initialStateBreeds: BreedsState = {
+export const initialStateBreeds: BreedsState = {
   breeds: [],
   errors: '',
   loading: false,

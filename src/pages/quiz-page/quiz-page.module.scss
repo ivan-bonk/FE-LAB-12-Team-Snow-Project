@@ -2,6 +2,7 @@
   max-width: 600px;
   padding: 20px;
   margin: 0 auto;
+  margin-bottom: 20px;
   &__title {
     font-family: Roboto, sans-serif;
     font-style: normal;
@@ -10,6 +11,8 @@
     line-height: 33px;
     margin-right: 10%;
     margin: 20px 0;
+    margin-top: 0;
+    text-align: center;
   }
   &__img {
     display: block;
@@ -18,12 +21,13 @@
 
   &__submit {
     margin: 10px 0;
-    padding: 8px 13px;
+    font-size: 14px;
+    padding: 8px 10px;
     display: inline-block;
-    background-color: #ff453a;
+    background-color: #902111;
+    border-radius: 15px;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
   }
   .error {
     color: rgb(255, 1, 1);
@@ -45,10 +49,10 @@
     &__submit {
       margin: 20px 0;
       padding: 8px 13px;
-      font-size: 18px;
+      font-size: 16px;
     }
     .error {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 }

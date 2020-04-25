@@ -1,48 +1,28 @@
 import React, { useState, useRef } from 'react';
 import { Menu } from '../menu/menu.component';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleMenu } from 'store/menu/actions/menu.action';
 import styles from './navigation.module.scss';
-
-const setAppStyles = (overflow: string) => {
-  // I don't know how to override 'as' syntax yet
-  const appWrapper = document.querySelector('#app-wrapper') as HTMLElement;
-
-  if (overflow === 'hidden') {
-    document.body.style.overflow = '';
-    appWrapper.style.filter = '';
-  } else {
-    document.body.style.overflow = 'hidden';
-    appWrapper.style.filter = 'blur(4px)';
-  }
-};
+import { RootState } from './navigation.interfaces';
 
 export const Navigation: React.FC = () => {
-  const [navigationMenu, setNavigationMenu] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const isMenuOn = useSelector((state: RootState) => state.menu.menuOn);
+
   const menuRef = useRef<HTMLDivElement>(null);
 
   const onBurgerClick = () => {
-    setNavigationMenu(!navigationMenu);
-
-    setAppStyles(document.body.style.overflow);
+    dispatch(toggleMenu);
   };
-
-  if (document.documentElement.clientWidth < 800){
-    const appWrapper = document.querySelector('#app-wrapper') as HTMLElement;
-    if(appWrapper){
-      appWrapper.addEventListener("click", () => onBurgerClick());
-    }
-  }
 
   const onLinkClick = () => {
     if (document.documentElement.clientWidth < 800) {
-      setNavigationMenu(!navigationMenu);
-
-      setAppStyles('hidden');
+      dispatch(toggleMenu);
     }
   };
 
   const renderContent = () => {
-    if (navigationMenu) {
+    if (isMenuOn) {
       if (menuRef.current) {
         menuRef.current.style.display = 'initial';
       }

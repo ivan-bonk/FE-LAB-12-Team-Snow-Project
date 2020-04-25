@@ -32,7 +32,8 @@ input[type='range']::-webkit-slider-thumb {
   height: 18px;
   width: 18px;
   border-radius: 25px;
-  background: #ff453a;
+  background: #ff9f0a;
+  border: none;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -7px;
@@ -106,6 +107,6 @@ input[type='range']:focus::-ms-fill-upper {
 
 @media (min-width: 560px) {
   output {
-    font-size: 20px;
+    font-size: 16px;
   }
 }

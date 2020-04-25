@@ -2,7 +2,7 @@ import { createReducer } from 'typesafe-actions';
 import { actionType } from '../actions/comparison.action';
 import { ComparisonState } from 'pages/comparison/comparison.interface';
 
-const initialState: ComparisonState = {
+export const initialState: ComparisonState = {
   petsToCompare: [],
   error: '',
   loading: false,
