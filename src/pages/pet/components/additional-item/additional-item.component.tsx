@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { AdditionalItemProps } from '../../props.models';
 import style from './additional-item.module.scss';
 
@@ -11,6 +11,18 @@ export const AdditionalItem: React.FC<AdditionalItemProps> = props => {
       {item}
     </li>
   ));
+  
+  useLayoutEffect(() => {
+    const openAdditional = () => {
+      window.innerWidth > 576 ? setOpen(true) : setOpen(false);
+    };
+    
+    openAdditional();
+    window.addEventListener('resize', openAdditional);
+
+    return () => window.removeEventListener('resize', openAdditional);
+  }, []);
+
   const arrowType = open ? 'expand_less' : 'expand_more';
   return (
     <article className={style.artcleContainer}>
