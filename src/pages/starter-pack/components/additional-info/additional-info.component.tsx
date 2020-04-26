@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import style from './additional-info.module.scss';
 
 export const AdditionalInfo: React.FC = () => {
@@ -9,6 +9,19 @@ export const AdditionalInfo: React.FC = () => {
   const toggle = (callback: React.Dispatch<React.SetStateAction<boolean>>, block: boolean) => {
     callback(!block);
   };
+
+  useLayoutEffect(() => {
+    const openAdditional = () => {
+      window.innerWidth > 576 ? setVaccination(true) : setVaccination(false);
+      window.innerWidth > 576 ? setFood(true) : setFood(false);
+      window.innerWidth > 576 ? setWalk(true) : setWalk(false);
+    };
+    
+    openAdditional();
+    window.addEventListener('resize', openAdditional);
+
+    return () => window.removeEventListener('resize', openAdditional);
+  }, []);
 
   return (
     <div className={style.additional}>
