@@ -43,9 +43,7 @@ export const AnalysisItem: React.FC<CareBodyProps> = props => {
       const res = str.split('-').map(el => {
         return el
           .split('')
-          .filter(item => {
-            return !isNaN(parseInt(item));
-          })
+          .filter(item => !isNaN(parseInt(item)))
           .join('');
       });
       return res;
