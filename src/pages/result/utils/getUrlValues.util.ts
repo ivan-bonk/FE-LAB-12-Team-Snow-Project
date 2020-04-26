@@ -1,7 +1,7 @@
 import { FilterValues } from '../result.interfaces';
 
 const getFilterValue = (value: string) => {
-  return value.match(/(?<==).*/g)![0];
+  return value.slice(value.indexOf('=') + 1);
 };
 
 export const getUrlFilterValues = (url: string): FilterValues => {
