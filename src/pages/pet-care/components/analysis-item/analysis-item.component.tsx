@@ -17,7 +17,7 @@ const title = [
 
 const weightStrLength = 5;
 
-export const AnalysisItem: React.FC<CareBodyProps> = (props) => {
+export const AnalysisItem: React.FC<CareBodyProps> = props => {
   const location = useLocation();
   const quizData = useSelector((state: QuizData) => state.quiz);
   const stateValue: Data | null = location.state ? location.state : null;
@@ -40,7 +40,13 @@ export const AnalysisItem: React.FC<CareBodyProps> = (props) => {
 
   const transformData = (str: string) => {
     if (str !== undefined && str.length > weightStrLength) {
-      return str.replace(/[^\d-]/g, '').split('-');
+      const res = str.split('-').map(el => {
+        return el
+          .split('')
+          .filter(item => !isNaN(parseInt(item)))
+          .join('');
+      });
+      return res;
     } else {
       return [str];
     }
