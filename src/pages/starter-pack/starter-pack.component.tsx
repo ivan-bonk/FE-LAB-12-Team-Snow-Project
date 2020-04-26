@@ -5,7 +5,6 @@ import { fetchPetProfile, clearPetProfile } from 'store/pet/actions/pet.actions'
 import { StarterProps, RootState } from './starter-pack.interfaces';
 import { PetProfile } from 'shared/models';
 
-import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import { ToBuy } from './components/to-buy/to-buy.component';
 import { FromBreeder } from './components/from-breeder/from-breeder.component';
 import { AdditionalInfo } from './components/additional-info/additional-info.component';

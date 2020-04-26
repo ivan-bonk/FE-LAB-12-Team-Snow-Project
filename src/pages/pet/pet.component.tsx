@@ -12,7 +12,6 @@ import { ObservationsComponent } from './components/observations/observations.co
 import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { BackBtn } from './components/back-btn/back-btn.component';
-import { LoadingSpinner } from 'shared/components/loading-spinner/loading-spinner';
 import { AddPetToCompare } from 'shared/components/add-pet-to-compare/add-pet-to-compare.component';
 import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
 import { DogPicture } from 'shared/components/dog-picture/dog-picture.component';
