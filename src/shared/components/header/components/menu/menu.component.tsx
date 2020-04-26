@@ -9,7 +9,7 @@ import styles from './menu.module.scss';
 export const Menu: React.FC<MenuProps> = props => {
   const idsToCompare = useSelector((state: RootState) => state.comparisonHandler.idsToCompare);
   const location = useLocation();
-  const currentPage = location.pathname.slice(1);
+  const currentPage = location.pathname.split('/').join('');
 
   const activeStyle = styles.menuContainer__menu__menuItem_active;
   const passiveStyle = styles.menuContainer__menu__menuItem;
