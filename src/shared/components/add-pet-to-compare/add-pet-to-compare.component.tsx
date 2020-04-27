@@ -43,13 +43,21 @@ export const AddPetToCompare: React.FC<AddPetToCompareProps> = props => {
       )}
       {addedToCompare && (
         <div className={style.addBlock}>
-          <Tooltip TransitionComponent={Zoom} title="Собаку додано до порівняння" arrow>
+          <Tooltip
+            TransitionComponent={Zoom}
+            title={<h1 style={{ fontSize: '12px' }}>Собаку додано до порівняння</h1>}
+            arrow
+          >
             <div className={style.addBlock__element}>
               <span className={`material-icons ${style.addBlock__element__tick}`}>check</span>
               <span className={style.addBlock__element__added}>Додано</span>
             </div>
           </Tooltip>
-          <Tooltip TransitionComponent={Zoom} title="Перейти до порівняння собак" arrow>
+          <Tooltip
+            TransitionComponent={Zoom}
+            title={<h1 style={{ fontSize: '12px' }}>Перейти до порівняння собак</h1>}
+            arrow
+          >
             <div className={style.addBlock__element}>
               <span className={`material-icons ${style.addBlock__element__thumbs}`}>thumbs_up_down</span>
               <Link
@@ -60,7 +68,11 @@ export const AddPetToCompare: React.FC<AddPetToCompareProps> = props => {
               </Link>
             </div>
           </Tooltip>
-          <Tooltip TransitionComponent={Zoom} title="Видалити собаку зі списку порівняння" arrow>
+          <Tooltip
+            TransitionComponent={Zoom}
+            title={<h1 style={{ fontSize: '12px' }}>Видалити собаку зі списку порівняння</h1>}
+            arrow
+          >
             <div className={style.addBlock__element}>
               <span className={`material-icons ${style.addBlock__element__clear}`}>clear</span>
               <span className={style.addBlock__element__removePetBtn} onClick={onRemovePet}>
