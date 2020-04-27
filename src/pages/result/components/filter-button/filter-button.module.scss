@@ -10,9 +10,9 @@
 }
 
 .buttonText {
-  padding: 0 12px;
-  font-size: 16px;
-  line-height: 16px;
+  padding: 0 8px;
+  font-size: 13px;
+  line-height: 14px;
   color: #ffffff;
 }
 
@@ -47,5 +47,13 @@
     &__clearFilterButton {
       margin-left: 29px;
     }
+  }
+}
+
+@media (min-width: 600px) {
+  .buttonText {
+    padding: 0 12px;
+    font-size: 14px;
+    line-height: 16px;
   }
 }
