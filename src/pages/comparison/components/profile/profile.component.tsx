@@ -7,7 +7,7 @@ import style from './profile.module.scss';
 import { ProfileProps } from './profile.interface';
 export const Profile: React.FC<ProfileProps> = props => {
   return (
-    <Tooltip TransitionComponent={Zoom} title={props.breed} arrow>
+    <Tooltip TransitionComponent={Zoom} title={<h1 style={{ fontSize: '12px' }}>{props.breed}</h1>} arrow>
       <div className={style.petBlock}>
         <img className={style.petBlock__image} src={props.imgUrl} alt={props.breed} />
         <span className={style.petBlock__name}>{trimBreed(props.breed)}</span>
