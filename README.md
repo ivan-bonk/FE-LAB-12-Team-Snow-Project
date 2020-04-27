@@ -1,44 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://user-images.githubusercontent.com/44017234/80355349-a5f96d80-8880-11ea-83bf-e06290034e65.png)  <br/>
+# MyPet
 
-## Available Scripts
 
-In the project directory, you can run:
+## About application
+
+This app is designed for two types of users: 
+ - those who are just looking for a dog
+ - those who already have a dog and are looking for advice on caring for it
+ 
+For the first type of users our app help to find a dog breed which perfectly fits into their preferences and lifestyle.
+
+User is able to filter dog breeds based on:
+ - time and money he/she can afford to spend on a pet;
+ - user's health, family and apartment situation.
+ 
+Also app help to got prepared to buy it. <br/>
+When the perfect dog is found – what to do, to buy and to know before adopting.
+
+For the second type of users app help discover if adopted pet is treated according to the best practices.<br/>
+User can fill in the form and get some valuable advices on the pet care
+
+## Demo
+Find us here: <br/>
+[snow-project-pets-app](https://snow-project-pets-app.herokuapp.com/) <br/>
+![photo_2020-04-27_12-07-43](https://user-images.githubusercontent.com/44017234/80355060-413e1300-8880-11ea-93c8-55df3a927782.jpg)
+
+## Main useful commands
 
 ### `yarn start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Builds the app for production to the `build` folder.
