@@ -68,10 +68,6 @@ export const Result: React.FC<ResultProps> = props => {
       return [<ErrorHandling key={key} />];
     }
 
-    if (errors) {
-      return [<ErrorHandling key={key} />];
-    }
-
     if (searchedPetsValue) {
       const searchPetsFail = [
         <h4 key={key} className={styles.searchPetsFail}>
@@ -93,10 +89,21 @@ export const Result: React.FC<ResultProps> = props => {
       : petsArray;
   };
 
+  const renderFiltredDogsNumber = () => {
+    if (!pets.length) {
+      return '';
+    }
+
+    if (filterValues && renderPets()[0].type === 'div') {
+      return `Знайдено собачок: ${renderPets().length}`;
+    }
+  };
+
   return (
     <div className={styles.wrapper}>
       <DogSearch renderPets={handleSearchValue} pets={pets} />
       <FilterButton numberOfFilters={getNumberOfFilters(filterValues)} />
+      <div className={styles.filtderPetsNumber}>{renderFiltredDogsNumber()}</div>
       <div className={styles.dogsListContainer}>{renderPets()}</div>
     </div>
   );
