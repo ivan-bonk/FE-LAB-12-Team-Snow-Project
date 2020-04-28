@@ -91,11 +91,11 @@ export const Result: React.FC<ResultProps> = props => {
 
   const renderFiltredDogsNumber = () => {
     if (!pets.length) {
-      return <></>;
+      return '';
     }
 
     if (filterValues && renderPets()[0].type === 'div') {
-      return <div className={styles.filtderPetsNumber}>Знайдено собачок: {renderPets().length}</div>;
+      return `Знайдено собачок: ${renderPets().length}`;
     }
   };
 
@@ -103,7 +103,7 @@ export const Result: React.FC<ResultProps> = props => {
     <div className={styles.wrapper}>
       <DogSearch renderPets={handleSearchValue} pets={pets} />
       <FilterButton numberOfFilters={getNumberOfFilters(filterValues)} />
-      <div>{renderFiltredDogsNumber()}</div>
+      <div className={styles.filtderPetsNumber}>{renderFiltredDogsNumber()}</div>
       <div className={styles.dogsListContainer}>{renderPets()}</div>
     </div>
   );
