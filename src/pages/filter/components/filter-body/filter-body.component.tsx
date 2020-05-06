@@ -16,11 +16,11 @@ export const FilterBody: React.FC<Partial<BodyProps>> = () => {
   const history = useHistory();
   const filterData = useSelector((state: RootState) => state.filter);
 
-  const deltaPositionTime = 0.00415;
+  const deltaPositionTime = 2.05;
   const deltaMinTime = 55;
-  const deltaPositionMoney = 0.000345;
+  const deltaPositionMoney = 24.5;
   const deltaMinMoney = 340;
-  const deltaPositionSecurity = 0.00955;
+  const deltaPositionSecurity = 0.89;
   const deltaMinSecurity = 19;
 
   const goBack = (): void => {
