@@ -15,7 +15,7 @@ import { Data } from '../analysis-item/analysis-item.interface';
 import { ErrorHandling } from 'shared/components/error-handling/error-handling.component';
 
 export const PetCareBody: React.FC = () => {
-  const location = useLocation();
+  const location: any = useLocation();
   const locState: Data = location.state!;
 
   const quizData = useSelector((state: QuizData) => state.quiz);

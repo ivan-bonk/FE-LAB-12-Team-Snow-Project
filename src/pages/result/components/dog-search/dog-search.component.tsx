@@ -17,7 +17,7 @@ export const DogSearch: React.FC<DogSearchProps> = props => {
       <input
         type="text"
         className={styles.searchContainer__searchInput}
-        placeholder="Мопс..."
+        placeholder="Пудель..."
         onChange={onInputChange}
       />
     </div>
