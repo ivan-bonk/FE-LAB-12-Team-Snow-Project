@@ -18,7 +18,7 @@ const title = [
 const weightStrLength = 5;
 
 export const AnalysisItem: React.FC<CareBodyProps> = props => {
-  const location = useLocation();
+  const location: any = useLocation();
   const quizData = useSelector((state: QuizData) => state.quiz);
   const stateValue: Data | null = location.state ? location.state : null;
 
