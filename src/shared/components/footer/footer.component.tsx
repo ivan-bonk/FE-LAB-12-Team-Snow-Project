@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
       <footer className={style.footer}>
         <div className={style.footer__copyright}>
           <span className={`${style.footer__copyright__icon} material-icons`}>favorite_border</span>
-          <span className={style.footer__copyright__text}>Powered by EPAM University Program</span>
+          <span className={style.footer__copyright__text}>University Program</span>
         </div>
         <div className={style.footer__logo}>
           <Logo />

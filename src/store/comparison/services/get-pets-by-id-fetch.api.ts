@@ -6,7 +6,6 @@ export const fetchData = async (ids: string[]) => {
 
   for (const id of ids) {
     try {
-      // const pet = await fetch(`http://localhost:8080/pets/${id}`) // for testing in local api
       const pet = await fetch(`${api}/pets/${id}`);
       const response = await pet.json();
       data.push(response);

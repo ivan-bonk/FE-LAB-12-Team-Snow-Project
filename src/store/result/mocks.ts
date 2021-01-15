@@ -53,9 +53,9 @@ export const pet: PetProfile = {
   },
 
   imgUrl: [
-    'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
-    'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/25_su1w9i.jpg',
-    'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/aussie_eezpmt.jpg',
+    "https://petsi.net/images/dogbreed/25.jpg",
+    "https://getpet.club/content/catalog_image/168/big_4.jpg",
+    "https://dogipediya.ru/wp-content/uploads/2018/11/aussi5.jpg",
   ],
 
   _id: '5e8c4ffb4ed5f230f4c261f9',
@@ -116,9 +116,9 @@ export const petProfile = {
   },
 
   imgUrl: [
-    'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
-    'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/25_su1w9i.jpg',
-    'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/aussie_eezpmt.jpg',
+    "https://petsi.net/images/dogbreed/25.jpg",
+    "https://getpet.club/content/catalog_image/168/big_4.jpg",
+    "https://dogipediya.ru/wp-content/uploads/2018/11/aussi5.jpg",
   ],
 
   _id: '5e8c4ffb4ed5f230f4c261f9',

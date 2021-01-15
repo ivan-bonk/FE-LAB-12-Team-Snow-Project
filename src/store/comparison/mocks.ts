@@ -8,7 +8,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 2,
         type: true,
       },
@@ -16,7 +16,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 4,
         type: true,
       },
@@ -29,7 +29,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 4,
         type: true,
       },
@@ -37,7 +37,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 5,
         type: true,
       },
@@ -50,7 +50,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 3,
         type: true,
       },
@@ -58,7 +58,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 3,
         type: true,
       },
@@ -71,7 +71,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 4,
         type: true,
       },
@@ -79,7 +79,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 5,
         type: true,
       },
@@ -92,7 +92,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 3,
         type: true,
       },
@@ -100,7 +100,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 3,
         type: true,
       },
@@ -113,7 +113,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 5,
         type: true,
       },
@@ -121,7 +121,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 5,
         type: true,
       },
@@ -134,7 +134,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 4,
         type: true,
       },
@@ -142,7 +142,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 4,
         type: true,
       },
@@ -155,7 +155,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 3,
         type: true,
       },
@@ -163,7 +163,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 4,
         type: true,
       },
@@ -176,7 +176,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: 'Англія',
         type: false,
@@ -185,7 +185,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: 'США',
         type: false,
@@ -199,7 +199,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: '10-12 років',
         type: false,
@@ -208,7 +208,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: '13-15 років',
         type: false,
@@ -222,7 +222,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: '61-68 см',
         type: false,
@@ -231,7 +231,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: '51-58 см',
         type: false,
@@ -245,7 +245,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: '28-35 кг',
         type: false,
@@ -254,7 +254,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: '25-32 кг',
         type: false,
@@ -268,7 +268,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: '600 - 1500 $',
         type: false,
@@ -277,7 +277,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: '500 - 1200 $',
         type: false,
@@ -291,7 +291,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: 1920,
         type: false,
@@ -300,7 +300,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: 1600,
         type: false,
@@ -314,7 +314,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: 3,
         type: false,
@@ -323,7 +323,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: 2,
         type: false,
@@ -337,7 +337,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: 'average',
         type: false,
@@ -346,7 +346,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: 'average',
         type: false,
@@ -360,7 +360,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: 2,
         type: false,
@@ -369,7 +369,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: 2,
         type: false,
@@ -383,7 +383,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: 2,
         type: false,
@@ -392,7 +392,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: 2,
         type: false,
@@ -406,7 +406,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: 480,
         type: false,
@@ -415,7 +415,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: 400,
         type: false,
@@ -429,7 +429,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261fb',
         breed: 'Англійський сетер',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169492/Pets/english-setter/two-color-english-setter_naafum.jpg',
+          'https://petsi.net/images/dogbreed/big/59.jpg',
         value: 0,
         textValue: 2,
         type: false,
@@ -438,7 +438,7 @@ export const petsToCompare: PetsToCompareList[] = [
         id: '5e8c4ffb4ed5f230f4c261f9',
         breed: 'Австралійська вівчарка (Ауссі)',
         imgUrl:
-          'https://res.cloudinary.com/pet-image-api/image/upload/v1586169401/Pets/australian-shepherd/australian-shepherd-puppys_gdwfsl.jpg',
+          'https://petsi.net/images/dogbreed/25.jpg',
         value: 0,
         textValue: 2,
         type: false,
